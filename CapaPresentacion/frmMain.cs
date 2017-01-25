@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace CapaPresentacion
 {
-    public partial class frmRegistro : Form
+    public partial class frmMain : Form
     {
-        public frmRegistro()
+        public frmMain()
         {
             InitializeComponent();
-        }
-
-        private void btnRecogida_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
