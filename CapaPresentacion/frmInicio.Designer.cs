@@ -43,6 +43,7 @@
             this.btnRecogida.TabIndex = 0;
             this.btnRecogida.Text = "Recogida";
             this.btnRecogida.UseVisualStyleBackColor = true;
+            this.btnRecogida.Click += new System.EventHandler(this.btnRecogida_Click);
             // 
             // btnRegistro
             // 
@@ -53,6 +54,7 @@
             this.btnRegistro.TabIndex = 1;
             this.btnRegistro.Text = "Registro";
             this.btnRegistro.UseVisualStyleBackColor = true;
+            this.btnRegistro.Click += new System.EventHandler(this.btnRegistro_Click);
             // 
             // btnVenta
             // 
@@ -63,6 +65,7 @@
             this.btnVenta.TabIndex = 2;
             this.btnVenta.Text = "Venta";
             this.btnVenta.UseVisualStyleBackColor = true;
+            this.btnVenta.Click += new System.EventHandler(this.btnVenta_Click);
             // 
             // btnDevolucion
             // 
@@ -73,6 +76,7 @@
             this.btnDevolucion.TabIndex = 3;
             this.btnDevolucion.Text = "Devolución";
             this.btnDevolucion.UseVisualStyleBackColor = true;
+            this.btnDevolucion.Click += new System.EventHandler(this.btnDevolucion_Click);
             // 
             // frmInicio
             // 
