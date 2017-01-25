@@ -48,6 +48,7 @@
             // 
             // lblTitulo
             // 
+            this.lblTitulo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblTitulo.Font = new System.Drawing.Font("Rockwell", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -59,6 +60,7 @@
             // 
             // lblFecha
             // 
+            this.lblFecha.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblFecha.AutoSize = true;
             this.lblFecha.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblFecha.Font = new System.Drawing.Font("Rockwell", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -70,6 +72,7 @@
             // 
             // lblEmpleado
             // 
+            this.lblEmpleado.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblEmpleado.AutoSize = true;
             this.lblEmpleado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblEmpleado.Font = new System.Drawing.Font("Rockwell", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -81,6 +84,7 @@
             // 
             // lblCodArticulo
             // 
+            this.lblCodArticulo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblCodArticulo.AutoSize = true;
             this.lblCodArticulo.Font = new System.Drawing.Font("Rockwell", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCodArticulo.Location = new System.Drawing.Point(38, 134);
@@ -91,6 +95,7 @@
             // 
             // lblDescripcion
             // 
+            this.lblDescripcion.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblDescripcion.AutoSize = true;
             this.lblDescripcion.Font = new System.Drawing.Font("Rockwell", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDescripcion.Location = new System.Drawing.Point(38, 220);
@@ -101,6 +106,7 @@
             // 
             // txtCodArticulo
             // 
+            this.txtCodArticulo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtCodArticulo.Location = new System.Drawing.Point(313, 139);
             this.txtCodArticulo.Name = "txtCodArticulo";
             this.txtCodArticulo.Size = new System.Drawing.Size(183, 22);
@@ -108,6 +114,7 @@
             // 
             // txtDescripcion
             // 
+            this.txtDescripcion.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtDescripcion.Location = new System.Drawing.Point(313, 225);
             this.txtDescripcion.MinimumSize = new System.Drawing.Size(280, 100);
             this.txtDescripcion.Name = "txtDescripcion";
@@ -116,6 +123,7 @@
             // 
             // lblCantidad
             // 
+            this.lblCantidad.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblCantidad.AutoSize = true;
             this.lblCantidad.Font = new System.Drawing.Font("Rockwell", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCantidad.Location = new System.Drawing.Point(38, 374);
@@ -126,6 +134,7 @@
             // 
             // cmbCantidad
             // 
+            this.cmbCantidad.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cmbCantidad.FormattingEnabled = true;
             this.cmbCantidad.Location = new System.Drawing.Point(313, 374);
             this.cmbCantidad.Name = "cmbCantidad";
@@ -134,6 +143,7 @@
             // 
             // txtNumeroRecogida
             // 
+            this.txtNumeroRecogida.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtNumeroRecogida.Location = new System.Drawing.Point(919, 134);
             this.txtNumeroRecogida.Name = "txtNumeroRecogida";
             this.txtNumeroRecogida.Size = new System.Drawing.Size(183, 22);
@@ -141,6 +151,7 @@
             // 
             // lblNumeroRecogida
             // 
+            this.lblNumeroRecogida.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblNumeroRecogida.AutoSize = true;
             this.lblNumeroRecogida.Font = new System.Drawing.Font("Rockwell", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNumeroRecogida.Location = new System.Drawing.Point(644, 129);
@@ -151,6 +162,7 @@
             // 
             // txtTallaPesoLitros
             // 
+            this.txtTallaPesoLitros.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtTallaPesoLitros.Location = new System.Drawing.Point(919, 225);
             this.txtTallaPesoLitros.Name = "txtTallaPesoLitros";
             this.txtTallaPesoLitros.Size = new System.Drawing.Size(183, 22);
@@ -158,6 +170,7 @@
             // 
             // lblTallaPesoLitros
             // 
+            this.lblTallaPesoLitros.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblTallaPesoLitros.AutoSize = true;
             this.lblTallaPesoLitros.Font = new System.Drawing.Font("Rockwell", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTallaPesoLitros.Location = new System.Drawing.Point(644, 220);
@@ -168,6 +181,7 @@
             // 
             // txtFechaCaducidad
             // 
+            this.txtFechaCaducidad.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtFechaCaducidad.Location = new System.Drawing.Point(919, 374);
             this.txtFechaCaducidad.Name = "txtFechaCaducidad";
             this.txtFechaCaducidad.Size = new System.Drawing.Size(183, 22);
@@ -175,6 +189,7 @@
             // 
             // lblFechaCaducidad
             // 
+            this.lblFechaCaducidad.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblFechaCaducidad.AutoSize = true;
             this.lblFechaCaducidad.Font = new System.Drawing.Font("Rockwell", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFechaCaducidad.Location = new System.Drawing.Point(644, 369);
@@ -185,8 +200,9 @@
             // 
             // cmbNumeroEmpleado
             // 
+            this.cmbNumeroEmpleado.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cmbNumeroEmpleado.FormattingEnabled = true;
-            this.cmbNumeroEmpleado.Location = new System.Drawing.Point(1139, 24);
+            this.cmbNumeroEmpleado.Location = new System.Drawing.Point(1157, 25);
             this.cmbNumeroEmpleado.Name = "cmbNumeroEmpleado";
             this.cmbNumeroEmpleado.Size = new System.Drawing.Size(106, 24);
             this.cmbNumeroEmpleado.TabIndex = 15;
