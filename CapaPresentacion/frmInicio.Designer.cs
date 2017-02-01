@@ -36,6 +36,7 @@
             // 
             // btnRecogida
             // 
+            this.btnRecogida.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnRecogida.Font = new System.Drawing.Font("Palatino Linotype", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRecogida.Location = new System.Drawing.Point(49, 46);
             this.btnRecogida.Name = "btnRecogida";
@@ -47,6 +48,7 @@
             // 
             // btnRegistro
             // 
+            this.btnRegistro.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnRegistro.Font = new System.Drawing.Font("Palatino Linotype", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegistro.Location = new System.Drawing.Point(410, 46);
             this.btnRegistro.Name = "btnRegistro";
@@ -58,6 +60,7 @@
             // 
             // btnVenta
             // 
+            this.btnVenta.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnVenta.Font = new System.Drawing.Font("Palatino Linotype", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVenta.Location = new System.Drawing.Point(49, 253);
             this.btnVenta.Name = "btnVenta";
@@ -69,6 +72,7 @@
             // 
             // btnDevolucion
             // 
+            this.btnDevolucion.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnDevolucion.Font = new System.Drawing.Font("Palatino Linotype", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDevolucion.Location = new System.Drawing.Point(410, 253);
             this.btnDevolucion.Name = "btnDevolucion";
@@ -87,8 +91,10 @@
             this.Controls.Add(this.btnVenta);
             this.Controls.Add(this.btnRegistro);
             this.Controls.Add(this.btnRecogida);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmInicio";
             this.Text = "CuaShop";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.ResumeLayout(false);
 
         }
