@@ -230,9 +230,12 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.lblEmpleado);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.Name = "frmDevolucion";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmDevolucion";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmDevolucion_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

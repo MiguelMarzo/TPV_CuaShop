@@ -37,8 +37,8 @@ namespace CapaPresentacion
 
         private void btnDevolucion_Click(object sender, EventArgs e)
         {
-            //frmDevolucion devolucion = new frmDevolucion();
-            //devolucion.Show();
+            frmDevolucion devolucion = new frmDevolucion();
+            devolucion.Show();
         }
 
         private void frmInicio_Load(object sender, EventArgs e)

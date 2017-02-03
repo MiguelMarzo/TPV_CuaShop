@@ -48,6 +48,7 @@
             // 
             // btnVolver
             // 
+            this.btnVolver.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnVolver.Font = new System.Drawing.Font("Palatino Linotype", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVolver.Location = new System.Drawing.Point(44, 23);
             this.btnVolver.Margin = new System.Windows.Forms.Padding(2);
@@ -59,7 +60,7 @@
             // 
             // cmbNumeroEmpleado
             // 
-            this.cmbNumeroEmpleado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmbNumeroEmpleado.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cmbNumeroEmpleado.FormattingEnabled = true;
             this.cmbNumeroEmpleado.Location = new System.Drawing.Point(884, 43);
             this.cmbNumeroEmpleado.Margin = new System.Windows.Forms.Padding(2);
@@ -69,7 +70,7 @@
             // 
             // lblEmpleado
             // 
-            this.lblEmpleado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblEmpleado.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblEmpleado.AutoSize = true;
             this.lblEmpleado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblEmpleado.Font = new System.Drawing.Font("Rockwell", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -82,7 +83,7 @@
             // 
             // lblFecha
             // 
-            this.lblFecha.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblFecha.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblFecha.AutoSize = true;
             this.lblFecha.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblFecha.Font = new System.Drawing.Font("Rockwell", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -95,7 +96,7 @@
             // 
             // lblTitulo
             // 
-            this.lblTitulo.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblTitulo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblTitulo.Font = new System.Drawing.Font("Rockwell", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -108,7 +109,7 @@
             // 
             // pct1
             // 
-            this.pct1.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.pct1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pct1.Location = new System.Drawing.Point(44, 112);
             this.pct1.Name = "pct1";
             this.pct1.Size = new System.Drawing.Size(220, 205);
@@ -117,7 +118,7 @@
             // 
             // pct2
             // 
-            this.pct2.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.pct2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pct2.Location = new System.Drawing.Point(740, 112);
             this.pct2.Name = "pct2";
             this.pct2.Size = new System.Drawing.Size(220, 205);
@@ -191,7 +192,7 @@
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnAceptar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnAceptar.Font = new System.Drawing.Font("Palatino Linotype", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAceptar.Location = new System.Drawing.Point(304, 354);
             this.btnAceptar.Margin = new System.Windows.Forms.Padding(2);
