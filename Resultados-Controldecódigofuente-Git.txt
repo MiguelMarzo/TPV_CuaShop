@@ -1,0 +1,52 @@
+﻿Repositorios de apertura:
+C:\Users\David\Source\Repos\TPV_CuaShop
+Deshaciendo edit: C:\Users\David\Source\Repos\TPV_CuaShop\CapaPresentacion\frmInicio.Designer.cs
+Se creó la confirmación 6ba5f5f5 localmente en el repositorio C:\Users\David\Source\Repos\TPV_CuaShop
+Se creó la confirmación 50d54e0f localmente en el repositorio C:\Users\David\Source\Repos\TPV_CuaShop
+Se creó la confirmación 7c505a01 localmente en el repositorio C:\Users\David\Source\Repos\TPV_CuaShop
+Se produjo un error al recuperar: Error al enviar la solicitud.
+
+Inner Exception:
+    Se ha terminado la conexión: Error inesperado de envío.
+
+    Inner Exception:
+        No se puede escribir datos de en la conexión de transporte: Se produjo un error durante el intento de conexión ya que la parte conectada no respondió adecuadamente tras un periodo de tiempo, o bien se produjo un error en la conexión establecida ya que el host conectado no ha podido responder.
+
+        Inner Exception:
+            Se produjo un error durante el intento de conexión ya que la parte conectada no respondió adecuadamente tras un periodo de tiempo, o bien se produjo un error en la conexión establecida ya que el host conectado no ha podido responder
+Se produjo un error al recuperar: Error al enviar la solicitud.
+
+Inner Exception:
+    No es posible conectar con el servidor remoto
+
+    Inner Exception:
+        Se produjo un error durante el intento de conexión ya que la parte conectada no respondió adecuadamente tras un periodo de tiempo, o bien se produjo un error en la conexión establecida ya que el host conectado no ha podido responder 192.30.253.113:443
+Se produjo un error al recuperar: Error al enviar la solicitud.
+
+Inner Exception:
+    No es posible conectar con el servidor remoto
+
+    Inner Exception:
+        Se produjo un error durante el intento de conexión ya que la parte conectada no respondió adecuadamente tras un periodo de tiempo, o bien se produjo un error en la conexión establecida ya que el host conectado no ha podido responder 192.30.253.113:443
+Se creó la confirmación b1ef614a localmente en el repositorio C:\Users\David\Source\Repos\TPV_CuaShop
+Se produjo un error al insertar en el repositorio remoto: Error al enviar la solicitud.
+
+Inner Exception:
+    Se ha terminado la conexión: Error inesperado de envío.
+
+    Inner Exception:
+        No se puede escribir datos de en la conexión de transporte: Se produjo un error durante el intento de conexión ya que la parte conectada no respondió adecuadamente tras un periodo de tiempo, o bien se produjo un error en la conexión establecida ya que el host conectado no ha podido responder.
+
+        Inner Exception:
+            Se produjo un error durante el intento de conexión ya que la parte conectada no respondió adecuadamente tras un periodo de tiempo, o bien se produjo un error en la conexión establecida ya que el host conectado no ha podido responder
+Se produjo un error al recuperar: Error al enviar la solicitud.
+
+Inner Exception:
+    No se puede resolver el nombre remoto: 'github.com'
+Se produjo un error al insertar en el repositorio remoto: Error al enviar la solicitud.
+
+Inner Exception:
+    No es posible conectar con el servidor remoto
+
+    Inner Exception:
+        Se produjo un error durante el intento de conexión ya que la parte conectada no respondió adecuadamente tras un periodo de tiempo, o bien se produjo un error en la conexión establecida ya que el host conectado no ha podido responder 192.30.253.113:443

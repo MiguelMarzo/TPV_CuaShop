@@ -25,8 +25,8 @@ namespace CapaPresentacion
 
         private void btnRecogida_Click(object sender, EventArgs e)
         {
-            //frmRecogida recogida = new frmRecogida();
-            //recogida.Show();
+            frmRecogida recogida = new frmRecogida();
+            recogida.Show();
         }
 
         private void btnVenta_Click(object sender, EventArgs e)
@@ -39,6 +39,11 @@ namespace CapaPresentacion
         {
             //frmDevolucion devolucion = new frmDevolucion();
             //devolucion.Show();
+        }
+
+        private void frmInicio_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
