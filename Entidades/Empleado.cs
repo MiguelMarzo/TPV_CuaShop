@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    class Empleado : IEquatable<Empleado>
+    public class Empleado : IEquatable<Empleado>
     {
         private int numeroEmpleado;
         private string rutaFoto;

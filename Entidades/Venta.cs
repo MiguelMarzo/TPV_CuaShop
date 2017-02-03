@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    class Venta : IEquatable<Venta>
+    public class Venta : IEquatable<Venta>
     {
         private int numeroVenta;
         private int numeroEmpleado;

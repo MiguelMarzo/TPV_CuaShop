@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    class Articulo : IEquatable<Articulo>
+    public class Articulo : IEquatable<Articulo>
     {
-        private int codigoArticulo;
+        private string codigoArticulo;
         private string descripcion;
         private string tallaPesoLitros;
         private int stock;
@@ -16,15 +16,15 @@ namespace Entidades
         private int numeroRecogida;
         private int numeroPedido;
         private int numeroVenta;
-        private double precio;
+        private decimal precio;
 
         public Articulo()
         {
 
         }
 
-        public Articulo(int codigoArticulo, string descripcion, string tallaPesoLitros, int stock,
-            DateTime fechaCaducidad, int numeroRecogida, int numeroPedido, int numeroVenta, double precio)
+        public Articulo(string codigoArticulo, string descripcion, string tallaPesoLitros, int stock,
+            DateTime fechaCaducidad, int numeroRecogida, int numeroPedido, int numeroVenta, decimal precio)
         {
             this.codigoArticulo = codigoArticulo;
             this.descripcion = descripcion;
