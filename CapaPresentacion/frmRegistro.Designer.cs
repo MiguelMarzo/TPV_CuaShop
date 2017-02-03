@@ -53,9 +53,10 @@
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblTitulo.Font = new System.Drawing.Font("Rockwell", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.Location = new System.Drawing.Point(289, 42);
+            this.lblTitulo.Location = new System.Drawing.Point(217, 34);
+            this.lblTitulo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(627, 43);
+            this.lblTitulo.Size = new System.Drawing.Size(517, 35);
             this.lblTitulo.TabIndex = 0;
             this.lblTitulo.Text = "REGISTRO DE UN NUEVO ARTICULO";
             // 
@@ -65,9 +66,10 @@
             this.lblFecha.AutoSize = true;
             this.lblFecha.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblFecha.Font = new System.Drawing.Font("Rockwell", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFecha.Location = new System.Drawing.Point(966, 72);
+            this.lblFecha.Location = new System.Drawing.Point(724, 58);
+            this.lblFecha.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblFecha.Name = "lblFecha";
-            this.lblFecha.Size = new System.Drawing.Size(88, 29);
+            this.lblFecha.Size = new System.Drawing.Size(70, 23);
             this.lblFecha.TabIndex = 1;
             this.lblFecha.Text = "Fecha:";
             // 
@@ -77,9 +79,10 @@
             this.lblEmpleado.AutoSize = true;
             this.lblEmpleado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblEmpleado.Font = new System.Drawing.Font("Rockwell", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmpleado.Location = new System.Drawing.Point(966, 24);
+            this.lblEmpleado.Location = new System.Drawing.Point(724, 20);
+            this.lblEmpleado.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblEmpleado.Name = "lblEmpleado";
-            this.lblEmpleado.Size = new System.Drawing.Size(167, 29);
+            this.lblEmpleado.Size = new System.Drawing.Size(134, 23);
             this.lblEmpleado.TabIndex = 2;
             this.lblEmpleado.Text = "Nº Empleado:";
             // 
@@ -88,9 +91,10 @@
             this.lblCodArticulo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblCodArticulo.AutoSize = true;
             this.lblCodArticulo.Font = new System.Drawing.Font("Rockwell", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCodArticulo.Location = new System.Drawing.Point(54, 196);
+            this.lblCodArticulo.Location = new System.Drawing.Point(40, 159);
+            this.lblCodArticulo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCodArticulo.Name = "lblCodArticulo";
-            this.lblCodArticulo.Size = new System.Drawing.Size(228, 27);
+            this.lblCodArticulo.Size = new System.Drawing.Size(183, 21);
             this.lblCodArticulo.TabIndex = 3;
             this.lblCodArticulo.Text = "Código de artículo:";
             // 
@@ -99,27 +103,30 @@
             this.lblDescripcion.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblDescripcion.AutoSize = true;
             this.lblDescripcion.Font = new System.Drawing.Font("Rockwell", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescripcion.Location = new System.Drawing.Point(54, 282);
+            this.lblDescripcion.Location = new System.Drawing.Point(40, 229);
+            this.lblDescripcion.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDescripcion.Name = "lblDescripcion";
-            this.lblDescripcion.Size = new System.Drawing.Size(155, 27);
+            this.lblDescripcion.Size = new System.Drawing.Size(124, 21);
             this.lblDescripcion.TabIndex = 4;
             this.lblDescripcion.Text = "Descripción:\r\n";
             // 
             // txtCodArticulo
             // 
             this.txtCodArticulo.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtCodArticulo.Location = new System.Drawing.Point(329, 201);
+            this.txtCodArticulo.Location = new System.Drawing.Point(247, 163);
+            this.txtCodArticulo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtCodArticulo.Name = "txtCodArticulo";
-            this.txtCodArticulo.Size = new System.Drawing.Size(183, 22);
+            this.txtCodArticulo.Size = new System.Drawing.Size(138, 20);
             this.txtCodArticulo.TabIndex = 5;
             // 
             // txtDescripcion
             // 
             this.txtDescripcion.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtDescripcion.Location = new System.Drawing.Point(329, 287);
-            this.txtDescripcion.MinimumSize = new System.Drawing.Size(280, 100);
+            this.txtDescripcion.Location = new System.Drawing.Point(247, 233);
+            this.txtDescripcion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtDescripcion.MinimumSize = new System.Drawing.Size(211, 100);
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(280, 100);
+            this.txtDescripcion.Size = new System.Drawing.Size(211, 20);
             this.txtDescripcion.TabIndex = 6;
             // 
             // lblCantidad
@@ -127,9 +134,10 @@
             this.lblCantidad.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblCantidad.AutoSize = true;
             this.lblCantidad.Font = new System.Drawing.Font("Rockwell", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCantidad.Location = new System.Drawing.Point(54, 436);
+            this.lblCantidad.Location = new System.Drawing.Point(40, 354);
+            this.lblCantidad.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCantidad.Name = "lblCantidad";
-            this.lblCantidad.Size = new System.Drawing.Size(121, 27);
+            this.lblCantidad.Size = new System.Drawing.Size(97, 21);
             this.lblCantidad.TabIndex = 7;
             this.lblCantidad.Text = "Cantidad:";
             // 
@@ -137,17 +145,19 @@
             // 
             this.cmbCantidad.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cmbCantidad.FormattingEnabled = true;
-            this.cmbCantidad.Location = new System.Drawing.Point(329, 436);
+            this.cmbCantidad.Location = new System.Drawing.Point(247, 354);
+            this.cmbCantidad.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmbCantidad.Name = "cmbCantidad";
-            this.cmbCantidad.Size = new System.Drawing.Size(69, 24);
+            this.cmbCantidad.Size = new System.Drawing.Size(53, 21);
             this.cmbCantidad.TabIndex = 8;
             // 
             // txtNumeroRecogida
             // 
             this.txtNumeroRecogida.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtNumeroRecogida.Location = new System.Drawing.Point(935, 196);
+            this.txtNumeroRecogida.Location = new System.Drawing.Point(701, 159);
+            this.txtNumeroRecogida.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtNumeroRecogida.Name = "txtNumeroRecogida";
-            this.txtNumeroRecogida.Size = new System.Drawing.Size(183, 22);
+            this.txtNumeroRecogida.Size = new System.Drawing.Size(138, 20);
             this.txtNumeroRecogida.TabIndex = 10;
             // 
             // lblNumeroRecogida
@@ -155,18 +165,20 @@
             this.lblNumeroRecogida.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblNumeroRecogida.AutoSize = true;
             this.lblNumeroRecogida.Font = new System.Drawing.Font("Rockwell", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNumeroRecogida.Location = new System.Drawing.Point(660, 191);
+            this.lblNumeroRecogida.Location = new System.Drawing.Point(495, 155);
+            this.lblNumeroRecogida.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNumeroRecogida.Name = "lblNumeroRecogida";
-            this.lblNumeroRecogida.Size = new System.Drawing.Size(256, 27);
+            this.lblNumeroRecogida.Size = new System.Drawing.Size(203, 21);
             this.lblNumeroRecogida.TabIndex = 9;
             this.lblNumeroRecogida.Text = "Número de Recogida:";
             // 
             // txtTallaPesoLitros
             // 
             this.txtTallaPesoLitros.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtTallaPesoLitros.Location = new System.Drawing.Point(935, 287);
+            this.txtTallaPesoLitros.Location = new System.Drawing.Point(701, 233);
+            this.txtTallaPesoLitros.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtTallaPesoLitros.Name = "txtTallaPesoLitros";
-            this.txtTallaPesoLitros.Size = new System.Drawing.Size(183, 22);
+            this.txtTallaPesoLitros.Size = new System.Drawing.Size(138, 20);
             this.txtTallaPesoLitros.TabIndex = 12;
             // 
             // lblTallaPesoLitros
@@ -174,18 +186,20 @@
             this.lblTallaPesoLitros.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblTallaPesoLitros.AutoSize = true;
             this.lblTallaPesoLitros.Font = new System.Drawing.Font("Rockwell", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTallaPesoLitros.Location = new System.Drawing.Point(660, 282);
+            this.lblTallaPesoLitros.Location = new System.Drawing.Point(495, 229);
+            this.lblTallaPesoLitros.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTallaPesoLitros.Name = "lblTallaPesoLitros";
-            this.lblTallaPesoLitros.Size = new System.Drawing.Size(222, 27);
+            this.lblTallaPesoLitros.Size = new System.Drawing.Size(180, 21);
             this.lblTallaPesoLitros.TabIndex = 11;
             this.lblTallaPesoLitros.Text = "Talla, peso o litros:";
             // 
             // txtFechaCaducidad
             // 
             this.txtFechaCaducidad.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtFechaCaducidad.Location = new System.Drawing.Point(935, 436);
+            this.txtFechaCaducidad.Location = new System.Drawing.Point(701, 354);
+            this.txtFechaCaducidad.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtFechaCaducidad.Name = "txtFechaCaducidad";
-            this.txtFechaCaducidad.Size = new System.Drawing.Size(183, 22);
+            this.txtFechaCaducidad.Size = new System.Drawing.Size(138, 20);
             this.txtFechaCaducidad.TabIndex = 14;
             // 
             // lblFechaCaducidad
@@ -193,9 +207,10 @@
             this.lblFechaCaducidad.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblFechaCaducidad.AutoSize = true;
             this.lblFechaCaducidad.Font = new System.Drawing.Font("Rockwell", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFechaCaducidad.Location = new System.Drawing.Point(660, 431);
+            this.lblFechaCaducidad.Location = new System.Drawing.Point(495, 350);
+            this.lblFechaCaducidad.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblFechaCaducidad.Name = "lblFechaCaducidad";
-            this.lblFechaCaducidad.Size = new System.Drawing.Size(245, 27);
+            this.lblFechaCaducidad.Size = new System.Drawing.Size(194, 21);
             this.lblFechaCaducidad.TabIndex = 13;
             this.lblFechaCaducidad.Text = "Fecha de caducidad:";
             // 
@@ -203,17 +218,19 @@
             // 
             this.cmbNumeroEmpleado.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cmbNumeroEmpleado.FormattingEnabled = true;
-            this.cmbNumeroEmpleado.Location = new System.Drawing.Point(1157, 25);
+            this.cmbNumeroEmpleado.Location = new System.Drawing.Point(868, 20);
+            this.cmbNumeroEmpleado.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmbNumeroEmpleado.Name = "cmbNumeroEmpleado";
-            this.cmbNumeroEmpleado.Size = new System.Drawing.Size(106, 24);
+            this.cmbNumeroEmpleado.Size = new System.Drawing.Size(80, 21);
             this.cmbNumeroEmpleado.TabIndex = 15;
             // 
             // btnVolver
             // 
             this.btnVolver.Font = new System.Drawing.Font("Palatino Linotype", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVolver.Location = new System.Drawing.Point(59, 24);
+            this.btnVolver.Location = new System.Drawing.Point(44, 20);
+            this.btnVolver.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(143, 86);
+            this.btnVolver.Size = new System.Drawing.Size(107, 70);
             this.btnVolver.TabIndex = 16;
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = true;
@@ -221,9 +238,9 @@
             // 
             // frmRegistro
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1275, 646);
+            this.ClientSize = new System.Drawing.Size(956, 525);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.cmbNumeroEmpleado);
             this.Controls.Add(this.txtFechaCaducidad);
@@ -242,10 +259,12 @@
             this.Controls.Add(this.lblFecha);
             this.Controls.Add(this.lblTitulo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmRegistro";
             this.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultBounds;
             this.Text = "Registro";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.frmRegistro_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
