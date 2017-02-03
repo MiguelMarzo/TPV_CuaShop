@@ -97,8 +97,10 @@
             this.Controls.Add(this.btnBuscarArticulo);
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.btnAdministracion);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmMain";
             this.Text = "CuaShop";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.ResumeLayout(false);
             this.PerformLayout();
 

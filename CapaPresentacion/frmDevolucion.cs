@@ -10,24 +10,14 @@ using System.Windows.Forms;
 
 namespace CapaPresentacion
 {
-    public partial class frmRegistro : Form
+    public partial class frmDevolucion : Form
     {
-        public frmRegistro()
+        public frmDevolucion()
         {
             InitializeComponent();
         }
 
-        private void btnRecogida_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void lblFechaCaducidad_Click(object sender, EventArgs e)
+        private void frmDevolucion_Load(object sender, EventArgs e)
         {
 
         }
