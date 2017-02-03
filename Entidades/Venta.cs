@@ -13,6 +13,11 @@ namespace Entidades
         private DateTime fechaVenta;
         private double precio;
 
+        public Venta()
+        {
+
+        }
+
         public Venta(int numeroVenta, int numeroEmpleado, DateTime fechaVenta, double precio)
         {
             this.numeroVenta = numeroVenta;
