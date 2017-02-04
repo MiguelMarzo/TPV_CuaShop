@@ -14,6 +14,11 @@ namespace Entidades
         private string entregador;
         private int numeroEmpleado;
 
+        public Recogida()
+        {
+
+        }
+
         public Recogida(int numeroRecogida, DateTime fecha, int cantidadArticulos, string entregador, int numeroEmpleado)
         {
             this.numeroRecogida = numeroRecogida;

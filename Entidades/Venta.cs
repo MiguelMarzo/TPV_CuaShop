@@ -6,12 +6,17 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    class Venta : IEquatable<Venta>
+    public class Venta : IEquatable<Venta>
     {
         private int numeroVenta;
         private int numeroEmpleado;
         private DateTime fechaVenta;
         private double precio;
+
+        public Venta()
+        {
+
+        }
 
         public Venta(int numeroVenta, int numeroEmpleado, DateTime fechaVenta, double precio)
         {
