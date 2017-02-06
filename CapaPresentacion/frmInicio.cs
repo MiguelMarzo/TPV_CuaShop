@@ -26,5 +26,17 @@ namespace CapaPresentacion
         {
             this.Close();
         }
+
+        private void btnAccionesEmpleado_Click(object sender, EventArgs e)
+        {
+            frmAccionesEmpleado accionesEmpleado = new frmAccionesEmpleado();
+            accionesEmpleado.Show();
+        }
+
+        private void btnBuscarArticulo_Click(object sender, EventArgs e)
+        {
+            frmBuscarArticulo buscarArticulo = new frmBuscarArticulo();
+            buscarArticulo.Show();
+        }
     }
 }
