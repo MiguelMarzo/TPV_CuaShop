@@ -56,6 +56,7 @@
             this.btnAccionesEmpleado.TabIndex = 1;
             this.btnAccionesEmpleado.Text = "AccionesEmpleado";
             this.btnAccionesEmpleado.UseVisualStyleBackColor = true;
+            this.btnAccionesEmpleado.Click += new System.EventHandler(this.btnAccionesEmpleado_Click);
             // 
             // btnAdmin
             // 
@@ -78,6 +79,7 @@
             this.btnBuscarArticulo.TabIndex = 3;
             this.btnBuscarArticulo.Text = "Buscar Articulo";
             this.btnBuscarArticulo.UseVisualStyleBackColor = true;
+            this.btnBuscarArticulo.Click += new System.EventHandler(this.btnBuscarArticulo_Click);
             // 
             // btnSalir
             // 
