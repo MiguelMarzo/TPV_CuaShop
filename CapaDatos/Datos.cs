@@ -10,7 +10,6 @@ namespace CapaDatos
     public class Datos
     {
         private dsCuaShop dsShop;
-        private dsCuaShopTableAdapters.RecogidaTableAdapter daRecogida;
         public Datos()
         {
             CrearDataSetCompleto();
@@ -26,7 +25,7 @@ namespace CapaDatos
             var daEmpleado = new dsCuaShopTableAdapters.EmpleadoTableAdapter();
             daEmpleado.Fill(dsShop.Empleado);
 
-            daRecogida = new dsCuaShopTableAdapters.RecogidaTableAdapter();
+            var daRecogida = new dsCuaShopTableAdapters.RecogidaTableAdapter();
             daRecogida.Fill(dsShop.Recogida);
 
             var daVenta = new dsCuaShopTableAdapters.VentaTableAdapter();
@@ -40,20 +39,8 @@ namespace CapaDatos
                             select new Articulo(daArticulos.codigoArticulo, daArticulos.descripcion, daArticulos.tallaPesoLitros,
                             daArticulos.stock, daArticulos.fechaCaducidad, daArticulos.numeroRecogida, daArticulos.numeroPedido,
                             daArticulos.numeroVenta, daArticulos.precio);
-
+            
             return articulos.ToList();
-        }
-
-        public String CrearRegistroRecogida(String entregador, short numeroArticulosEntregados, short numeroEmpleado)
-        {
-            dsCuaShop.RecogidaRow drRegistroRecogida = dsShop.Recogida.NewRecogidaRow();
-            drRegistroRecogida.fecha = DateTime.Today;
-            drRegistroRecogida.cantidadArticulos = numeroArticulosEntregados;
-            drRegistroRecogida.entregador = entregador;
-            drRegistroRecogida.numeroEmpleado = numeroEmpleado;
-            dsShop.Recogida.AddRecogidaRow(drRegistroRecogida);
-            daRecogida.Update(drRegistroRecogida);
-            return null;
         }
     }
 }
