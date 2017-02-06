@@ -32,13 +32,14 @@
             this.btnRegistro = new System.Windows.Forms.Button();
             this.btnVenta = new System.Windows.Forms.Button();
             this.btnDevolucion = new System.Windows.Forms.Button();
+            this.btnVolver = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnRecogida
             // 
             this.btnRecogida.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnRecogida.Font = new System.Drawing.Font("Palatino Linotype", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRecogida.Location = new System.Drawing.Point(49, 46);
+            this.btnRecogida.Location = new System.Drawing.Point(157, 119);
             this.btnRecogida.Name = "btnRecogida";
             this.btnRecogida.Size = new System.Drawing.Size(271, 149);
             this.btnRecogida.TabIndex = 0;
@@ -50,7 +51,7 @@
             // 
             this.btnRegistro.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnRegistro.Font = new System.Drawing.Font("Palatino Linotype", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegistro.Location = new System.Drawing.Point(410, 46);
+            this.btnRegistro.Location = new System.Drawing.Point(518, 119);
             this.btnRegistro.Name = "btnRegistro";
             this.btnRegistro.Size = new System.Drawing.Size(271, 149);
             this.btnRegistro.TabIndex = 1;
@@ -62,7 +63,7 @@
             // 
             this.btnVenta.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnVenta.Font = new System.Drawing.Font("Palatino Linotype", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVenta.Location = new System.Drawing.Point(49, 253);
+            this.btnVenta.Location = new System.Drawing.Point(157, 326);
             this.btnVenta.Name = "btnVenta";
             this.btnVenta.Size = new System.Drawing.Size(271, 149);
             this.btnVenta.TabIndex = 2;
@@ -74,7 +75,7 @@
             // 
             this.btnDevolucion.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnDevolucion.Font = new System.Drawing.Font("Palatino Linotype", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDevolucion.Location = new System.Drawing.Point(410, 253);
+            this.btnDevolucion.Location = new System.Drawing.Point(518, 326);
             this.btnDevolucion.Name = "btnDevolucion";
             this.btnDevolucion.Size = new System.Drawing.Size(271, 149);
             this.btnDevolucion.TabIndex = 3;
@@ -82,17 +83,29 @@
             this.btnDevolucion.UseVisualStyleBackColor = true;
             this.btnDevolucion.Click += new System.EventHandler(this.btnDevolucion_Click);
             // 
-            // frmInicio
+            // btnVolver
+            // 
+            this.btnVolver.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnVolver.Font = new System.Drawing.Font("Palatino Linotype", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVolver.Location = new System.Drawing.Point(12, 12);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(174, 69);
+            this.btnVolver.TabIndex = 4;
+            this.btnVolver.Text = "Volver";
+            this.btnVolver.UseVisualStyleBackColor = true;
+            // 
+            // frmAccionesEmpleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(797, 485);
+            this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.btnDevolucion);
             this.Controls.Add(this.btnVenta);
             this.Controls.Add(this.btnRegistro);
             this.Controls.Add(this.btnRecogida);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "frmInicio";
+            this.Name = "frmAccionesEmpleado";
             this.Text = "CuaShop";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.ResumeLayout(false);
@@ -105,6 +118,7 @@
         private System.Windows.Forms.Button btnRegistro;
         private System.Windows.Forms.Button btnVenta;
         private System.Windows.Forms.Button btnDevolucion;
+        private System.Windows.Forms.Button btnVolver;
     }
 }
 
