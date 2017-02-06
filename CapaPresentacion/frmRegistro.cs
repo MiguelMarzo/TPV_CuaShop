@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CapaNegocio;
 
 namespace CapaPresentacion
 {
     public partial class frmRegistro : Form
     {
+        Negocio _negocio = new Negocio();
         public frmRegistro()
         {
             InitializeComponent();
@@ -21,20 +23,10 @@ namespace CapaPresentacion
             lblFecha.Text += DateTime.Today.ToShortDateString();
         }
 
-        private void btnRecogida_Click(object sender, EventArgs e)
+        private void btnAceptar_Click(object sender, EventArgs e)
         {
-
+           // _negocio.registrarArticulo(txtCodArticulo.Text, txtDescripcion.Text, cmbCantidad.SelectedItem, 
+           //     txtNumeroRecogida.Text, txtTallaPesoLitros.Text, txtFechaCaducidad.Text, cmbNumeroEmpleado.SelectedItem);
         }
-
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void lblFechaCaducidad_Click(object sender, EventArgs e)
-        {
-
-        }
-
     }
 }
