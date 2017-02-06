@@ -16,6 +16,10 @@ namespace CapaPresentacion
         {
             InitializeComponent();
         }
+        private void frmRegistro_Load(object sender, EventArgs e)
+        {
+            lblFecha.Text += DateTime.Today.ToShortDateString();
+        }
 
         private void btnRecogida_Click(object sender, EventArgs e)
         {
@@ -32,9 +36,5 @@ namespace CapaPresentacion
 
         }
 
-        private void frmRegistro_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }
