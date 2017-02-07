@@ -26,7 +26,7 @@ namespace CapaPresentacion
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            _negocio.CrearRegistroRecogida(cmbEntregador.SelectedItem, txtNumeroArticulosEntregados.Text, cmbNumeroEmpleado.SelectedItem);
+            _negocio.CrearRegistroRecogida(cmbEntregador.SelectedItem.ToString(), short.Parse(txtNumeroArticulosEntregados.Text), short.Parse(cmbNumeroEmpleado.SelectedItem.ToString()));
         }
     }
 }
