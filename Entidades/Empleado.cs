@@ -8,9 +8,9 @@ namespace Entidades
 {
     public class Empleado : IEquatable<Empleado>
     {
-        private int numeroEmpleado;
-        private string rutaFoto;
-        private string nombreEmpleado;
+        public int numeroEmpleado { get; set; }
+        public string rutaFoto;
+        public string nombreEmpleado;
 
         public Empleado()
         {
@@ -33,6 +33,10 @@ namespace Entidades
                 return true;
             else
                 return false;
+        }
+        public override string ToString()
+        {
+            return numeroEmpleado.ToString();
         }
     }
 }
