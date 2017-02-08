@@ -27,5 +27,20 @@ namespace CapaNegocio
         {
             return _datos.maxRecogida();
         }
-    }
+
+        public string existeArticulo(string codigoArticulo)
+        {
+            return _datos.existeArticulo(codigoArticulo);
+        }
+
+        public string insertarArticulo(string codigoArticulo, string descripcion, string tallaPesoLitros, int stock,
+            DateTime fechaCaducidad, int numeroRecogida, int numeroPedido, int numeroVenta, decimal precio, int iva)
+        {
+            return _datos.insertarArticulo(codigoArticulo, descripcion, tallaPesoLitros, stock, fechaCaducidad, numeroRecogida, numeroPedido, numeroVenta, precio, iva);
+        }
+
+        public string actualizarStockArticulo(string codigoArticulo, short cantidad)
+        {
+            return _datos.actualizarStockArticulo(codigoArticulo, cantidad);
+        }
 }
