@@ -34,7 +34,12 @@ namespace CapaPresentacion
 
         private void btnAnadirCarrito_Click(object sender, EventArgs e)
         {
+
+           
+
             dgvProductos.DataSource = _negocio.DevolverTodosLosArticulos();
+
+
             
             //if (dgvProductos.SelectedRows.Count > 0)
             //{
