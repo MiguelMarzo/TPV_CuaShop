@@ -27,6 +27,9 @@ namespace CapaPresentacion
         {
            // _negocio.registrarArticulo(txtCodArticulo.Text, txtDescripcion.Text, cmbCantidad.SelectedItem, 
            //     txtNumeroRecogida.Text, txtTallaPesoLitros.Text, txtFechaCaducidad.Text, cmbNumeroEmpleado.SelectedItem);
+
+
+
         }
     }
 }
