@@ -8,16 +8,16 @@ namespace Entidades
 {
     public class Articulo : IEquatable<Articulo>
     {
-        private string codigoArticulo;
-        private string descripcion;
-        private string tallaPesoLitros;
-        private int stock;
-        private DateTime fechaCaducidad;
-        private int numeroRecogida;
-        private int numeroPedido;
-        private int numeroVenta;
-        private decimal precio;
-        private int iva;
+        public string codigoArticulo { get; set;}
+        public string descripcion { get; set; }
+        public string tallaPesoLitros { get; set; }
+        public int stock { get; set; }
+        public DateTime fechaCaducidad { get; set; }
+        public int numeroRecogida { get; set; }
+        public int numeroPedido { get; set; }
+        public int numeroVenta { get; set; }
+        public decimal precio { get; set; }
+        public int iva { get; set; }
 
         public Articulo()
         {
@@ -48,5 +48,7 @@ namespace Entidades
             else
                 return false;
         }
+
+
     }
 }
