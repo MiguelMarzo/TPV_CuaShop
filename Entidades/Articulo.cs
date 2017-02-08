@@ -17,6 +17,7 @@ namespace Entidades
         private int numeroPedido;
         private int numeroVenta;
         private decimal precio;
+        private int iva;
 
         public Articulo()
         {
@@ -24,7 +25,7 @@ namespace Entidades
         }
 
         public Articulo(string codigoArticulo, string descripcion, string tallaPesoLitros, int stock,
-            DateTime fechaCaducidad, int numeroRecogida, int numeroPedido, int numeroVenta, decimal precio)
+            DateTime fechaCaducidad, int numeroRecogida, int numeroPedido, int numeroVenta, decimal precio,int iva)
         {
             this.codigoArticulo = codigoArticulo;
             this.descripcion = descripcion;
@@ -35,6 +36,7 @@ namespace Entidades
             this.numeroPedido = numeroPedido;
             this.numeroVenta = numeroVenta;
             this.precio = precio;
+            this.iva = iva;
         }
         public bool Equals(Articulo other)
         {

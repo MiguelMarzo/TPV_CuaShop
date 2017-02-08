@@ -39,20 +39,43 @@ namespace CapaDatos
                             orderby daArticulos.descripcion ascending
                             select new Articulo(daArticulos.codigoArticulo, daArticulos.descripcion, daArticulos.tallaPesoLitros,
                             daArticulos.stock, daArticulos.fechaCaducidad, daArticulos.numeroRecogida, daArticulos.numeroPedido,
-                            daArticulos.numeroVenta, daArticulos.precio);
+                            daArticulos.numeroVenta, daArticulos.precio, daArticulos.idiva);
             
             return articulos.ToList();
         }
         public String CrearRegistroRecogida(String entregador, short numeroArticulosEntregados, short numeroEmpleado)
         {
-            dsCuaShop.RecogidaRow drRegistroRecogida = dsShop.Recogida.NewRecogidaRow();
-            drRegistroRecogida.fecha = DateTime.Today;
-            drRegistroRecogida.cantidadArticulos = numeroArticulosEntregados;
-            drRegistroRecogida.entregador = entregador;
-            drRegistroRecogida.numeroEmpleado = numeroEmpleado;
-            dsShop.Recogida.AddRecogidaRow(drRegistroRecogida);
-            daRecogida.Update(drRegistroRecogida);
-            return null;
+            try
+            {
+                dsCuaShop.RecogidaRow drRegistroRecogida = dsShop.Recogida.NewRecogidaRow();
+                drRegistroRecogida.fecha = DateTime.Today;
+                drRegistroRecogida.cantidadArticulos = numeroArticulosEntregados;
+                drRegistroRecogida.entregador = entregador;
+                drRegistroRecogida.numeroEmpleado = numeroEmpleado;
+                dsShop.Recogida.AddRecogidaRow(drRegistroRecogida);
+                daRecogida.Update(drRegistroRecogida);
+                return "Insertado";
+            }catch
+            {
+                return "Error";
+            }
+            
+        }
+
+        public List<Empleado> devolverEmpleados()
+        {
+            var empleados = from daEmpleado in dsShop.Empleado
+                            orderby daEmpleado.nombreEmpleado
+                            select new Empleado(daEmpleado.numeroEmpleado, daEmpleado.rutaFoto, daEmpleado.nombreEmpleado);
+
+            return empleados.ToList();
+        }
+
+        public int maxRecogida()
+        {
+            var numRecogida = dsShop.Recogida.OrderByDescending(x => x.numeroRecogida).First().numeroRecogida;
+            
+            return numRecogida;
         }
     }
 }

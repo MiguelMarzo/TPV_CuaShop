@@ -11,19 +11,17 @@ namespace Entidades
         private int numeroEmpleado;
         private string rutaFoto;
         private string nombreEmpleado;
-        private bool admin;
 
         public Empleado()
         {
 
         }
 
-        public Empleado(int numeroEmpleado, string rutaFoto, string nombreEmpleado, bool admin)
+        public Empleado(int numeroEmpleado, string rutaFoto, string nombreEmpleado)
         {
             this.numeroEmpleado = numeroEmpleado;
             this.rutaFoto = rutaFoto;
             this.nombreEmpleado = nombreEmpleado;
-            this.admin = admin;
         }
 
         public bool Equals(Empleado other)
