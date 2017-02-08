@@ -54,5 +54,7 @@ namespace CapaDatos
             daRecogida.Update(drRegistroRecogida);
             return null;
         }
+
+
     }
 }
