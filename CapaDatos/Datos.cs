@@ -4,13 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Entidades;
+using CapaDatos.dsCuaShopTableAdapters;
 
 namespace CapaDatos
 {
     public class Datos
     {
         private dsCuaShop dsShop;
-        private dsCuaShopTableAdapters.RecogidaTableAdapter daRecogida;
+        private RecogidaTableAdapter daRecogida;
+        private ArticuloTableAdapter daArticulo;
+        private EmpleadoTableAdapter daEmpleado;
+        private VentaTableAdapter daVenta;
         public Datos()
         {
             CrearDataSetCompleto();
@@ -20,16 +24,16 @@ namespace CapaDatos
         {
             dsShop = new dsCuaShop();
 
-            var daArticulo = new dsCuaShopTableAdapters.ArticuloTableAdapter();
+            daArticulo = new dsCuaShopTableAdapters.ArticuloTableAdapter();
             daArticulo.Fill(dsShop.Articulo);
 
-            var daEmpleado = new dsCuaShopTableAdapters.EmpleadoTableAdapter();
+            daEmpleado = new dsCuaShopTableAdapters.EmpleadoTableAdapter();
             daEmpleado.Fill(dsShop.Empleado);
 
             daRecogida = new dsCuaShopTableAdapters.RecogidaTableAdapter();
             daRecogida.Fill(dsShop.Recogida);
 
-            var daVenta = new dsCuaShopTableAdapters.VentaTableAdapter();
+            daVenta = new dsCuaShopTableAdapters.VentaTableAdapter();
             daVenta.Fill(dsShop.Venta);
         }
 
@@ -81,5 +85,68 @@ namespace CapaDatos
             
             return numRecogida + 1;
         }
+
+        public string existeArticulo(string codigoArticulo)
+        {
+
+            var articulo = from art in dsShop.Articulo
+                           where art.codigoArticulo.Equals(codigoArticulo)
+                           select new Articulo();
+
+            if (articulo == null) {
+                return "No existe";
+            }else
+            {
+                return "Existe";
+            }
+            
+        }
+
+        public string insertarArticulo(string codigoArticulo, string descripcion, string tallaPesoLitros, int stock,
+            DateTime fechaCaducidad, int numeroRecogida, int numeroPedido, int numeroVenta, decimal precio, int iva)
+        {
+
+            Articulo art = new Articulo(codigoArticulo, descripcion, tallaPesoLitros, stock, fechaCaducidad, numeroRecogida, numeroPedido, numeroVenta, precio, iva);
+
+            try
+            {
+                dsCuaShop.ArticuloRow drArticulo = dsShop.Articulo.NewArticuloRow();
+                drArticulo.codigoArticulo = art.codigoArticulo;
+                drArticulo.descripcion = art.descripcion;
+                drArticulo.tallaPesoLitros = art.tallaPesoLitros;
+                drArticulo.stock = short.Parse(art.stock.ToString());
+                drArticulo.fechaCaducidad = art.fechaCaducidad;
+                drArticulo.numeroRecogida = art.numeroRecogida;
+                drArticulo.numeroPedido = art.numeroPedido;
+                drArticulo.numeroVenta = short.Parse(art.numeroVenta.ToString());
+                drArticulo.precio = art.precio;
+                drArticulo.idiva = art.iva;
+                dsShop.Articulo.AddArticuloRow(drArticulo);
+                daArticulo.Update(drArticulo);
+                return "Insertado";
+            }
+            catch
+            {
+                return "Error";
+            }
+
+    }
+
+        public string actualizarStockArticulo(string codigoArticulo, short cantidad) {
+
+            try
+            {
+                var drArticulo = dsShop.Articulo.FindBycodigoArticulo(codigoArticulo);
+                drArticulo.stock += cantidad;
+                daArticulo.Update(drArticulo);
+                return "Actualizado";
+            }catch (Exception ex)
+            {
+                return "No se ha podido actualizar: " + ex.Message;
+            }
+            
+
+        }  
+
     }
 }
