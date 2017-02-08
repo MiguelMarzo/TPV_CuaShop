@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaNegocio;
+using Entidades;
 
 namespace CapaPresentacion
 {
@@ -21,12 +22,22 @@ namespace CapaPresentacion
 
         private void frmRecogida_Load(object sender, EventArgs e)
         {
-            
+            var empleados =  _negocio.devolverEmpleados();
+            foreach (Empleado empleado in empleados) {
+                cmbNumeroEmpleado.Items.Add(empleado);
+                cmbNumeroEmpleado.DisplayMember = "[nombreEmpleado]";
+            }
+            lblNumeroRecogida.Text += ": " + _negocio.maxRecogida();
+            cmbEntregador.Items.Add("Profesor");
+            cmbEntregador.Items.Add("Alumno");
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            _negocio.CrearRegistroRecogida(cmbEntregador.SelectedItem.ToString(), short.Parse(txtNumeroArticulosEntregados.Text), short.Parse(cmbNumeroEmpleado.SelectedItem.ToString()));
+            Empleado empl = new Empleado();
+            empl= (Empleado) cmbNumeroEmpleado.SelectedItem;
+           
+            _negocio.CrearRegistroRecogida(cmbEntregador.SelectedItem.ToString(), short.Parse(txtNumeroArticulosEntregados.Text), (short) empl.numeroEmpleado);
         }
     }
 }

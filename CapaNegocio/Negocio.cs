@@ -19,5 +19,13 @@ namespace CapaNegocio
         {
             return _datos.CrearRegistroRecogida(entregador, numeroArticulosEntregados, numeroEmpleado);
         }
+        public List<Empleado> devolverEmpleados()
+        {
+            return _datos.devolverEmpleados();
+        }
+        public int maxRecogida()
+        {
+            return _datos.maxRecogida();
+        }
     }
 }
