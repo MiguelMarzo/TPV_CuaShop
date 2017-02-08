@@ -39,5 +39,10 @@ namespace CapaPresentacion
            
             _negocio.CrearRegistroRecogida(cmbEntregador.SelectedItem.ToString(), short.Parse(txtNumeroArticulosEntregados.Text), (short) empl.numeroEmpleado);
         }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
