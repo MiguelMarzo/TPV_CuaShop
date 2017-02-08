@@ -13,9 +13,7 @@ namespace CapaPresentacion
 {
     public partial class frmRecogida : Form
     {
-
-        public Negocio _negocio = new Negocio();
-        
+        private Negocio _negocio = new Negocio();
         public frmRecogida()
         {
             InitializeComponent();

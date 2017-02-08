@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmBuscarArticulo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBuscarArticulo.Designer.cs">
+      <DependentUpon>frmBuscarArticulo.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmDevolucion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,6 +90,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmBuscarArticulo.resx">
+      <DependentUpon>frmBuscarArticulo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmDevolucion.resx">
       <DependentUpon>frmDevolucion.cs</DependentUpon>
     </EmbeddedResource>
@@ -126,7 +135,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CapaNegocio\CapaNegocio.csproj">
-      <Project>{B95B544C-D8AC-401F-9235-B4C1A111FF7C}</Project>
+      <Project>{b95b544c-d8ac-401f-9235-b4c1a111ff7c}</Project>
       <Name>CapaNegocio</Name>
     </ProjectReference>
     <ProjectReference Include="..\Entidades\Entidades.csproj">
