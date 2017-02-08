@@ -28,7 +28,55 @@ namespace CapaPresentacion
            // _negocio.registrarArticulo(txtCodArticulo.Text, txtDescripcion.Text, cmbCantidad.SelectedItem, 
            //     txtNumeroRecogida.Text, txtTallaPesoLitros.Text, txtFechaCaducidad.Text, cmbNumeroEmpleado.SelectedItem);
 
+            if (cmbNumeroEmpleado.SelectedItem == null)
+            {
+                MessageBox.Show("Debes indicar el número de empleado");
+                return;
+            }
 
+            if (txtCodArticulo.Text == "")
+            {
+                MessageBox.Show("Debes indicar el código del artículo");
+                return;
+            }
+
+            if (txtNumeroRecogida.Text == "")
+            {
+                MessageBox.Show("Debes indicar el número de recogida");
+                return;
+            }
+
+            if (txtDescripcion.Text == "")
+            {
+                MessageBox.Show("Debes indicar la descripción del artículo");
+                return;
+            }
+
+            if (txtTallaPesoLitros.Text == "")
+            {
+                MessageBox.Show("Debes indicar la talla, el peso o los litros que tiene el artículo");
+                return;
+            }
+
+            if (txtCantidad.Text == "")
+            {
+                MessageBox.Show("Debes indicar la cantidad del artículo");
+                return;
+            }
+
+            if (txtFechaCaducidad.Text == "")
+            {
+                MessageBox.Show("Debes indicar la fecha de caducidad del artículo");
+                return;
+            }
+
+            if (_negocio.existeArticulo(txtCodArticulo.Text) == "Existe")
+            {
+                _negocio.actualizarStockArticulo(txtCodArticulo.Text, short.Parse(txtCantidad.Text));
+            }else
+            {
+                //_negocio.insertarArticulo(txtCodArticulo.Text, txtDescripcion.Text, txtTallaPesoLitros.Text, txtCantidad.Text, DateTime.Parse(txtFechaCaducidad.Text), txtNumeroRecogida.Text, 0, 0, , );
+            }
 
         }
     }
