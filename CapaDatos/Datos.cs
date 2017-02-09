@@ -149,8 +149,14 @@ namespace CapaDatos
             try
             {
                 var drArticulo = dsShop.Articulo.FindBycodigoArticulo(codigoArticulo);
+                drArticulo.BeginEdit();
                 drArticulo.stock += cantidad;
+                drArticulo.EndEdit();
                 daArticulo.Update(drArticulo);
+                dsShop.Articulo.GetChanges();
+                drArticulo.AcceptChanges();
+
+                
                 return "Actualizado";
             }catch (Exception ex)
             {

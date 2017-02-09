@@ -122,7 +122,7 @@
             // 
             this.txtCodArticulo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtCodArticulo.Location = new System.Drawing.Point(278, 149);
-            this.txtCodArticulo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCodArticulo.Margin = new System.Windows.Forms.Padding(2);
             this.txtCodArticulo.Name = "txtCodArticulo";
             this.txtCodArticulo.Size = new System.Drawing.Size(213, 20);
             this.txtCodArticulo.TabIndex = 5;
@@ -131,7 +131,7 @@
             // 
             this.txtDescripcion.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtDescripcion.Location = new System.Drawing.Point(278, 189);
-            this.txtDescripcion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtDescripcion.Margin = new System.Windows.Forms.Padding(2);
             this.txtDescripcion.MinimumSize = new System.Drawing.Size(211, 100);
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(211, 20);
@@ -141,7 +141,7 @@
             // 
             this.txtNumeroRecogida.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtNumeroRecogida.Location = new System.Drawing.Point(753, 153);
-            this.txtNumeroRecogida.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNumeroRecogida.Margin = new System.Windows.Forms.Padding(2);
             this.txtNumeroRecogida.Name = "txtNumeroRecogida";
             this.txtNumeroRecogida.Size = new System.Drawing.Size(166, 20);
             this.txtNumeroRecogida.TabIndex = 10;
@@ -162,7 +162,7 @@
             // 
             this.txtTallaPesoLitros.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtTallaPesoLitros.Location = new System.Drawing.Point(753, 202);
-            this.txtTallaPesoLitros.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTallaPesoLitros.Margin = new System.Windows.Forms.Padding(2);
             this.txtTallaPesoLitros.Name = "txtTallaPesoLitros";
             this.txtTallaPesoLitros.Size = new System.Drawing.Size(166, 20);
             this.txtTallaPesoLitros.TabIndex = 12;
@@ -184,7 +184,7 @@
             this.cmbNumeroEmpleado.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cmbNumeroEmpleado.FormattingEnabled = true;
             this.cmbNumeroEmpleado.Location = new System.Drawing.Point(926, 31);
-            this.cmbNumeroEmpleado.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbNumeroEmpleado.Margin = new System.Windows.Forms.Padding(2);
             this.cmbNumeroEmpleado.Name = "cmbNumeroEmpleado";
             this.cmbNumeroEmpleado.Size = new System.Drawing.Size(80, 21);
             this.cmbNumeroEmpleado.TabIndex = 15;
@@ -194,12 +194,13 @@
             this.btnVolver.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnVolver.Font = new System.Drawing.Font("Palatino Linotype", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVolver.Location = new System.Drawing.Point(66, 16);
-            this.btnVolver.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnVolver.Margin = new System.Windows.Forms.Padding(2);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(137, 61);
             this.btnVolver.TabIndex = 16;
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = true;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
             // lblCantidad
             // 
@@ -230,7 +231,7 @@
             this.btnAceptar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnAceptar.Font = new System.Drawing.Font("Palatino Linotype", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAceptar.Location = new System.Drawing.Point(274, 446);
-            this.btnAceptar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAceptar.Margin = new System.Windows.Forms.Padding(2);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(482, 61);
             this.btnAceptar.TabIndex = 17;
@@ -242,7 +243,7 @@
             // 
             this.txtCantidad.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtCantidad.Location = new System.Drawing.Point(278, 301);
-            this.txtCantidad.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCantidad.Margin = new System.Windows.Forms.Padding(2);
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.Size = new System.Drawing.Size(79, 20);
             this.txtCantidad.TabIndex = 18;
@@ -251,7 +252,7 @@
             // 
             this.txtPedido.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtPedido.Location = new System.Drawing.Point(278, 366);
-            this.txtPedido.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPedido.Margin = new System.Windows.Forms.Padding(2);
             this.txtPedido.Name = "txtPedido";
             this.txtPedido.Size = new System.Drawing.Size(79, 20);
             this.txtPedido.TabIndex = 20;
@@ -284,7 +285,7 @@
             // 
             this.txtPrecio.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtPrecio.Location = new System.Drawing.Point(493, 366);
-            this.txtPrecio.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPrecio.Margin = new System.Windows.Forms.Padding(2);
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(150, 20);
             this.txtPrecio.TabIndex = 23;
@@ -303,16 +304,18 @@
             // 
             // calFechaCaducidad
             // 
+            this.calFechaCaducidad.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.calFechaCaducidad.Location = new System.Drawing.Point(753, 254);
-            this.calFechaCaducidad.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.calFechaCaducidad.Margin = new System.Windows.Forms.Padding(7);
             this.calFechaCaducidad.Name = "calFechaCaducidad";
             this.calFechaCaducidad.TabIndex = 24;
             // 
             // chkFecha
             // 
+            this.chkFecha.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.chkFecha.AutoSize = true;
             this.chkFecha.Location = new System.Drawing.Point(564, 265);
-            this.chkFecha.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chkFecha.Margin = new System.Windows.Forms.Padding(2);
             this.chkFecha.Name = "chkFecha";
             this.chkFecha.Size = new System.Drawing.Size(115, 17);
             this.chkFecha.TabIndex = 25;
@@ -352,7 +355,7 @@
             this.Controls.Add(this.lblCodArticulo);
             this.Controls.Add(this.txtCodArticulo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmRegistro";
             this.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultBounds;
             this.Text = "Registro";
