@@ -8,15 +8,16 @@ namespace Entidades
 {
     public class Articulo : IEquatable<Articulo>
     {
-        private string codigoArticulo;
-        private string descripcion;
-        private string tallaPesoLitros;
-        private int stock;
-        private DateTime fechaCaducidad;
-        private int numeroRecogida;
-        private int numeroPedido;
-        private int numeroVenta;
-        private decimal precio;
+        public string codigoArticulo { get; set;}
+        public string descripcion { get; set; }
+        public string tallaPesoLitros { get; set; }
+        public int stock { get; set; }
+        public DateTime fechaCaducidad { get; set; }
+        public int numeroRecogida { get; set; }
+        public int numeroPedido { get; set; }
+        public int numeroVenta { get; set; }
+        public decimal precio { get; set; }
+        public int iva { get; set; }
 
         public Articulo()
         {
@@ -24,7 +25,7 @@ namespace Entidades
         }
 
         public Articulo(string codigoArticulo, string descripcion, string tallaPesoLitros, int stock,
-            DateTime fechaCaducidad, int numeroRecogida, int numeroPedido, int numeroVenta, decimal precio)
+            DateTime fechaCaducidad, int numeroRecogida, int numeroPedido, int numeroVenta, decimal precio,int iva)
         {
             this.codigoArticulo = codigoArticulo;
             this.descripcion = descripcion;
@@ -35,6 +36,7 @@ namespace Entidades
             this.numeroPedido = numeroPedido;
             this.numeroVenta = numeroVenta;
             this.precio = precio;
+            this.iva = iva;
         }
         public bool Equals(Articulo other)
         {
@@ -46,5 +48,7 @@ namespace Entidades
             else
                 return false;
         }
+
+
     }
 }

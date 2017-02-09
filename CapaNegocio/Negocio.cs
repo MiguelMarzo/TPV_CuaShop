@@ -9,12 +9,38 @@ namespace CapaNegocio
     {
         private Datos _datos = new Datos();
 
-        public List<Articulo> DevolverTodosLosArticulos() {
+        public List<Articulo> DevolverTodosLosArticulos()
+        {
             return _datos.DevolverTodosLosArticulos();
         }
         public String CrearRegistroRecogida(String entregador, short numeroArticulosEntregados, short numeroEmpleado)
         {
             return _datos.CrearRegistroRecogida(entregador, numeroArticulosEntregados, numeroEmpleado);
+        }
+        public List<Empleado> devolverEmpleados()
+        {
+            return _datos.devolverEmpleados();
+        }
+        public int maxRecogida()
+        {
+            return _datos.maxRecogida();
+        }
+
+        public string existeArticulo(string codigoArticulo)
+        {
+            return _datos.existeArticulo(codigoArticulo);
+        }
+
+        public string insertarArticulo(string codigoArticulo, string descripcion, string tallaPesoLitros, int stock,
+            DateTime fechaCaducidad, int numeroRecogida, int numeroPedido, int numeroVenta, decimal precio, int iva)
+        {
+            return "";
+            //return _datos.insertarArticulo(codigoArticulo, descripcion, tallaPesoLitros, stock, fechaCaducidad, numeroRecogida, numeroPedido, numeroVenta, precio, iva);
+        }
+
+        public string actualizarStockArticulo(string codigoArticulo, short cantidad)
+        {
+            return _datos.actualizarStockArticulo(codigoArticulo, cantidad);
         }
     }
 }

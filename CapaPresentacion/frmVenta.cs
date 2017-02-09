@@ -34,15 +34,24 @@ namespace CapaPresentacion
 
         private void btnAnadirCarrito_Click(object sender, EventArgs e)
         {
+
+           
+
+            dgvProductos.DataSource = _negocio.DevolverTodosLosArticulos();
+
+
             
-                List<Articulo> articulos = new List<Articulo>();
-                for (int i = 0; i < dgvProductos.SelectedRows.Count; i++)
-                {
-                    
-                }
+            //if (dgvProductos.SelectedRows.Count > 0)
+            //{
+            //    List<Articulo> articulos = new List<Articulo>();
+            //    for (int i = 0; i < dgvProductos.SelectedRows.Count; i++)
+            //    {
+
+            //    }
+            //}
         }
 
-        private void dgvProductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
         {
 
         }

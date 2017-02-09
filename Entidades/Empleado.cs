@@ -8,22 +8,20 @@ namespace Entidades
 {
     public class Empleado : IEquatable<Empleado>
     {
-        private int numeroEmpleado;
-        private string rutaFoto;
-        private string nombreEmpleado;
-        private bool admin;
+        public int numeroEmpleado { get; set; }
+        public string rutaFoto;
+        public string nombreEmpleado;
 
         public Empleado()
         {
 
         }
 
-        public Empleado(int numeroEmpleado, string rutaFoto, string nombreEmpleado, bool admin)
+        public Empleado(int numeroEmpleado, string rutaFoto, string nombreEmpleado)
         {
             this.numeroEmpleado = numeroEmpleado;
             this.rutaFoto = rutaFoto;
             this.nombreEmpleado = nombreEmpleado;
-            this.admin = admin;
         }
 
         public bool Equals(Empleado other)
@@ -35,6 +33,10 @@ namespace Entidades
                 return true;
             else
                 return false;
+        }
+        public override string ToString()
+        {
+            return numeroEmpleado.ToString();
         }
     }
 }
