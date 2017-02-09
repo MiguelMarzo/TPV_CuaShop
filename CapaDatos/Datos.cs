@@ -59,13 +59,13 @@ namespace CapaDatos
             dsShop.Recogida.AddRecogidaRow(drRegistroRecogida);
             daRecogida.Update(drRegistroRecogida);
             return "Insertado";
-            try
-            {
+            //try
+            //{
 
-            }catch
-            {
-                return "Error";
-            }
+            //}catch
+            //{
+            //    return "Error";
+            //}
             
         }
 

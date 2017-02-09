@@ -51,9 +51,9 @@ namespace CapaNegocio
             return _datos.devolverVenta(codigoVenta);
         }
 
-        public string actualizarPrecioVenta(int codigoArticulo, int precio)
+        public string actualizarPrecioVenta(int codigoVenta, int precio)
         {
-            return _datos.actualizarPrecioVenta(codigoArticulo, precio);
+            return _datos.actualizarPrecioVenta(codigoVenta, precio);
         }
     }
 }
