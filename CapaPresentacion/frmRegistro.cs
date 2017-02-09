@@ -21,12 +21,12 @@ namespace CapaPresentacion
         private void frmRegistro_Load(object sender, EventArgs e)
         {
             lblFecha.Text += DateTime.Today.ToShortDateString();
+            chkFecha.CheckState = CheckState.Unchecked;
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-           // _negocio.registrarArticulo(txtCodArticulo.Text, txtDescripcion.Text, cmbCantidad.SelectedItem, 
-           //     txtNumeroRecogida.Text, txtTallaPesoLitros.Text, txtFechaCaducidad.Text, cmbNumeroEmpleado.SelectedItem);
+
 
             if (cmbNumeroEmpleado.SelectedItem == null)
             {
@@ -64,20 +64,34 @@ namespace CapaPresentacion
                 return;
             }
 
-            //if (txtFechaCaducidad.Text == "")
-            //{
-            //    MessageBox.Show("Debes indicar la fecha de caducidad del artículo");
-            //    return;
-            //}
+            var fecha = DateTime.MinValue;
+            if (chkFecha.CheckState == CheckState.Checked)
+            {
+                fecha = calFechaCaducidad.SelectionStart;
+            }
 
             if (_negocio.existeArticulo(txtCodArticulo.Text) == "Existe")
             {
                 _negocio.actualizarStockArticulo(txtCodArticulo.Text, short.Parse(txtCantidad.Text));
-            }else
+            }
+            else
             {
-                //_negocio.insertarArticulo(txtCodArticulo.Text, txtDescripcion.Text, txtTallaPesoLitros.Text, txtCantidad.Text, DateTime.Parse(txtFechaCaducidad.Text), txtNumeroRecogida.Text, 0, 0, , );
+                _negocio.insertarArticulo(txtCodArticulo.Text, txtDescripcion.Text, txtTallaPesoLitros.Text, Int32.Parse(txtCantidad.Text),
+               fecha, Int32.Parse(txtNumeroRecogida.Text), Int32.Parse(txtPedido.Text), 0, Decimal.Parse(txtPrecio.Text), 0);
             }
 
+        }
+
+        private void chkFecha_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkFecha.CheckState == CheckState.Checked)
+            {
+                calFechaCaducidad.Enabled = true;
+            }
+            else
+            {
+                calFechaCaducidad.Enabled = false;
+            }
         }
     }
 }
