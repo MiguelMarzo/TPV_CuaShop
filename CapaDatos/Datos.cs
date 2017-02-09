@@ -165,6 +165,8 @@ namespace CapaDatos
                 var drVenta = dsShop.Venta.FindBynumeroVenta((short) codigoVenta);
                 drVenta.precioVenta -= precio;
                 daVenta.Update(drVenta);
+                dsShop.Venta.GetChanges();
+                drVenta.AcceptChanges();
                 return "Actualizado";
             }
             catch (Exception ex)
