@@ -45,5 +45,15 @@ namespace CapaNegocio
         {
             return _datos.actualizarStockArticulo(codigoArticulo, cantidad);
         }
+
+        public List<Articulo> devolverVenta(string codigoVenta)
+        {
+            return _datos.devolverVenta(codigoVenta);
+        }
+
+        public string actualizarPrecioVenta(int codigoArticulo, int precio)
+        {
+            return _datos.actualizarPrecioVenta(codigoArticulo, precio);
+        }
     }
 }

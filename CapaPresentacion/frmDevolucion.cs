@@ -36,5 +36,18 @@ namespace CapaPresentacion
         {
             this.Close();
         }
+
+        private void btnTicket_Click(object sender, EventArgs e)
+        {
+            var numeroArticulo = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+            var precio = dataGridView1.CurrentRow.Cells[8].Value;
+            _negocio.actualizarStockArticulo(numeroArticulo, -1);
+            _negocio.actualizarPrecioVenta((int.Parse(textBox1.Text)), (int) precio);
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = _negocio.devolverVenta(textBox1.Text);
+        }
     }
 }

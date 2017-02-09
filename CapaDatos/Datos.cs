@@ -146,7 +146,32 @@ namespace CapaDatos
             }
             
 
-        }  
+        }
+
+        public List<Articulo> devolverVenta(string codigoVenta)
+        {
+            var articulos = from daArticulo in dsShop.Articulo
+                            orderby daArticulo.numeroVenta.ToString().Equals(codigoVenta)
+                            select new Articulo(daArticulo.codigoArticulo, daArticulo.descripcion, daArticulo.tallaPesoLitros, daArticulo.stock, daArticulo.fechaCaducidad,
+                            daArticulo.numeroRecogida, daArticulo.numeroPedido, daArticulo.numeroVenta, daArticulo.precio, daArticulo.idiva);
+
+            return articulos.ToList();
+        }
+
+        public string actualizarPrecioVenta(int codigoVenta, int precio)
+        {
+            try
+            {
+                var drVenta = dsShop.Venta.FindBynumeroVenta((short) codigoVenta);
+                drVenta.precioVenta -= precio;
+                daVenta.Update(drVenta);
+                return "Actualizado";
+            }
+            catch (Exception ex)
+            {
+                return "No se ha podido actualizar: " + ex.Message;
+            }
+        }
 
     }
 }
