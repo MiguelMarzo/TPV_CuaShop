@@ -103,10 +103,10 @@ namespace CapaDatos
         }
 
         public string insertarArticulo(string codigoArticulo, string descripcion, string tallaPesoLitros, int stock,
-            DateTime fechaCaducidad, int numeroRecogida, int numeroPedido, decimal precio)
+            DateTime fechaCaducidad, int numeroRecogida, int numeroPedido, int numeroVenta, decimal precio, int iva)
         {
-            var iva = 1; //CORREGIR, AÑADIR METODO PARA CALCULAR EL IVA E INSERTARLO AQUI
-            Articulo art = new Articulo(codigoArticulo, descripcion, tallaPesoLitros, stock, fechaCaducidad, numeroRecogida, numeroPedido, 0, precio, iva);
+
+            Articulo art = new Articulo(codigoArticulo, descripcion, tallaPesoLitros, stock, fechaCaducidad, numeroRecogida, numeroPedido, numeroVenta, precio, iva);
 
             try
             {

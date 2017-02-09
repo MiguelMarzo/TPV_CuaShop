@@ -1,4 +1,7 @@
-﻿namespace CapaPresentacion
+﻿using System;
+using System.Windows.Forms;
+
+namespace CapaPresentacion
 {
     partial class frmVenta
     {
@@ -70,6 +73,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 45F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(774, 498);
             this.tableLayoutPanel1.TabIndex = 0;
+            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
             // tlpBotones
             // 
@@ -144,6 +148,7 @@
             this.dgvProductos.Name = "dgvProductos";
             this.dgvProductos.Size = new System.Drawing.Size(381, 219);
             this.dgvProductos.TabIndex = 2;
+            this.dgvProductos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductos_CellContentClick);
             // 
             // tlpCarrito
             // 
@@ -244,6 +249,11 @@
             this.tableLayoutPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         #endregion
