@@ -8,8 +8,8 @@ namespace Entidades
 {
     public class Familia : IEquatable<Familia>
     {
-        private String idFamilia;
-        private String rutaFoto;
+        public String idFamilia;
+        public String rutaFoto;
 
         public Familia()
         {

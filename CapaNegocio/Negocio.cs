@@ -42,5 +42,10 @@ namespace CapaNegocio
         {
             return _datos.actualizarStockArticulo(codigoArticulo, cantidad);
         }
+
+        public List<Familia> devolverFamilias()
+        {
+            return _datos.devolverFamilias();
+        }
     }
 }
