@@ -22,13 +22,15 @@ namespace CapaPresentacion
         {
             lblFecha.Text += DateTime.Today.ToShortDateString();
             chkFecha.CheckState = CheckState.Unchecked;
+            calFechaCaducidad.Enabled = false;
+            cmbNumeroEmpleado.Text = "1";
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
 
 
-            if (cmbNumeroEmpleado.SelectedItem == null)
+            if (cmbNumeroEmpleado.Text == "")
             {
                 MessageBox.Show("Debes indicar el número de empleado");
                 return;
@@ -72,12 +74,27 @@ namespace CapaPresentacion
 
             if (_negocio.existeArticulo(txtCodArticulo.Text) == "Existe")
             {
-                _negocio.actualizarStockArticulo(txtCodArticulo.Text, short.Parse(txtCantidad.Text));
+                if (_negocio.actualizarStockArticulo(txtCodArticulo.Text, short.Parse(txtCantidad.Text)) == "Actualizado")
+                {
+                    MessageBox.Show("Artículo añadido");
+                }else
+                {
+                    MessageBox.Show("No se ha podido añadir");
+                }
+                
+                
             }
             else
             {
-                _negocio.insertarArticulo(txtCodArticulo.Text, txtDescripcion.Text, txtTallaPesoLitros.Text, Int32.Parse(txtCantidad.Text),
-               fecha, Int32.Parse(txtNumeroRecogida.Text), Int32.Parse(txtPedido.Text), 0, Decimal.Parse(txtPrecio.Text), 0);
+                if (_negocio.insertarArticulo(txtCodArticulo.Text, txtDescripcion.Text, txtTallaPesoLitros.Text, Int32.Parse(txtCantidad.Text),
+               fecha, Int32.Parse(txtNumeroRecogida.Text), Int32.Parse(txtPedido.Text), 0, Decimal.Parse(txtPrecio.Text), 0) == "Insertado")
+                {
+                    MessageBox.Show("Articulo añadido");
+                }else
+                {
+                    MessageBox.Show("No se ha podido añadir");
+                }
+                
             }
 
         }
@@ -92,6 +109,11 @@ namespace CapaPresentacion
             {
                 calFechaCaducidad.Enabled = false;
             }
+        }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
