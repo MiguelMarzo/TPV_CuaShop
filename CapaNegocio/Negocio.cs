@@ -35,10 +35,10 @@ namespace CapaNegocio
         }
 
         public string insertarArticulo(string codigoArticulo, string descripcion, string tallaPesoLitros, int stock,
-            DateTime fechaCaducidad, int numeroRecogida, int numeroPedido, int numeroVenta, decimal precio, int iva)
+            DateTime fechaCaducidad, int numeroRecogida, int numeroPedido, decimal precio)
         {
-            return "";
-            //return _datos.insertarArticulo(codigoArticulo, descripcion, tallaPesoLitros, stock, fechaCaducidad, numeroRecogida, numeroPedido, numeroVenta, precio, iva);
+            return _datos.insertarArticulo(codigoArticulo, descripcion, tallaPesoLitros, stock,
+                fechaCaducidad, numeroRecogida, numeroPedido, precio);
         }
 
         public string actualizarStockArticulo(string codigoArticulo, short cantidad)

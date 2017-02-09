@@ -27,6 +27,7 @@ namespace CapaPresentacion
                 cmbNumeroEmpleado.Items.Add(empleado);
                 cmbNumeroEmpleado.DisplayMember = "[nombreEmpleado]";
             }
+            lblFecha.Text += ": " + DateTime.Today.ToShortDateString();
             lblNumeroRecogida.Text += ": " + _negocio.maxRecogida();
             cmbEntregador.Items.Add("Profesor");
             cmbEntregador.Items.Add("Alumno");

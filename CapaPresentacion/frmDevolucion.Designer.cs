@@ -31,7 +31,7 @@
             this.lblEmpleado = new System.Windows.Forms.Label();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbNumeroEmpleado = new System.Windows.Forms.ComboBox();
             this.btnAtras = new System.Windows.Forms.Button();
             this.lblFechaR = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -85,15 +85,15 @@
             this.label2.TabIndex = 11;
             this.label2.Text = "Fecha:";
             // 
-            // comboBox1
+            // cmbNumeroEmpleado
             // 
-            this.comboBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(1212, 44);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(185, 24);
-            this.comboBox1.TabIndex = 12;
+            this.cmbNumeroEmpleado.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cmbNumeroEmpleado.FormattingEnabled = true;
+            this.cmbNumeroEmpleado.Location = new System.Drawing.Point(1212, 44);
+            this.cmbNumeroEmpleado.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbNumeroEmpleado.Name = "cmbNumeroEmpleado";
+            this.cmbNumeroEmpleado.Size = new System.Drawing.Size(185, 24);
+            this.cmbNumeroEmpleado.TabIndex = 12;
             // 
             // btnAtras
             // 
@@ -244,7 +244,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.lblFechaR);
             this.Controls.Add(this.btnAtras);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cmbNumeroEmpleado);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.lblEmpleado);
@@ -268,7 +268,7 @@
         private System.Windows.Forms.Label lblEmpleado;
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbNumeroEmpleado;
         private System.Windows.Forms.Button btnAtras;
         private System.Windows.Forms.Label lblFechaR;
         private System.Windows.Forms.GroupBox groupBox1;
