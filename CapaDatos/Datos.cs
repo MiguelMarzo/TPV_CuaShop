@@ -79,6 +79,14 @@ namespace CapaDatos
 
         }
 
+        public List<Familia> devolverFamilias()
+        {
+            var familias = from daFamilia in dsShop.Famillia
+                           select new Familia(daFamilia.idFamilia, daFamilia.rutaFoto);
+            return familias.ToList();
+        }
+
+
         public int maxRecogida()
         {
             var numRecogida = dsShop.Recogida.OrderByDescending(x => x.numeroRecogida).First().numeroRecogida;
