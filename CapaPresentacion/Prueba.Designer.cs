@@ -32,20 +32,20 @@
             this.btnFamilia9 = new System.Windows.Forms.Button();
             this.btnFamilia8 = new System.Windows.Forms.Button();
             this.btnFamilia7 = new System.Windows.Forms.Button();
-            this.btnFamilia6 = new System.Windows.Forms.Button();
             this.btnFamilia5 = new System.Windows.Forms.Button();
             this.btnFamilia4 = new System.Windows.Forms.Button();
             this.btnFamilia3 = new System.Windows.Forms.Button();
             this.btnFamilia2 = new System.Windows.Forms.Button();
-            this.btnFamilia1 = new System.Windows.Forms.Button();
             this.btnAnadirCarrito = new System.Windows.Forms.Button();
             this.btnSacarTicket = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnFamilia6 = new System.Windows.Forms.Button();
+            this.btnFamilia1 = new System.Windows.Forms.Button();
             this.btnAtras = new System.Windows.Forms.Button();
             this.dgvProductos = new System.Windows.Forms.DataGridView();
             this.grpFamilias = new System.Windows.Forms.GroupBox();
             this.grpSubFamilias = new System.Windows.Forms.GroupBox();
+            this.btnSubFamilia12 = new System.Windows.Forms.Button();
+            this.btnSubFamilia11 = new System.Windows.Forms.Button();
             this.btnSubFamilia1 = new System.Windows.Forms.Button();
             this.btnSubFamilia2 = new System.Windows.Forms.Button();
             this.btnSubFamilia3 = new System.Windows.Forms.Button();
@@ -57,8 +57,6 @@
             this.btnSubFamilia10 = new System.Windows.Forms.Button();
             this.btnSubFamilia9 = new System.Windows.Forms.Button();
             this.dsCuaShop1 = new CapaDatos.dsCuaShop();
-            this.btnSubFamilia12 = new System.Windows.Forms.Button();
-            this.btnSubFamilia11 = new System.Windows.Forms.Button();
             this.lblArticulos = new System.Windows.Forms.Label();
             this.dgvCarrito = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
@@ -104,15 +102,6 @@
             this.btnFamilia7.Text = "familia7";
             this.btnFamilia7.UseVisualStyleBackColor = true;
             // 
-            // btnFamilia6
-            // 
-            this.btnFamilia6.Location = new System.Drawing.Point(-110, 129);
-            this.btnFamilia6.Name = "btnFamilia6";
-            this.btnFamilia6.Size = new System.Drawing.Size(95, 82);
-            this.btnFamilia6.TabIndex = 15;
-            this.btnFamilia6.Text = "familia6";
-            this.btnFamilia6.UseVisualStyleBackColor = true;
-            // 
             // btnFamilia5
             // 
             this.btnFamilia5.Location = new System.Drawing.Point(6, 221);
@@ -149,68 +138,65 @@
             this.btnFamilia2.Text = "familia2";
             this.btnFamilia2.UseVisualStyleBackColor = true;
             // 
-            // btnFamilia1
-            // 
-            this.btnFamilia1.Location = new System.Drawing.Point(-110, 42);
-            this.btnFamilia1.Name = "btnFamilia1";
-            this.btnFamilia1.Size = new System.Drawing.Size(95, 81);
-            this.btnFamilia1.TabIndex = 10;
-            this.btnFamilia1.Text = "familia1";
-            this.btnFamilia1.UseVisualStyleBackColor = true;
-            // 
             // btnAnadirCarrito
             // 
-            this.btnAnadirCarrito.Location = new System.Drawing.Point(917, 127);
+            this.btnAnadirCarrito.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnAnadirCarrito.Location = new System.Drawing.Point(904, 123);
             this.btnAnadirCarrito.Margin = new System.Windows.Forms.Padding(4);
             this.btnAnadirCarrito.Name = "btnAnadirCarrito";
-            this.btnAnadirCarrito.Size = new System.Drawing.Size(161, 137);
+            this.btnAnadirCarrito.Size = new System.Drawing.Size(121, 130);
             this.btnAnadirCarrito.TabIndex = 20;
             this.btnAnadirCarrito.Text = "Añadir al carrito ->";
             this.btnAnadirCarrito.UseVisualStyleBackColor = true;
             // 
             // btnSacarTicket
             // 
-            this.btnSacarTicket.Location = new System.Drawing.Point(1198, 484);
+            this.btnSacarTicket.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnSacarTicket.Location = new System.Drawing.Point(1102, 480);
             this.btnSacarTicket.Margin = new System.Windows.Forms.Padding(4);
             this.btnSacarTicket.Name = "btnSacarTicket";
-            this.btnSacarTicket.Size = new System.Drawing.Size(161, 137);
+            this.btnSacarTicket.Size = new System.Drawing.Size(139, 114);
             this.btnSacarTicket.TabIndex = 21;
             this.btnSacarTicket.Text = "Efectuar compra / Sacar ticket";
             this.btnSacarTicket.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnFamilia6
             // 
-            this.button1.Location = new System.Drawing.Point(116, 221);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(95, 82);
-            this.button1.TabIndex = 24;
-            this.button1.Text = "familia6";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnFamilia6.Location = new System.Drawing.Point(116, 221);
+            this.btnFamilia6.Name = "btnFamilia6";
+            this.btnFamilia6.Size = new System.Drawing.Size(95, 82);
+            this.btnFamilia6.TabIndex = 24;
+            this.btnFamilia6.Text = "familia6";
+            this.btnFamilia6.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnFamilia1
             // 
-            this.button2.Location = new System.Drawing.Point(6, 27);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(95, 82);
-            this.button2.TabIndex = 23;
-            this.button2.Text = "familia1";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnFamilia1.Location = new System.Drawing.Point(6, 27);
+            this.btnFamilia1.Name = "btnFamilia1";
+            this.btnFamilia1.Size = new System.Drawing.Size(95, 82);
+            this.btnFamilia1.TabIndex = 23;
+            this.btnFamilia1.Text = "familia1";
+            this.btnFamilia1.UseVisualStyleBackColor = true;
+            this.btnFamilia1.Click += new System.EventHandler(this.button2_Click);
             // 
             // btnAtras
             // 
+            this.btnAtras.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnAtras.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAtras.Location = new System.Drawing.Point(12, 11);
+            this.btnAtras.Location = new System.Drawing.Point(14, 5);
             this.btnAtras.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAtras.Name = "btnAtras";
             this.btnAtras.Size = new System.Drawing.Size(196, 64);
             this.btnAtras.TabIndex = 25;
             this.btnAtras.Text = "Volver";
             this.btnAtras.UseVisualStyleBackColor = true;
+            this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
             // 
             // dgvProductos
             // 
+            this.dgvProductos.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProductos.Location = new System.Drawing.Point(255, 36);
+            this.dgvProductos.Location = new System.Drawing.Point(242, 30);
             this.dgvProductos.Margin = new System.Windows.Forms.Padding(4);
             this.dgvProductos.Name = "dgvProductos";
             this.dgvProductos.Size = new System.Drawing.Size(654, 335);
@@ -218,17 +204,18 @@
             // 
             // grpFamilias
             // 
-            this.grpFamilias.Controls.Add(this.button2);
+            this.grpFamilias.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.grpFamilias.Controls.Add(this.btnFamilia1);
             this.grpFamilias.Controls.Add(this.btnFamilia2);
             this.grpFamilias.Controls.Add(this.btnFamilia3);
-            this.grpFamilias.Controls.Add(this.button1);
+            this.grpFamilias.Controls.Add(this.btnFamilia6);
             this.grpFamilias.Controls.Add(this.btnFamilia4);
             this.grpFamilias.Controls.Add(this.btnFamilia5);
             this.grpFamilias.Controls.Add(this.btnFamilia7);
             this.grpFamilias.Controls.Add(this.btnFamilia8);
             this.grpFamilias.Controls.Add(this.btnFamilia10);
             this.grpFamilias.Controls.Add(this.btnFamilia9);
-            this.grpFamilias.Location = new System.Drawing.Point(12, 80);
+            this.grpFamilias.Location = new System.Drawing.Point(-1, 74);
             this.grpFamilias.Name = "grpFamilias";
             this.grpFamilias.Size = new System.Drawing.Size(227, 518);
             this.grpFamilias.TabIndex = 27;
@@ -237,6 +224,7 @@
             // 
             // grpSubFamilias
             // 
+            this.grpSubFamilias.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.grpSubFamilias.Controls.Add(this.btnSubFamilia12);
             this.grpSubFamilias.Controls.Add(this.btnSubFamilia11);
             this.grpSubFamilias.Controls.Add(this.btnSubFamilia1);
@@ -249,12 +237,30 @@
             this.grpSubFamilias.Controls.Add(this.btnSubFamilia8);
             this.grpSubFamilias.Controls.Add(this.btnSubFamilia10);
             this.grpSubFamilias.Controls.Add(this.btnSubFamilia9);
-            this.grpSubFamilias.Location = new System.Drawing.Point(255, 378);
+            this.grpSubFamilias.Location = new System.Drawing.Point(242, 372);
             this.grpSubFamilias.Name = "grpSubFamilias";
             this.grpSubFamilias.Size = new System.Drawing.Size(664, 220);
             this.grpSubFamilias.TabIndex = 28;
             this.grpSubFamilias.TabStop = false;
             this.grpSubFamilias.Text = "SUBFAMILIAS";
+            // 
+            // btnSubFamilia12
+            // 
+            this.btnSubFamilia12.Location = new System.Drawing.Point(559, 124);
+            this.btnSubFamilia12.Name = "btnSubFamilia12";
+            this.btnSubFamilia12.Size = new System.Drawing.Size(95, 82);
+            this.btnSubFamilia12.TabIndex = 26;
+            this.btnSubFamilia12.Text = "subfamilia12";
+            this.btnSubFamilia12.UseVisualStyleBackColor = true;
+            // 
+            // btnSubFamilia11
+            // 
+            this.btnSubFamilia11.Location = new System.Drawing.Point(449, 124);
+            this.btnSubFamilia11.Name = "btnSubFamilia11";
+            this.btnSubFamilia11.Size = new System.Drawing.Size(95, 82);
+            this.btnSubFamilia11.TabIndex = 25;
+            this.btnSubFamilia11.Text = "subfamilia11";
+            this.btnSubFamilia11.UseVisualStyleBackColor = true;
             // 
             // btnSubFamilia1
             // 
@@ -351,28 +357,11 @@
             this.dsCuaShop1.DataSetName = "dsCuaShop";
             this.dsCuaShop1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // btnSubFamilia12
-            // 
-            this.btnSubFamilia12.Location = new System.Drawing.Point(559, 124);
-            this.btnSubFamilia12.Name = "btnSubFamilia12";
-            this.btnSubFamilia12.Size = new System.Drawing.Size(95, 82);
-            this.btnSubFamilia12.TabIndex = 26;
-            this.btnSubFamilia12.Text = "subfamilia12";
-            this.btnSubFamilia12.UseVisualStyleBackColor = true;
-            // 
-            // btnSubFamilia11
-            // 
-            this.btnSubFamilia11.Location = new System.Drawing.Point(449, 124);
-            this.btnSubFamilia11.Name = "btnSubFamilia11";
-            this.btnSubFamilia11.Size = new System.Drawing.Size(95, 82);
-            this.btnSubFamilia11.TabIndex = 25;
-            this.btnSubFamilia11.Text = "subfamilia11";
-            this.btnSubFamilia11.UseVisualStyleBackColor = true;
-            // 
             // lblArticulos
             // 
+            this.lblArticulos.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblArticulos.AutoSize = true;
-            this.lblArticulos.Location = new System.Drawing.Point(258, 15);
+            this.lblArticulos.Location = new System.Drawing.Point(245, 9);
             this.lblArticulos.Name = "lblArticulos";
             this.lblArticulos.Size = new System.Drawing.Size(66, 17);
             this.lblArticulos.TabIndex = 29;
@@ -380,18 +369,19 @@
             // 
             // dgvCarrito
             // 
+            this.dgvCarrito.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgvCarrito.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCarrito.Location = new System.Drawing.Point(1086, 36);
+            this.dgvCarrito.Location = new System.Drawing.Point(1033, 30);
             this.dgvCarrito.Margin = new System.Windows.Forms.Padding(4);
             this.dgvCarrito.Name = "dgvCarrito";
-            this.dgvCarrito.Size = new System.Drawing.Size(374, 440);
+            this.dgvCarrito.Size = new System.Drawing.Size(294, 440);
             this.dgvCarrito.TabIndex = 30;
             // 
             // Prueba
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1473, 627);
+            this.ClientSize = new System.Drawing.Size(1336, 615);
             this.Controls.Add(this.dgvCarrito);
             this.Controls.Add(this.lblArticulos);
             this.Controls.Add(this.grpSubFamilias);
@@ -400,10 +390,11 @@
             this.Controls.Add(this.btnAtras);
             this.Controls.Add(this.btnAnadirCarrito);
             this.Controls.Add(this.btnSacarTicket);
-            this.Controls.Add(this.btnFamilia6);
-            this.Controls.Add(this.btnFamilia1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Prueba";
             this.Text = "Prueba";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.Prueba_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).EndInit();
             this.grpFamilias.ResumeLayout(false);
             this.grpSubFamilias.ResumeLayout(false);
@@ -420,16 +411,14 @@
         private System.Windows.Forms.Button btnFamilia9;
         private System.Windows.Forms.Button btnFamilia8;
         private System.Windows.Forms.Button btnFamilia7;
-        private System.Windows.Forms.Button btnFamilia6;
         private System.Windows.Forms.Button btnFamilia5;
         private System.Windows.Forms.Button btnFamilia4;
         private System.Windows.Forms.Button btnFamilia3;
         private System.Windows.Forms.Button btnFamilia2;
-        private System.Windows.Forms.Button btnFamilia1;
         private System.Windows.Forms.Button btnAnadirCarrito;
         private System.Windows.Forms.Button btnSacarTicket;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnFamilia6;
+        private System.Windows.Forms.Button btnFamilia1;
         private System.Windows.Forms.Button btnAtras;
         private System.Windows.Forms.DataGridView dgvProductos;
         private System.Windows.Forms.GroupBox grpFamilias;

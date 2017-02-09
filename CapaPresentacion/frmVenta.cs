@@ -24,11 +24,6 @@ namespace CapaPresentacion
 
         private void frmVenta_Load(object sender, EventArgs e)
         {
-            foreach (Control celda in tlpFamilias.Controls)
-            {
-                Button newBoton = new Button();
-                
-            }
         }
 
         private void btnAtras_Click(object sender, EventArgs e)

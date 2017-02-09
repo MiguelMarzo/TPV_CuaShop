@@ -37,16 +37,6 @@ namespace CapaPresentacion
             this.btnSacarTicket = new System.Windows.Forms.Button();
             this.btnCancelarCompra = new System.Windows.Forms.Button();
             this.tlpFamilias = new System.Windows.Forms.TableLayoutPanel();
-            this.btnFamilia10 = new System.Windows.Forms.Button();
-            this.btnFamilia9 = new System.Windows.Forms.Button();
-            this.btnFamilia8 = new System.Windows.Forms.Button();
-            this.btnFamilia7 = new System.Windows.Forms.Button();
-            this.btnFamilia6 = new System.Windows.Forms.Button();
-            this.btnFamilia5 = new System.Windows.Forms.Button();
-            this.btnFamilia4 = new System.Windows.Forms.Button();
-            this.btnFamilia3 = new System.Windows.Forms.Button();
-            this.btnFamilia2 = new System.Windows.Forms.Button();
-            this.btnFamilia1 = new System.Windows.Forms.Button();
             this.dgvProductos = new System.Windows.Forms.DataGridView();
             this.tlpCarrito = new System.Windows.Forms.TableLayoutPanel();
             this.ptbCarrito = new System.Windows.Forms.PictureBox();
@@ -56,7 +46,6 @@ namespace CapaPresentacion
             this.btnAtras = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.tlpBotones.SuspendLayout();
-            this.tlpFamilias.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             this.tlpCarrito.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbCarrito)).BeginInit();
@@ -114,7 +103,6 @@ namespace CapaPresentacion
             this.btnAnadirCarrito.TabIndex = 0;
             this.btnAnadirCarrito.Text = "Añadir al carrito";
             this.btnAnadirCarrito.UseVisualStyleBackColor = true;
-            this.btnAnadirCarrito.Click += new System.EventHandler(this.btnAnadirCarrito_Click);
             // 
             // btnSacarTicket
             // 
@@ -144,16 +132,6 @@ namespace CapaPresentacion
             this.tlpFamilias.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tlpFamilias.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tlpFamilias.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tlpFamilias.Controls.Add(this.btnFamilia10, 4, 1);
-            this.tlpFamilias.Controls.Add(this.btnFamilia9, 3, 1);
-            this.tlpFamilias.Controls.Add(this.btnFamilia8, 2, 1);
-            this.tlpFamilias.Controls.Add(this.btnFamilia7, 1, 1);
-            this.tlpFamilias.Controls.Add(this.btnFamilia6, 0, 1);
-            this.tlpFamilias.Controls.Add(this.btnFamilia5, 4, 0);
-            this.tlpFamilias.Controls.Add(this.btnFamilia4, 3, 0);
-            this.tlpFamilias.Controls.Add(this.btnFamilia3, 2, 0);
-            this.tlpFamilias.Controls.Add(this.btnFamilia2, 1, 0);
-            this.tlpFamilias.Controls.Add(this.btnFamilia1, 0, 0);
             this.tlpFamilias.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpFamilias.Location = new System.Drawing.Point(4, 157);
             this.tlpFamilias.Margin = new System.Windows.Forms.Padding(4);
@@ -165,96 +143,6 @@ namespace CapaPresentacion
             this.tlpFamilias.TabIndex = 1;
             this.tlpFamilias.Paint += new System.Windows.Forms.PaintEventHandler(this.tlpFamilias_Paint);
             // 
-            // btnFamilia10
-            // 
-            this.btnFamilia10.Location = new System.Drawing.Point(407, 90);
-            this.btnFamilia10.Name = "btnFamilia10";
-            this.btnFamilia10.Size = new System.Drawing.Size(98, 82);
-            this.btnFamilia10.TabIndex = 9;
-            this.btnFamilia10.Text = "familia10";
-            this.btnFamilia10.UseVisualStyleBackColor = true;
-            // 
-            // btnFamilia9
-            // 
-            this.btnFamilia9.Location = new System.Drawing.Point(306, 90);
-            this.btnFamilia9.Name = "btnFamilia9";
-            this.btnFamilia9.Size = new System.Drawing.Size(95, 82);
-            this.btnFamilia9.TabIndex = 8;
-            this.btnFamilia9.Text = "familia9";
-            this.btnFamilia9.UseVisualStyleBackColor = true;
-            // 
-            // btnFamilia8
-            // 
-            this.btnFamilia8.Location = new System.Drawing.Point(205, 90);
-            this.btnFamilia8.Name = "btnFamilia8";
-            this.btnFamilia8.Size = new System.Drawing.Size(95, 82);
-            this.btnFamilia8.TabIndex = 7;
-            this.btnFamilia8.Text = "familia8";
-            this.btnFamilia8.UseVisualStyleBackColor = true;
-            // 
-            // btnFamilia7
-            // 
-            this.btnFamilia7.Location = new System.Drawing.Point(104, 90);
-            this.btnFamilia7.Name = "btnFamilia7";
-            this.btnFamilia7.Size = new System.Drawing.Size(95, 82);
-            this.btnFamilia7.TabIndex = 6;
-            this.btnFamilia7.Text = "familia7";
-            this.btnFamilia7.UseVisualStyleBackColor = true;
-            // 
-            // btnFamilia6
-            // 
-            this.btnFamilia6.Location = new System.Drawing.Point(3, 90);
-            this.btnFamilia6.Name = "btnFamilia6";
-            this.btnFamilia6.Size = new System.Drawing.Size(95, 82);
-            this.btnFamilia6.TabIndex = 5;
-            this.btnFamilia6.Text = "familia6";
-            this.btnFamilia6.UseVisualStyleBackColor = true;
-            // 
-            // btnFamilia5
-            // 
-            this.btnFamilia5.Location = new System.Drawing.Point(407, 3);
-            this.btnFamilia5.Name = "btnFamilia5";
-            this.btnFamilia5.Size = new System.Drawing.Size(98, 81);
-            this.btnFamilia5.TabIndex = 4;
-            this.btnFamilia5.Text = "familia5";
-            this.btnFamilia5.UseVisualStyleBackColor = true;
-            // 
-            // btnFamilia4
-            // 
-            this.btnFamilia4.Location = new System.Drawing.Point(306, 3);
-            this.btnFamilia4.Name = "btnFamilia4";
-            this.btnFamilia4.Size = new System.Drawing.Size(95, 81);
-            this.btnFamilia4.TabIndex = 3;
-            this.btnFamilia4.Text = "familia4";
-            this.btnFamilia4.UseVisualStyleBackColor = true;
-            // 
-            // btnFamilia3
-            // 
-            this.btnFamilia3.Location = new System.Drawing.Point(205, 3);
-            this.btnFamilia3.Name = "btnFamilia3";
-            this.btnFamilia3.Size = new System.Drawing.Size(95, 81);
-            this.btnFamilia3.TabIndex = 2;
-            this.btnFamilia3.Text = "familia3";
-            this.btnFamilia3.UseVisualStyleBackColor = true;
-            // 
-            // btnFamilia2
-            // 
-            this.btnFamilia2.Location = new System.Drawing.Point(104, 3);
-            this.btnFamilia2.Name = "btnFamilia2";
-            this.btnFamilia2.Size = new System.Drawing.Size(95, 81);
-            this.btnFamilia2.TabIndex = 1;
-            this.btnFamilia2.Text = "familia2";
-            this.btnFamilia2.UseVisualStyleBackColor = true;
-            // 
-            // btnFamilia1
-            // 
-            this.btnFamilia1.Location = new System.Drawing.Point(3, 3);
-            this.btnFamilia1.Name = "btnFamilia1";
-            this.btnFamilia1.Size = new System.Drawing.Size(95, 81);
-            this.btnFamilia1.TabIndex = 0;
-            this.btnFamilia1.Text = "familia1";
-            this.btnFamilia1.UseVisualStyleBackColor = true;
-            // 
             // dgvProductos
             // 
             this.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -264,7 +152,6 @@ namespace CapaPresentacion
             this.dgvProductos.Name = "dgvProductos";
             this.dgvProductos.Size = new System.Drawing.Size(508, 269);
             this.dgvProductos.TabIndex = 2;
-            this.dgvProductos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductos_CellContentClick);
             // 
             // tlpCarrito
             // 
@@ -363,7 +250,6 @@ namespace CapaPresentacion
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tlpBotones.ResumeLayout(false);
-            this.tlpFamilias.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).EndInit();
             this.tlpCarrito.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ptbCarrito)).EndInit();
@@ -393,15 +279,5 @@ namespace CapaPresentacion
         private System.Windows.Forms.TableLayoutPanel tlpSubFamilias;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Button btnAtras;
-        private System.Windows.Forms.Button btnFamilia10;
-        private System.Windows.Forms.Button btnFamilia9;
-        private System.Windows.Forms.Button btnFamilia8;
-        private System.Windows.Forms.Button btnFamilia7;
-        private System.Windows.Forms.Button btnFamilia6;
-        private System.Windows.Forms.Button btnFamilia5;
-        private System.Windows.Forms.Button btnFamilia4;
-        private System.Windows.Forms.Button btnFamilia3;
-        private System.Windows.Forms.Button btnFamilia2;
-        private System.Windows.Forms.Button btnFamilia1;
     }
 }

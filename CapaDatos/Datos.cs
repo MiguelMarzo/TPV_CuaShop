@@ -15,6 +15,7 @@ namespace CapaDatos
         private ArticuloTableAdapter daArticulo;
         private EmpleadoTableAdapter daEmpleado;
         private VentaTableAdapter daVenta;
+        private FamilliaTableAdapter daFamilia;
         public Datos()
         {
             CrearDataSetCompleto();
@@ -35,6 +36,9 @@ namespace CapaDatos
 
             daVenta = new dsCuaShopTableAdapters.VentaTableAdapter();
             daVenta.Fill(dsShop.Venta);
+
+            daFamilia = new dsCuaShopTableAdapters.FamilliaTableAdapter();
+            daFamilia.Fill(dsShop.Famillia);
         }
 
         public List<Articulo> DevolverTodosLosArticulos()
