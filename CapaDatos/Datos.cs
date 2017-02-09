@@ -15,6 +15,7 @@ namespace CapaDatos
         private ArticuloTableAdapter daArticulo;
         private EmpleadoTableAdapter daEmpleado;
         private VentaTableAdapter daVenta;
+        private FamilliaTableAdapter daFamilia;
         public Datos()
         {
             CrearDataSetCompleto();
@@ -35,6 +36,9 @@ namespace CapaDatos
 
             daVenta = new dsCuaShopTableAdapters.VentaTableAdapter();
             daVenta.Fill(dsShop.Venta);
+
+            daFamilia = new dsCuaShopTableAdapters.FamilliaTableAdapter();
+            daFamilia.Fill(dsShop.Famillia);
         }
 
         public List<Articulo> DevolverTodosLosArticulos()
@@ -79,6 +83,14 @@ namespace CapaDatos
 
         }
 
+        public List<Familia> devolverFamilias()
+        {
+            var familias = from daFamilia in dsShop.Famillia
+                           select new Familia(daFamilia.idFamilia, daFamilia.rutaFoto);
+            return familias.ToList();
+        }
+
+
         public int maxRecogida()
         {
             var numRecogida = dsShop.Recogida.OrderByDescending(x => x.numeroRecogida).First().numeroRecogida;
@@ -103,10 +115,10 @@ namespace CapaDatos
         }
 
         public string insertarArticulo(string codigoArticulo, string descripcion, string tallaPesoLitros, int stock,
-            DateTime fechaCaducidad, int numeroRecogida, int numeroPedido, decimal precio)
+            DateTime fechaCaducidad, int numeroRecogida, int numeroPedido, int numeroVenta, decimal precio, int iva)
         {
-            var iva = 1; //CORREGIR, AÑADIR METODO PARA CALCULAR EL IVA E INSERTARLO AQUI
-            Articulo art = new Articulo(codigoArticulo, descripcion, tallaPesoLitros, stock, fechaCaducidad, numeroRecogida, numeroPedido, 0, precio, iva);
+
+            Articulo art = new Articulo(codigoArticulo, descripcion, tallaPesoLitros, stock, fechaCaducidad, numeroRecogida, numeroPedido, numeroVenta, precio, iva);
 
             try
             {

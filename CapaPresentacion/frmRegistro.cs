@@ -26,7 +26,7 @@ namespace CapaPresentacion
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-           
+
 
             if (cmbNumeroEmpleado.SelectedItem == null)
             {
@@ -69,14 +69,15 @@ namespace CapaPresentacion
             {
                 fecha = calFechaCaducidad.SelectionStart;
             }
-          
+
             if (_negocio.existeArticulo(txtCodArticulo.Text) == "Existe")
             {
                 _negocio.actualizarStockArticulo(txtCodArticulo.Text, short.Parse(txtCantidad.Text));
-            } else
+            }
+            else
             {
                 _negocio.insertarArticulo(txtCodArticulo.Text, txtDescripcion.Text, txtTallaPesoLitros.Text, Int32.Parse(txtCantidad.Text),
-               fecha, Int32.Parse(txtNumeroRecogida.Text), Int32.Parse(txtPedido.Text), Decimal.Parse(txtPrecio.Text));
+               fecha, Int32.Parse(txtNumeroRecogida.Text), Int32.Parse(txtPedido.Text), 0, Decimal.Parse(txtPrecio.Text), 0);
             }
 
         }
@@ -86,7 +87,8 @@ namespace CapaPresentacion
             if (chkFecha.CheckState == CheckState.Checked)
             {
                 calFechaCaducidad.Enabled = true;
-            } else
+            }
+            else
             {
                 calFechaCaducidad.Enabled = false;
             }

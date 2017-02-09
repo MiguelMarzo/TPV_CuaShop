@@ -31,7 +31,7 @@ namespace CapaPresentacion
 
         private void btnVenta_Click(object sender, EventArgs e)
         {
-            frmVenta venta = new frmVenta();
+            Prueba venta = new Prueba();
             venta.Show();
         }
 

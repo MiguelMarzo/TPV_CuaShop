@@ -1,4 +1,7 @@
-﻿namespace CapaPresentacion
+﻿using System;
+using System.Windows.Forms;
+
+namespace CapaPresentacion
 {
     partial class frmVenta
     {
@@ -63,13 +66,15 @@
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 1, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 45F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(774, 498);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1032, 613);
             this.tableLayoutPanel1.TabIndex = 0;
+            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
             // tlpBotones
             // 
@@ -81,40 +86,40 @@
             this.tlpBotones.Controls.Add(this.btnSacarTicket, 1, 0);
             this.tlpBotones.Controls.Add(this.btnCancelarCompra, 2, 0);
             this.tlpBotones.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpBotones.Location = new System.Drawing.Point(3, 3);
+            this.tlpBotones.Location = new System.Drawing.Point(4, 4);
+            this.tlpBotones.Margin = new System.Windows.Forms.Padding(4);
             this.tlpBotones.Name = "tlpBotones";
             this.tlpBotones.RowCount = 1;
             this.tlpBotones.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpBotones.Size = new System.Drawing.Size(381, 118);
+            this.tlpBotones.Size = new System.Drawing.Size(508, 145);
             this.tlpBotones.TabIndex = 0;
             // 
             // btnAnadirCarrito
             // 
-            this.btnAnadirCarrito.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnAnadirCarrito.Location = new System.Drawing.Point(3, 3);
+            this.btnAnadirCarrito.Location = new System.Drawing.Point(4, 4);
+            this.btnAnadirCarrito.Margin = new System.Windows.Forms.Padding(4);
             this.btnAnadirCarrito.Name = "btnAnadirCarrito";
-            this.btnAnadirCarrito.Size = new System.Drawing.Size(121, 112);
+            this.btnAnadirCarrito.Size = new System.Drawing.Size(161, 137);
             this.btnAnadirCarrito.TabIndex = 0;
             this.btnAnadirCarrito.Text = "Añadir al carrito";
             this.btnAnadirCarrito.UseVisualStyleBackColor = true;
-            this.btnAnadirCarrito.Click += new System.EventHandler(this.btnAnadirCarrito_Click);
             // 
             // btnSacarTicket
             // 
-            this.btnSacarTicket.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnSacarTicket.Location = new System.Drawing.Point(130, 3);
+            this.btnSacarTicket.Location = new System.Drawing.Point(173, 4);
+            this.btnSacarTicket.Margin = new System.Windows.Forms.Padding(4);
             this.btnSacarTicket.Name = "btnSacarTicket";
-            this.btnSacarTicket.Size = new System.Drawing.Size(121, 112);
+            this.btnSacarTicket.Size = new System.Drawing.Size(161, 137);
             this.btnSacarTicket.TabIndex = 1;
             this.btnSacarTicket.Text = "Sacar ticket";
             this.btnSacarTicket.UseVisualStyleBackColor = true;
             // 
             // btnCancelarCompra
             // 
-            this.btnCancelarCompra.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnCancelarCompra.Location = new System.Drawing.Point(257, 3);
+            this.btnCancelarCompra.Location = new System.Drawing.Point(342, 4);
+            this.btnCancelarCompra.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancelarCompra.Name = "btnCancelarCompra";
-            this.btnCancelarCompra.Size = new System.Drawing.Size(121, 112);
+            this.btnCancelarCompra.Size = new System.Drawing.Size(162, 137);
             this.btnCancelarCompra.TabIndex = 2;
             this.btnCancelarCompra.Text = "Cancelar compra";
             this.btnCancelarCompra.UseVisualStyleBackColor = true;
@@ -128,21 +133,24 @@
             this.tlpFamilias.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tlpFamilias.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tlpFamilias.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpFamilias.Location = new System.Drawing.Point(3, 127);
+            this.tlpFamilias.Location = new System.Drawing.Point(4, 157);
+            this.tlpFamilias.Margin = new System.Windows.Forms.Padding(4);
             this.tlpFamilias.Name = "tlpFamilias";
             this.tlpFamilias.RowCount = 2;
             this.tlpFamilias.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpFamilias.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpFamilias.Size = new System.Drawing.Size(381, 143);
+            this.tlpFamilias.Size = new System.Drawing.Size(508, 175);
             this.tlpFamilias.TabIndex = 1;
+            this.tlpFamilias.Paint += new System.Windows.Forms.PaintEventHandler(this.tlpFamilias_Paint);
             // 
             // dgvProductos
             // 
             this.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProductos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvProductos.Location = new System.Drawing.Point(3, 276);
+            this.dgvProductos.Location = new System.Drawing.Point(4, 340);
+            this.dgvProductos.Margin = new System.Windows.Forms.Padding(4);
             this.dgvProductos.Name = "dgvProductos";
-            this.dgvProductos.Size = new System.Drawing.Size(381, 219);
+            this.dgvProductos.Size = new System.Drawing.Size(508, 269);
             this.dgvProductos.TabIndex = 2;
             // 
             // tlpCarrito
@@ -153,19 +161,21 @@
             this.tlpCarrito.Controls.Add(this.ptbCarrito, 0, 0);
             this.tlpCarrito.Controls.Add(this.dgvCarrito, 1, 0);
             this.tlpCarrito.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpCarrito.Location = new System.Drawing.Point(390, 3);
+            this.tlpCarrito.Location = new System.Drawing.Point(520, 4);
+            this.tlpCarrito.Margin = new System.Windows.Forms.Padding(4);
             this.tlpCarrito.Name = "tlpCarrito";
             this.tlpCarrito.RowCount = 1;
             this.tlpCarrito.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpCarrito.Size = new System.Drawing.Size(381, 118);
+            this.tlpCarrito.Size = new System.Drawing.Size(508, 145);
             this.tlpCarrito.TabIndex = 3;
             // 
             // ptbCarrito
             // 
             this.ptbCarrito.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ptbCarrito.Location = new System.Drawing.Point(3, 3);
+            this.ptbCarrito.Location = new System.Drawing.Point(4, 4);
+            this.ptbCarrito.Margin = new System.Windows.Forms.Padding(4);
             this.ptbCarrito.Name = "ptbCarrito";
-            this.ptbCarrito.Size = new System.Drawing.Size(89, 112);
+            this.ptbCarrito.Size = new System.Drawing.Size(119, 137);
             this.ptbCarrito.TabIndex = 0;
             this.ptbCarrito.TabStop = false;
             // 
@@ -173,9 +183,10 @@
             // 
             this.dgvCarrito.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCarrito.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvCarrito.Location = new System.Drawing.Point(98, 3);
+            this.dgvCarrito.Location = new System.Drawing.Point(131, 4);
+            this.dgvCarrito.Margin = new System.Windows.Forms.Padding(4);
             this.dgvCarrito.Name = "dgvCarrito";
-            this.dgvCarrito.Size = new System.Drawing.Size(280, 112);
+            this.dgvCarrito.Size = new System.Drawing.Size(373, 137);
             this.dgvCarrito.TabIndex = 1;
             // 
             // tlpSubFamilias
@@ -186,13 +197,14 @@
             this.tlpSubFamilias.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tlpSubFamilias.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tlpSubFamilias.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpSubFamilias.Location = new System.Drawing.Point(390, 276);
+            this.tlpSubFamilias.Location = new System.Drawing.Point(520, 340);
+            this.tlpSubFamilias.Margin = new System.Windows.Forms.Padding(4);
             this.tlpSubFamilias.Name = "tlpSubFamilias";
             this.tlpSubFamilias.RowCount = 3;
             this.tlpSubFamilias.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tlpSubFamilias.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tlpSubFamilias.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tlpSubFamilias.Size = new System.Drawing.Size(381, 219);
+            this.tlpSubFamilias.Size = new System.Drawing.Size(508, 269);
             this.tlpSubFamilias.TabIndex = 4;
             // 
             // tableLayoutPanel2
@@ -202,13 +214,13 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.Controls.Add(this.btnAtras, 0, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(389, 126);
-            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(2);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(519, 155);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 16F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(383, 145);
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(510, 179);
             this.tableLayoutPanel2.TabIndex = 5;
             this.tableLayoutPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel2_Paint);
             // 
@@ -216,10 +228,10 @@
             // 
             this.btnAtras.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnAtras.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAtras.Location = new System.Drawing.Point(2, 2);
-            this.btnAtras.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAtras.Location = new System.Drawing.Point(3, 2);
+            this.btnAtras.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAtras.Name = "btnAtras";
-            this.btnAtras.Size = new System.Drawing.Size(187, 141);
+            this.btnAtras.Size = new System.Drawing.Size(249, 175);
             this.btnAtras.TabIndex = 0;
             this.btnAtras.Text = "Volver";
             this.btnAtras.UseVisualStyleBackColor = true;
@@ -227,11 +239,12 @@
             // 
             // frmVenta
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(774, 498);
+            this.ClientSize = new System.Drawing.Size(1032, 613);
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmVenta";
             this.Text = "frmPrueba";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -244,6 +257,11 @@
             this.tableLayoutPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         #endregion
