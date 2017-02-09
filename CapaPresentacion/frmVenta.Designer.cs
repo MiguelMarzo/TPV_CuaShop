@@ -177,7 +177,6 @@ namespace CapaPresentacion
             this.dgvProductos.Name = "dgvProductos";
             this.dgvProductos.Size = new System.Drawing.Size(508, 269);
             this.dgvProductos.TabIndex = 2;
-            this.dgvProductos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductos_CellContentClick);
             // 
             // tlpCarrito
             // 

@@ -64,11 +64,11 @@ namespace CapaPresentacion
                 return;
             }
 
-            if (txtFechaCaducidad.Text == "")
-            {
-                MessageBox.Show("Debes indicar la fecha de caducidad del artículo");
-                return;
-            }
+            //if (txtFechaCaducidad.Text == "")
+            //{
+            //    MessageBox.Show("Debes indicar la fecha de caducidad del artículo");
+            //    return;
+            //}
 
             if (_negocio.existeArticulo(txtCodArticulo.Text) == "Existe")
             {
