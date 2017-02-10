@@ -35,10 +35,10 @@ namespace CapaNegocio
         }
 
         public string insertarArticulo(string codigoArticulo, string descripcion, string tallaPesoLitros, int stock,
-            DateTime fechaCaducidad, int numeroRecogida, int numeroPedido, decimal precio)
+            DateTime fechaCaducidad, int numeroRecogida, int numeroPedido, int numeroVenta, decimal precio, int iva)
         {
             return _datos.insertarArticulo(codigoArticulo, descripcion, tallaPesoLitros, stock,
-                fechaCaducidad, numeroRecogida, numeroPedido, precio);
+                fechaCaducidad, numeroRecogida, numeroPedido,numeroVenta, precio, iva);
         }
 
         public string actualizarStockArticulo(string codigoArticulo, short cantidad)
@@ -54,6 +54,10 @@ namespace CapaNegocio
         public string actualizarPrecioVenta(int codigoVenta, int precio)
         {
             return _datos.actualizarPrecioVenta(codigoVenta, precio);
+        }
+        public List<Familia> devolverFamilias()
+        {
+            return _datos.devolverFamilias();
         }
     }
 }

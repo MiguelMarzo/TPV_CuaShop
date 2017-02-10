@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using CapaNegocio;
 using Entidades;
 
+
 namespace CapaPresentacion
 {
     public partial class Prueba : Form

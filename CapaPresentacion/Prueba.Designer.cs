@@ -56,13 +56,11 @@
             this.btnSubFamilia8 = new System.Windows.Forms.Button();
             this.btnSubFamilia10 = new System.Windows.Forms.Button();
             this.btnSubFamilia9 = new System.Windows.Forms.Button();
-            this.dsCuaShop1 = new CapaDatos.dsCuaShop();
             this.lblArticulos = new System.Windows.Forms.Label();
             this.dgvCarrito = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             this.grpFamilias.SuspendLayout();
             this.grpSubFamilias.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dsCuaShop1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCarrito)).BeginInit();
             this.SuspendLayout();
             // 
@@ -354,8 +352,6 @@
             // 
             // dsCuaShop1
             // 
-            this.dsCuaShop1.DataSetName = "dsCuaShop";
-            this.dsCuaShop1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // lblArticulos
             // 
@@ -398,7 +394,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).EndInit();
             this.grpFamilias.ResumeLayout(false);
             this.grpSubFamilias.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dsCuaShop1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCarrito)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -435,7 +430,6 @@
         private System.Windows.Forms.Button btnSubFamilia8;
         private System.Windows.Forms.Button btnSubFamilia10;
         private System.Windows.Forms.Button btnSubFamilia9;
-        private CapaDatos.dsCuaShop dsCuaShop1;
         private System.Windows.Forms.Label lblArticulos;
         private System.Windows.Forms.DataGridView dgvCarrito;
     }
