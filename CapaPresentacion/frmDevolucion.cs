@@ -41,7 +41,6 @@ namespace CapaPresentacion
         {
             var numeroArticulo = dataGridView1.CurrentRow.Cells[0].Value.ToString();
             var precio = dataGridView1.CurrentRow.Cells[8].Value;
-            var res = _negocio.actualizarStockArticulo(numeroArticulo, 2);
             var res2 = _negocio.actualizarPrecioVenta((int.Parse(textBox1.Text)), (int) precio);
 
             dataGridView1.DataSource = _negocio.devolverVenta(textBox1.Text);

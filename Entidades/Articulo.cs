@@ -8,10 +8,12 @@ namespace Entidades
 {
     public class Articulo : IEquatable<Articulo>
     {
+        private object p;
+
+        public int idArticulo { get; set; }
         public string codigoArticulo { get; set;}
         public string descripcion { get; set; }
         public string tallaPesoLitros { get; set; }
-        public int stock { get; set; }
         public DateTime fechaCaducidad { get; set; }
         public int numeroRecogida { get; set; }
         public int numeroPedido { get; set; }
@@ -24,13 +26,13 @@ namespace Entidades
 
         }
 
-        public Articulo(string codigoArticulo, string descripcion, string tallaPesoLitros, int stock,
+        public Articulo(int idarticulo, string codigoArticulo, string descripcion, string tallaPesoLitros,
             DateTime fechaCaducidad, int numeroRecogida, int numeroPedido, int numeroVenta, decimal precio,int iva)
         {
+            this.idArticulo = idarticulo;
             this.codigoArticulo = codigoArticulo;
             this.descripcion = descripcion;
             this.tallaPesoLitros = tallaPesoLitros;
-            this.stock = stock;
             this.fechaCaducidad = fechaCaducidad;
             this.numeroRecogida = numeroRecogida;
             this.numeroPedido = numeroPedido;
@@ -38,6 +40,21 @@ namespace Entidades
             this.precio = precio;
             this.iva = iva;
         }
+
+        public Articulo(string codigoArticulo, string descripcion, string tallaPesoLitros, DateTime fechaCaducidad, int numeroRecogida, int numeroPedido, int numeroVenta, decimal precio, int iva)
+        {
+            
+            this.codigoArticulo = codigoArticulo;
+            this.descripcion = descripcion;
+            this.tallaPesoLitros = tallaPesoLitros;
+            this.fechaCaducidad = fechaCaducidad;
+            this.numeroRecogida = numeroRecogida;
+            this.numeroPedido = numeroPedido;
+            this.numeroVenta = numeroVenta;
+            this.precio = precio;
+            this.iva = iva;
+        }
+
         public bool Equals(Articulo other)
         {
             if (other == null)

@@ -72,32 +72,12 @@ namespace CapaPresentacion
                 fecha = calFechaCaducidad.SelectionStart;
             }
 
-            if (_negocio.existeArticulo(txtCodArticulo.Text) == "Existe")
-            {
-                if (_negocio.actualizarStockArticulo(txtCodArticulo.Text, short.Parse(txtCantidad.Text)) == "Actualizado")
-                {
-                    MessageBox.Show("Artículo añadido");
-                }else
-                {
-                    MessageBox.Show("No se ha podido añadir");
-                }
-                
-                
-            }
-            else
-            {
-                if (_negocio.insertarArticulo(txtCodArticulo.Text, txtDescripcion.Text, txtTallaPesoLitros.Text, Int32.Parse(txtCantidad.Text),
-               fecha, Int32.Parse(txtNumeroRecogida.Text), Int32.Parse(txtPedido.Text), 0, Decimal.Parse(txtPrecio.Text), 0) == "Insertado")
-                {
-                    MessageBox.Show("Articulo añadido");
-                }else
-                {
-                    MessageBox.Show("No se ha podido añadir");
-                }
+            _negocio.insertarArticulo(txtCodArticulo.Text, txtDescripcion.Text, txtTallaPesoLitros.Text, Int32.Parse(txtCantidad.Text),
+           fecha, Int32.Parse(txtNumeroRecogida.Text), Int32.Parse(txtPedido.Text), 0, Decimal.Parse(txtPrecio.Text), 0);
                 
             }
 
-        }
+        
 
         private void chkFecha_CheckedChanged(object sender, EventArgs e)
         {

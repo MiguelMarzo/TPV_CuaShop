@@ -41,10 +41,6 @@ namespace CapaNegocio
                 fechaCaducidad, numeroRecogida, numeroPedido,numeroVenta, precio, iva);
         }
 
-        public string actualizarStockArticulo(string codigoArticulo, short cantidad)
-        {
-            return _datos.actualizarStockArticulo(codigoArticulo, cantidad);
-        }
 
         public List<Articulo> devolverVenta(string codigoVenta)
         {

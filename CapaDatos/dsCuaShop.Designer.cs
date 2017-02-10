@@ -815,13 +815,13 @@ namespace CapaDatos {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class ArticuloDataTable : global::System.Data.TypedTableBase<ArticuloRow> {
             
+            private global::System.Data.DataColumn columnidArticulo;
+            
             private global::System.Data.DataColumn columncodigoArticulo;
             
             private global::System.Data.DataColumn columndescripcion;
             
             private global::System.Data.DataColumn columntallaPesoLitros;
-            
-            private global::System.Data.DataColumn columnstock;
             
             private global::System.Data.DataColumn columnfechaCaducidad;
             
@@ -870,6 +870,14 @@ namespace CapaDatos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn idArticuloColumn {
+                get {
+                    return this.columnidArticulo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public global::System.Data.DataColumn codigoArticuloColumn {
                 get {
                     return this.columncodigoArticulo;
@@ -889,14 +897,6 @@ namespace CapaDatos {
             public global::System.Data.DataColumn tallaPesoLitrosColumn {
                 get {
                     return this.columntallaPesoLitros;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn stockColumn {
-                get {
-                    return this.columnstock;
                 }
             }
             
@@ -985,13 +985,13 @@ namespace CapaDatos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ArticuloRow AddArticuloRow(string codigoArticulo, string descripcion, string tallaPesoLitros, short stock, System.DateTime fechaCaducidad, RecogidaRow parentRecogidaRowByRecogidaArticulo, int numeroPedido, VentaRow parentVentaRowByVentaArticulo, decimal precio, IvaRow parentIvaRowByIvaArticulo) {
+            public ArticuloRow AddArticuloRow(short idArticulo, string codigoArticulo, string descripcion, string tallaPesoLitros, System.DateTime fechaCaducidad, RecogidaRow parentRecogidaRowByRecogidaArticulo, int numeroPedido, VentaRow parentVentaRowByVentaArticulo, decimal precio, IvaRow parentIvaRowByIvaArticulo) {
                 ArticuloRow rowArticuloRow = ((ArticuloRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
+                        idArticulo,
                         codigoArticulo,
                         descripcion,
                         tallaPesoLitros,
-                        stock,
                         fechaCaducidad,
                         null,
                         numeroPedido,
@@ -1014,9 +1014,9 @@ namespace CapaDatos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ArticuloRow FindBycodigoArticulo(string codigoArticulo) {
+            public ArticuloRow FindByidArticulo(short idArticulo) {
                 return ((ArticuloRow)(this.Rows.Find(new object[] {
-                            codigoArticulo})));
+                            idArticulo})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1036,10 +1036,10 @@ namespace CapaDatos {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
+                this.columnidArticulo = base.Columns["idArticulo"];
                 this.columncodigoArticulo = base.Columns["codigoArticulo"];
                 this.columndescripcion = base.Columns["descripcion"];
                 this.columntallaPesoLitros = base.Columns["tallaPesoLitros"];
-                this.columnstock = base.Columns["stock"];
                 this.columnfechaCaducidad = base.Columns["fechaCaducidad"];
                 this.columnnumeroRecogida = base.Columns["numeroRecogida"];
                 this.columnnumeroPedido = base.Columns["numeroPedido"];
@@ -1051,14 +1051,14 @@ namespace CapaDatos {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             private void InitClass() {
+                this.columnidArticulo = new global::System.Data.DataColumn("idArticulo", typeof(short), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnidArticulo);
                 this.columncodigoArticulo = new global::System.Data.DataColumn("codigoArticulo", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncodigoArticulo);
                 this.columndescripcion = new global::System.Data.DataColumn("descripcion", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columndescripcion);
                 this.columntallaPesoLitros = new global::System.Data.DataColumn("tallaPesoLitros", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columntallaPesoLitros);
-                this.columnstock = new global::System.Data.DataColumn("stock", typeof(short), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnstock);
                 this.columnfechaCaducidad = new global::System.Data.DataColumn("fechaCaducidad", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnfechaCaducidad);
                 this.columnnumeroRecogida = new global::System.Data.DataColumn("numeroRecogida", typeof(int), null, global::System.Data.MappingType.Element);
@@ -1072,9 +1072,9 @@ namespace CapaDatos {
                 this.columnidiva = new global::System.Data.DataColumn("idiva", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnidiva);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columncodigoArticulo}, true));
-                this.columncodigoArticulo.AllowDBNull = false;
-                this.columncodigoArticulo.Unique = true;
+                                this.columnidArticulo}, true));
+                this.columnidArticulo.AllowDBNull = false;
+                this.columnidArticulo.Unique = true;
                 this.columncodigoArticulo.MaxLength = 14;
                 this.columndescripcion.MaxLength = 536870910;
                 this.columntallaPesoLitros.MaxLength = 255;
@@ -2761,9 +2761,25 @@ namespace CapaDatos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public short idArticulo {
+                get {
+                    return ((short)(this[this.tableArticulo.idArticuloColumn]));
+                }
+                set {
+                    this[this.tableArticulo.idArticuloColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string codigoArticulo {
                 get {
-                    return ((string)(this[this.tableArticulo.codigoArticuloColumn]));
+                    try {
+                        return ((string)(this[this.tableArticulo.codigoArticuloColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'codigoArticulo\' de la tabla \'Articulo\' es DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableArticulo.codigoArticuloColumn] = value;
@@ -2799,22 +2815,6 @@ namespace CapaDatos {
                 }
                 set {
                     this[this.tableArticulo.tallaPesoLitrosColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public short stock {
-                get {
-                    try {
-                        return ((short)(this[this.tableArticulo.stockColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'stock\' de la tabla \'Articulo\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableArticulo.stockColumn] = value;
                 }
             }
             
@@ -2949,6 +2949,18 @@ namespace CapaDatos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IscodigoArticuloNull() {
+                return this.IsNull(this.tableArticulo.codigoArticuloColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetcodigoArticuloNull() {
+                this[this.tableArticulo.codigoArticuloColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsdescripcionNull() {
                 return this.IsNull(this.tableArticulo.descripcionColumn);
             }
@@ -2969,18 +2981,6 @@ namespace CapaDatos {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SettallaPesoLitrosNull() {
                 this[this.tableArticulo.tallaPesoLitrosColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsstockNull() {
-                return this.IsNull(this.tableArticulo.stockColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetstockNull() {
-                this[this.tableArticulo.stockColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4282,10 +4282,10 @@ namespace CapaDatos.dsCuaShopTableAdapters {
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "Articulo";
+            tableMapping.ColumnMappings.Add("idArticulo", "idArticulo");
             tableMapping.ColumnMappings.Add("codigoArticulo", "codigoArticulo");
             tableMapping.ColumnMappings.Add("descripcion", "descripcion");
             tableMapping.ColumnMappings.Add("tallaPesoLitros", "tallaPesoLitros");
-            tableMapping.ColumnMappings.Add("stock", "stock");
             tableMapping.ColumnMappings.Add("fechaCaducidad", "fechaCaducidad");
             tableMapping.ColumnMappings.Add("numeroRecogida", "numeroRecogida");
             tableMapping.ColumnMappings.Add("numeroPedido", "numeroPedido");
@@ -4295,13 +4295,13 @@ namespace CapaDatos.dsCuaShopTableAdapters {
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM `Articulo` WHERE ((`codigoArticulo` = ?) AND ((? = 1 AND `tallaPesoLitros` IS NULL) OR (`tallaPesoLitros` = ?)) AND ((? = 1 AND `stock` IS NULL) OR (`stock` = ?)) AND ((? = 1 AND `fechaCaducidad` IS NULL) OR (`fechaCaducidad` = ?)) AND ((? = 1 AND `numeroRecogida` IS NULL) OR (`numeroRecogida` = ?)) AND ((? = 1 AND `numeroPedido` IS NULL) OR (`numeroPedido` = ?)) AND ((? = 1 AND `numeroVenta` IS NULL) OR (`numeroVenta` = ?)) AND ((? = 1 AND `precio` IS NULL) OR (`precio` = ?)) AND ((? = 1 AND `idiva` IS NULL) OR (`idiva` = ?)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM `Articulo` WHERE ((`idArticulo` = ?) AND ((? = 1 AND `codigoArticulo` IS NULL) OR (`codigoArticulo` = ?)) AND ((? = 1 AND `tallaPesoLitros` IS NULL) OR (`tallaPesoLitros` = ?)) AND ((? = 1 AND `fechaCaducidad` IS NULL) OR (`fechaCaducidad` = ?)) AND ((? = 1 AND `numeroRecogida` IS NULL) OR (`numeroRecogida` = ?)) AND ((? = 1 AND `numeroPedido` IS NULL) OR (`numeroPedido` = ?)) AND ((? = 1 AND `numeroVenta` IS NULL) OR (`numeroVenta` = ?)) AND ((? = 1 AND `precio` IS NULL) OR (`precio` = ?)) AND ((? = 1 AND `idiva` IS NULL) OR (`idiva` = ?)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_idArticulo", global::System.Data.OleDb.OleDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "idArticulo", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_codigoArticulo", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "codigoArticulo", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_codigoArticulo", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "codigoArticulo", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_tallaPesoLitros", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "tallaPesoLitros", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_tallaPesoLitros", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "tallaPesoLitros", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_stock", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "stock", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_stock", global::System.Data.OleDb.OleDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "stock", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_fechaCaducidad", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fechaCaducidad", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_fechaCaducidad", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fechaCaducidad", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_numeroRecogida", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "numeroRecogida", global::System.Data.DataRowVersion.Original, true, null));
@@ -4316,14 +4316,14 @@ namespace CapaDatos.dsCuaShopTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_idiva", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "idiva", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.InsertCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO `Articulo` (`codigoArticulo`, `descripcion`, `tallaPesoLitros`, `stoc" +
-                "k`, `fechaCaducidad`, `numeroRecogida`, `numeroPedido`, `numeroVenta`, `precio`," +
-                " `idiva`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO `Articulo` (`idArticulo`, `codigoArticulo`, `descripcion`, `tallaPeso" +
+                "Litros`, `fechaCaducidad`, `numeroRecogida`, `numeroPedido`, `numeroVenta`, `pre" +
+                "cio`, `idiva`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("idArticulo", global::System.Data.OleDb.OleDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "idArticulo", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("codigoArticulo", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "codigoArticulo", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("descripcion", global::System.Data.OleDb.OleDbType.LongVarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "descripcion", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("tallaPesoLitros", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "tallaPesoLitros", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("stock", global::System.Data.OleDb.OleDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "stock", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("fechaCaducidad", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fechaCaducidad", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("numeroRecogida", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "numeroRecogida", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("numeroPedido", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "numeroPedido", global::System.Data.DataRowVersion.Current, false, null));
@@ -4332,23 +4332,23 @@ namespace CapaDatos.dsCuaShopTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("idiva", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "idiva", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE `Articulo` SET `codigoArticulo` = ?, `descripcion` = ?, `tallaPesoLitros` = ?, `stock` = ?, `fechaCaducidad` = ?, `numeroRecogida` = ?, `numeroPedido` = ?, `numeroVenta` = ?, `precio` = ?, `idiva` = ? WHERE ((`codigoArticulo` = ?) AND ((? = 1 AND `tallaPesoLitros` IS NULL) OR (`tallaPesoLitros` = ?)) AND ((? = 1 AND `stock` IS NULL) OR (`stock` = ?)) AND ((? = 1 AND `fechaCaducidad` IS NULL) OR (`fechaCaducidad` = ?)) AND ((? = 1 AND `numeroRecogida` IS NULL) OR (`numeroRecogida` = ?)) AND ((? = 1 AND `numeroPedido` IS NULL) OR (`numeroPedido` = ?)) AND ((? = 1 AND `numeroVenta` IS NULL) OR (`numeroVenta` = ?)) AND ((? = 1 AND `precio` IS NULL) OR (`precio` = ?)) AND ((? = 1 AND `idiva` IS NULL) OR (`idiva` = ?)))";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE `Articulo` SET `idArticulo` = ?, `codigoArticulo` = ?, `descripcion` = ?, `tallaPesoLitros` = ?, `fechaCaducidad` = ?, `numeroRecogida` = ?, `numeroPedido` = ?, `numeroVenta` = ?, `precio` = ?, `idiva` = ? WHERE ((`idArticulo` = ?) AND ((? = 1 AND `codigoArticulo` IS NULL) OR (`codigoArticulo` = ?)) AND ((? = 1 AND `tallaPesoLitros` IS NULL) OR (`tallaPesoLitros` = ?)) AND ((? = 1 AND `fechaCaducidad` IS NULL) OR (`fechaCaducidad` = ?)) AND ((? = 1 AND `numeroRecogida` IS NULL) OR (`numeroRecogida` = ?)) AND ((? = 1 AND `numeroPedido` IS NULL) OR (`numeroPedido` = ?)) AND ((? = 1 AND `numeroVenta` IS NULL) OR (`numeroVenta` = ?)) AND ((? = 1 AND `precio` IS NULL) OR (`precio` = ?)) AND ((? = 1 AND `idiva` IS NULL) OR (`idiva` = ?)))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("idArticulo", global::System.Data.OleDb.OleDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "idArticulo", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("codigoArticulo", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "codigoArticulo", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("descripcion", global::System.Data.OleDb.OleDbType.LongVarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "descripcion", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("tallaPesoLitros", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "tallaPesoLitros", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("stock", global::System.Data.OleDb.OleDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "stock", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("fechaCaducidad", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fechaCaducidad", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("numeroRecogida", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "numeroRecogida", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("numeroPedido", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "numeroPedido", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("numeroVenta", global::System.Data.OleDb.OleDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "numeroVenta", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("precio", global::System.Data.OleDb.OleDbType.Numeric, 0, global::System.Data.ParameterDirection.Input, ((byte)(18)), ((byte)(0)), "precio", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("idiva", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "idiva", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_idArticulo", global::System.Data.OleDb.OleDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "idArticulo", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_codigoArticulo", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "codigoArticulo", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_codigoArticulo", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "codigoArticulo", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_tallaPesoLitros", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "tallaPesoLitros", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_tallaPesoLitros", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "tallaPesoLitros", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_stock", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "stock", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_stock", global::System.Data.OleDb.OleDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "stock", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_fechaCaducidad", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fechaCaducidad", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_fechaCaducidad", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fechaCaducidad", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_numeroRecogida", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "numeroRecogida", global::System.Data.DataRowVersion.Original, true, null));
@@ -4376,8 +4376,8 @@ namespace CapaDatos.dsCuaShopTableAdapters {
             this._commandCollection = new global::System.Data.OleDb.OleDbCommand[1];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT codigoArticulo, descripcion, tallaPesoLitros, stock, fechaCaducidad, numer" +
-                "oRecogida, numeroPedido, numeroVenta, precio, idiva FROM Articulo";
+            this._commandCollection[0].CommandText = "SELECT idArticulo, codigoArticulo, descripcion, tallaPesoLitros, fechaCaducidad, " +
+                "numeroRecogida, numeroPedido, numeroVenta, precio, idiva FROM Articulo";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -4438,28 +4438,22 @@ namespace CapaDatos.dsCuaShopTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(string Original_codigoArticulo, string Original_tallaPesoLitros, global::System.Nullable<short> Original_stock, global::System.Nullable<global::System.DateTime> Original_fechaCaducidad, global::System.Nullable<int> Original_numeroRecogida, global::System.Nullable<int> Original_numeroPedido, global::System.Nullable<short> Original_numeroVenta, global::System.Nullable<decimal> Original_precio, global::System.Nullable<int> Original_idiva) {
+        public virtual int Delete(short Original_idArticulo, string Original_codigoArticulo, string Original_tallaPesoLitros, global::System.Nullable<global::System.DateTime> Original_fechaCaducidad, global::System.Nullable<int> Original_numeroRecogida, global::System.Nullable<int> Original_numeroPedido, global::System.Nullable<short> Original_numeroVenta, global::System.Nullable<decimal> Original_precio, global::System.Nullable<int> Original_idiva) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((short)(Original_idArticulo));
             if ((Original_codigoArticulo == null)) {
                 throw new global::System.ArgumentNullException("Original_codigoArticulo");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[0].Value = ((string)(Original_codigoArticulo));
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_codigoArticulo));
             }
             if ((Original_tallaPesoLitros == null)) {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_tallaPesoLitros));
-            }
-            if ((Original_stock.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((short)(Original_stock.Value));
-            }
-            else {
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_tallaPesoLitros));
             }
             if ((Original_fechaCaducidad.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
@@ -4529,30 +4523,25 @@ namespace CapaDatos.dsCuaShopTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string codigoArticulo, string descripcion, string tallaPesoLitros, global::System.Nullable<short> stock, global::System.Nullable<global::System.DateTime> fechaCaducidad, global::System.Nullable<int> numeroRecogida, global::System.Nullable<int> numeroPedido, global::System.Nullable<short> numeroVenta, global::System.Nullable<decimal> precio, global::System.Nullable<int> idiva) {
+        public virtual int Insert(short idArticulo, string codigoArticulo, string descripcion, string tallaPesoLitros, global::System.Nullable<global::System.DateTime> fechaCaducidad, global::System.Nullable<int> numeroRecogida, global::System.Nullable<int> numeroPedido, global::System.Nullable<short> numeroVenta, global::System.Nullable<decimal> precio, global::System.Nullable<int> idiva) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((short)(idArticulo));
             if ((codigoArticulo == null)) {
                 throw new global::System.ArgumentNullException("codigoArticulo");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(codigoArticulo));
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(codigoArticulo));
             }
             if ((descripcion == null)) {
-                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(descripcion));
-            }
-            if ((tallaPesoLitros == null)) {
                 this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(tallaPesoLitros));
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(descripcion));
             }
-            if ((stock.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((short)(stock.Value));
+            if ((tallaPesoLitros == null)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(tallaPesoLitros));
             }
             if ((fechaCaducidad.HasValue == true)) {
                 this.Adapter.InsertCommand.Parameters[4].Value = ((System.DateTime)(fechaCaducidad.Value));
@@ -4611,48 +4600,43 @@ namespace CapaDatos.dsCuaShopTableAdapters {
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(
+                    short idArticulo, 
                     string codigoArticulo, 
                     string descripcion, 
                     string tallaPesoLitros, 
-                    global::System.Nullable<short> stock, 
                     global::System.Nullable<global::System.DateTime> fechaCaducidad, 
                     global::System.Nullable<int> numeroRecogida, 
                     global::System.Nullable<int> numeroPedido, 
                     global::System.Nullable<short> numeroVenta, 
                     global::System.Nullable<decimal> precio, 
                     global::System.Nullable<int> idiva, 
+                    short Original_idArticulo, 
                     string Original_codigoArticulo, 
                     string Original_tallaPesoLitros, 
-                    global::System.Nullable<short> Original_stock, 
                     global::System.Nullable<global::System.DateTime> Original_fechaCaducidad, 
                     global::System.Nullable<int> Original_numeroRecogida, 
                     global::System.Nullable<int> Original_numeroPedido, 
                     global::System.Nullable<short> Original_numeroVenta, 
                     global::System.Nullable<decimal> Original_precio, 
                     global::System.Nullable<int> Original_idiva) {
+            this.Adapter.UpdateCommand.Parameters[0].Value = ((short)(idArticulo));
             if ((codigoArticulo == null)) {
                 throw new global::System.ArgumentNullException("codigoArticulo");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(codigoArticulo));
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(codigoArticulo));
             }
             if ((descripcion == null)) {
-                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(descripcion));
-            }
-            if ((tallaPesoLitros == null)) {
                 this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(tallaPesoLitros));
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(descripcion));
             }
-            if ((stock.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((short)(stock.Value));
+            if ((tallaPesoLitros == null)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(tallaPesoLitros));
             }
             if ((fechaCaducidad.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[4].Value = ((System.DateTime)(fechaCaducidad.Value));
@@ -4690,27 +4674,21 @@ namespace CapaDatos.dsCuaShopTableAdapters {
             else {
                 this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
+            this.Adapter.UpdateCommand.Parameters[10].Value = ((short)(Original_idArticulo));
             if ((Original_codigoArticulo == null)) {
                 throw new global::System.ArgumentNullException("Original_codigoArticulo");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_codigoArticulo));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_codigoArticulo));
             }
             if ((Original_tallaPesoLitros == null)) {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_tallaPesoLitros));
-            }
-            if ((Original_stock.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((short)(Original_stock.Value));
-            }
-            else {
                 this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(Original_tallaPesoLitros));
             }
             if ((Original_fechaCaducidad.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
@@ -4781,25 +4759,25 @@ namespace CapaDatos.dsCuaShopTableAdapters {
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(
+                    string codigoArticulo, 
                     string descripcion, 
                     string tallaPesoLitros, 
-                    global::System.Nullable<short> stock, 
                     global::System.Nullable<global::System.DateTime> fechaCaducidad, 
                     global::System.Nullable<int> numeroRecogida, 
                     global::System.Nullable<int> numeroPedido, 
                     global::System.Nullable<short> numeroVenta, 
                     global::System.Nullable<decimal> precio, 
                     global::System.Nullable<int> idiva, 
+                    short Original_idArticulo, 
                     string Original_codigoArticulo, 
                     string Original_tallaPesoLitros, 
-                    global::System.Nullable<short> Original_stock, 
                     global::System.Nullable<global::System.DateTime> Original_fechaCaducidad, 
                     global::System.Nullable<int> Original_numeroRecogida, 
                     global::System.Nullable<int> Original_numeroPedido, 
                     global::System.Nullable<short> Original_numeroVenta, 
                     global::System.Nullable<decimal> Original_precio, 
                     global::System.Nullable<int> Original_idiva) {
-            return this.Update(Original_codigoArticulo, descripcion, tallaPesoLitros, stock, fechaCaducidad, numeroRecogida, numeroPedido, numeroVenta, precio, idiva, Original_codigoArticulo, Original_tallaPesoLitros, Original_stock, Original_fechaCaducidad, Original_numeroRecogida, Original_numeroPedido, Original_numeroVenta, Original_precio, Original_idiva);
+            return this.Update(Original_idArticulo, codigoArticulo, descripcion, tallaPesoLitros, fechaCaducidad, numeroRecogida, numeroPedido, numeroVenta, precio, idiva, Original_idArticulo, Original_codigoArticulo, Original_tallaPesoLitros, Original_fechaCaducidad, Original_numeroRecogida, Original_numeroPedido, Original_numeroVenta, Original_precio, Original_idiva);
         }
     }
     
@@ -6489,8 +6467,13 @@ namespace CapaDatos.dsCuaShopTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(short Original_numeroVenta, global::System.Nullable<short> Original_numeroEmpleado, global::System.Nullable<global::System.DateTime> Original_fechaVenta, global::System.Nullable<decimal> Original_precioVenta) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((short)(Original_numeroVenta));
+        public virtual int Delete(global::System.Nullable<short> Original_numeroVenta, global::System.Nullable<short> Original_numeroEmpleado, global::System.Nullable<global::System.DateTime> Original_fechaVenta, global::System.Nullable<decimal> Original_precioVenta) {
+            if ((Original_numeroVenta.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[0].Value = ((short)(Original_numeroVenta.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
             if ((Original_numeroEmpleado.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
                 this.Adapter.DeleteCommand.Parameters[2].Value = ((short)(Original_numeroEmpleado.Value));
@@ -6535,8 +6518,13 @@ namespace CapaDatos.dsCuaShopTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(short numeroVenta, global::System.Nullable<short> numeroEmpleado, global::System.Nullable<global::System.DateTime> fechaVenta, global::System.Nullable<decimal> precioVenta) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((short)(numeroVenta));
+        public virtual int Insert(global::System.Nullable<short> numeroVenta, global::System.Nullable<short> numeroEmpleado, global::System.Nullable<global::System.DateTime> fechaVenta, global::System.Nullable<decimal> precioVenta) {
+            if ((numeroVenta.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((short)(numeroVenta.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
             if ((numeroEmpleado.HasValue == true)) {
                 this.Adapter.InsertCommand.Parameters[1].Value = ((short)(numeroEmpleado.Value));
             }
@@ -6575,8 +6563,13 @@ namespace CapaDatos.dsCuaShopTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(short numeroVenta, global::System.Nullable<short> numeroEmpleado, global::System.Nullable<global::System.DateTime> fechaVenta, global::System.Nullable<decimal> precioVenta, short Original_numeroVenta, global::System.Nullable<short> Original_numeroEmpleado, global::System.Nullable<global::System.DateTime> Original_fechaVenta, global::System.Nullable<decimal> Original_precioVenta) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((short)(numeroVenta));
+        public virtual int Update(global::System.Nullable<short> numeroVenta, global::System.Nullable<short> numeroEmpleado, global::System.Nullable<global::System.DateTime> fechaVenta, global::System.Nullable<decimal> precioVenta, global::System.Nullable<short> Original_numeroVenta, global::System.Nullable<short> Original_numeroEmpleado, global::System.Nullable<global::System.DateTime> Original_fechaVenta, global::System.Nullable<decimal> Original_precioVenta) {
+            if ((numeroVenta.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((short)(numeroVenta.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
             if ((numeroEmpleado.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[1].Value = ((short)(numeroEmpleado.Value));
             }
@@ -6595,7 +6588,12 @@ namespace CapaDatos.dsCuaShopTableAdapters {
             else {
                 this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((short)(Original_numeroVenta));
+            if ((Original_numeroVenta.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((short)(Original_numeroVenta.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
             if ((Original_numeroEmpleado.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(0));
                 this.Adapter.UpdateCommand.Parameters[6].Value = ((short)(Original_numeroEmpleado.Value));
@@ -6640,7 +6638,7 @@ namespace CapaDatos.dsCuaShopTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<short> numeroEmpleado, global::System.Nullable<global::System.DateTime> fechaVenta, global::System.Nullable<decimal> precioVenta, short Original_numeroVenta, global::System.Nullable<short> Original_numeroEmpleado, global::System.Nullable<global::System.DateTime> Original_fechaVenta, global::System.Nullable<decimal> Original_precioVenta) {
+        public virtual int Update(global::System.Nullable<short> numeroEmpleado, global::System.Nullable<global::System.DateTime> fechaVenta, global::System.Nullable<decimal> precioVenta, global::System.Nullable<short> Original_numeroVenta, global::System.Nullable<short> Original_numeroEmpleado, global::System.Nullable<global::System.DateTime> Original_fechaVenta, global::System.Nullable<decimal> Original_precioVenta) {
             return this.Update(Original_numeroVenta, numeroEmpleado, fechaVenta, precioVenta, Original_numeroVenta, Original_numeroEmpleado, Original_fechaVenta, Original_precioVenta);
         }
     }

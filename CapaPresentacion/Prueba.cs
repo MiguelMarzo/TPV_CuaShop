@@ -23,6 +23,7 @@ namespace CapaPresentacion
         private void Prueba_Load(object sender, EventArgs e)
         {
             cargarFamilias();
+            dgvProductos.DataSource = _negocio.DevolverTodosLosArticulos();
 
         }
         private void cargarFamilias()
@@ -46,7 +47,7 @@ namespace CapaPresentacion
     
         private void button2_Click(object sender, EventArgs e)
         {
-            dgvProductos.DataSource = _negocio.DevolverTodosLosArticulos();
+           
         }
 
         

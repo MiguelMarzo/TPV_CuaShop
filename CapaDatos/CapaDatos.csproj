@@ -41,6 +41,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Datos.cs" />
+    <Compile Include="dsCuaShop.cs">
+      <DependentUpon>dsCuaShop.xsd</DependentUpon>
+    </Compile>
     <Compile Include="dsCuaShop.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -72,10 +75,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CapaPresentacion\CapaPresentacion.csproj">
-      <Project>{ade90a6e-533a-4256-a38c-3fce1ba44140}</Project>
-      <Name>CapaPresentacion</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Entidades\Entidades.csproj">
       <Project>{0e1e8b29-4c10-43da-a2ca-b17b143cc02d}</Project>
       <Name>Entidades</Name>
