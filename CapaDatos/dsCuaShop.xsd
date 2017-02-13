@@ -2,14 +2,15 @@
 <xs:schema id="dsCuaShop" targetNamespace="http://tempuri.org/dsCuaShop.xsd" xmlns:mstns="http://tempuri.org/dsCuaShop.xsd" xmlns="http://tempuri.org/dsCuaShop.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
-      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="1" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
           <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="TPVdb1ConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="TPVdb1ConnectionString (Settings)" PropertyReference="ApplicationSettings.CapaDatos.Properties.Settings.GlobalReference.Default.TPVdb1ConnectionString" Provider="System.Data.OleDb" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="TPVdb1ConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="TPVdb1ConnectionString1 (Settings)" PropertyReference="ApplicationSettings.CapaDatos.Properties.Settings.GlobalReference.Default.TPVdb1ConnectionString1" Provider="System.Data.OleDb" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="AdminTableAdapter" GeneratorDataComponentClassName="AdminTableAdapter" Name="Admin" UserDataComponentName="AdminTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="TPVdb1ConnectionString (Settings)" DbObjectName="Admin" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="TPVdb1ConnectionString1 (Settings)" DbObjectName="Admin" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM `Admin` WHERE ((`Id` = ?) AND ((? = 1 AND `Usuario` IS NULL) OR (`Usuario` = ?)) AND ((? = 1 AND `Contraseña` IS NULL) OR (`Contraseña` = ?)))</CommandText>
@@ -62,16 +63,16 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ArticuloTableAdapter" GeneratorDataComponentClassName="ArticuloTableAdapter" Name="Articulo" UserDataComponentName="ArticuloTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="TPVdb1ConnectionString (Settings)" DbObjectName="Articulo" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="TPVdb1ConnectionString1 (Settings)" DbObjectName="Articulo" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>DELETE FROM `Articulo` WHERE ((`idArticulo` = ?) AND ((? = 1 AND `codigoArticulo` IS NULL) OR (`codigoArticulo` = ?)) AND ((? = 1 AND `tallaPesoLitros` IS NULL) OR (`tallaPesoLitros` = ?)) AND ((? = 1 AND `fechaCaducidad` IS NULL) OR (`fechaCaducidad` = ?)) AND ((? = 1 AND `numeroRecogida` IS NULL) OR (`numeroRecogida` = ?)) AND ((? = 1 AND `numeroPedido` IS NULL) OR (`numeroPedido` = ?)) AND ((? = 1 AND `numeroVenta` IS NULL) OR (`numeroVenta` = ?)) AND ((? = 1 AND `precio` IS NULL) OR (`precio` = ?)) AND ((? = 1 AND `idiva` IS NULL) OR (`idiva` = ?)))</CommandText>
+                    <CommandText>DELETE FROM `Articulo` WHERE ((`codigoArticulo` = ?) AND ((? = 1 AND `tallaPesoLitros` IS NULL) OR (`tallaPesoLitros` = ?)) AND ((? = 1 AND `stock` IS NULL) OR (`stock` = ?)) AND ((? = 1 AND `fechaCaducidad` IS NULL) OR (`fechaCaducidad` = ?)) AND ((? = 1 AND `numeroRecogida` IS NULL) OR (`numeroRecogida` = ?)) AND ((? = 1 AND `numeroPedido` IS NULL) OR (`numeroPedido` = ?)) AND ((? = 1 AND `numeroVenta` IS NULL) OR (`numeroVenta` = ?)) AND ((? = 1 AND `precio` IS NULL) OR (`precio` = ?)) AND ((? = 1 AND `idiva` IS NULL) OR (`idiva` = ?)) AND ((? = 1 AND `localizacion` IS NULL) OR (`localizacion` = ?)) AND ((? = 1 AND `idFamilia` IS NULL) OR (`idFamilia` = ?)) AND ((? = 1 AND `idSubFamilia` IS NULL) OR (`idSubFamilia` = ?)))</CommandText>
                     <Parameters>
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="Original_idArticulo" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="idArticulo" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_codigoArticulo" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="codigoArticulo" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_codigoArticulo" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="codigoArticulo" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_tallaPesoLitros" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="tallaPesoLitros" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_tallaPesoLitros" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="tallaPesoLitros" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_stock" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="stock" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="Original_stock" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="stock" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_fechaCaducidad" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="fechaCaducidad" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="Original_fechaCaducidad" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="fechaCaducidad" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_numeroRecogida" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="numeroRecogida" SourceColumnNullMapping="true" SourceVersion="Original" />
@@ -84,51 +85,63 @@
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="Original_precio" Precision="18" ProviderType="Numeric" Scale="0" Size="0" SourceColumn="precio" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_idiva" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="idiva" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_idiva" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="idiva" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_localizacion" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="localizacion" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_localizacion" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="localizacion" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_idFamilia" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="idFamilia" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_idFamilia" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="idFamilia" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_idSubFamilia" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="idSubFamilia" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_idSubFamilia" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="idSubFamilia" SourceColumnNullMapping="false" SourceVersion="Original" />
                     </Parameters>
                   </DbCommand>
                 </DeleteCommand>
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>INSERT INTO `Articulo` (`idArticulo`, `codigoArticulo`, `descripcion`, `tallaPesoLitros`, `fechaCaducidad`, `numeroRecogida`, `numeroPedido`, `numeroVenta`, `precio`, `idiva`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)</CommandText>
+                    <CommandText>INSERT INTO `Articulo` (`codigoArticulo`, `descripcion`, `tallaPesoLitros`, `stock`, `fechaCaducidad`, `numeroRecogida`, `numeroPedido`, `numeroVenta`, `precio`, `idiva`, `localizacion`, `idFamilia`, `idSubFamilia`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)</CommandText>
                     <Parameters>
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="idArticulo" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="idArticulo" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="codigoArticulo" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="codigoArticulo" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="descripcion" Precision="0" ProviderType="LongVarWChar" Scale="0" Size="0" SourceColumn="descripcion" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="tallaPesoLitros" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="tallaPesoLitros" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="stock" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="stock" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="fechaCaducidad" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="fechaCaducidad" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="numeroRecogida" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="numeroRecogida" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="numeroPedido" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="numeroPedido" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="numeroVenta" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="numeroVenta" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="precio" Precision="18" ProviderType="Numeric" Scale="0" Size="0" SourceColumn="precio" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="idiva" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="idiva" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="localizacion" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="localizacion" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="idFamilia" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="idFamilia" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="idSubFamilia" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="idSubFamilia" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
                 </InsertCommand>
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT idArticulo, codigoArticulo, descripcion, tallaPesoLitros, fechaCaducidad, numeroRecogida, numeroPedido, numeroVenta, precio, idiva FROM Articulo</CommandText>
+                    <CommandText>SELECT codigoArticulo, descripcion, tallaPesoLitros, stock, fechaCaducidad, numeroRecogida, numeroPedido, numeroVenta, precio, idiva, localizacion, idFamilia, idSubFamilia FROM Articulo</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>UPDATE `Articulo` SET `idArticulo` = ?, `codigoArticulo` = ?, `descripcion` = ?, `tallaPesoLitros` = ?, `fechaCaducidad` = ?, `numeroRecogida` = ?, `numeroPedido` = ?, `numeroVenta` = ?, `precio` = ?, `idiva` = ? WHERE ((`idArticulo` = ?) AND ((? = 1 AND `codigoArticulo` IS NULL) OR (`codigoArticulo` = ?)) AND ((? = 1 AND `tallaPesoLitros` IS NULL) OR (`tallaPesoLitros` = ?)) AND ((? = 1 AND `fechaCaducidad` IS NULL) OR (`fechaCaducidad` = ?)) AND ((? = 1 AND `numeroRecogida` IS NULL) OR (`numeroRecogida` = ?)) AND ((? = 1 AND `numeroPedido` IS NULL) OR (`numeroPedido` = ?)) AND ((? = 1 AND `numeroVenta` IS NULL) OR (`numeroVenta` = ?)) AND ((? = 1 AND `precio` IS NULL) OR (`precio` = ?)) AND ((? = 1 AND `idiva` IS NULL) OR (`idiva` = ?)))</CommandText>
+                    <CommandText>UPDATE `Articulo` SET `codigoArticulo` = ?, `descripcion` = ?, `tallaPesoLitros` = ?, `stock` = ?, `fechaCaducidad` = ?, `numeroRecogida` = ?, `numeroPedido` = ?, `numeroVenta` = ?, `precio` = ?, `idiva` = ?, `localizacion` = ?, `idFamilia` = ?, `idSubFamilia` = ? WHERE ((`codigoArticulo` = ?) AND ((? = 1 AND `tallaPesoLitros` IS NULL) OR (`tallaPesoLitros` = ?)) AND ((? = 1 AND `stock` IS NULL) OR (`stock` = ?)) AND ((? = 1 AND `fechaCaducidad` IS NULL) OR (`fechaCaducidad` = ?)) AND ((? = 1 AND `numeroRecogida` IS NULL) OR (`numeroRecogida` = ?)) AND ((? = 1 AND `numeroPedido` IS NULL) OR (`numeroPedido` = ?)) AND ((? = 1 AND `numeroVenta` IS NULL) OR (`numeroVenta` = ?)) AND ((? = 1 AND `precio` IS NULL) OR (`precio` = ?)) AND ((? = 1 AND `idiva` IS NULL) OR (`idiva` = ?)) AND ((? = 1 AND `localizacion` IS NULL) OR (`localizacion` = ?)) AND ((? = 1 AND `idFamilia` IS NULL) OR (`idFamilia` = ?)) AND ((? = 1 AND `idSubFamilia` IS NULL) OR (`idSubFamilia` = ?)))</CommandText>
                     <Parameters>
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="idArticulo" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="idArticulo" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="codigoArticulo" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="codigoArticulo" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="descripcion" Precision="0" ProviderType="LongVarWChar" Scale="0" Size="0" SourceColumn="descripcion" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="tallaPesoLitros" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="tallaPesoLitros" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="stock" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="stock" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="fechaCaducidad" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="fechaCaducidad" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="numeroRecogida" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="numeroRecogida" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="numeroPedido" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="numeroPedido" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="numeroVenta" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="numeroVenta" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="precio" Precision="18" ProviderType="Numeric" Scale="0" Size="0" SourceColumn="precio" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="idiva" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="idiva" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="Original_idArticulo" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="idArticulo" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_codigoArticulo" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="codigoArticulo" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="localizacion" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="localizacion" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="idFamilia" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="idFamilia" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="idSubFamilia" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="idSubFamilia" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_codigoArticulo" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="codigoArticulo" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_tallaPesoLitros" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="tallaPesoLitros" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_tallaPesoLitros" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="tallaPesoLitros" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_stock" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="stock" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="Original_stock" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="stock" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_fechaCaducidad" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="fechaCaducidad" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="Original_fechaCaducidad" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="fechaCaducidad" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_numeroRecogida" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="numeroRecogida" SourceColumnNullMapping="true" SourceVersion="Original" />
@@ -141,28 +154,37 @@
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="Original_precio" Precision="18" ProviderType="Numeric" Scale="0" Size="0" SourceColumn="precio" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_idiva" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="idiva" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_idiva" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="idiva" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_localizacion" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="localizacion" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_localizacion" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="localizacion" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_idFamilia" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="idFamilia" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_idFamilia" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="idFamilia" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_idSubFamilia" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="idSubFamilia" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_idSubFamilia" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="idSubFamilia" SourceColumnNullMapping="false" SourceVersion="Original" />
                     </Parameters>
                   </DbCommand>
                 </UpdateCommand>
               </DbSource>
             </MainSource>
             <Mappings>
-              <Mapping SourceColumn="idArticulo" DataSetColumn="idArticulo" />
               <Mapping SourceColumn="codigoArticulo" DataSetColumn="codigoArticulo" />
               <Mapping SourceColumn="descripcion" DataSetColumn="descripcion" />
               <Mapping SourceColumn="tallaPesoLitros" DataSetColumn="tallaPesoLitros" />
+              <Mapping SourceColumn="stock" DataSetColumn="stock" />
               <Mapping SourceColumn="fechaCaducidad" DataSetColumn="fechaCaducidad" />
               <Mapping SourceColumn="numeroRecogida" DataSetColumn="numeroRecogida" />
               <Mapping SourceColumn="numeroPedido" DataSetColumn="numeroPedido" />
               <Mapping SourceColumn="numeroVenta" DataSetColumn="numeroVenta" />
               <Mapping SourceColumn="precio" DataSetColumn="precio" />
               <Mapping SourceColumn="idiva" DataSetColumn="idiva" />
+              <Mapping SourceColumn="localizacion" DataSetColumn="localizacion" />
+              <Mapping SourceColumn="idFamilia" DataSetColumn="idFamilia" />
+              <Mapping SourceColumn="idSubFamilia" DataSetColumn="idSubFamilia" />
             </Mappings>
             <Sources />
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="EmpleadoTableAdapter" GeneratorDataComponentClassName="EmpleadoTableAdapter" Name="Empleado" UserDataComponentName="EmpleadoTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="TPVdb1ConnectionString (Settings)" DbObjectName="Empleado" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="TPVdb1ConnectionString1 (Settings)" DbObjectName="Empleado" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM `Empleado` WHERE ((`numeroEmpleado` = ?) AND ((? = 1 AND `rutaFoto` IS NULL) OR (`rutaFoto` = ?)) AND ((? = 1 AND `nombreEmpleado` IS NULL) OR (`nombreEmpleado` = ?)))</CommandText>
@@ -217,7 +239,7 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="FamilliaTableAdapter" GeneratorDataComponentClassName="FamilliaTableAdapter" Name="Famillia" UserDataComponentName="FamilliaTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="TPVdb1ConnectionString (Settings)" DbObjectName="Famillia" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="TPVdb1ConnectionString1 (Settings)" DbObjectName="Famillia" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM `Famillia` WHERE ((`idFamilia` = ?) AND ((? = 1 AND `rutaFoto` IS NULL) OR (`rutaFoto` = ?)))</CommandText>
@@ -265,7 +287,7 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="IvaTableAdapter" GeneratorDataComponentClassName="IvaTableAdapter" Name="Iva" UserDataComponentName="IvaTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="TPVdb1ConnectionString (Settings)" DbObjectName="Iva" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="TPVdb1ConnectionString1 (Settings)" DbObjectName="Iva" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM `Iva` WHERE ((`IdIva` = ?) AND ((? = 1 AND `Tipo` IS NULL) OR (`Tipo` = ?)))</CommandText>
@@ -311,7 +333,7 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="RecogidaTableAdapter" GeneratorDataComponentClassName="RecogidaTableAdapter" Name="Recogida" UserDataComponentName="RecogidaTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="TPVdb1ConnectionString (Settings)" DbObjectName="Recogida" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="TPVdb1ConnectionString1 (Settings)" DbObjectName="Recogida" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM `Recogida` WHERE ((`numeroRecogida` = ?) AND ((? = 1 AND `fecha` IS NULL) OR (`fecha` = ?)) AND ((? = 1 AND `cantidadArticulos` IS NULL) OR (`cantidadArticulos` = ?)) AND ((? = 1 AND `entregador` IS NULL) OR (`entregador` = ?)) AND ((? = 1 AND `numeroEmpleado` IS NULL) OR (`numeroEmpleado` = ?)))</CommandText>
@@ -378,14 +400,69 @@
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SubFamiliaTableAdapter" GeneratorDataComponentClassName="SubFamiliaTableAdapter" Name="SubFamilia" UserDataComponentName="SubFamiliaTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TPVdb1ConnectionString1 (Settings)" DbObjectName="SubFamilia" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM `SubFamilia` WHERE ((`idSubFamilia` = ?) AND ((? = 1 AND `nombreSubFamilia` IS NULL) OR (`nombreSubFamilia` = ?)) AND ((? = 1 AND `idFamilia` IS NULL) OR (`idFamilia` = ?)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_idSubFamilia" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="idSubFamilia" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_nombreSubFamilia" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="nombreSubFamilia" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_nombreSubFamilia" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="nombreSubFamilia" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_idFamilia" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="idFamilia" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_idFamilia" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="idFamilia" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO `SubFamilia` (`idSubFamilia`, `nombreSubFamilia`, `idFamilia`) VALUES (?, ?, ?)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="idSubFamilia" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="idSubFamilia" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="nombreSubFamilia" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="nombreSubFamilia" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="idFamilia" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="idFamilia" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT idSubFamilia, nombreSubFamilia, idFamilia FROM SubFamilia</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE `SubFamilia` SET `idSubFamilia` = ?, `nombreSubFamilia` = ?, `idFamilia` = ? WHERE ((`idSubFamilia` = ?) AND ((? = 1 AND `nombreSubFamilia` IS NULL) OR (`nombreSubFamilia` = ?)) AND ((? = 1 AND `idFamilia` IS NULL) OR (`idFamilia` = ?)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="idSubFamilia" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="idSubFamilia" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="nombreSubFamilia" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="nombreSubFamilia" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="idFamilia" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="idFamilia" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_idSubFamilia" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="idSubFamilia" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_nombreSubFamilia" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="nombreSubFamilia" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_nombreSubFamilia" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="nombreSubFamilia" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_idFamilia" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="idFamilia" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_idFamilia" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="idFamilia" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="idSubFamilia" DataSetColumn="idSubFamilia" />
+              <Mapping SourceColumn="nombreSubFamilia" DataSetColumn="nombreSubFamilia" />
+              <Mapping SourceColumn="idFamilia" DataSetColumn="idFamilia" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="VentaTableAdapter" GeneratorDataComponentClassName="VentaTableAdapter" Name="Venta" UserDataComponentName="VentaTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="TPVdb1ConnectionString (Settings)" DbObjectName="Venta" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="TPVdb1ConnectionString1 (Settings)" DbObjectName="Venta" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM `Venta` WHERE ((`numeroVenta` = ?) AND ((? = 1 AND `numeroEmpleado` IS NULL) OR (`numeroEmpleado` = ?)) AND ((? = 1 AND `fechaVenta` IS NULL) OR (`fechaVenta` = ?)) AND ((? = 1 AND `precioVenta` IS NULL) OR (`precioVenta` = ?)))</CommandText>
                     <Parameters>
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="Original_numeroVenta" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="numeroVenta" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="Original_numeroVenta" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="numeroVenta" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_numeroEmpleado" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="numeroEmpleado" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="Original_numeroEmpleado" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="numeroEmpleado" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_fechaVenta" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="fechaVenta" SourceColumnNullMapping="true" SourceVersion="Original" />
@@ -399,7 +476,7 @@
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>INSERT INTO `Venta` (`numeroVenta`, `numeroEmpleado`, `fechaVenta`, `precioVenta`) VALUES (?, ?, ?, ?)</CommandText>
                     <Parameters>
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="numeroVenta" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="numeroVenta" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="numeroVenta" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="numeroVenta" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="numeroEmpleado" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="numeroEmpleado" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="fechaVenta" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="fechaVenta" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="precioVenta" Precision="18" ProviderType="Numeric" Scale="0" Size="0" SourceColumn="precioVenta" SourceColumnNullMapping="false" SourceVersion="Current" />
@@ -416,11 +493,11 @@
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>UPDATE `Venta` SET `numeroVenta` = ?, `numeroEmpleado` = ?, `fechaVenta` = ?, `precioVenta` = ? WHERE ((`numeroVenta` = ?) AND ((? = 1 AND `numeroEmpleado` IS NULL) OR (`numeroEmpleado` = ?)) AND ((? = 1 AND `fechaVenta` IS NULL) OR (`fechaVenta` = ?)) AND ((? = 1 AND `precioVenta` IS NULL) OR (`precioVenta` = ?)))</CommandText>
                     <Parameters>
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="numeroVenta" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="numeroVenta" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="numeroVenta" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="numeroVenta" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="numeroEmpleado" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="numeroEmpleado" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="fechaVenta" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="fechaVenta" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="precioVenta" Precision="18" ProviderType="Numeric" Scale="0" Size="0" SourceColumn="precioVenta" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="Original_numeroVenta" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="numeroVenta" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="Original_numeroVenta" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="numeroVenta" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_numeroEmpleado" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="numeroEmpleado" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="Original_numeroEmpleado" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="numeroEmpleado" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_fechaVenta" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="fechaVenta" SourceColumnNullMapping="true" SourceVersion="Original" />
@@ -472,8 +549,7 @@
         <xs:element name="Articulo" msprop:Generator_TableClassName="ArticuloDataTable" msprop:Generator_TableVarName="tableArticulo" msprop:Generator_TablePropName="Articulo" msprop:Generator_RowDeletingName="ArticuloRowDeleting" msprop:Generator_RowChangingName="ArticuloRowChanging" msprop:Generator_RowEvHandlerName="ArticuloRowChangeEventHandler" msprop:Generator_RowDeletedName="ArticuloRowDeleted" msprop:Generator_UserTableName="Articulo" msprop:Generator_RowChangedName="ArticuloRowChanged" msprop:Generator_RowEvArgName="ArticuloRowChangeEvent" msprop:Generator_RowClassName="ArticuloRow">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="idArticulo" msprop:Generator_ColumnVarNameInTable="columnidArticulo" msprop:Generator_ColumnPropNameInRow="idArticulo" msprop:Generator_ColumnPropNameInTable="idArticuloColumn" msprop:Generator_UserColumnName="idArticulo" type="xs:short" />
-              <xs:element name="codigoArticulo" msprop:Generator_ColumnVarNameInTable="columncodigoArticulo" msprop:Generator_ColumnPropNameInRow="codigoArticulo" msprop:Generator_ColumnPropNameInTable="codigoArticuloColumn" msprop:Generator_UserColumnName="codigoArticulo" minOccurs="0">
+              <xs:element name="codigoArticulo" msprop:Generator_ColumnVarNameInTable="columncodigoArticulo" msprop:Generator_ColumnPropNameInRow="codigoArticulo" msprop:Generator_ColumnPropNameInTable="codigoArticuloColumn" msprop:Generator_UserColumnName="codigoArticulo">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="14" />
@@ -494,12 +570,34 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="stock" msprop:Generator_ColumnVarNameInTable="columnstock" msprop:Generator_ColumnPropNameInRow="stock" msprop:Generator_ColumnPropNameInTable="stockColumn" msprop:Generator_UserColumnName="stock" type="xs:short" minOccurs="0" />
               <xs:element name="fechaCaducidad" msprop:Generator_ColumnVarNameInTable="columnfechaCaducidad" msprop:Generator_ColumnPropNameInRow="fechaCaducidad" msprop:Generator_ColumnPropNameInTable="fechaCaducidadColumn" msprop:Generator_UserColumnName="fechaCaducidad" type="xs:dateTime" minOccurs="0" />
               <xs:element name="numeroRecogida" msprop:Generator_ColumnVarNameInTable="columnnumeroRecogida" msprop:Generator_ColumnPropNameInRow="numeroRecogida" msprop:Generator_ColumnPropNameInTable="numeroRecogidaColumn" msprop:Generator_UserColumnName="numeroRecogida" type="xs:int" minOccurs="0" />
               <xs:element name="numeroPedido" msprop:Generator_ColumnVarNameInTable="columnnumeroPedido" msprop:Generator_ColumnPropNameInRow="numeroPedido" msprop:Generator_ColumnPropNameInTable="numeroPedidoColumn" msprop:Generator_UserColumnName="numeroPedido" type="xs:int" minOccurs="0" />
               <xs:element name="numeroVenta" msprop:Generator_ColumnVarNameInTable="columnnumeroVenta" msprop:Generator_ColumnPropNameInRow="numeroVenta" msprop:Generator_ColumnPropNameInTable="numeroVentaColumn" msprop:Generator_UserColumnName="numeroVenta" type="xs:short" minOccurs="0" />
               <xs:element name="precio" msprop:Generator_ColumnVarNameInTable="columnprecio" msprop:Generator_ColumnPropNameInRow="precio" msprop:Generator_ColumnPropNameInTable="precioColumn" msprop:Generator_UserColumnName="precio" type="xs:decimal" minOccurs="0" />
               <xs:element name="idiva" msprop:Generator_ColumnVarNameInTable="columnidiva" msprop:Generator_ColumnPropNameInRow="idiva" msprop:Generator_ColumnPropNameInTable="idivaColumn" msprop:Generator_UserColumnName="idiva" type="xs:int" minOccurs="0" />
+              <xs:element name="localizacion" msprop:Generator_ColumnVarNameInTable="columnlocalizacion" msprop:Generator_ColumnPropNameInRow="localizacion" msprop:Generator_ColumnPropNameInTable="localizacionColumn" msprop:Generator_UserColumnName="localizacion" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="idFamilia" msprop:Generator_ColumnVarNameInTable="columnidFamilia" msprop:Generator_ColumnPropNameInRow="idFamilia" msprop:Generator_ColumnPropNameInTable="idFamiliaColumn" msprop:Generator_UserColumnName="idFamilia" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="idSubFamilia" msprop:Generator_ColumnVarNameInTable="columnidSubFamilia" msprop:Generator_ColumnPropNameInRow="idSubFamilia" msprop:Generator_ColumnPropNameInTable="idSubFamiliaColumn" msprop:Generator_UserColumnName="idSubFamilia" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -575,6 +673,33 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="SubFamilia" msprop:Generator_TableClassName="SubFamiliaDataTable" msprop:Generator_TableVarName="tableSubFamilia" msprop:Generator_TablePropName="SubFamilia" msprop:Generator_RowDeletingName="SubFamiliaRowDeleting" msprop:Generator_RowChangingName="SubFamiliaRowChanging" msprop:Generator_RowEvHandlerName="SubFamiliaRowChangeEventHandler" msprop:Generator_RowDeletedName="SubFamiliaRowDeleted" msprop:Generator_UserTableName="SubFamilia" msprop:Generator_RowChangedName="SubFamiliaRowChanged" msprop:Generator_RowEvArgName="SubFamiliaRowChangeEvent" msprop:Generator_RowClassName="SubFamiliaRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="idSubFamilia" msprop:Generator_ColumnVarNameInTable="columnidSubFamilia" msprop:Generator_ColumnPropNameInRow="idSubFamilia" msprop:Generator_ColumnPropNameInTable="idSubFamiliaColumn" msprop:Generator_UserColumnName="idSubFamilia">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="nombreSubFamilia" msprop:Generator_ColumnVarNameInTable="columnnombreSubFamilia" msprop:Generator_ColumnPropNameInRow="nombreSubFamilia" msprop:Generator_ColumnPropNameInTable="nombreSubFamiliaColumn" msprop:Generator_UserColumnName="nombreSubFamilia" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="idFamilia" msprop:Generator_ColumnVarNameInTable="columnidFamilia" msprop:Generator_ColumnPropNameInRow="idFamilia" msprop:Generator_ColumnPropNameInTable="idFamiliaColumn" msprop:Generator_UserColumnName="idFamilia" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
         <xs:element name="Venta" msprop:Generator_TableClassName="VentaDataTable" msprop:Generator_TableVarName="tableVenta" msprop:Generator_TablePropName="Venta" msprop:Generator_RowDeletingName="VentaRowDeleting" msprop:Generator_RowChangingName="VentaRowChanging" msprop:Generator_RowEvHandlerName="VentaRowChangeEventHandler" msprop:Generator_RowDeletedName="VentaRowDeleted" msprop:Generator_UserTableName="Venta" msprop:Generator_RowChangedName="VentaRowChanged" msprop:Generator_RowEvArgName="VentaRowChangeEvent" msprop:Generator_RowClassName="VentaRow">
           <xs:complexType>
             <xs:sequence>
@@ -593,7 +718,7 @@
     </xs:unique>
     <xs:unique name="Articulo_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:Articulo" />
-      <xs:field xpath="mstns:idArticulo" />
+      <xs:field xpath="mstns:codigoArticulo" />
     </xs:unique>
     <xs:unique name="Empleado_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:Empleado" />
@@ -611,6 +736,10 @@
       <xs:selector xpath=".//mstns:Recogida" />
       <xs:field xpath="mstns:numeroRecogida" />
     </xs:unique>
+    <xs:unique name="SubFamilia_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:SubFamilia" />
+      <xs:field xpath="mstns:idSubFamilia" />
+    </xs:unique>
     <xs:unique name="Venta_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:Venta" />
       <xs:field xpath="mstns:numeroVenta" />
@@ -618,10 +747,13 @@
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
+      <msdata:Relationship name="FamilliaArticulo" msdata:parent="Famillia" msdata:child="Articulo" msdata:parentkey="idFamilia" msdata:childkey="idFamilia" msprop:Generator_UserChildTable="Articulo" msprop:Generator_ChildPropName="GetArticuloRows" msprop:Generator_UserRelationName="FamilliaArticulo" msprop:Generator_RelationVarName="relationFamilliaArticulo" msprop:Generator_UserParentTable="Famillia" msprop:Generator_ParentPropName="FamilliaRow" />
       <msdata:Relationship name="IvaArticulo" msdata:parent="Iva" msdata:child="Articulo" msdata:parentkey="IdIva" msdata:childkey="idiva" msprop:Generator_UserChildTable="Articulo" msprop:Generator_ChildPropName="GetArticuloRows" msprop:Generator_UserRelationName="IvaArticulo" msprop:Generator_RelationVarName="relationIvaArticulo" msprop:Generator_UserParentTable="Iva" msprop:Generator_ParentPropName="IvaRow" />
       <msdata:Relationship name="RecogidaArticulo" msdata:parent="Recogida" msdata:child="Articulo" msdata:parentkey="numeroRecogida" msdata:childkey="numeroRecogida" msprop:Generator_UserChildTable="Articulo" msprop:Generator_ChildPropName="GetArticuloRows" msprop:Generator_UserRelationName="RecogidaArticulo" msprop:Generator_RelationVarName="relationRecogidaArticulo" msprop:Generator_UserParentTable="Recogida" msprop:Generator_ParentPropName="RecogidaRow" />
+      <msdata:Relationship name="SubFamiliaArticulo" msdata:parent="SubFamilia" msdata:child="Articulo" msdata:parentkey="idSubFamilia" msdata:childkey="idSubFamilia" msprop:Generator_UserChildTable="Articulo" msprop:Generator_ChildPropName="GetArticuloRows" msprop:Generator_UserRelationName="SubFamiliaArticulo" msprop:Generator_RelationVarName="relationSubFamiliaArticulo" msprop:Generator_UserParentTable="SubFamilia" msprop:Generator_ParentPropName="SubFamiliaRow" />
       <msdata:Relationship name="VentaArticulo" msdata:parent="Venta" msdata:child="Articulo" msdata:parentkey="numeroVenta" msdata:childkey="numeroVenta" msprop:Generator_UserChildTable="Articulo" msprop:Generator_ChildPropName="GetArticuloRows" msprop:Generator_UserRelationName="VentaArticulo" msprop:Generator_RelationVarName="relationVentaArticulo" msprop:Generator_UserParentTable="Venta" msprop:Generator_ParentPropName="VentaRow" />
       <msdata:Relationship name="EmpleadoRecogida" msdata:parent="Empleado" msdata:child="Recogida" msdata:parentkey="numeroEmpleado" msdata:childkey="numeroEmpleado" msprop:Generator_UserChildTable="Recogida" msprop:Generator_ChildPropName="GetRecogidaRows" msprop:Generator_UserRelationName="EmpleadoRecogida" msprop:Generator_ParentPropName="EmpleadoRow" msprop:Generator_RelationVarName="relationEmpleadoRecogida" msprop:Generator_UserParentTable="Empleado" />
+      <msdata:Relationship name="FamilliaSubFamilia" msdata:parent="Famillia" msdata:child="SubFamilia" msdata:parentkey="idFamilia" msdata:childkey="idFamilia" msprop:Generator_UserChildTable="SubFamilia" msprop:Generator_ChildPropName="GetSubFamiliaRows" msprop:Generator_UserRelationName="FamilliaSubFamilia" msprop:Generator_ParentPropName="FamilliaRow" msprop:Generator_RelationVarName="relationFamilliaSubFamilia" msprop:Generator_UserParentTable="Famillia" />
       <msdata:Relationship name="EmpleadoVenta" msdata:parent="Empleado" msdata:child="Venta" msdata:parentkey="numeroEmpleado" msdata:childkey="numeroEmpleado" msprop:Generator_UserChildTable="Venta" msprop:Generator_ChildPropName="GetVentaRows" msprop:Generator_UserRelationName="EmpleadoVenta" msprop:Generator_ParentPropName="EmpleadoRow" msprop:Generator_RelationVarName="relationEmpleadoVenta" msprop:Generator_UserParentTable="Empleado" />
     </xs:appinfo>
   </xs:annotation>

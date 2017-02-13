@@ -32,5 +32,16 @@ namespace CapaDatos.Properties {
                 return ((string)(this["TPVdb1ConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=\"C:\\Users\\Miguel\\Documents\\Visual S" +
+            "tudio 2015\\Projects\\CapaPresentacion\\CapaPresentacion\\bin\\Debug\\TPVdb1.accdb\"")]
+        public string TPVdb1ConnectionString1 {
+            get {
+                return ((string)(this["TPVdb1ConnectionString1"]));
+            }
+        }
     }
 }

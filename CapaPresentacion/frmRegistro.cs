@@ -28,9 +28,8 @@ namespace CapaPresentacion
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-
-
-            if (cmbNumeroEmpleado.Text == "")
+            
+            if (cmbNumeroEmpleado.SelectedText == "")
             {
                 MessageBox.Show("Debes indicar el número de empleado");
                 return;
@@ -42,7 +41,7 @@ namespace CapaPresentacion
                 return;
             }
 
-            if (txtNumeroRecogida.Text == "")
+            if (cmbRecogida.SelectedText == "")
             {
                 MessageBox.Show("Debes indicar el número de recogida");
                 return;
@@ -66,6 +65,13 @@ namespace CapaPresentacion
                 return;
             }
 
+            var precio = 0;
+            if (!Int32.TryParse(txtPrecio.Text, out precio))
+            {
+                MessageBox.Show("Debes introducir un precio correcto");
+                return;
+            }
+
             var fecha = DateTime.MinValue;
             if (chkFecha.CheckState == CheckState.Checked)
             {
@@ -73,7 +79,7 @@ namespace CapaPresentacion
             }
 
             _negocio.insertarArticulo(txtCodArticulo.Text, txtDescripcion.Text, txtTallaPesoLitros.Text, Int32.Parse(txtCantidad.Text),
-           fecha, Int32.Parse(txtNumeroRecogida.Text), Int32.Parse(txtPedido.Text), 0, Decimal.Parse(txtPrecio.Text), 0);
+           fecha, Int32.Parse(cmbNumeroEmpleado.SelectedText), Int32.Parse(txtPedido.Text), 0, precio, 0);
                 
             }
 
