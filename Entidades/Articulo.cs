@@ -9,8 +9,7 @@ namespace Entidades
     public class Articulo : IEquatable<Articulo>
     {
         private object p;
-
-        public int idArticulo { get; set; }
+        
         public string codigoArticulo { get; set;}
         public string descripcion { get; set; }
         public string tallaPesoLitros { get; set; }
@@ -19,17 +18,15 @@ namespace Entidades
         public int numeroPedido { get; set; }
         public int numeroVenta { get; set; }
         public decimal precio { get; set; }
-        public int iva { get; set; }
 
         public Articulo()
         {
 
         }
 
-        public Articulo(int idarticulo, string codigoArticulo, string descripcion, string tallaPesoLitros,
-            DateTime fechaCaducidad, int numeroRecogida, int numeroPedido, int numeroVenta, decimal precio,int iva)
+        public Articulo(string codigoArticulo, string descripcion, string tallaPesoLitros,
+            DateTime fechaCaducidad, int numeroRecogida, int numeroPedido, int numeroVenta, decimal precio)
         {
-            this.idArticulo = idarticulo;
             this.codigoArticulo = codigoArticulo;
             this.descripcion = descripcion;
             this.tallaPesoLitros = tallaPesoLitros;
@@ -38,7 +35,6 @@ namespace Entidades
             this.numeroPedido = numeroPedido;
             this.numeroVenta = numeroVenta;
             this.precio = precio;
-            this.iva = iva;
         }
 
         public Articulo(string codigoArticulo, string descripcion, string tallaPesoLitros, DateTime fechaCaducidad, int numeroRecogida, int numeroPedido, int numeroVenta, decimal precio, int iva)

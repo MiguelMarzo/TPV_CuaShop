@@ -23,7 +23,7 @@ namespace CapaPresentacion
             lblFecha.Text += DateTime.Today.ToShortDateString();
             chkFecha.CheckState = CheckState.Unchecked;
             calFechaCaducidad.Enabled = false;
-            cmbNumeroEmpleado.Text = "1";
+            cmbNumeroEmpleado.SelectedIndex = 1;
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
@@ -79,7 +79,7 @@ namespace CapaPresentacion
             }
 
             _negocio.insertarArticulo(txtCodArticulo.Text, txtDescripcion.Text, txtTallaPesoLitros.Text, Int32.Parse(txtCantidad.Text),
-           fecha, Int32.Parse(cmbNumeroEmpleado.SelectedText), Int32.Parse(txtPedido.Text), 0, precio, 0);
+            fecha, Int32.Parse(cmbRecogida.SelectedText), Int32.Parse(txtPedido.Text), 0, precio, cmbFamilia.SelectedText, cmbSubFamilia.SelectedText);
                 
             }
 

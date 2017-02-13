@@ -45,9 +45,9 @@ namespace CapaDatos
         {
             var articulos = from daArticulos in dsShop.Articulo
                             orderby daArticulos.descripcion ascending
-                            select new Articulo(daArticulos.idArticulo, daArticulos.codigoArticulo, daArticulos.descripcion, daArticulos.tallaPesoLitros,
+                            select new Articulo(daArticulos.codigoArticulo, daArticulos.descripcion, daArticulos.tallaPesoLitros,
                             daArticulos.fechaCaducidad, daArticulos.numeroRecogida, daArticulos.numeroPedido,
-                            daArticulos.numeroVenta, daArticulos.precio, daArticulos.idiva);
+                            daArticulos.numeroVenta, daArticulos.precio);
             
             return articulos.ToList();
         }
@@ -115,14 +115,14 @@ namespace CapaDatos
         }
 
         public string insertarArticulo(string codigoArticulo, string descripcion, string tallaPesoLitros, int stock,
-            DateTime fechaCaducidad, int numeroRecogida, int numeroPedido, int numeroVenta, decimal precio, int iva)
+            DateTime fechaCaducidad, int numeroRecogida, int numeroPedido, int numeroVenta, decimal precio, string familia, string subfamilia)
         {
-
-            Articulo art = new Articulo(codigoArticulo, descripcion, tallaPesoLitros, fechaCaducidad, numeroRecogida, numeroPedido, numeroVenta, precio, iva);
+            
+            
+            Articulo art = new Articulo(codigoArticulo, descripcion, tallaPesoLitros, fechaCaducidad, numeroRecogida, numeroPedido, numeroVenta, precio);
 
            
                 dsCuaShop.ArticuloRow drArticulo = dsShop.Articulo.NewArticuloRow();
-                drArticulo.idArticulo = (short) maxIdArticulo();
                 drArticulo.codigoArticulo = art.codigoArticulo;
                 drArticulo.descripcion = art.descripcion;
                 drArticulo.tallaPesoLitros = art.tallaPesoLitros;
@@ -131,11 +131,11 @@ namespace CapaDatos
                 drArticulo.numeroPedido = art.numeroPedido;
                 drArticulo.numeroVenta = 0;
                 drArticulo.precio = art.precio;
-                drArticulo.idiva = 1;
                 dsShop.Articulo.AddArticuloRow(drArticulo);
                 daArticulo.Update(drArticulo);
                 return "Insertado";
             try { 
+
             }
             catch
             {
@@ -143,12 +143,6 @@ namespace CapaDatos
             }
 
     }
-        public int maxIdArticulo()
-        {
-            var id = dsShop.Articulo.OrderByDescending(x => x.idArticulo).First().idArticulo;
-
-            return id + 1;
-        }
 
 
         public List<Articulo> devolverVenta(string codigoVenta)
