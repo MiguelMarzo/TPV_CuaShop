@@ -16,6 +16,7 @@ namespace CapaDatos
         private EmpleadoTableAdapter daEmpleado;
         private VentaTableAdapter daVenta;
         private FamilliaTableAdapter daFamilia;
+        private SubFamiliaTableAdapter daSubFamilia;
         public Datos()
         {
             CrearDataSetCompleto();
@@ -39,6 +40,9 @@ namespace CapaDatos
 
             daFamilia = new dsCuaShopTableAdapters.FamilliaTableAdapter();
             daFamilia.Fill(dsShop.Famillia);
+
+            daSubFamilia = new dsCuaShopTableAdapters.SubFamiliaTableAdapter();
+            daSubFamilia.Fill(dsShop.SubFamilia);
         }
 
         public List<Articulo> DevolverTodosLosArticulos()
@@ -47,11 +51,11 @@ namespace CapaDatos
                             orderby daArticulos.descripcion ascending
                             select new Articulo(daArticulos.codigoArticulo, daArticulos.descripcion, daArticulos.tallaPesoLitros,
                             daArticulos.fechaCaducidad, daArticulos.numeroRecogida, daArticulos.numeroPedido,
-                            daArticulos.numeroVenta, daArticulos.precio);
-            
+                            daArticulos.numeroVenta, daArticulos.precio, daArticulos.localizacion, daArticulos.idFamilia, daArticulos.idSubFamilia);
+
             return articulos.ToList();
         }
-        
+
         public String CrearRegistroRecogida(String entregador, short numeroArticulosEntregados, short numeroEmpleado)
         {
             dsCuaShop.RecogidaRow drRegistroRecogida = dsShop.Recogida.NewRecogidaRow();
@@ -63,14 +67,7 @@ namespace CapaDatos
             dsShop.Recogida.AddRecogidaRow(drRegistroRecogida);
             daRecogida.Update(drRegistroRecogida);
             return "Insertado";
-            //try
-            //{
 
-            //}catch
-            //{
-            //    return "Error";
-            //}
-            
         }
 
         public List<Empleado> devolverEmpleados()
@@ -86,15 +83,21 @@ namespace CapaDatos
         public List<Familia> devolverFamilias()
         {
             var familias = from daFamilia in dsShop.Famillia
-                           select new Familia(daFamilia.idFamilia, daFamilia.rutaFoto);
+                           select new Familia(daFamilia.idFamilia, daFamilia.rutaFoto, daFamilia.nombreFamilia);
             return familias.ToList();
+        }
+        public List<SubFamilia> devolverSubFamilias()
+        {
+            var subFamilias = from daSubFam in dsShop.SubFamilia
+                              select new SubFamilia(daSubFam.idSubFamilia, daSubFam.idFamilia, daSubFam.nombreSubFamilia);
+            return subFamilias.ToList();
         }
 
 
         public int maxRecogida()
         {
             var numRecogida = dsShop.Recogida.OrderByDescending(x => x.numeroRecogida).First().numeroRecogida;
-            
+
             return numRecogida + 1;
         }
 
@@ -105,44 +108,36 @@ namespace CapaDatos
                            where art.codigoArticulo.Equals(codigoArticulo)
                            select new Articulo();
 
-            if (articulo == null) {
+            if (articulo == null)
+            {
                 return "No existe";
-            }else
+            }
+            else
             {
                 return "Existe";
             }
-            
+
         }
 
         public string insertarArticulo(string codigoArticulo, string descripcion, string tallaPesoLitros, int stock,
-            DateTime fechaCaducidad, int numeroRecogida, int numeroPedido, int numeroVenta, decimal precio, string familia, string subfamilia)
+            DateTime fechaCaducidad, int numeroRecogida, int numeroPedido, int numeroVenta, decimal precio, Familia familia, SubFamilia subfamilia)
         {
-            
-            
-            Articulo art = new Articulo(codigoArticulo, descripcion, tallaPesoLitros, fechaCaducidad, numeroRecogida, numeroPedido, numeroVenta, precio);
+            Articulo art = new Articulo(codigoArticulo, descripcion, tallaPesoLitros, fechaCaducidad, numeroRecogida, 
+                numeroPedido, numeroVenta, precio, "", familia.idFamilia, subfamilia.idSubFamilia);
 
-           
-                dsCuaShop.ArticuloRow drArticulo = dsShop.Articulo.NewArticuloRow();
-                drArticulo.codigoArticulo = art.codigoArticulo;
-                drArticulo.descripcion = art.descripcion;
-                drArticulo.tallaPesoLitros = art.tallaPesoLitros;
-                drArticulo.fechaCaducidad = art.fechaCaducidad;
-                drArticulo.numeroRecogida = art.numeroRecogida;
-                drArticulo.numeroPedido = art.numeroPedido;
-                drArticulo.numeroVenta = 0;
-                drArticulo.precio = art.precio;
-                dsShop.Articulo.AddArticuloRow(drArticulo);
-                daArticulo.Update(drArticulo);
-                return "Insertado";
-            try { 
-
-            }
-            catch
-            {
-                return "Error";
-            }
-
-    }
+            dsCuaShop.ArticuloRow drArticulo = dsShop.Articulo.NewArticuloRow();
+            drArticulo.codigoArticulo = art.codigoArticulo;
+            drArticulo.descripcion = art.descripcion;
+            drArticulo.tallaPesoLitros = art.tallaPesoLitros;
+            drArticulo.fechaCaducidad = art.fechaCaducidad;
+            drArticulo.numeroRecogida = art.numeroRecogida;
+            drArticulo.numeroPedido = art.numeroPedido;
+            drArticulo.numeroVenta = 0;
+            drArticulo.precio = art.precio;
+            dsShop.Articulo.AddArticuloRow(drArticulo);
+            daArticulo.Update(drArticulo);
+            return "Insertado";
+        }
 
 
         public List<Articulo> devolverVenta(string codigoVenta)
@@ -150,7 +145,8 @@ namespace CapaDatos
             var articulos = from daArticulo in dsShop.Articulo
                             orderby daArticulo.numeroVenta.ToString().Equals(codigoVenta)
                             select new Articulo(daArticulo.codigoArticulo, daArticulo.descripcion, daArticulo.tallaPesoLitros, daArticulo.fechaCaducidad,
-                            daArticulo.numeroRecogida, daArticulo.numeroPedido, daArticulo.numeroVenta, daArticulo.precio, daArticulo.idiva);
+                            daArticulo.numeroRecogida, daArticulo.numeroPedido, daArticulo.numeroVenta, daArticulo.precio, daArticulo.localizacion,
+                            daArticulo.idFamilia, daArticulo.idSubFamilia);
 
             return articulos.ToList();
         }
@@ -159,7 +155,7 @@ namespace CapaDatos
         {
             try
             {
-                var drVenta = dsShop.Venta.FindBynumeroVenta((short) codigoVenta);
+                var drVenta = dsShop.Venta.FindBynumeroVenta((short)codigoVenta);
                 drVenta.precioVenta -= precio;
                 daVenta.Update(drVenta);
                 dsShop.Venta.GetChanges();

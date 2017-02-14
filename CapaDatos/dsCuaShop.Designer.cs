@@ -1610,6 +1610,8 @@ namespace CapaDatos {
             
             private global::System.Data.DataColumn columnrutaFoto;
             
+            private global::System.Data.DataColumn columnnombreFamilia;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public FamilliaDataTable() {
@@ -1661,6 +1663,14 @@ namespace CapaDatos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn nombreFamiliaColumn {
+                get {
+                    return this.columnnombreFamilia;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1696,11 +1706,12 @@ namespace CapaDatos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public FamilliaRow AddFamilliaRow(string idFamilia, string rutaFoto) {
+            public FamilliaRow AddFamilliaRow(string idFamilia, string rutaFoto, string nombreFamilia) {
                 FamilliaRow rowFamilliaRow = ((FamilliaRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         idFamilia,
-                        rutaFoto};
+                        rutaFoto,
+                        nombreFamilia};
                 rowFamilliaRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowFamilliaRow);
                 return rowFamilliaRow;
@@ -1732,6 +1743,7 @@ namespace CapaDatos {
             internal void InitVars() {
                 this.columnidFamilia = base.Columns["idFamilia"];
                 this.columnrutaFoto = base.Columns["rutaFoto"];
+                this.columnnombreFamilia = base.Columns["nombreFamilia"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1741,12 +1753,15 @@ namespace CapaDatos {
                 base.Columns.Add(this.columnidFamilia);
                 this.columnrutaFoto = new global::System.Data.DataColumn("rutaFoto", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnrutaFoto);
+                this.columnnombreFamilia = new global::System.Data.DataColumn("nombreFamilia", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnombreFamilia);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnidFamilia}, true));
                 this.columnidFamilia.AllowDBNull = false;
                 this.columnidFamilia.Unique = true;
                 this.columnidFamilia.MaxLength = 255;
                 this.columnrutaFoto.MaxLength = 255;
+                this.columnnombreFamilia.MaxLength = 255;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3708,6 +3723,22 @@ namespace CapaDatos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string nombreFamilia {
+                get {
+                    try {
+                        return ((string)(this[this.tableFamillia.nombreFamiliaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'nombreFamilia\' de la tabla \'Famillia\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableFamillia.nombreFamiliaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsrutaFotoNull() {
                 return this.IsNull(this.tableFamillia.rutaFotoColumn);
             }
@@ -3716,6 +3747,18 @@ namespace CapaDatos {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetrutaFotoNull() {
                 this[this.tableFamillia.rutaFotoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsnombreFamiliaNull() {
+                return this.IsNull(this.tableFamillia.nombreFamiliaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetnombreFamiliaNull() {
+                this[this.tableFamillia.nombreFamiliaColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4638,7 +4681,7 @@ namespace CapaDatos.dsCuaShopTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.OleDb.OleDbConnection();
-            this._connection.ConnectionString = global::CapaDatos.Properties.Settings.Default.TPVdb1ConnectionString1;
+            this._connection.ConnectionString = global::CapaDatos.Properties.Settings.Default.TPVdb1ConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5051,7 +5094,7 @@ namespace CapaDatos.dsCuaShopTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.OleDb.OleDbConnection();
-            this._connection.ConnectionString = global::CapaDatos.Properties.Settings.Default.TPVdb1ConnectionString1;
+            this._connection.ConnectionString = global::CapaDatos.Properties.Settings.Default.TPVdb1ConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5748,7 +5791,7 @@ namespace CapaDatos.dsCuaShopTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.OleDb.OleDbConnection();
-            this._connection.ConnectionString = global::CapaDatos.Properties.Settings.Default.TPVdb1ConnectionString1;
+            this._connection.ConnectionString = global::CapaDatos.Properties.Settings.Default.TPVdb1ConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6069,38 +6112,48 @@ namespace CapaDatos.dsCuaShopTableAdapters {
             tableMapping.DataSetTable = "Famillia";
             tableMapping.ColumnMappings.Add("idFamilia", "idFamilia");
             tableMapping.ColumnMappings.Add("rutaFoto", "rutaFoto");
+            tableMapping.ColumnMappings.Add("nombreFamilia", "nombreFamilia");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
             this._adapter.DeleteCommand.CommandText = "DELETE FROM `Famillia` WHERE ((`idFamilia` = ?) AND ((? = 1 AND `rutaFoto` IS NUL" +
-                "L) OR (`rutaFoto` = ?)))";
+                "L) OR (`rutaFoto` = ?)) AND ((? = 1 AND `nombreFamilia` IS NULL) OR (`nombreFami" +
+                "lia` = ?)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_idFamilia", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "idFamilia", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_rutaFoto", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "rutaFoto", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_rutaFoto", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "rutaFoto", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_nombreFamilia", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "nombreFamilia", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_nombreFamilia", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "nombreFamilia", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.InsertCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO `Famillia` (`idFamilia`, `rutaFoto`) VALUES (?, ?)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO `Famillia` (`idFamilia`, `rutaFoto`, `nombreFamilia`) VALUES (?, ?, ?" +
+                ")";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("idFamilia", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "idFamilia", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("rutaFoto", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "rutaFoto", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("nombreFamilia", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "nombreFamilia", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE `Famillia` SET `idFamilia` = ?, `rutaFoto` = ? WHERE ((`idFamilia` = ?) AN" +
-                "D ((? = 1 AND `rutaFoto` IS NULL) OR (`rutaFoto` = ?)))";
+            this._adapter.UpdateCommand.CommandText = "UPDATE `Famillia` SET `idFamilia` = ?, `rutaFoto` = ?, `nombreFamilia` = ? WHERE " +
+                "((`idFamilia` = ?) AND ((? = 1 AND `rutaFoto` IS NULL) OR (`rutaFoto` = ?)) AND " +
+                "((? = 1 AND `nombreFamilia` IS NULL) OR (`nombreFamilia` = ?)))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("idFamilia", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "idFamilia", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("rutaFoto", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "rutaFoto", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("nombreFamilia", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "nombreFamilia", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_idFamilia", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "idFamilia", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_rutaFoto", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "rutaFoto", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_rutaFoto", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "rutaFoto", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_nombreFamilia", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "nombreFamilia", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_nombreFamilia", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "nombreFamilia", global::System.Data.DataRowVersion.Original, false, null));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.OleDb.OleDbConnection();
-            this._connection.ConnectionString = global::CapaDatos.Properties.Settings.Default.TPVdb1ConnectionString1;
+            this._connection.ConnectionString = global::CapaDatos.Properties.Settings.Default.TPVdb1ConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6109,7 +6162,7 @@ namespace CapaDatos.dsCuaShopTableAdapters {
             this._commandCollection = new global::System.Data.OleDb.OleDbCommand[1];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT idFamilia, rutaFoto FROM Famillia";
+            this._commandCollection[0].CommandText = "SELECT idFamilia, rutaFoto, nombreFamilia FROM Famillia";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -6170,7 +6223,7 @@ namespace CapaDatos.dsCuaShopTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(string Original_idFamilia, string Original_rutaFoto) {
+        public virtual int Delete(string Original_idFamilia, string Original_rutaFoto, string Original_nombreFamilia) {
             if ((Original_idFamilia == null)) {
                 throw new global::System.ArgumentNullException("Original_idFamilia");
             }
@@ -6184,6 +6237,14 @@ namespace CapaDatos.dsCuaShopTableAdapters {
             else {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
                 this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_rutaFoto));
+            }
+            if ((Original_nombreFamilia == null)) {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_nombreFamilia));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -6205,7 +6266,7 @@ namespace CapaDatos.dsCuaShopTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string idFamilia, string rutaFoto) {
+        public virtual int Insert(string idFamilia, string rutaFoto, string nombreFamilia) {
             if ((idFamilia == null)) {
                 throw new global::System.ArgumentNullException("idFamilia");
             }
@@ -6217,6 +6278,12 @@ namespace CapaDatos.dsCuaShopTableAdapters {
             }
             else {
                 this.Adapter.InsertCommand.Parameters[1].Value = ((string)(rutaFoto));
+            }
+            if ((nombreFamilia == null)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(nombreFamilia));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -6238,7 +6305,7 @@ namespace CapaDatos.dsCuaShopTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string idFamilia, string rutaFoto, string Original_idFamilia, string Original_rutaFoto) {
+        public virtual int Update(string idFamilia, string rutaFoto, string nombreFamilia, string Original_idFamilia, string Original_rutaFoto, string Original_nombreFamilia) {
             if ((idFamilia == null)) {
                 throw new global::System.ArgumentNullException("idFamilia");
             }
@@ -6251,19 +6318,33 @@ namespace CapaDatos.dsCuaShopTableAdapters {
             else {
                 this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(rutaFoto));
             }
+            if ((nombreFamilia == null)) {
+                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(nombreFamilia));
+            }
             if ((Original_idFamilia == null)) {
                 throw new global::System.ArgumentNullException("Original_idFamilia");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Original_idFamilia));
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Original_idFamilia));
             }
             if ((Original_rutaFoto == null)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Original_rutaFoto));
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Original_rutaFoto));
+            }
+            if ((Original_nombreFamilia == null)) {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_nombreFamilia));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -6285,8 +6366,8 @@ namespace CapaDatos.dsCuaShopTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string rutaFoto, string Original_idFamilia, string Original_rutaFoto) {
-            return this.Update(Original_idFamilia, rutaFoto, Original_idFamilia, Original_rutaFoto);
+        public virtual int Update(string rutaFoto, string nombreFamilia, string Original_idFamilia, string Original_rutaFoto, string Original_nombreFamilia) {
+            return this.Update(Original_idFamilia, rutaFoto, nombreFamilia, Original_idFamilia, Original_rutaFoto, Original_nombreFamilia);
         }
     }
     
@@ -6442,7 +6523,7 @@ namespace CapaDatos.dsCuaShopTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.OleDb.OleDbConnection();
-            this._connection.ConnectionString = global::CapaDatos.Properties.Settings.Default.TPVdb1ConnectionString1;
+            this._connection.ConnectionString = global::CapaDatos.Properties.Settings.Default.TPVdb1ConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6776,7 +6857,7 @@ namespace CapaDatos.dsCuaShopTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.OleDb.OleDbConnection();
-            this._connection.ConnectionString = global::CapaDatos.Properties.Settings.Default.TPVdb1ConnectionString1;
+            this._connection.ConnectionString = global::CapaDatos.Properties.Settings.Default.TPVdb1ConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7196,7 +7277,7 @@ namespace CapaDatos.dsCuaShopTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.OleDb.OleDbConnection();
-            this._connection.ConnectionString = global::CapaDatos.Properties.Settings.Default.TPVdb1ConnectionString1;
+            this._connection.ConnectionString = global::CapaDatos.Properties.Settings.Default.TPVdb1ConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7583,7 +7664,7 @@ namespace CapaDatos.dsCuaShopTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.OleDb.OleDbConnection();
-            this._connection.ConnectionString = global::CapaDatos.Properties.Settings.Default.TPVdb1ConnectionString1;
+            this._connection.ConnectionString = global::CapaDatos.Properties.Settings.Default.TPVdb1ConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

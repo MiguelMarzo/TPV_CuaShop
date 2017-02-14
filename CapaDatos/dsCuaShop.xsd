@@ -10,7 +10,7 @@
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="AdminTableAdapter" GeneratorDataComponentClassName="AdminTableAdapter" Name="Admin" UserDataComponentName="AdminTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="TPVdb1ConnectionString1 (Settings)" DbObjectName="Admin" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="TPVdb1ConnectionString (Settings)" DbObjectName="Admin" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM `Admin` WHERE ((`Id` = ?) AND ((? = 1 AND `Usuario` IS NULL) OR (`Usuario` = ?)) AND ((? = 1 AND `Contraseña` IS NULL) OR (`Contraseña` = ?)))</CommandText>
@@ -63,7 +63,7 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ArticuloTableAdapter" GeneratorDataComponentClassName="ArticuloTableAdapter" Name="Articulo" UserDataComponentName="ArticuloTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="TPVdb1ConnectionString1 (Settings)" DbObjectName="Articulo" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="TPVdb1ConnectionString (Settings)" DbObjectName="Articulo" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM `Articulo` WHERE ((`codigoArticulo` = ?) AND ((? = 1 AND `tallaPesoLitros` IS NULL) OR (`tallaPesoLitros` = ?)) AND ((? = 1 AND `stock` IS NULL) OR (`stock` = ?)) AND ((? = 1 AND `fechaCaducidad` IS NULL) OR (`fechaCaducidad` = ?)) AND ((? = 1 AND `numeroRecogida` IS NULL) OR (`numeroRecogida` = ?)) AND ((? = 1 AND `numeroPedido` IS NULL) OR (`numeroPedido` = ?)) AND ((? = 1 AND `numeroVenta` IS NULL) OR (`numeroVenta` = ?)) AND ((? = 1 AND `precio` IS NULL) OR (`precio` = ?)) AND ((? = 1 AND `idiva` IS NULL) OR (`idiva` = ?)) AND ((? = 1 AND `localizacion` IS NULL) OR (`localizacion` = ?)) AND ((? = 1 AND `idFamilia` IS NULL) OR (`idFamilia` = ?)) AND ((? = 1 AND `idSubFamilia` IS NULL) OR (`idSubFamilia` = ?)))</CommandText>
@@ -184,7 +184,7 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="EmpleadoTableAdapter" GeneratorDataComponentClassName="EmpleadoTableAdapter" Name="Empleado" UserDataComponentName="EmpleadoTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="TPVdb1ConnectionString1 (Settings)" DbObjectName="Empleado" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="TPVdb1ConnectionString (Settings)" DbObjectName="Empleado" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM `Empleado` WHERE ((`numeroEmpleado` = ?) AND ((? = 1 AND `rutaFoto` IS NULL) OR (`rutaFoto` = ?)) AND ((? = 1 AND `nombreEmpleado` IS NULL) OR (`nombreEmpleado` = ?)))</CommandText>
@@ -239,41 +239,47 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="FamilliaTableAdapter" GeneratorDataComponentClassName="FamilliaTableAdapter" Name="Famillia" UserDataComponentName="FamilliaTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="TPVdb1ConnectionString1 (Settings)" DbObjectName="Famillia" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="TPVdb1ConnectionString (Settings)" DbObjectName="Famillia" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>DELETE FROM `Famillia` WHERE ((`idFamilia` = ?) AND ((? = 1 AND `rutaFoto` IS NULL) OR (`rutaFoto` = ?)))</CommandText>
+                    <CommandText>DELETE FROM `Famillia` WHERE ((`idFamilia` = ?) AND ((? = 1 AND `rutaFoto` IS NULL) OR (`rutaFoto` = ?)) AND ((? = 1 AND `nombreFamilia` IS NULL) OR (`nombreFamilia` = ?)))</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_idFamilia" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="idFamilia" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_rutaFoto" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="rutaFoto" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_rutaFoto" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="rutaFoto" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_nombreFamilia" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="nombreFamilia" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_nombreFamilia" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="nombreFamilia" SourceColumnNullMapping="false" SourceVersion="Original" />
                     </Parameters>
                   </DbCommand>
                 </DeleteCommand>
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>INSERT INTO `Famillia` (`idFamilia`, `rutaFoto`) VALUES (?, ?)</CommandText>
+                    <CommandText>INSERT INTO `Famillia` (`idFamilia`, `rutaFoto`, `nombreFamilia`) VALUES (?, ?, ?)</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="idFamilia" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="idFamilia" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="rutaFoto" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="rutaFoto" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="nombreFamilia" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="nombreFamilia" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
                 </InsertCommand>
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT idFamilia, rutaFoto FROM Famillia</CommandText>
+                    <CommandText>SELECT idFamilia, rutaFoto, nombreFamilia FROM Famillia</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>UPDATE `Famillia` SET `idFamilia` = ?, `rutaFoto` = ? WHERE ((`idFamilia` = ?) AND ((? = 1 AND `rutaFoto` IS NULL) OR (`rutaFoto` = ?)))</CommandText>
+                    <CommandText>UPDATE `Famillia` SET `idFamilia` = ?, `rutaFoto` = ?, `nombreFamilia` = ? WHERE ((`idFamilia` = ?) AND ((? = 1 AND `rutaFoto` IS NULL) OR (`rutaFoto` = ?)) AND ((? = 1 AND `nombreFamilia` IS NULL) OR (`nombreFamilia` = ?)))</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="idFamilia" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="idFamilia" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="rutaFoto" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="rutaFoto" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="nombreFamilia" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="nombreFamilia" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_idFamilia" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="idFamilia" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_rutaFoto" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="rutaFoto" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_rutaFoto" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="rutaFoto" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_nombreFamilia" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="nombreFamilia" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_nombreFamilia" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="nombreFamilia" SourceColumnNullMapping="false" SourceVersion="Original" />
                     </Parameters>
                   </DbCommand>
                 </UpdateCommand>
@@ -282,12 +288,13 @@
             <Mappings>
               <Mapping SourceColumn="idFamilia" DataSetColumn="idFamilia" />
               <Mapping SourceColumn="rutaFoto" DataSetColumn="rutaFoto" />
+              <Mapping SourceColumn="nombreFamilia" DataSetColumn="nombreFamilia" />
             </Mappings>
             <Sources />
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="IvaTableAdapter" GeneratorDataComponentClassName="IvaTableAdapter" Name="Iva" UserDataComponentName="IvaTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="TPVdb1ConnectionString1 (Settings)" DbObjectName="Iva" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="TPVdb1ConnectionString (Settings)" DbObjectName="Iva" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM `Iva` WHERE ((`IdIva` = ?) AND ((? = 1 AND `Tipo` IS NULL) OR (`Tipo` = ?)))</CommandText>
@@ -333,7 +340,7 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="RecogidaTableAdapter" GeneratorDataComponentClassName="RecogidaTableAdapter" Name="Recogida" UserDataComponentName="RecogidaTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="TPVdb1ConnectionString1 (Settings)" DbObjectName="Recogida" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="TPVdb1ConnectionString (Settings)" DbObjectName="Recogida" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM `Recogida` WHERE ((`numeroRecogida` = ?) AND ((? = 1 AND `fecha` IS NULL) OR (`fecha` = ?)) AND ((? = 1 AND `cantidadArticulos` IS NULL) OR (`cantidadArticulos` = ?)) AND ((? = 1 AND `entregador` IS NULL) OR (`entregador` = ?)) AND ((? = 1 AND `numeroEmpleado` IS NULL) OR (`numeroEmpleado` = ?)))</CommandText>
@@ -402,7 +409,7 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SubFamiliaTableAdapter" GeneratorDataComponentClassName="SubFamiliaTableAdapter" Name="SubFamilia" UserDataComponentName="SubFamiliaTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="TPVdb1ConnectionString1 (Settings)" DbObjectName="SubFamilia" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="TPVdb1ConnectionString (Settings)" DbObjectName="SubFamilia" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM `SubFamilia` WHERE ((`idSubFamilia` = ?) AND ((? = 1 AND `nombreSubFamilia` IS NULL) OR (`nombreSubFamilia` = ?)) AND ((? = 1 AND `idFamilia` IS NULL) OR (`idFamilia` = ?)))</CommandText>
@@ -457,7 +464,7 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="VentaTableAdapter" GeneratorDataComponentClassName="VentaTableAdapter" Name="Venta" UserDataComponentName="VentaTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="TPVdb1ConnectionString1 (Settings)" DbObjectName="Venta" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="TPVdb1ConnectionString (Settings)" DbObjectName="Venta" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM `Venta` WHERE ((`numeroVenta` = ?) AND ((? = 1 AND `numeroEmpleado` IS NULL) OR (`numeroEmpleado` = ?)) AND ((? = 1 AND `fechaVenta` IS NULL) OR (`fechaVenta` = ?)) AND ((? = 1 AND `precioVenta` IS NULL) OR (`precioVenta` = ?)))</CommandText>
@@ -633,6 +640,13 @@
                 </xs:simpleType>
               </xs:element>
               <xs:element name="rutaFoto" msprop:Generator_ColumnVarNameInTable="columnrutaFoto" msprop:Generator_ColumnPropNameInRow="rutaFoto" msprop:Generator_ColumnPropNameInTable="rutaFotoColumn" msprop:Generator_UserColumnName="rutaFoto" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="nombreFamilia" msprop:Generator_ColumnVarNameInTable="columnnombreFamilia" msprop:Generator_ColumnPropNameInRow="nombreFamilia" msprop:Generator_ColumnPropNameInTable="nombreFamiliaColumn" msprop:Generator_UserColumnName="nombreFamilia" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="255" />

@@ -10,16 +10,18 @@ namespace Entidades
     {
         public String idFamilia;
         public String rutaFoto;
+        public String nombreFamilia;
 
         public Familia()
         {
 
         }
 
-        public Familia(String idFamilia, String rutaFoto)
+        public Familia(String idFamilia, String rutaFoto, String nombreFamilia)
         {
             this.idFamilia = idFamilia;
             this.rutaFoto = rutaFoto;
+            this.nombreFamilia = nombreFamilia;
         }
 
         public bool Equals(Familia other)

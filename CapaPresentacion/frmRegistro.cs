@@ -8,22 +8,33 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaNegocio;
+using Entidades;
 
 namespace CapaPresentacion
 {
     public partial class frmRegistro : Form
     {
         Negocio _negocio = new Negocio();
+        private List<Familia> familias;
+        private List<SubFamilia> subFamilias;
         public frmRegistro()
         {
             InitializeComponent();
+            cmbFamilia.DisplayMember = "nombreFamilia";
         }
         private void frmRegistro_Load(object sender, EventArgs e)
         {
+            subFamilias = new List<SubFamilia>();
+            subFamilias = _negocio.devolverSubFamilias();
+            cmbSubFamilia.DataSource = subFamilias;
+            familias = new List<Familia>();
+            familias = _negocio.devolverFamilias();
+            cmbFamilia.DataSource = familias;
+            
             lblFecha.Text += DateTime.Today.ToShortDateString();
             chkFecha.CheckState = CheckState.Unchecked;
             calFechaCaducidad.Enabled = false;
-            cmbNumeroEmpleado.SelectedIndex = 1;
+            //cmbNumeroEmpleado.SelectedIndex = 0;
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
@@ -78,9 +89,11 @@ namespace CapaPresentacion
                 fecha = calFechaCaducidad.SelectionStart;
             }
 
-            _negocio.insertarArticulo(txtCodArticulo.Text, txtDescripcion.Text, txtTallaPesoLitros.Text, Int32.Parse(txtCantidad.Text),
-            fecha, Int32.Parse(cmbRecogida.SelectedText), Int32.Parse(txtPedido.Text), 0, precio, cmbFamilia.SelectedText, cmbSubFamilia.SelectedText);
-                
+            var result =  _negocio.insertarArticulo(txtCodArticulo.Text, txtDescripcion.Text, txtTallaPesoLitros.Text, Int32.Parse(txtCantidad.Text),
+            fecha, Int32.Parse(cmbRecogida.SelectedText), Int32.Parse(txtPedido.Text), 0, precio, (Familia) cmbFamilia.SelectedItem, 
+            (SubFamilia) cmbSubFamilia.SelectedItem);
+
+            MessageBox.Show(result);
             }
 
         

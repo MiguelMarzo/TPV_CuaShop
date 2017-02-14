@@ -7,9 +7,7 @@ using System.Threading.Tasks;
 namespace Entidades
 {
     public class Articulo : IEquatable<Articulo>
-    {
-        private object p;
-        
+    {        
         public string codigoArticulo { get; set;}
         public string descripcion { get; set; }
         public string tallaPesoLitros { get; set; }
@@ -18,6 +16,11 @@ namespace Entidades
         public int numeroPedido { get; set; }
         public int numeroVenta { get; set; }
         public decimal precio { get; set; }
+        public int idIva { get; set; }
+
+        public String localizacion { get; set; }
+        public String idFamilia { get; set; }
+        public String idSubFamilia { get; set; }
 
         public Articulo()
         {
@@ -25,7 +28,8 @@ namespace Entidades
         }
 
         public Articulo(string codigoArticulo, string descripcion, string tallaPesoLitros,
-            DateTime fechaCaducidad, int numeroRecogida, int numeroPedido, int numeroVenta, decimal precio)
+            DateTime fechaCaducidad, int numeroRecogida, int numeroPedido, int numeroVenta, decimal precio, 
+            String localizacion, String idFamilia, String idSubFamilia)
         {
             this.codigoArticulo = codigoArticulo;
             this.descripcion = descripcion;
@@ -35,20 +39,9 @@ namespace Entidades
             this.numeroPedido = numeroPedido;
             this.numeroVenta = numeroVenta;
             this.precio = precio;
-        }
-
-        public Articulo(string codigoArticulo, string descripcion, string tallaPesoLitros, DateTime fechaCaducidad, int numeroRecogida, int numeroPedido, int numeroVenta, decimal precio, int iva)
-        {
-            
-            this.codigoArticulo = codigoArticulo;
-            this.descripcion = descripcion;
-            this.tallaPesoLitros = tallaPesoLitros;
-            this.fechaCaducidad = fechaCaducidad;
-            this.numeroRecogida = numeroRecogida;
-            this.numeroPedido = numeroPedido;
-            this.numeroVenta = numeroVenta;
-            this.precio = precio;
-            this.iva = iva;
+            this.localizacion = localizacion;
+            this.idFamilia = idFamilia;
+            this.idSubFamilia = idSubFamilia;
         }
 
         public bool Equals(Articulo other)

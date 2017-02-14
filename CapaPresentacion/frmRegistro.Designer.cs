@@ -56,6 +56,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.cmbSubFamilia = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.txtLocalizacion = new System.Windows.Forms.TextBox();
+            this.lblLocalizacion = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblTitulo
@@ -195,7 +197,7 @@
             this.lblCantidad.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblCantidad.AutoSize = true;
             this.lblCantidad.Font = new System.Drawing.Font("Rockwell", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCantidad.Location = new System.Drawing.Point(200, 388);
+            this.lblCantidad.Location = new System.Drawing.Point(382, 390);
             this.lblCantidad.Name = "lblCantidad";
             this.lblCantidad.Size = new System.Drawing.Size(121, 27);
             this.lblCantidad.TabIndex = 7;
@@ -228,7 +230,7 @@
             // txtCantidad
             // 
             this.txtCantidad.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtCantidad.Location = new System.Drawing.Point(374, 392);
+            this.txtCantidad.Location = new System.Drawing.Point(556, 394);
             this.txtCantidad.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.Size = new System.Drawing.Size(104, 22);
@@ -237,7 +239,7 @@
             // txtPedido
             // 
             this.txtPedido.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtPedido.Location = new System.Drawing.Point(371, 450);
+            this.txtPedido.Location = new System.Drawing.Point(553, 452);
             this.txtPedido.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPedido.Name = "txtPedido";
             this.txtPedido.Size = new System.Drawing.Size(104, 22);
@@ -248,7 +250,7 @@
             this.lblPedido.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblPedido.AutoSize = true;
             this.lblPedido.Font = new System.Drawing.Font("Rockwell", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPedido.Location = new System.Drawing.Point(221, 446);
+            this.lblPedido.Location = new System.Drawing.Point(403, 448);
             this.lblPedido.Name = "lblPedido";
             this.lblPedido.Size = new System.Drawing.Size(98, 27);
             this.lblPedido.TabIndex = 19;
@@ -259,7 +261,7 @@
             this.lblOjo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblOjo.AutoSize = true;
             this.lblOjo.Font = new System.Drawing.Font("Rockwell", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOjo.Location = new System.Drawing.Point(223, 476);
+            this.lblOjo.Location = new System.Drawing.Point(405, 478);
             this.lblOjo.Name = "lblOjo";
             this.lblOjo.Size = new System.Drawing.Size(85, 17);
             this.lblOjo.TabIndex = 21;
@@ -268,7 +270,7 @@
             // txtPrecio
             // 
             this.txtPrecio.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtPrecio.Location = new System.Drawing.Point(657, 450);
+            this.txtPrecio.Location = new System.Drawing.Point(782, 446);
             this.txtPrecio.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(199, 22);
@@ -279,7 +281,7 @@
             this.lblPrecio.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblPrecio.AutoSize = true;
             this.lblPrecio.Font = new System.Drawing.Font("Rockwell", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrecio.Location = new System.Drawing.Point(560, 446);
+            this.lblPrecio.Location = new System.Drawing.Point(685, 445);
             this.lblPrecio.Name = "lblPrecio";
             this.lblPrecio.Size = new System.Drawing.Size(91, 27);
             this.lblPrecio.TabIndex = 22;
@@ -319,7 +321,7 @@
             // 
             this.cmbFamilia.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cmbFamilia.FormattingEnabled = true;
-            this.cmbFamilia.Location = new System.Drawing.Point(374, 289);
+            this.cmbFamilia.Location = new System.Drawing.Point(244, 397);
             this.cmbFamilia.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbFamilia.Name = "cmbFamilia";
             this.cmbFamilia.Size = new System.Drawing.Size(129, 24);
@@ -330,7 +332,7 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Rockwell", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(221, 286);
+            this.label1.Location = new System.Drawing.Point(91, 394);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(100, 27);
             this.label1.TabIndex = 27;
@@ -340,7 +342,7 @@
             // 
             this.cmbSubFamilia.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cmbSubFamilia.FormattingEnabled = true;
-            this.cmbSubFamilia.Location = new System.Drawing.Point(374, 334);
+            this.cmbSubFamilia.Location = new System.Drawing.Point(244, 442);
             this.cmbSubFamilia.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbSubFamilia.Name = "cmbSubFamilia";
             this.cmbSubFamilia.Size = new System.Drawing.Size(129, 24);
@@ -351,11 +353,31 @@
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Rockwell", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(178, 329);
+            this.label2.Location = new System.Drawing.Point(48, 437);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(143, 27);
             this.label2.TabIndex = 29;
             this.label2.Text = "SubFamilia:";
+            // 
+            // txtLocalizacion
+            // 
+            this.txtLocalizacion.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtLocalizacion.Location = new System.Drawing.Point(244, 354);
+            this.txtLocalizacion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtLocalizacion.Name = "txtLocalizacion";
+            this.txtLocalizacion.Size = new System.Drawing.Size(129, 22);
+            this.txtLocalizacion.TabIndex = 32;
+            // 
+            // lblLocalizacion
+            // 
+            this.lblLocalizacion.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblLocalizacion.AutoSize = true;
+            this.lblLocalizacion.Font = new System.Drawing.Font("Rockwell", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLocalizacion.Location = new System.Drawing.Point(33, 349);
+            this.lblLocalizacion.Name = "lblLocalizacion";
+            this.lblLocalizacion.Size = new System.Drawing.Size(158, 27);
+            this.lblLocalizacion.TabIndex = 31;
+            this.lblLocalizacion.Text = "Localización:";
             // 
             // frmRegistro
             // 
@@ -364,6 +386,8 @@
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1353, 645);
+            this.Controls.Add(this.txtLocalizacion);
+            this.Controls.Add(this.lblLocalizacion);
             this.Controls.Add(this.cmbSubFamilia);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cmbFamilia);
@@ -434,5 +458,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cmbSubFamilia;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtLocalizacion;
+        private System.Windows.Forms.Label lblLocalizacion;
     }
 }

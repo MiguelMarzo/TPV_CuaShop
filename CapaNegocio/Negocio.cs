@@ -35,7 +35,7 @@ namespace CapaNegocio
         }
 
         public string insertarArticulo(string codigoArticulo, string descripcion, string tallaPesoLitros, int cantidad,
-            DateTime fechaCaducidad, int numeroRecogida, int numeroPedido, int numeroVenta, decimal precio, string familia, string subfamilia)
+            DateTime fechaCaducidad, int numeroRecogida, int numeroPedido, int numeroVenta, decimal precio, Familia familia, SubFamilia subfamilia)
         {
             return _datos.insertarArticulo(codigoArticulo, descripcion, tallaPesoLitros, cantidad,
                 fechaCaducidad, numeroRecogida, numeroPedido,numeroVenta, precio, familia, subfamilia);
@@ -54,6 +54,11 @@ namespace CapaNegocio
         public List<Familia> devolverFamilias()
         {
             return _datos.devolverFamilias();
+        }
+
+        public List<SubFamilia> devolverSubFamilias()
+        {
+            return _datos.devolverSubFamilias();
         }
     }
 }
