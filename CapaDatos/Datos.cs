@@ -89,10 +89,17 @@ namespace CapaDatos
         public List<SubFamilia> devolverSubFamilias()
         {
             var subFamilias = from daSubFam in dsShop.SubFamilia
-                              select new SubFamilia(daSubFam.idSubFamilia, daSubFam.idFamilia, daSubFam.nombreSubFamilia);
+                              select new SubFamilia(daSubFam.idSubFamilia, daSubFam.idFamilia, daSubFam.nombreSubFamilia, daSubFam.idIva);
             return subFamilias.ToList();
         }
 
+        public List<Recogida> devolverRecogidas()
+        {
+            var recogidas = from daRecogida in dsShop.Recogida
+                            select new Recogida(daRecogida.numeroRecogida, daRecogida.fecha, daRecogida.cantidadArticulos, 
+                            daRecogida.entregador, daRecogida.numeroEmpleado);
+            return recogidas.ToList();
+        }
 
         public int maxRecogida()
         {
@@ -120,10 +127,10 @@ namespace CapaDatos
         }
 
         public string insertarArticulo(string codigoArticulo, string descripcion, string tallaPesoLitros, int stock,
-            int numeroRecogida, int numeroPedido, int numeroVenta, decimal precio, Familia familia, SubFamilia subfamilia)
+            int numeroRecogida, int numeroPedido, int numeroVenta, decimal precio, String localizacion, Familia familia, SubFamilia subfamilia)
         {
             Articulo art = new Articulo(codigoArticulo, descripcion, tallaPesoLitros, numeroRecogida, 
-                numeroPedido, numeroVenta, precio, "", familia.idFamilia, subfamilia.idSubFamilia);
+                numeroPedido, numeroVenta, precio, localizacion, familia.idFamilia, subfamilia.idSubFamilia);
 
             dsCuaShop.ArticuloRow drArticulo = dsShop.Articulo.NewArticuloRow();
             drArticulo.codigoArticulo = art.codigoArticulo;
@@ -133,6 +140,10 @@ namespace CapaDatos
             drArticulo.numeroPedido = art.numeroPedido;
             drArticulo.numeroVenta = 0;
             drArticulo.precio = art.precio;
+            drArticulo.localizacion = art.localizacion;
+            drArticulo.idFamilia = art.idFamilia;
+            drArticulo.idSubFamilia = art.idSubFamilia;
+            drArticulo.idiva = subfamilia.idIva;
             dsShop.Articulo.AddArticuloRow(drArticulo);
             daArticulo.Update(drArticulo);
             return "Insertado";

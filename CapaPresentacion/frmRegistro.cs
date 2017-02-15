@@ -17,6 +17,7 @@ namespace CapaPresentacion
         Negocio _negocio = new Negocio();
         private List<Familia> familias;
         private List<SubFamilia> subFamilias;
+        private List<Recogida> recogidas;
         public frmRegistro()
         {
             InitializeComponent();
@@ -29,32 +30,28 @@ namespace CapaPresentacion
             cmbSubFamilia.DataSource = subFamilias;
             familias = new List<Familia>();
             familias = _negocio.devolverFamilias();
+            recogidas = _negocio.devolverRecogidas();
+            cmbRecogida.DataSource = recogidas;
+            cmbRecogida.DisplayMember = "numeroRecogida";
             cmbFamilia.DataSource = familias;
-            
-            lblFecha.Text += DateTime.Today.ToShortDateString();
-            chkFecha.CheckState = CheckState.Unchecked;
-            calFechaCaducidad.Enabled = false;
-            //cmbNumeroEmpleado.SelectedIndex = 0;
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            
-            if (cmbNumeroEmpleado.SelectedText == "")
+            int estanteria = 0;
+            int estante = 0;
+            int altura = 0;
+            if ((txtEstante.Text == "") || (txtEstanteria.Text == "") || (txtAltura.Text == "") || !(int.TryParse(txtEstanteria.Text, out estanteria)) ||
+                !(int.TryParse(txtEstante.Text, out estante)) || !(int.TryParse(txtAltura.Text, out altura)))
             {
-                MessageBox.Show("Debes indicar el número de empleado");
+                MessageBox.Show("Estante, estanteria o altura incorrectos");
                 return;
             }
+            String localizacion = estanteria + "." + estante + "." + altura;
 
             if (txtCodArticulo.Text == "")
             {
                 MessageBox.Show("Debes indicar el código del artículo");
-                return;
-            }
-
-            if (cmbRecogida.SelectedText == "")
-            {
-                MessageBox.Show("Debes indicar el número de recogida");
                 return;
             }
 
@@ -76,33 +73,28 @@ namespace CapaPresentacion
                 return;
             }
 
-            var precio = 0;
-            if (!Int32.TryParse(txtPrecio.Text, out precio))
+            Decimal precio = 0;
+            if (!Decimal.TryParse(txtPrecio.Text, out precio))
             {
                 MessageBox.Show("Debes introducir un precio correcto");
                 return;
             }
-
-            var result =  _negocio.insertarArticulo(txtCodArticulo.Text, txtDescripcion.Text, txtTallaPesoLitros.Text, Int32.Parse(txtCantidad.Text),
-            Int32.Parse(cmbRecogida.SelectedText), Int32.Parse(txtPedido.Text), 0, precio, (Familia) cmbFamilia.SelectedItem, 
-            (SubFamilia) cmbSubFamilia.SelectedItem);
+            Recogida recogida = new Recogida();
+            recogida = (Recogida) cmbRecogida.SelectedItem;
+            int cantidad = int.Parse(txtCantidad.Text);
+            int numPedido;
+            if (!(int.TryParse(txtPedido.Text, out numPedido)))
+            {
+                numPedido = 0;
+            }
+            var result = _negocio.insertarArticulo(txtCodArticulo.Text, txtDescripcion.Text, txtTallaPesoLitros.Text, cantidad,
+            recogida.numeroRecogida, numPedido, 0, precio, localizacion, (Familia)cmbFamilia.SelectedItem,
+            (SubFamilia)cmbSubFamilia.SelectedItem);
 
             MessageBox.Show(result);
-            }
-
-        
-
-        private void chkFecha_CheckedChanged(object sender, EventArgs e)
-        {
-            if (chkFecha.CheckState == CheckState.Checked)
-            {
-                calFechaCaducidad.Enabled = true;
-            }
-            else
-            {
-                calFechaCaducidad.Enabled = false;
-            }
         }
+
+
 
         private void btnVolver_Click(object sender, EventArgs e)
         {

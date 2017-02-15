@@ -30,7 +30,6 @@
         {
             this.lblTitulo = new System.Windows.Forms.Label();
             this.lblFecha = new System.Windows.Forms.Label();
-            this.lblEmpleado = new System.Windows.Forms.Label();
             this.lblCodArticulo = new System.Windows.Forms.Label();
             this.lblDescripcion = new System.Windows.Forms.Label();
             this.txtCodArticulo = new System.Windows.Forms.TextBox();
@@ -38,10 +37,8 @@
             this.lblNumeroRecogida = new System.Windows.Forms.Label();
             this.txtTallaPesoLitros = new System.Windows.Forms.TextBox();
             this.lblTallaPesoLitros = new System.Windows.Forms.Label();
-            this.cmbNumeroEmpleado = new System.Windows.Forms.ComboBox();
             this.btnVolver = new System.Windows.Forms.Button();
             this.lblCantidad = new System.Windows.Forms.Label();
-            this.lblFechaCaducidad = new System.Windows.Forms.Label();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.txtCantidad = new System.Windows.Forms.TextBox();
             this.txtPedido = new System.Windows.Forms.TextBox();
@@ -49,15 +46,17 @@
             this.lblOjo = new System.Windows.Forms.Label();
             this.txtPrecio = new System.Windows.Forms.TextBox();
             this.lblPrecio = new System.Windows.Forms.Label();
-            this.calFechaCaducidad = new System.Windows.Forms.MonthCalendar();
-            this.chkFecha = new System.Windows.Forms.CheckBox();
             this.cmbRecogida = new System.Windows.Forms.ComboBox();
             this.cmbFamilia = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.cmbSubFamilia = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtLocalizacion = new System.Windows.Forms.TextBox();
-            this.lblLocalizacion = new System.Windows.Forms.Label();
+            this.txtEstanteria = new System.Windows.Forms.TextBox();
+            this.lblEstanteria = new System.Windows.Forms.Label();
+            this.lblEstante = new System.Windows.Forms.Label();
+            this.txtEstante = new System.Windows.Forms.TextBox();
+            this.txtAltura = new System.Windows.Forms.TextBox();
+            this.lblAltura = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblTitulo
@@ -79,23 +78,11 @@
             this.lblFecha.AutoSize = true;
             this.lblFecha.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblFecha.Font = new System.Drawing.Font("Rockwell", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFecha.Location = new System.Drawing.Point(1109, 84);
+            this.lblFecha.Location = new System.Drawing.Point(1027, 49);
             this.lblFecha.Name = "lblFecha";
             this.lblFecha.Size = new System.Drawing.Size(88, 29);
             this.lblFecha.TabIndex = 1;
             this.lblFecha.Text = "Fecha:";
-            // 
-            // lblEmpleado
-            // 
-            this.lblEmpleado.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblEmpleado.AutoSize = true;
-            this.lblEmpleado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblEmpleado.Font = new System.Drawing.Font("Rockwell", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmpleado.Location = new System.Drawing.Point(1029, 38);
-            this.lblEmpleado.Name = "lblEmpleado";
-            this.lblEmpleado.Size = new System.Drawing.Size(167, 29);
-            this.lblEmpleado.TabIndex = 2;
-            this.lblEmpleado.Text = "Nº Empleado:";
             // 
             // lblCodArticulo
             // 
@@ -169,16 +156,6 @@
             this.lblTallaPesoLitros.TabIndex = 11;
             this.lblTallaPesoLitros.Text = "Talla, peso o litros:";
             // 
-            // cmbNumeroEmpleado
-            // 
-            this.cmbNumeroEmpleado.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.cmbNumeroEmpleado.FormattingEnabled = true;
-            this.cmbNumeroEmpleado.Location = new System.Drawing.Point(1235, 38);
-            this.cmbNumeroEmpleado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cmbNumeroEmpleado.Name = "cmbNumeroEmpleado";
-            this.cmbNumeroEmpleado.Size = new System.Drawing.Size(105, 24);
-            this.cmbNumeroEmpleado.TabIndex = 15;
-            // 
             // btnVolver
             // 
             this.btnVolver.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -202,17 +179,6 @@
             this.lblCantidad.Size = new System.Drawing.Size(121, 27);
             this.lblCantidad.TabIndex = 7;
             this.lblCantidad.Text = "Cantidad:";
-            // 
-            // lblFechaCaducidad
-            // 
-            this.lblFechaCaducidad.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblFechaCaducidad.AutoSize = true;
-            this.lblFechaCaducidad.Font = new System.Drawing.Font("Rockwell", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFechaCaducidad.Location = new System.Drawing.Point(747, 350);
-            this.lblFechaCaducidad.Name = "lblFechaCaducidad";
-            this.lblFechaCaducidad.Size = new System.Drawing.Size(245, 27);
-            this.lblFechaCaducidad.TabIndex = 13;
-            this.lblFechaCaducidad.Text = "Fecha de caducidad:";
             // 
             // btnAceptar
             // 
@@ -287,26 +253,6 @@
             this.lblPrecio.TabIndex = 22;
             this.lblPrecio.Text = "Precio:";
             // 
-            // calFechaCaducidad
-            // 
-            this.calFechaCaducidad.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.calFechaCaducidad.Location = new System.Drawing.Point(1004, 313);
-            this.calFechaCaducidad.Name = "calFechaCaducidad";
-            this.calFechaCaducidad.TabIndex = 24;
-            // 
-            // chkFecha
-            // 
-            this.chkFecha.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.chkFecha.AutoSize = true;
-            this.chkFecha.Location = new System.Drawing.Point(752, 326);
-            this.chkFecha.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.chkFecha.Name = "chkFecha";
-            this.chkFecha.Size = new System.Drawing.Size(144, 21);
-            this.chkFecha.TabIndex = 25;
-            this.chkFecha.Text = "Activar/Descativar";
-            this.chkFecha.UseVisualStyleBackColor = true;
-            this.chkFecha.CheckedChanged += new System.EventHandler(this.chkFecha_CheckedChanged);
-            // 
             // cmbRecogida
             // 
             this.cmbRecogida.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -359,25 +305,65 @@
             this.label2.TabIndex = 29;
             this.label2.Text = "SubFamilia:";
             // 
-            // txtLocalizacion
+            // txtEstanteria
             // 
-            this.txtLocalizacion.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtLocalizacion.Location = new System.Drawing.Point(244, 354);
-            this.txtLocalizacion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtLocalizacion.Name = "txtLocalizacion";
-            this.txtLocalizacion.Size = new System.Drawing.Size(129, 22);
-            this.txtLocalizacion.TabIndex = 32;
+            this.txtEstanteria.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtEstanteria.Location = new System.Drawing.Point(1004, 306);
+            this.txtEstanteria.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtEstanteria.Name = "txtEstanteria";
+            this.txtEstanteria.Size = new System.Drawing.Size(129, 22);
+            this.txtEstanteria.TabIndex = 32;
             // 
-            // lblLocalizacion
+            // lblEstanteria
             // 
-            this.lblLocalizacion.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblLocalizacion.AutoSize = true;
-            this.lblLocalizacion.Font = new System.Drawing.Font("Rockwell", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLocalizacion.Location = new System.Drawing.Point(33, 349);
-            this.lblLocalizacion.Name = "lblLocalizacion";
-            this.lblLocalizacion.Size = new System.Drawing.Size(158, 27);
-            this.lblLocalizacion.TabIndex = 31;
-            this.lblLocalizacion.Text = "Localización:";
+            this.lblEstanteria.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblEstanteria.AutoSize = true;
+            this.lblEstanteria.Font = new System.Drawing.Font("Rockwell", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEstanteria.Location = new System.Drawing.Point(843, 306);
+            this.lblEstanteria.Name = "lblEstanteria";
+            this.lblEstanteria.Size = new System.Drawing.Size(130, 27);
+            this.lblEstanteria.TabIndex = 33;
+            this.lblEstanteria.Text = "Estanteria:";
+            // 
+            // lblEstante
+            // 
+            this.lblEstante.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblEstante.AutoSize = true;
+            this.lblEstante.Font = new System.Drawing.Font("Rockwell", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEstante.Location = new System.Drawing.Point(873, 343);
+            this.lblEstante.Name = "lblEstante";
+            this.lblEstante.Size = new System.Drawing.Size(100, 27);
+            this.lblEstante.TabIndex = 34;
+            this.lblEstante.Text = "Estante:";
+            // 
+            // txtEstante
+            // 
+            this.txtEstante.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtEstante.Location = new System.Drawing.Point(1004, 348);
+            this.txtEstante.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtEstante.Name = "txtEstante";
+            this.txtEstante.Size = new System.Drawing.Size(129, 22);
+            this.txtEstante.TabIndex = 35;
+            // 
+            // txtAltura
+            // 
+            this.txtAltura.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtAltura.Location = new System.Drawing.Point(1004, 390);
+            this.txtAltura.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtAltura.Name = "txtAltura";
+            this.txtAltura.Size = new System.Drawing.Size(129, 22);
+            this.txtAltura.TabIndex = 37;
+            // 
+            // lblAltura
+            // 
+            this.lblAltura.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblAltura.AutoSize = true;
+            this.lblAltura.Font = new System.Drawing.Font("Rockwell", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAltura.Location = new System.Drawing.Point(886, 385);
+            this.lblAltura.Name = "lblAltura";
+            this.lblAltura.Size = new System.Drawing.Size(87, 27);
+            this.lblAltura.TabIndex = 36;
+            this.lblAltura.Text = "Altura:";
             // 
             // frmRegistro
             // 
@@ -386,15 +372,17 @@
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1353, 645);
-            this.Controls.Add(this.txtLocalizacion);
-            this.Controls.Add(this.lblLocalizacion);
+            this.Controls.Add(this.txtAltura);
+            this.Controls.Add(this.lblAltura);
+            this.Controls.Add(this.txtEstante);
+            this.Controls.Add(this.lblEstante);
+            this.Controls.Add(this.lblEstanteria);
+            this.Controls.Add(this.txtEstanteria);
             this.Controls.Add(this.cmbSubFamilia);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cmbFamilia);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cmbRecogida);
-            this.Controls.Add(this.chkFecha);
-            this.Controls.Add(this.calFechaCaducidad);
             this.Controls.Add(this.txtPrecio);
             this.Controls.Add(this.lblPrecio);
             this.Controls.Add(this.lblOjo);
@@ -403,10 +391,7 @@
             this.Controls.Add(this.txtCantidad);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.lblFecha);
-            this.Controls.Add(this.lblEmpleado);
-            this.Controls.Add(this.cmbNumeroEmpleado);
             this.Controls.Add(this.txtTallaPesoLitros);
-            this.Controls.Add(this.lblFechaCaducidad);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.lblNumeroRecogida);
@@ -432,7 +417,6 @@
 
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.Label lblFecha;
-        private System.Windows.Forms.Label lblEmpleado;
         private System.Windows.Forms.Label lblCodArticulo;
         private System.Windows.Forms.Label lblDescripcion;
         private System.Windows.Forms.TextBox txtCodArticulo;
@@ -440,10 +424,8 @@
         private System.Windows.Forms.Label lblNumeroRecogida;
         private System.Windows.Forms.TextBox txtTallaPesoLitros;
         private System.Windows.Forms.Label lblTallaPesoLitros;
-        private System.Windows.Forms.ComboBox cmbNumeroEmpleado;
         private System.Windows.Forms.Button btnVolver;
         private System.Windows.Forms.Label lblCantidad;
-        private System.Windows.Forms.Label lblFechaCaducidad;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.TextBox txtCantidad;
         private System.Windows.Forms.TextBox txtPedido;
@@ -451,14 +433,16 @@
         private System.Windows.Forms.Label lblOjo;
         private System.Windows.Forms.TextBox txtPrecio;
         private System.Windows.Forms.Label lblPrecio;
-        private System.Windows.Forms.MonthCalendar calFechaCaducidad;
-        private System.Windows.Forms.CheckBox chkFecha;
         private System.Windows.Forms.ComboBox cmbRecogida;
         private System.Windows.Forms.ComboBox cmbFamilia;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cmbSubFamilia;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtLocalizacion;
-        private System.Windows.Forms.Label lblLocalizacion;
+        private System.Windows.Forms.TextBox txtEstanteria;
+        private System.Windows.Forms.Label lblEstanteria;
+        private System.Windows.Forms.Label lblEstante;
+        private System.Windows.Forms.TextBox txtEstante;
+        private System.Windows.Forms.TextBox txtAltura;
+        private System.Windows.Forms.Label lblAltura;
     }
 }

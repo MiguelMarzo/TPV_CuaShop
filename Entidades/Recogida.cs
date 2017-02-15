@@ -8,11 +8,11 @@ namespace Entidades
 {
     public class Recogida : IEquatable<Recogida>
     {
-        private int numeroRecogida;
-        private DateTime fecha;
-        private int cantidadArticulos;
-        private string entregador;
-        private int numeroEmpleado;
+        public int numeroRecogida;
+        public DateTime fecha;
+        public int cantidadArticulos;
+        public string entregador;
+        public int numeroEmpleado;
 
         public Recogida()
         {

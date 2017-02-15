@@ -11,17 +11,19 @@ namespace Entidades
         public String idSubFamilia;
         public String idFamilia;
         public String nombre;
+        public int idIva;
 
         public SubFamilia()
         {
 
         }
 
-        public SubFamilia(String idSubFamilia, String idFamilia, String nombre)
+        public SubFamilia(String idSubFamilia, String idFamilia, String nombre, int idIva)
         {
             this.idSubFamilia = idSubFamilia;
             this.idFamilia = idFamilia;
             this.nombre = nombre;
+            this.idIva = idIva;
         }
 
         public bool Equals(SubFamilia other)

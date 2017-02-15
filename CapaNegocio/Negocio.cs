@@ -35,12 +35,16 @@ namespace CapaNegocio
         }
 
         public string insertarArticulo(string codigoArticulo, string descripcion, string tallaPesoLitros, int cantidad,
-            int numeroRecogida, int numeroPedido, int numeroVenta, decimal precio, Familia familia, SubFamilia subfamilia)
+            int numeroRecogida, int numeroPedido, int numeroVenta, decimal precio, String localizacion, Familia familia, SubFamilia subfamilia)
         {
             return _datos.insertarArticulo(codigoArticulo, descripcion, tallaPesoLitros, cantidad,
-                numeroRecogida, numeroPedido,numeroVenta, precio, familia, subfamilia);
+                numeroRecogida, numeroPedido,numeroVenta, precio, localizacion, familia, subfamilia);
         }
 
+        public List<Recogida> devolverRecogidas()
+        {
+            return _datos.devolverRecogidas();
+        }
 
         public List<Articulo> devolverVenta(string codigoVenta)
         {
