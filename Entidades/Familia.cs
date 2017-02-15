@@ -37,7 +37,7 @@ namespace Entidades
 
         public override string ToString()
         {
-            return idFamilia.ToString();
+            return nombreFamilia.ToString();
         }
     }
 }

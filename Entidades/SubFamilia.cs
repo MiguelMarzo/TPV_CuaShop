@@ -39,7 +39,7 @@ namespace Entidades
 
         public override string ToString()
         {
-            return idSubFamilia.ToString();
+            return nombre.ToString();
         }
     }
 }

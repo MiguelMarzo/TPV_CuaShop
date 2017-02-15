@@ -29,16 +29,16 @@ namespace CapaNegocio
             return _datos.maxRecogida();
         }
 
-        public string existeArticulo(string codigoArticulo)
+        public bool existeArticulo(string codigoArticulo)
         {
             return _datos.existeArticulo(codigoArticulo);
         }
 
-        public string insertarArticulo(string codigoArticulo, string descripcion, string tallaPesoLitros, int cantidad,
+        public string registro(string codigoArticulo, string descripcion, string tallaPesoLitros, int cantidad,
             int numeroRecogida, int numeroPedido, int numeroVenta, decimal precio, String localizacion, Familia familia, SubFamilia subfamilia)
         {
-            return _datos.insertarArticulo(codigoArticulo, descripcion, tallaPesoLitros, cantidad,
-                numeroRecogida, numeroPedido,numeroVenta, precio, localizacion, familia, subfamilia);
+            return _datos.registro(codigoArticulo, descripcion, tallaPesoLitros, cantidad,
+                numeroRecogida, numeroPedido, numeroVenta, precio, localizacion, familia, subfamilia);
         }
 
         public List<Recogida> devolverRecogidas()
@@ -60,9 +60,14 @@ namespace CapaNegocio
             return _datos.devolverFamilias();
         }
 
-        public List<SubFamilia> devolverSubFamilias()
+        public List<SubFamilia> devolverSubFamiliasPorFamilia(Familia fam)
         {
-            return _datos.devolverSubFamilias();
+            return _datos.devolverSubFamilias(fam);
+        }
+
+        public List<Articulo> devolverArticulosPorSubFamilia(SubFamilia subFam)
+        {
+            return _datos.devolverArticulosPorSubFamilia(subFam);
         }
     }
 }

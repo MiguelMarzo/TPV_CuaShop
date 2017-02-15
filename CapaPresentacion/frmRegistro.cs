@@ -20,21 +20,22 @@ namespace CapaPresentacion
         private List<Recogida> recogidas;
         public frmRegistro()
         {
-            InitializeComponent();
-            cmbFamilia.DisplayMember = "nombreFamilia";
+            InitializeComponent();            
         }
         private void frmRegistro_Load(object sender, EventArgs e)
         {
             lblEmpleado.Text += StaticGlobal.GlobalVar.numeroEmpleado;
-            subFamilias = new List<SubFamilia>();
-            subFamilias = _negocio.devolverSubFamilias();
-            cmbSubFamilia.DataSource = subFamilias;
-            familias = new List<Familia>();
-            familias = _negocio.devolverFamilias();
+
             recogidas = _negocio.devolverRecogidas();
             cmbRecogida.DataSource = recogidas;
             cmbRecogida.DisplayMember = "numeroRecogida";
+
+            familias = new List<Familia>();
+            familias = _negocio.devolverFamilias();
             cmbFamilia.DataSource = familias;
+            cmbFamilia.DisplayMember = "nombreFamilia";  
+            cmbFamiliaStock.DataSource = familias;
+            cmbFamiliaStock.DisplayMember = "nombreFamilia";
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
@@ -88,9 +89,9 @@ namespace CapaPresentacion
             {
                 numPedido = 0;
             }
-            var result = _negocio.insertarArticulo(txtCodArticulo.Text, txtDescripcion.Text, txtTallaPesoLitros.Text, cantidad,
-            recogida.numeroRecogida, numPedido, 0, precio, localizacion, (Familia)cmbFamilia.SelectedItem,
-            (SubFamilia)cmbSubFamilia.SelectedItem);
+            var result = _negocio.registro(txtCodArticulo.Text, txtDescripcion.Text, txtTallaPesoLitros.Text, cantidad,
+            recogida.numeroRecogida, numPedido, 0, precio, localizacion, (Familia)cmbFamiliaStock.SelectedItem,
+            (SubFamilia)cmbSubFamiliaStock.SelectedItem);
 
             MessageBox.Show(result);
         }
@@ -100,6 +101,19 @@ namespace CapaPresentacion
         private void btnVolver_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void cmbFamiliaStock_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            subFamilias = new List<SubFamilia>();
+            subFamilias = _negocio.devolverSubFamiliasPorFamilia((Familia)cmbFamiliaStock.SelectedItem);
+            cmbSubFamiliaStock.DataSource = subFamilias;
+            cmbSubFamiliaStock.DisplayMember = "nombreSubFamilia";
+        }
+
+        private void cmbSubFamiliaStock_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            dgvProductos.DataSource = _negocio.devolverArticulosPorSubFamilia((SubFamilia)cmbSubFamiliaStock.SelectedItem);
         }
     }
 }
