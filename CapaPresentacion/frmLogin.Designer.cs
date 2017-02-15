@@ -37,29 +37,33 @@
             this.lblTitulo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.Font = new System.Drawing.Font("Rockwell", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.Location = new System.Drawing.Point(304, 74);
+            this.lblTitulo.Location = new System.Drawing.Point(228, 60);
+            this.lblTitulo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(584, 147);
+            this.lblTitulo.Size = new System.Drawing.Size(467, 117);
             this.lblTitulo.TabIndex = 1;
             this.lblTitulo.Text = "CuaShop";
             // 
             // grpEmpleados
             // 
             this.grpEmpleados.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.grpEmpleados.Location = new System.Drawing.Point(106, 264);
+            this.grpEmpleados.Location = new System.Drawing.Point(132, 179);
+            this.grpEmpleados.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.grpEmpleados.Name = "grpEmpleados";
-            this.grpEmpleados.Size = new System.Drawing.Size(1036, 319);
+            this.grpEmpleados.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpEmpleados.Size = new System.Drawing.Size(670, 259);
             this.grpEmpleados.TabIndex = 2;
             this.grpEmpleados.TabStop = false;
             // 
             // frmLogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1299, 687);
+            this.ClientSize = new System.Drawing.Size(974, 558);
             this.Controls.Add(this.grpEmpleados);
             this.Controls.Add(this.lblTitulo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmLogin";
             this.Text = "Login";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

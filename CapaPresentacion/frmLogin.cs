@@ -26,15 +26,38 @@ namespace CapaPresentacion
             empleados = _negocio.devolverEmpleados();
             int i = 0;
             foreach (Empleado emp in empleados)
-            {                
-                Button btnAdd = new Button();
-                btnAdd.BackColor = Color.Gray;
-                btnAdd.Text = "Add";
-                btnAdd.Location = new System.Drawing.Point(90, 25 + i);
-                btnAdd.Size = new System.Drawing.Size(50, 25);
-                grpEmpleados.Controls.Add(btnAdd);
-                i = i + 10;
+            {
+                if (emp.rutaFoto != "nope")
+                {
+                    Button btnAdd = new Button();
+                    btnAdd.BackColor = Color.Gray;
+                    btnAdd.Size = new System.Drawing.Size(100, 100);
+                    btnAdd.BackgroundImage = new Bitmap(emp.rutaFoto);
+                    btnAdd.BackgroundImageLayout = ImageLayout.Stretch;
+                    btnAdd.Click += button_click;
+                    if (grpEmpleados.Controls.Count >= 6)
+                    {
+                        btnAdd.Location = new System.Drawing.Point(10 + i, 135);
+                    }
+                    else
+                    {
+                        btnAdd.Location = new System.Drawing.Point(10 + i, 25);
+                    }
+                    i = i + 110;
+                    if (i >= 600)
+                    {
+                        i = 0;
+                    }
+
+                    grpEmpleados.Controls.Add(btnAdd);
+                }           
             }
+        }
+
+        private void button_click(object sender, EventArgs e)
+        {
+            frmInicio inicio = new frmInicio();
+            inicio.Show();
         }
     }
 }
