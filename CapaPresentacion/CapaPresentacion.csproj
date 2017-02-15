@@ -105,6 +105,7 @@
     <Compile Include="Prueba.Designer.cs">
       <DependentUpon>Prueba.cs</DependentUpon>
     </Compile>
+    <Compile Include="StaticGlobal.cs" />
     <EmbeddedResource Include="frmBuscarArticulo.resx">
       <DependentUpon>frmBuscarArticulo.cs</DependentUpon>
     </EmbeddedResource>

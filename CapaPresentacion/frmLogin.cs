@@ -30,6 +30,7 @@ namespace CapaPresentacion
                 if (emp.rutaFoto != "nope")
                 {
                     Button btnAdd = new Button();
+                    btnAdd.Tag = emp;
                     btnAdd.BackColor = Color.Gray;
                     btnAdd.Size = new System.Drawing.Size(100, 100);
                     btnAdd.BackgroundImage = new Bitmap(emp.rutaFoto);
@@ -56,6 +57,8 @@ namespace CapaPresentacion
 
         private void button_click(object sender, EventArgs e)
         {
+            Button btnClicked = sender as Button;
+            StaticGlobal.GlobalVar = (Empleado) btnClicked.Tag;
             frmInicio inicio = new frmInicio();
             inicio.Show();
         }
