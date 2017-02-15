@@ -25,6 +25,7 @@ namespace CapaPresentacion
         }
         private void frmRegistro_Load(object sender, EventArgs e)
         {
+            lblEmpleado.Text += StaticGlobal.GlobalVar.numeroEmpleado;
             subFamilias = new List<SubFamilia>();
             subFamilias = _negocio.devolverSubFamilias();
             cmbSubFamilia.DataSource = subFamilias;

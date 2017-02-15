@@ -22,11 +22,8 @@ namespace CapaPresentacion
 
         private void frmRecogida_Load(object sender, EventArgs e)
         {
+            lblEmpleado.Text += StaticGlobal.GlobalVar.numeroEmpleado;
             var empleados =  _negocio.devolverEmpleados();
-            foreach (Empleado empleado in empleados) {
-                cmbNumeroEmpleado.Items.Add(empleado);
-                cmbNumeroEmpleado.DisplayMember = "[nombreEmpleado]";
-            }
             lblNumeroRecogida.Text += ": " + _negocio.maxRecogida();
             cmbEntregador.Items.Add("Profesor");
             cmbEntregador.Items.Add("Alumno");
@@ -34,10 +31,8 @@ namespace CapaPresentacion
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            Empleado empl = new Empleado();
-            empl= (Empleado) cmbNumeroEmpleado.SelectedItem;
            
-            _negocio.CrearRegistroRecogida(cmbEntregador.SelectedItem.ToString(), short.Parse(txtNumeroArticulosEntregados.Text), (short) empl.numeroEmpleado);
+            _negocio.CrearRegistroRecogida(cmbEntregador.SelectedItem.ToString(), short.Parse(txtNumeroArticulosEntregados.Text), (short) StaticGlobal.GlobalVar.numeroEmpleado);
         }
 
         private void btnVolver_Click(object sender, EventArgs e)

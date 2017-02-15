@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.btnVolver = new System.Windows.Forms.Button();
-            this.cmbNumeroEmpleado = new System.Windows.Forms.ComboBox();
             this.lblEmpleado = new System.Windows.Forms.Label();
             this.lblFecha = new System.Windows.Forms.Label();
             this.lblTitulo = new System.Windows.Forms.Label();
@@ -59,16 +58,6 @@
             this.btnVolver.UseVisualStyleBackColor = true;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
-            // cmbNumeroEmpleado
-            // 
-            this.cmbNumeroEmpleado.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.cmbNumeroEmpleado.FormattingEnabled = true;
-            this.cmbNumeroEmpleado.Location = new System.Drawing.Point(884, 43);
-            this.cmbNumeroEmpleado.Margin = new System.Windows.Forms.Padding(2);
-            this.cmbNumeroEmpleado.Name = "cmbNumeroEmpleado";
-            this.cmbNumeroEmpleado.Size = new System.Drawing.Size(80, 24);
-            this.cmbNumeroEmpleado.TabIndex = 20;
-            // 
             // lblEmpleado
             // 
             this.lblEmpleado.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -78,7 +67,7 @@
             this.lblEmpleado.Location = new System.Drawing.Point(740, 43);
             this.lblEmpleado.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblEmpleado.Name = "lblEmpleado";
-            this.lblEmpleado.Size = new System.Drawing.Size(167, 29);
+            this.lblEmpleado.Size = new System.Drawing.Size(134, 23);
             this.lblEmpleado.TabIndex = 19;
             this.lblEmpleado.Text = "Nº Empleado:";
             // 
@@ -91,7 +80,7 @@
             this.lblFecha.Location = new System.Drawing.Point(740, 81);
             this.lblFecha.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblFecha.Name = "lblFecha";
-            this.lblFecha.Size = new System.Drawing.Size(88, 29);
+            this.lblFecha.Size = new System.Drawing.Size(70, 23);
             this.lblFecha.TabIndex = 18;
             this.lblFecha.Text = "Fecha:";
             // 
@@ -104,7 +93,7 @@
             this.lblTitulo.Location = new System.Drawing.Point(304, 43);
             this.lblTitulo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(471, 43);
+            this.lblTitulo.Size = new System.Drawing.Size(389, 35);
             this.lblTitulo.TabIndex = 17;
             this.lblTitulo.Text = "RECOGIDA DE ARTICULOS";
             // 
@@ -135,7 +124,7 @@
             this.lblCodArticulo.Location = new System.Drawing.Point(300, 112);
             this.lblCodArticulo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCodArticulo.Name = "lblCodArticulo";
-            this.lblCodArticulo.Size = new System.Drawing.Size(251, 27);
+            this.lblCodArticulo.Size = new System.Drawing.Size(200, 21);
             this.lblCodArticulo.TabIndex = 24;
             this.lblCodArticulo.Text = "Numero de recogida:";
             // 
@@ -147,7 +136,7 @@
             this.label1.Location = new System.Drawing.Point(300, 205);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(146, 27);
+            this.label1.Size = new System.Drawing.Size(117, 21);
             this.label1.TabIndex = 25;
             this.label1.Text = "Entregador:";
             // 
@@ -158,7 +147,7 @@
             this.cmbEntregador.Location = new System.Drawing.Point(443, 207);
             this.cmbEntregador.Margin = new System.Windows.Forms.Padding(2);
             this.cmbEntregador.Name = "cmbEntregador";
-            this.cmbEntregador.Size = new System.Drawing.Size(199, 24);
+            this.cmbEntregador.Size = new System.Drawing.Size(199, 21);
             this.cmbEntregador.TabIndex = 26;
             // 
             // label2
@@ -169,7 +158,7 @@
             this.label2.Location = new System.Drawing.Point(300, 296);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(350, 27);
+            this.label2.Size = new System.Drawing.Size(280, 21);
             this.label2.TabIndex = 27;
             this.label2.Text = "Cuantos artículos se entregan:";
             // 
@@ -179,7 +168,7 @@
             this.txtNumeroArticulosEntregados.Location = new System.Drawing.Point(584, 298);
             this.txtNumeroArticulosEntregados.Margin = new System.Windows.Forms.Padding(2);
             this.txtNumeroArticulosEntregados.Name = "txtNumeroArticulosEntregados";
-            this.txtNumeroArticulosEntregados.Size = new System.Drawing.Size(119, 22);
+            this.txtNumeroArticulosEntregados.Size = new System.Drawing.Size(119, 20);
             this.txtNumeroArticulosEntregados.TabIndex = 28;
             // 
             // lblNumeroRecogida
@@ -188,7 +177,7 @@
             this.lblNumeroRecogida.AutoSize = true;
             this.lblNumeroRecogida.Location = new System.Drawing.Point(505, 120);
             this.lblNumeroRecogida.Name = "lblNumeroRecogida";
-            this.lblNumeroRecogida.Size = new System.Drawing.Size(0, 17);
+            this.lblNumeroRecogida.Size = new System.Drawing.Size(0, 13);
             this.lblNumeroRecogida.TabIndex = 29;
             // 
             // btnAceptar
@@ -218,7 +207,6 @@
             this.Controls.Add(this.pct2);
             this.Controls.Add(this.pct1);
             this.Controls.Add(this.btnVolver);
-            this.Controls.Add(this.cmbNumeroEmpleado);
             this.Controls.Add(this.lblEmpleado);
             this.Controls.Add(this.lblFecha);
             this.Controls.Add(this.lblTitulo);
@@ -238,7 +226,6 @@
         #endregion
 
         private System.Windows.Forms.Button btnVolver;
-        private System.Windows.Forms.ComboBox cmbNumeroEmpleado;
         private System.Windows.Forms.Label lblEmpleado;
         private System.Windows.Forms.Label lblFecha;
         private System.Windows.Forms.Label lblTitulo;

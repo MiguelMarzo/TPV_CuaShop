@@ -30,6 +30,7 @@
         {
             this.lblTitulo = new System.Windows.Forms.Label();
             this.grpEmpleados = new System.Windows.Forms.GroupBox();
+            this.btnSalir = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblTitulo
@@ -48,22 +49,36 @@
             // 
             this.grpEmpleados.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.grpEmpleados.Location = new System.Drawing.Point(132, 179);
-            this.grpEmpleados.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpEmpleados.Margin = new System.Windows.Forms.Padding(2);
             this.grpEmpleados.Name = "grpEmpleados";
-            this.grpEmpleados.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpEmpleados.Padding = new System.Windows.Forms.Padding(2);
             this.grpEmpleados.Size = new System.Drawing.Size(670, 259);
             this.grpEmpleados.TabIndex = 2;
             this.grpEmpleados.TabStop = false;
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnSalir.Font = new System.Drawing.Font("Rockwell", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalir.Location = new System.Drawing.Point(736, 11);
+            this.btnSalir.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(114, 78);
+            this.btnSalir.TabIndex = 5;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(974, 558);
+            this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.grpEmpleados);
             this.Controls.Add(this.lblTitulo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmLogin";
             this.Text = "Login";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -77,5 +92,6 @@
 
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.GroupBox grpEmpleados;
+        private System.Windows.Forms.Button btnSalir;
     }
 }
