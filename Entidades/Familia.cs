@@ -34,6 +34,11 @@ namespace Entidades
             else
                 return false;
         }
+
+        public override string ToString()
+        {
+            return idFamilia.ToString();
+        }
     }
 }
 
