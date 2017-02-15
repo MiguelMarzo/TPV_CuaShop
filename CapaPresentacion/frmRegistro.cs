@@ -83,14 +83,8 @@ namespace CapaPresentacion
                 return;
             }
 
-            var fecha = DateTime.MinValue;
-            if (chkFecha.CheckState == CheckState.Checked)
-            {
-                fecha = calFechaCaducidad.SelectionStart;
-            }
-
             var result =  _negocio.insertarArticulo(txtCodArticulo.Text, txtDescripcion.Text, txtTallaPesoLitros.Text, Int32.Parse(txtCantidad.Text),
-            fecha, Int32.Parse(cmbRecogida.SelectedText), Int32.Parse(txtPedido.Text), 0, precio, (Familia) cmbFamilia.SelectedItem, 
+            Int32.Parse(cmbRecogida.SelectedText), Int32.Parse(txtPedido.Text), 0, precio, (Familia) cmbFamilia.SelectedItem, 
             (SubFamilia) cmbSubFamilia.SelectedItem);
 
             MessageBox.Show(result);

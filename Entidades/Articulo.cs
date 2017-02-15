@@ -11,13 +11,11 @@ namespace Entidades
         public string codigoArticulo { get; set;}
         public string descripcion { get; set; }
         public string tallaPesoLitros { get; set; }
-        public DateTime fechaCaducidad { get; set; }
         public int numeroRecogida { get; set; }
         public int numeroPedido { get; set; }
         public int numeroVenta { get; set; }
         public decimal precio { get; set; }
         public int idIva { get; set; }
-
         public String localizacion { get; set; }
         public String idFamilia { get; set; }
         public String idSubFamilia { get; set; }
@@ -28,13 +26,12 @@ namespace Entidades
         }
 
         public Articulo(string codigoArticulo, string descripcion, string tallaPesoLitros,
-            DateTime fechaCaducidad, int numeroRecogida, int numeroPedido, int numeroVenta, decimal precio, 
+            int numeroRecogida, int numeroPedido, int numeroVenta, decimal precio, 
             String localizacion, String idFamilia, String idSubFamilia)
         {
             this.codigoArticulo = codigoArticulo;
             this.descripcion = descripcion;
             this.tallaPesoLitros = tallaPesoLitros;
-            this.fechaCaducidad = fechaCaducidad;
             this.numeroRecogida = numeroRecogida;
             this.numeroPedido = numeroPedido;
             this.numeroVenta = numeroVenta;

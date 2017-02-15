@@ -49,8 +49,8 @@ namespace CapaDatos
         {
             var articulos = from daArticulos in dsShop.Articulo
                             orderby daArticulos.descripcion ascending
-                            select new Articulo(daArticulos.codigoArticulo, daArticulos.descripcion, daArticulos.tallaPesoLitros,
-                            daArticulos.fechaCaducidad, daArticulos.numeroRecogida, daArticulos.numeroPedido,
+                            select new Articulo(daArticulos.codigoArticulo, daArticulos.descripcion, daArticulos.tallaPesoLitros
+                            , daArticulos.numeroRecogida, daArticulos.numeroPedido,
                             daArticulos.numeroVenta, daArticulos.precio, daArticulos.localizacion, daArticulos.idFamilia, daArticulos.idSubFamilia);
 
             return articulos.ToList();
@@ -120,16 +120,15 @@ namespace CapaDatos
         }
 
         public string insertarArticulo(string codigoArticulo, string descripcion, string tallaPesoLitros, int stock,
-            DateTime fechaCaducidad, int numeroRecogida, int numeroPedido, int numeroVenta, decimal precio, Familia familia, SubFamilia subfamilia)
+            int numeroRecogida, int numeroPedido, int numeroVenta, decimal precio, Familia familia, SubFamilia subfamilia)
         {
-            Articulo art = new Articulo(codigoArticulo, descripcion, tallaPesoLitros, fechaCaducidad, numeroRecogida, 
+            Articulo art = new Articulo(codigoArticulo, descripcion, tallaPesoLitros, numeroRecogida, 
                 numeroPedido, numeroVenta, precio, "", familia.idFamilia, subfamilia.idSubFamilia);
 
             dsCuaShop.ArticuloRow drArticulo = dsShop.Articulo.NewArticuloRow();
             drArticulo.codigoArticulo = art.codigoArticulo;
             drArticulo.descripcion = art.descripcion;
             drArticulo.tallaPesoLitros = art.tallaPesoLitros;
-            drArticulo.fechaCaducidad = art.fechaCaducidad;
             drArticulo.numeroRecogida = art.numeroRecogida;
             drArticulo.numeroPedido = art.numeroPedido;
             drArticulo.numeroVenta = 0;
@@ -144,7 +143,7 @@ namespace CapaDatos
         {
             var articulos = from daArticulo in dsShop.Articulo
                             orderby daArticulo.numeroVenta.ToString().Equals(codigoVenta)
-                            select new Articulo(daArticulo.codigoArticulo, daArticulo.descripcion, daArticulo.tallaPesoLitros, daArticulo.fechaCaducidad,
+                            select new Articulo(daArticulo.codigoArticulo, daArticulo.descripcion, daArticulo.tallaPesoLitros,
                             daArticulo.numeroRecogida, daArticulo.numeroPedido, daArticulo.numeroVenta, daArticulo.precio, daArticulo.localizacion,
                             daArticulo.idFamilia, daArticulo.idSubFamilia);
 
