@@ -1,6 +1,6 @@
 ﻿namespace CapaPresentacion
 {
-    partial class Login
+    partial class frmLogin
     {
         /// <summary>
         /// Required designer variable.
@@ -45,13 +45,14 @@
             // 
             // grpEmpleados
             // 
+            this.grpEmpleados.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.grpEmpleados.Location = new System.Drawing.Point(106, 264);
             this.grpEmpleados.Name = "grpEmpleados";
             this.grpEmpleados.Size = new System.Drawing.Size(1036, 319);
             this.grpEmpleados.TabIndex = 2;
             this.grpEmpleados.TabStop = false;
             // 
-            // Login
+            // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -59,9 +60,10 @@
             this.Controls.Add(this.grpEmpleados);
             this.Controls.Add(this.lblTitulo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Login";
+            this.Name = "frmLogin";
             this.Text = "Login";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.Login_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

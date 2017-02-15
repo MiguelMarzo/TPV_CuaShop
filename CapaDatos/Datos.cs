@@ -77,7 +77,6 @@ namespace CapaDatos
                             select new Empleado(daEmpleado.numeroEmpleado, daEmpleado.rutaFoto, daEmpleado.nombreEmpleado);
 
             return empleados.ToList();
-
         }
 
         public List<Familia> devolverFamilias()
