@@ -153,7 +153,7 @@ namespace CapaDatos
                 drArticulo.numeroPedido = art.numeroPedido;
                 drArticulo.numeroVenta = 0;
                 drArticulo.precio = art.precio;
-                drArticulo.stock = 0;
+                drArticulo.stock = (short) art.stock;
                 drArticulo.localizacion = art.localizacion;
                 drArticulo.idFamilia = art.idFamilia;
                 drArticulo.idSubFamilia = art.idSubFamilia;
