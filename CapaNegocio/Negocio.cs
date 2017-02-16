@@ -16,58 +16,72 @@ namespace CapaNegocio
         {
             return _datos.DevolverTodosLosArticulos();
         }
+
         public String CrearRegistroRecogida(String entregador, short numeroArticulosEntregados, short numeroEmpleado)
         {
             return _datos.CrearRegistroRecogida(entregador, numeroArticulosEntregados, numeroEmpleado);
         }
-        public List<Empleado> devolverEmpleados()
+
+        public List<Empleado> DevolverEmpleados()
         {
-            return _datos.devolverEmpleados();
-        }
-        public int maxRecogida()
-        {
-            return _datos.maxRecogida();
+            return _datos.DevolverEmpleados();
         }
 
-        public bool existeArticulo(string codigoArticulo)
+        public int MaxRecogida()
         {
-            return _datos.existeArticulo(codigoArticulo);
+            return _datos.MaxRecogida();
         }
 
-        public string registro(string codigoArticulo, string descripcion, string tallaPesoLitros, int cantidad,
+        public bool ExisteArticulo(string codigoArticulo)
+        {
+            return _datos.ExisteArticulo(codigoArticulo);
+        }
+
+        public string RegistroNuevoArticulo(string codigoArticulo, string descripcion, string tallaPesoLitros, int cantidad,
             int numeroRecogida, int numeroPedido, int numeroVenta, decimal precio, String localizacion, Familia familia, SubFamilia subfamilia)
         {
-            return _datos.registro(codigoArticulo, descripcion, tallaPesoLitros, cantidad,
+            return _datos.RegistroNuevoArticulo(codigoArticulo, descripcion, tallaPesoLitros, cantidad,
                 numeroRecogida, numeroPedido, numeroVenta, precio, localizacion, familia, subfamilia);
         }
 
-        public List<Recogida> devolverRecogidas()
+        public List<Recogida> DevolverRecogidas()
         {
-            return _datos.devolverRecogidas();
+            return _datos.DevolverRecogidas();
         }
 
-        public List<Articulo> devolverVenta(string codigoVenta)
+        public List<Articulo> DevolverVenta(string codigoVenta)
         {
-            return _datos.devolverVenta(codigoVenta);
+            return _datos.DevolverVentaPorCodigoVenta(codigoVenta);
         }
 
-        public string actualizarPrecioVenta(int codigoVenta, int precio)
+        public string ActualizarPrecioVenta(int codigoVenta, int precio)
         {
-            return _datos.actualizarPrecioVenta(codigoVenta, precio);
-        }
-        public List<Familia> devolverFamilias()
-        {
-            return _datos.devolverFamilias();
+            return _datos.ActualizarPrecioVenta(codigoVenta, precio);
         }
 
-        public List<SubFamilia> devolverSubFamiliasPorFamilia(Familia fam)
+        public List<Familia> DevolverFamilias()
         {
-            return _datos.devolverSubFamilias(fam);
+            return _datos.DevolverFamilias();
         }
 
-        public List<Articulo> devolverArticulosPorSubFamilia(SubFamilia subFam)
+        public List<SubFamilia> DevolverSubFamiliasPorFamilia(Familia fam)
         {
-            return _datos.devolverArticulosPorSubFamilia(subFam);
+            return _datos.DevolverSubFamilias(fam);
+        }
+
+        public List<Articulo> DevolverArticulosPorSubFamilia(SubFamilia subFam)
+        {
+            return _datos.DevolverArticulosPorSubFamilia(subFam);
+        }
+
+        public Articulo DevolverArticuloPorCodigo(String codigo)
+        {
+            return _datos.DevolverArticuloPorCodigo(codigo);
+        }
+
+        public String ActualizarStockArticulo(String codigo, int cantidad)
+        {
+            return _datos.ActualizarStockArticulo(codigo, cantidad);
         }
     }
 }

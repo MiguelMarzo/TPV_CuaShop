@@ -27,12 +27,12 @@ namespace CapaPresentacion
             lblEmpleado.Text += StaticGlobal.GlobalVar.numeroEmpleado;
             lblFecha.Text += DateTime.Today.ToShortDateString();
 
-            recogidas = _negocio.devolverRecogidas();
+            recogidas = _negocio.DevolverRecogidas();
             cmbRecogida.DataSource = recogidas;
             cmbRecogida.DisplayMember = "numeroRecogida";
 
             familias = new List<Familia>();
-            familias = _negocio.devolverFamilias();
+            familias = _negocio.DevolverFamilias();
             cmbFamilia.DataSource = familias;
             cmbFamilia.DisplayMember = "nombreFamilia";  
             cmbFamiliaStock.DataSource = familias;
@@ -90,7 +90,7 @@ namespace CapaPresentacion
             {
                 numPedido = 0;
             }
-            var result = _negocio.registro(txtCodArticulo.Text, txtDescripcion.Text, txtTallaPesoLitros.Text, cantidad,
+            var result = _negocio.RegistroNuevoArticulo(txtCodArticulo.Text, txtDescripcion.Text, txtTallaPesoLitros.Text, cantidad,
             recogida.numeroRecogida, numPedido, 0, precio, localizacion, (Familia)cmbFamiliaStock.SelectedItem,
             (SubFamilia)cmbSubFamiliaStock.SelectedItem);
 
@@ -107,19 +107,36 @@ namespace CapaPresentacion
         private void cmbFamiliaStock_SelectedIndexChanged(object sender, EventArgs e)
         {
             subFamilias = new List<SubFamilia>();
-            subFamilias = _negocio.devolverSubFamiliasPorFamilia((Familia)cmbFamiliaStock.SelectedItem);
+            subFamilias = _negocio.DevolverSubFamiliasPorFamilia((Familia)cmbFamiliaStock.SelectedItem);
             cmbSubFamiliaStock.DataSource = subFamilias;
             cmbSubFamiliaStock.DisplayMember = "nombreSubFamilia";
         }
 
+        private void cmbFamilia_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            subFamilias = new List<SubFamilia>();
+            subFamilias = _negocio.DevolverSubFamiliasPorFamilia((Familia)cmbFamilia.SelectedItem);
+            cmbSubFamilia.DataSource = subFamilias;
+            cmbSubFamilia.DisplayMember = "nombreSubFamilia";
+        }
+
         private void cmbSubFamiliaStock_SelectedIndexChanged(object sender, EventArgs e)
         {
-            dgvProductos.DataSource = _negocio.devolverArticulosPorSubFamilia((SubFamilia)cmbSubFamiliaStock.SelectedItem);
+            dgvProductos.DataSource = _negocio.DevolverArticulosPorSubFamilia((SubFamilia)cmbSubFamiliaStock.SelectedItem);
         }
 
         private void btnAñadirStock_Click(object sender, EventArgs e)
         {
-           // _negocio.registro();
+            int cantidad;
+            if (!(int.TryParse(txtCantidadStock.Text, out cantidad)))
+            {
+                MessageBox.Show("Debes introducir una cantidad adecuada");
+                return;
+            }
+            String result = _negocio.ActualizarStockArticulo(dgvProductos.SelectedCells[0].Value.ToString(), cantidad);
+            MessageBox.Show(result);
         }
+
+
     }
 }

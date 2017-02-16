@@ -23,7 +23,7 @@ namespace CapaPresentacion
 
         private void Login_Load(object sender, EventArgs e)
         {
-            empleados = _negocio.devolverEmpleados();
+            empleados = _negocio.DevolverEmpleados();
             int i = 0;
             foreach (Empleado emp in empleados)
             {

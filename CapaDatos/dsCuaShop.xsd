@@ -532,7 +532,7 @@
   <xs:element name="dsCuaShop" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsCuaShop" msprop:Generator_UserDSName="dsCuaShop">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Venta" msprop:Generator_TableClassName="VentaDataTable" msprop:Generator_TableVarName="tableVenta" msprop:Generator_TablePropName="Venta" msprop:Generator_RowDeletingName="VentaRowDeleting" msprop:Generator_RowChangingName="VentaRowChanging" msprop:Generator_RowEvHandlerName="VentaRowChangeEventHandler" msprop:Generator_RowDeletedName="VentaRowDeleted" msprop:Generator_UserTableName="Venta" msprop:Generator_RowChangedName="VentaRowChanged" msprop:Generator_RowEvArgName="VentaRowChangeEvent" msprop:Generator_RowClassName="VentaRow">
+        <xs:element name="Venta" msprop:Generator_TableClassName="VentaDataTable" msprop:Generator_TableVarName="tableVenta" msprop:Generator_RowChangedName="VentaRowChanged" msprop:Generator_TablePropName="Venta" msprop:Generator_RowDeletingName="VentaRowDeleting" msprop:Generator_RowChangingName="VentaRowChanging" msprop:Generator_RowEvHandlerName="VentaRowChangeEventHandler" msprop:Generator_RowDeletedName="VentaRowDeleted" msprop:Generator_RowClassName="VentaRow" msprop:Generator_UserTableName="Venta" msprop:Generator_RowEvArgName="VentaRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="numeroVenta" msprop:Generator_ColumnVarNameInTable="columnnumeroVenta" msprop:Generator_ColumnPropNameInRow="numeroVenta" msprop:Generator_ColumnPropNameInTable="numeroVentaColumn" msprop:Generator_UserColumnName="numeroVenta" type="xs:short" />
@@ -542,7 +542,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="SubFamilia" msprop:Generator_TableClassName="SubFamiliaDataTable" msprop:Generator_TableVarName="tableSubFamilia" msprop:Generator_TablePropName="SubFamilia" msprop:Generator_RowDeletingName="SubFamiliaRowDeleting" msprop:Generator_RowChangingName="SubFamiliaRowChanging" msprop:Generator_RowEvHandlerName="SubFamiliaRowChangeEventHandler" msprop:Generator_RowDeletedName="SubFamiliaRowDeleted" msprop:Generator_UserTableName="SubFamilia" msprop:Generator_RowChangedName="SubFamiliaRowChanged" msprop:Generator_RowEvArgName="SubFamiliaRowChangeEvent" msprop:Generator_RowClassName="SubFamiliaRow">
+        <xs:element name="SubFamilia" msprop:Generator_TableClassName="SubFamiliaDataTable" msprop:Generator_TableVarName="tableSubFamilia" msprop:Generator_RowChangedName="SubFamiliaRowChanged" msprop:Generator_TablePropName="SubFamilia" msprop:Generator_RowDeletingName="SubFamiliaRowDeleting" msprop:Generator_RowChangingName="SubFamiliaRowChanging" msprop:Generator_RowEvHandlerName="SubFamiliaRowChangeEventHandler" msprop:Generator_RowDeletedName="SubFamiliaRowDeleted" msprop:Generator_RowClassName="SubFamiliaRow" msprop:Generator_UserTableName="SubFamilia" msprop:Generator_RowEvArgName="SubFamiliaRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="idSubFamilia" msprop:Generator_ColumnVarNameInTable="columnidSubFamilia" msprop:Generator_ColumnPropNameInRow="idSubFamilia" msprop:Generator_ColumnPropNameInTable="idSubFamiliaColumn" msprop:Generator_UserColumnName="idSubFamilia">
@@ -570,7 +570,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Recogida" msprop:Generator_TableClassName="RecogidaDataTable" msprop:Generator_TableVarName="tableRecogida" msprop:Generator_TablePropName="Recogida" msprop:Generator_RowDeletingName="RecogidaRowDeleting" msprop:Generator_RowChangingName="RecogidaRowChanging" msprop:Generator_RowEvHandlerName="RecogidaRowChangeEventHandler" msprop:Generator_RowDeletedName="RecogidaRowDeleted" msprop:Generator_UserTableName="Recogida" msprop:Generator_RowChangedName="RecogidaRowChanged" msprop:Generator_RowEvArgName="RecogidaRowChangeEvent" msprop:Generator_RowClassName="RecogidaRow">
+        <xs:element name="Recogida" msprop:Generator_TableClassName="RecogidaDataTable" msprop:Generator_TableVarName="tableRecogida" msprop:Generator_RowChangedName="RecogidaRowChanged" msprop:Generator_TablePropName="Recogida" msprop:Generator_RowDeletingName="RecogidaRowDeleting" msprop:Generator_RowChangingName="RecogidaRowChanging" msprop:Generator_RowEvHandlerName="RecogidaRowChangeEventHandler" msprop:Generator_RowDeletedName="RecogidaRowDeleted" msprop:Generator_RowClassName="RecogidaRow" msprop:Generator_UserTableName="Recogida" msprop:Generator_RowEvArgName="RecogidaRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="numeroRecogida" msprop:Generator_ColumnVarNameInTable="columnnumeroRecogida" msprop:Generator_ColumnPropNameInRow="numeroRecogida" msprop:Generator_ColumnPropNameInTable="numeroRecogidaColumn" msprop:Generator_UserColumnName="numeroRecogida" type="xs:int" />
@@ -587,7 +587,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Iva" msprop:Generator_TableClassName="IvaDataTable" msprop:Generator_TableVarName="tableIva" msprop:Generator_TablePropName="Iva" msprop:Generator_RowDeletingName="IvaRowDeleting" msprop:Generator_RowChangingName="IvaRowChanging" msprop:Generator_RowEvHandlerName="IvaRowChangeEventHandler" msprop:Generator_RowDeletedName="IvaRowDeleted" msprop:Generator_UserTableName="Iva" msprop:Generator_RowChangedName="IvaRowChanged" msprop:Generator_RowEvArgName="IvaRowChangeEvent" msprop:Generator_RowClassName="IvaRow">
+        <xs:element name="Iva" msprop:Generator_TableClassName="IvaDataTable" msprop:Generator_TableVarName="tableIva" msprop:Generator_RowChangedName="IvaRowChanged" msprop:Generator_TablePropName="Iva" msprop:Generator_RowDeletingName="IvaRowDeleting" msprop:Generator_RowChangingName="IvaRowChanging" msprop:Generator_RowEvHandlerName="IvaRowChangeEventHandler" msprop:Generator_RowDeletedName="IvaRowDeleted" msprop:Generator_RowClassName="IvaRow" msprop:Generator_UserTableName="Iva" msprop:Generator_RowEvArgName="IvaRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="IdIva" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnIdIva" msprop:Generator_ColumnPropNameInRow="IdIva" msprop:Generator_ColumnPropNameInTable="IdIvaColumn" msprop:Generator_UserColumnName="IdIva" type="xs:int" />
@@ -601,7 +601,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Famillia" msprop:Generator_TableClassName="FamilliaDataTable" msprop:Generator_TableVarName="tableFamillia" msprop:Generator_TablePropName="Famillia" msprop:Generator_RowDeletingName="FamilliaRowDeleting" msprop:Generator_RowChangingName="FamilliaRowChanging" msprop:Generator_RowEvHandlerName="FamilliaRowChangeEventHandler" msprop:Generator_RowDeletedName="FamilliaRowDeleted" msprop:Generator_UserTableName="Famillia" msprop:Generator_RowChangedName="FamilliaRowChanged" msprop:Generator_RowEvArgName="FamilliaRowChangeEvent" msprop:Generator_RowClassName="FamilliaRow">
+        <xs:element name="Famillia" msprop:Generator_TableClassName="FamilliaDataTable" msprop:Generator_TableVarName="tableFamillia" msprop:Generator_RowChangedName="FamilliaRowChanged" msprop:Generator_TablePropName="Famillia" msprop:Generator_RowDeletingName="FamilliaRowDeleting" msprop:Generator_RowChangingName="FamilliaRowChanging" msprop:Generator_RowEvHandlerName="FamilliaRowChangeEventHandler" msprop:Generator_RowDeletedName="FamilliaRowDeleted" msprop:Generator_RowClassName="FamilliaRow" msprop:Generator_UserTableName="Famillia" msprop:Generator_RowEvArgName="FamilliaRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="idFamilia" msprop:Generator_ColumnVarNameInTable="columnidFamilia" msprop:Generator_ColumnPropNameInRow="idFamilia" msprop:Generator_ColumnPropNameInTable="idFamiliaColumn" msprop:Generator_UserColumnName="idFamilia">
@@ -628,7 +628,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Empleado" msprop:Generator_TableClassName="EmpleadoDataTable" msprop:Generator_TableVarName="tableEmpleado" msprop:Generator_TablePropName="Empleado" msprop:Generator_RowDeletingName="EmpleadoRowDeleting" msprop:Generator_RowChangingName="EmpleadoRowChanging" msprop:Generator_RowEvHandlerName="EmpleadoRowChangeEventHandler" msprop:Generator_RowDeletedName="EmpleadoRowDeleted" msprop:Generator_UserTableName="Empleado" msprop:Generator_RowChangedName="EmpleadoRowChanged" msprop:Generator_RowEvArgName="EmpleadoRowChangeEvent" msprop:Generator_RowClassName="EmpleadoRow">
+        <xs:element name="Empleado" msprop:Generator_TableClassName="EmpleadoDataTable" msprop:Generator_TableVarName="tableEmpleado" msprop:Generator_RowChangedName="EmpleadoRowChanged" msprop:Generator_TablePropName="Empleado" msprop:Generator_RowDeletingName="EmpleadoRowDeleting" msprop:Generator_RowChangingName="EmpleadoRowChanging" msprop:Generator_RowEvHandlerName="EmpleadoRowChangeEventHandler" msprop:Generator_RowDeletedName="EmpleadoRowDeleted" msprop:Generator_RowClassName="EmpleadoRow" msprop:Generator_UserTableName="Empleado" msprop:Generator_RowEvArgName="EmpleadoRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="numeroEmpleado" msprop:Generator_ColumnVarNameInTable="columnnumeroEmpleado" msprop:Generator_ColumnPropNameInRow="numeroEmpleado" msprop:Generator_ColumnPropNameInTable="numeroEmpleadoColumn" msprop:Generator_UserColumnName="numeroEmpleado" type="xs:short" />
@@ -649,7 +649,28 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Articulo" msprop:Generator_TableClassName="ArticuloDataTable" msprop:Generator_TableVarName="tableArticulo" msprop:Generator_TablePropName="Articulo" msprop:Generator_RowDeletingName="ArticuloRowDeleting" msprop:Generator_RowChangingName="ArticuloRowChanging" msprop:Generator_RowEvHandlerName="ArticuloRowChangeEventHandler" msprop:Generator_RowDeletedName="ArticuloRowDeleted" msprop:Generator_UserTableName="Articulo" msprop:Generator_RowChangedName="ArticuloRowChanged" msprop:Generator_RowEvArgName="ArticuloRowChangeEvent" msprop:Generator_RowClassName="ArticuloRow">
+        <xs:element name="Admin" msprop:Generator_TableClassName="AdminDataTable" msprop:Generator_TableVarName="tableAdmin" msprop:Generator_RowChangedName="AdminRowChanged" msprop:Generator_TablePropName="Admin" msprop:Generator_RowDeletingName="AdminRowDeleting" msprop:Generator_RowChangingName="AdminRowChanging" msprop:Generator_RowEvHandlerName="AdminRowChangeEventHandler" msprop:Generator_RowDeletedName="AdminRowDeleted" msprop:Generator_RowClassName="AdminRow" msprop:Generator_UserTableName="Admin" msprop:Generator_RowEvArgName="AdminRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
+              <xs:element name="Usuario" msprop:Generator_ColumnVarNameInTable="columnUsuario" msprop:Generator_ColumnPropNameInRow="Usuario" msprop:Generator_ColumnPropNameInTable="UsuarioColumn" msprop:Generator_UserColumnName="Usuario" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Contraseña" msprop:Generator_ColumnVarNameInTable="columnContraseña" msprop:Generator_ColumnPropNameInRow="Contraseña" msprop:Generator_ColumnPropNameInTable="ContraseñaColumn" msprop:Generator_UserColumnName="Contraseña" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Articulo" msprop:Generator_TableClassName="ArticuloDataTable" msprop:Generator_TableVarName="tableArticulo" msprop:Generator_RowChangedName="ArticuloRowChanged" msprop:Generator_TablePropName="Articulo" msprop:Generator_RowDeletingName="ArticuloRowDeleting" msprop:Generator_RowChangingName="ArticuloRowChanging" msprop:Generator_RowEvHandlerName="ArticuloRowChangeEventHandler" msprop:Generator_RowDeletedName="ArticuloRowDeleted" msprop:Generator_RowClassName="ArticuloRow" msprop:Generator_UserTableName="Articulo" msprop:Generator_RowEvArgName="ArticuloRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="codigoArticulo" msprop:Generator_ColumnVarNameInTable="columncodigoArticulo" msprop:Generator_ColumnPropNameInRow="codigoArticulo" msprop:Generator_ColumnPropNameInTable="codigoArticuloColumn" msprop:Generator_UserColumnName="codigoArticulo">
@@ -703,27 +724,6 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Admin" msprop:Generator_TableClassName="AdminDataTable" msprop:Generator_TableVarName="tableAdmin" msprop:Generator_TablePropName="Admin" msprop:Generator_RowDeletingName="AdminRowDeleting" msprop:Generator_RowChangingName="AdminRowChanging" msprop:Generator_RowEvHandlerName="AdminRowChangeEventHandler" msprop:Generator_RowDeletedName="AdminRowDeleted" msprop:Generator_UserTableName="Admin" msprop:Generator_RowChangedName="AdminRowChanged" msprop:Generator_RowEvArgName="AdminRowChangeEvent" msprop:Generator_RowClassName="AdminRow">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="Id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
-              <xs:element name="Usuario" msprop:Generator_ColumnVarNameInTable="columnUsuario" msprop:Generator_ColumnPropNameInRow="Usuario" msprop:Generator_ColumnPropNameInTable="UsuarioColumn" msprop:Generator_UserColumnName="Usuario" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="255" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Contraseña" msprop:Generator_ColumnVarNameInTable="columnContraseña" msprop:Generator_ColumnPropNameInRow="Contraseña" msprop:Generator_ColumnPropNameInTable="ContraseñaColumn" msprop:Generator_UserColumnName="Contraseña" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="255" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
@@ -750,26 +750,26 @@
       <xs:selector xpath=".//mstns:Empleado" />
       <xs:field xpath="mstns:numeroEmpleado" />
     </xs:unique>
-    <xs:unique name="Articulo_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
-      <xs:selector xpath=".//mstns:Articulo" />
-      <xs:field xpath="mstns:codigoArticulo" />
-    </xs:unique>
     <xs:unique name="Admin_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:Admin" />
       <xs:field xpath="mstns:Id" />
     </xs:unique>
+    <xs:unique name="Articulo_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Articulo" />
+      <xs:field xpath="mstns:codigoArticulo" />
+    </xs:unique>
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="EmpleadoVenta" msdata:parent="Empleado" msdata:child="Venta" msdata:parentkey="numeroEmpleado" msdata:childkey="numeroEmpleado" msprop:Generator_UserChildTable="Venta" msprop:Generator_ChildPropName="GetVentaRows" msprop:Generator_UserRelationName="EmpleadoVenta" msprop:Generator_RelationVarName="relationEmpleadoVenta" msprop:Generator_UserParentTable="Empleado" msprop:Generator_ParentPropName="EmpleadoRow" />
-      <msdata:Relationship name="FamilliaSubFamilia" msdata:parent="Famillia" msdata:child="SubFamilia" msdata:parentkey="idFamilia" msdata:childkey="idFamilia" msprop:Generator_UserChildTable="SubFamilia" msprop:Generator_ChildPropName="GetSubFamiliaRows" msprop:Generator_UserRelationName="FamilliaSubFamilia" msprop:Generator_RelationVarName="relationFamilliaSubFamilia" msprop:Generator_UserParentTable="Famillia" msprop:Generator_ParentPropName="FamilliaRow" />
-      <msdata:Relationship name="IvaSubFamilia" msdata:parent="Iva" msdata:child="SubFamilia" msdata:parentkey="IdIva" msdata:childkey="idIva" msprop:Generator_UserChildTable="SubFamilia" msprop:Generator_ChildPropName="GetSubFamiliaRows" msprop:Generator_UserRelationName="IvaSubFamilia" msprop:Generator_RelationVarName="relationIvaSubFamilia" msprop:Generator_UserParentTable="Iva" msprop:Generator_ParentPropName="IvaRow" />
-      <msdata:Relationship name="EmpleadoRecogida" msdata:parent="Empleado" msdata:child="Recogida" msdata:parentkey="numeroEmpleado" msdata:childkey="numeroEmpleado" msprop:Generator_UserChildTable="Recogida" msprop:Generator_ChildPropName="GetRecogidaRows" msprop:Generator_UserRelationName="EmpleadoRecogida" msprop:Generator_RelationVarName="relationEmpleadoRecogida" msprop:Generator_UserParentTable="Empleado" msprop:Generator_ParentPropName="EmpleadoRow" />
-      <msdata:Relationship name="FamilliaArticulo" msdata:parent="Famillia" msdata:child="Articulo" msdata:parentkey="idFamilia" msdata:childkey="idFamilia" msprop:Generator_UserChildTable="Articulo" msprop:Generator_ChildPropName="GetArticuloRows" msprop:Generator_UserRelationName="FamilliaArticulo" msprop:Generator_ParentPropName="FamilliaRow" msprop:Generator_RelationVarName="relationFamilliaArticulo" msprop:Generator_UserParentTable="Famillia" />
-      <msdata:Relationship name="IvaArticulo" msdata:parent="Iva" msdata:child="Articulo" msdata:parentkey="IdIva" msdata:childkey="idiva" msprop:Generator_UserChildTable="Articulo" msprop:Generator_ChildPropName="GetArticuloRows" msprop:Generator_UserRelationName="IvaArticulo" msprop:Generator_ParentPropName="IvaRow" msprop:Generator_RelationVarName="relationIvaArticulo" msprop:Generator_UserParentTable="Iva" />
-      <msdata:Relationship name="RecogidaArticulo" msdata:parent="Recogida" msdata:child="Articulo" msdata:parentkey="numeroRecogida" msdata:childkey="numeroRecogida" msprop:Generator_UserChildTable="Articulo" msprop:Generator_ChildPropName="GetArticuloRows" msprop:Generator_UserRelationName="RecogidaArticulo" msprop:Generator_ParentPropName="RecogidaRow" msprop:Generator_RelationVarName="relationRecogidaArticulo" msprop:Generator_UserParentTable="Recogida" />
-      <msdata:Relationship name="SubFamiliaArticulo" msdata:parent="SubFamilia" msdata:child="Articulo" msdata:parentkey="idSubFamilia" msdata:childkey="idSubFamilia" msprop:Generator_UserChildTable="Articulo" msprop:Generator_ChildPropName="GetArticuloRows" msprop:Generator_UserRelationName="SubFamiliaArticulo" msprop:Generator_ParentPropName="SubFamiliaRow" msprop:Generator_RelationVarName="relationSubFamiliaArticulo" msprop:Generator_UserParentTable="SubFamilia" />
-      <msdata:Relationship name="VentaArticulo" msdata:parent="Venta" msdata:child="Articulo" msdata:parentkey="numeroVenta" msdata:childkey="numeroVenta" msprop:Generator_UserChildTable="Articulo" msprop:Generator_ChildPropName="GetArticuloRows" msprop:Generator_UserRelationName="VentaArticulo" msprop:Generator_ParentPropName="VentaRow" msprop:Generator_RelationVarName="relationVentaArticulo" msprop:Generator_UserParentTable="Venta" />
+      <msdata:Relationship name="EmpleadoVenta" msdata:parent="Empleado" msdata:child="Venta" msdata:parentkey="numeroEmpleado" msdata:childkey="numeroEmpleado" msprop:Generator_UserChildTable="Venta" msprop:Generator_ChildPropName="GetVentaRows" msprop:Generator_UserRelationName="EmpleadoVenta" msprop:Generator_ParentPropName="EmpleadoRow" msprop:Generator_RelationVarName="relationEmpleadoVenta" msprop:Generator_UserParentTable="Empleado" />
+      <msdata:Relationship name="FamilliaSubFamilia" msdata:parent="Famillia" msdata:child="SubFamilia" msdata:parentkey="idFamilia" msdata:childkey="idFamilia" msprop:Generator_UserChildTable="SubFamilia" msprop:Generator_ChildPropName="GetSubFamiliaRows" msprop:Generator_UserRelationName="FamilliaSubFamilia" msprop:Generator_ParentPropName="FamilliaRow" msprop:Generator_RelationVarName="relationFamilliaSubFamilia" msprop:Generator_UserParentTable="Famillia" />
+      <msdata:Relationship name="IvaSubFamilia" msdata:parent="Iva" msdata:child="SubFamilia" msdata:parentkey="IdIva" msdata:childkey="idIva" msprop:Generator_UserChildTable="SubFamilia" msprop:Generator_ChildPropName="GetSubFamiliaRows" msprop:Generator_UserRelationName="IvaSubFamilia" msprop:Generator_ParentPropName="IvaRow" msprop:Generator_RelationVarName="relationIvaSubFamilia" msprop:Generator_UserParentTable="Iva" />
+      <msdata:Relationship name="EmpleadoRecogida" msdata:parent="Empleado" msdata:child="Recogida" msdata:parentkey="numeroEmpleado" msdata:childkey="numeroEmpleado" msprop:Generator_UserChildTable="Recogida" msprop:Generator_ChildPropName="GetRecogidaRows" msprop:Generator_UserRelationName="EmpleadoRecogida" msprop:Generator_ParentPropName="EmpleadoRow" msprop:Generator_RelationVarName="relationEmpleadoRecogida" msprop:Generator_UserParentTable="Empleado" />
+      <msdata:Relationship name="VentaArticulo" msdata:parent="Venta" msdata:child="Articulo" msdata:parentkey="numeroVenta" msdata:childkey="numeroVenta" msprop:Generator_UserChildTable="Articulo" msprop:Generator_ChildPropName="GetArticuloRows" msprop:Generator_UserRelationName="VentaArticulo" msprop:Generator_RelationVarName="relationVentaArticulo" msprop:Generator_UserParentTable="Venta" msprop:Generator_ParentPropName="VentaRow" />
+      <msdata:Relationship name="SubFamiliaArticulo" msdata:parent="SubFamilia" msdata:child="Articulo" msdata:parentkey="idSubFamilia" msdata:childkey="idSubFamilia" msprop:Generator_UserChildTable="Articulo" msprop:Generator_ChildPropName="GetArticuloRows" msprop:Generator_UserRelationName="SubFamiliaArticulo" msprop:Generator_RelationVarName="relationSubFamiliaArticulo" msprop:Generator_UserParentTable="SubFamilia" msprop:Generator_ParentPropName="SubFamiliaRow" />
+      <msdata:Relationship name="RecogidaArticulo" msdata:parent="Recogida" msdata:child="Articulo" msdata:parentkey="numeroRecogida" msdata:childkey="numeroRecogida" msprop:Generator_UserChildTable="Articulo" msprop:Generator_ChildPropName="GetArticuloRows" msprop:Generator_UserRelationName="RecogidaArticulo" msprop:Generator_RelationVarName="relationRecogidaArticulo" msprop:Generator_UserParentTable="Recogida" msprop:Generator_ParentPropName="RecogidaRow" />
+      <msdata:Relationship name="IvaArticulo" msdata:parent="Iva" msdata:child="Articulo" msdata:parentkey="IdIva" msdata:childkey="idiva" msprop:Generator_UserChildTable="Articulo" msprop:Generator_ChildPropName="GetArticuloRows" msprop:Generator_UserRelationName="IvaArticulo" msprop:Generator_RelationVarName="relationIvaArticulo" msprop:Generator_UserParentTable="Iva" msprop:Generator_ParentPropName="IvaRow" />
+      <msdata:Relationship name="FamilliaArticulo" msdata:parent="Famillia" msdata:child="Articulo" msdata:parentkey="idFamilia" msdata:childkey="idFamilia" msprop:Generator_UserChildTable="Articulo" msprop:Generator_ChildPropName="GetArticuloRows" msprop:Generator_UserRelationName="FamilliaArticulo" msprop:Generator_RelationVarName="relationFamilliaArticulo" msprop:Generator_UserParentTable="Famillia" msprop:Generator_ParentPropName="FamilliaRow" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>
