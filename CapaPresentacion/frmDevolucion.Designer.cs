@@ -30,17 +30,15 @@
         {
             this.lblEmpleado = new System.Windows.Forms.Label();
             this.lblTitulo = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.cmbNumeroEmpleado = new System.Windows.Forms.ComboBox();
+            this.lblFecha = new System.Windows.Forms.Label();
             this.btnAtras = new System.Windows.Forms.Button();
-            this.lblFechaR = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.btnTicket = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.lblVenta = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.btnBuscar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -50,7 +48,7 @@
             this.lblEmpleado.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblEmpleado.AutoSize = true;
             this.lblEmpleado.Font = new System.Drawing.Font("Rockwell", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmpleado.Location = new System.Drawing.Point(771, 33);
+            this.lblEmpleado.Location = new System.Drawing.Point(771, 94);
             this.lblEmpleado.Name = "lblEmpleado";
             this.lblEmpleado.Size = new System.Drawing.Size(132, 21);
             this.lblEmpleado.TabIndex = 1;
@@ -68,25 +66,16 @@
             this.lblTitulo.TabIndex = 10;
             this.lblTitulo.Text = "DEVOLUCIÓN DE ARTICULOS";
             // 
-            // label2
+            // lblFecha
             // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Rockwell", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(771, 94);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(68, 21);
-            this.label2.TabIndex = 11;
-            this.label2.Text = "Fecha:";
-            // 
-            // cmbNumeroEmpleado
-            // 
-            this.cmbNumeroEmpleado.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.cmbNumeroEmpleado.FormattingEnabled = true;
-            this.cmbNumeroEmpleado.Location = new System.Drawing.Point(909, 36);
-            this.cmbNumeroEmpleado.Name = "cmbNumeroEmpleado";
-            this.cmbNumeroEmpleado.Size = new System.Drawing.Size(140, 21);
-            this.cmbNumeroEmpleado.TabIndex = 12;
+            this.lblFecha.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblFecha.AutoSize = true;
+            this.lblFecha.Font = new System.Drawing.Font("Rockwell", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFecha.Location = new System.Drawing.Point(771, 58);
+            this.lblFecha.Name = "lblFecha";
+            this.lblFecha.Size = new System.Drawing.Size(68, 21);
+            this.lblFecha.TabIndex = 11;
+            this.lblFecha.Text = "Fecha:";
             // 
             // btnAtras
             // 
@@ -98,17 +87,6 @@
             this.btnAtras.Text = "ATRAS";
             this.btnAtras.UseVisualStyleBackColor = true;
             this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
-            // 
-            // lblFechaR
-            // 
-            this.lblFechaR.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblFechaR.AutoSize = true;
-            this.lblFechaR.Font = new System.Drawing.Font("Rockwell", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFechaR.Location = new System.Drawing.Point(845, 94);
-            this.lblFechaR.Name = "lblFechaR";
-            this.lblFechaR.Size = new System.Drawing.Size(62, 21);
-            this.lblFechaR.TabIndex = 14;
-            this.lblFechaR.Text = "Fecha";
             // 
             // groupBox1
             // 
@@ -125,6 +103,22 @@
             this.groupBox1.TabIndex = 17;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Location = new System.Drawing.Point(641, 28);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscar.TabIndex = 23;
+            this.btnBuscar.Text = "button1";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(386, 31);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(185, 20);
+            this.textBox1.TabIndex = 22;
             // 
             // btnTicket
             // 
@@ -163,32 +157,14 @@
             this.lblVenta.TabIndex = 17;
             this.lblVenta.Text = "Código de Barras:";
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(386, 31);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(185, 20);
-            this.textBox1.TabIndex = 22;
-            // 
-            // btnBuscar
-            // 
-            this.btnBuscar.Location = new System.Drawing.Point(641, 28);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(75, 23);
-            this.btnBuscar.TabIndex = 23;
-            this.btnBuscar.Text = "button1";
-            this.btnBuscar.UseVisualStyleBackColor = true;
-            // 
             // frmDevolucion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1106, 638);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.lblFechaR);
             this.Controls.Add(this.btnAtras);
-            this.Controls.Add(this.cmbNumeroEmpleado);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblFecha);
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.lblEmpleado);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -209,10 +185,8 @@
         #endregion
         private System.Windows.Forms.Label lblEmpleado;
         private System.Windows.Forms.Label lblTitulo;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox cmbNumeroEmpleado;
+        private System.Windows.Forms.Label lblFecha;
         private System.Windows.Forms.Button btnAtras;
-        private System.Windows.Forms.Label lblFechaR;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnTicket;
         private System.Windows.Forms.DataGridView dataGridView1;

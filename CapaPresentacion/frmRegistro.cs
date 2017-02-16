@@ -25,6 +25,7 @@ namespace CapaPresentacion
         private void frmRegistro_Load(object sender, EventArgs e)
         {
             lblEmpleado.Text += StaticGlobal.GlobalVar.numeroEmpleado;
+            lblFecha.Text += DateTime.Today.ToShortDateString();
 
             recogidas = _negocio.devolverRecogidas();
             cmbRecogida.DataSource = recogidas;
@@ -114,6 +115,11 @@ namespace CapaPresentacion
         private void cmbSubFamiliaStock_SelectedIndexChanged(object sender, EventArgs e)
         {
             dgvProductos.DataSource = _negocio.devolverArticulosPorSubFamilia((SubFamilia)cmbSubFamiliaStock.SelectedItem);
+        }
+
+        private void btnAñadirStock_Click(object sender, EventArgs e)
+        {
+           // _negocio.registro();
         }
     }
 }

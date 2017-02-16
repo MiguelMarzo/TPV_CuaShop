@@ -93,7 +93,7 @@
             this.lblFecha.AutoSize = true;
             this.lblFecha.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblFecha.Font = new System.Drawing.Font("Rockwell", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFecha.Location = new System.Drawing.Point(858, 53);
+            this.lblFecha.Location = new System.Drawing.Point(815, 53);
             this.lblFecha.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblFecha.Name = "lblFecha";
             this.lblFecha.Size = new System.Drawing.Size(70, 23);
@@ -550,6 +550,7 @@
             this.btnAñadirStock.TabIndex = 43;
             this.btnAñadirStock.Text = "Añadir Articulo ya Existente";
             this.btnAñadirStock.UseVisualStyleBackColor = true;
+            this.btnAñadirStock.Click += new System.EventHandler(this.btnAñadirStock_Click);
             // 
             // frmRegistro
             // 

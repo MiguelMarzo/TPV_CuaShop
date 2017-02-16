@@ -23,6 +23,7 @@ namespace CapaPresentacion
         private void frmRecogida_Load(object sender, EventArgs e)
         {
             lblEmpleado.Text += StaticGlobal.GlobalVar.numeroEmpleado;
+            lblFecha.Text += DateTime.Today.ToShortDateString();
             var empleados =  _negocio.devolverEmpleados();
             lblNumeroRecogida.Text += ": " + _negocio.maxRecogida();
             cmbEntregador.Items.Add("Profesor");

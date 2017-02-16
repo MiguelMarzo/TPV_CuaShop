@@ -33,7 +33,7 @@ namespace CapaPresentacion
                     btnAdd.Tag = emp;
                     btnAdd.BackColor = Color.Gray;
                     btnAdd.Size = new System.Drawing.Size(100, 100);
-                    btnAdd.BackgroundImage = new Bitmap(emp.rutaFoto);
+                    //btnAdd.BackgroundImage = new Bitmap(emp.rutaFoto);
                     btnAdd.BackgroundImageLayout = ImageLayout.Stretch;
                     btnAdd.Click += button_click;
                     if (grpEmpleados.Controls.Count >= 6)

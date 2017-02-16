@@ -22,13 +22,8 @@ namespace CapaPresentacion
 
         private void frmDevolucion_Load(object sender, EventArgs e)
         {
-            var empleados = _negocio.devolverEmpleados();
-            foreach (Empleado empleado in empleados)
-            {
-                cmbNumeroEmpleado.Items.Add(empleado);
-                cmbNumeroEmpleado.DisplayMember = "[nombreEmpleado]";
-            }
-            lblFechaR.Text = ": " + DateTime.Today.ToShortDateString();
+            lblEmpleado.Text += StaticGlobal.GlobalVar.numeroEmpleado;
+            lblFecha.Text += DateTime.Today.ToShortDateString();
             dataGridView1.DataSource = _negocio.DevolverTodosLosArticulos();
         }
 
