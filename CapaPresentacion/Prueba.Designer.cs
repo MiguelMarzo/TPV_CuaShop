@@ -61,6 +61,7 @@
             this.lblEmpleado = new System.Windows.Forms.Label();
             this.lblFecha = new System.Windows.Forms.Label();
             this.lblTitulo = new System.Windows.Forms.Label();
+            this.btnDevolverAProductos = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             this.grpFamilias.SuspendLayout();
             this.grpSubFamilias.SuspendLayout();
@@ -150,11 +151,12 @@
             // btnAnadirCarrito
             // 
             this.btnAnadirCarrito.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnAnadirCarrito.Location = new System.Drawing.Point(678, 240);
+            this.btnAnadirCarrito.Location = new System.Drawing.Point(678, 164);
             this.btnAnadirCarrito.Name = "btnAnadirCarrito";
+            this.btnAnadirCarrito.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnAnadirCarrito.Size = new System.Drawing.Size(91, 106);
             this.btnAnadirCarrito.TabIndex = 20;
-            this.btnAnadirCarrito.Text = "Añadir al carrito ->";
+            this.btnAnadirCarrito.Text = "Añadir al carrito        <----------------------";
             this.btnAnadirCarrito.UseVisualStyleBackColor = true;
             this.btnAnadirCarrito.Click += new System.EventHandler(this.btnAnadirCarrito_Click);
             // 
@@ -437,11 +439,23 @@
             this.lblTitulo.Text = "VENTA DE UN ARTICULO";
             this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // btnDevolverAProductos
+            // 
+            this.btnDevolverAProductos.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnDevolverAProductos.Location = new System.Drawing.Point(678, 330);
+            this.btnDevolverAProductos.Name = "btnDevolverAProductos";
+            this.btnDevolverAProductos.Size = new System.Drawing.Size(91, 106);
+            this.btnDevolverAProductos.TabIndex = 42;
+            this.btnDevolverAProductos.Text = "Devolver a productos <-----------------------";
+            this.btnDevolverAProductos.UseVisualStyleBackColor = true;
+            this.btnDevolverAProductos.Click += new System.EventHandler(this.btnDevolverAProductos_Click);
+            // 
             // Prueba
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1002, 780);
+            this.Controls.Add(this.btnDevolverAProductos);
             this.Controls.Add(this.lblEmpleado);
             this.Controls.Add(this.lblFecha);
             this.Controls.Add(this.lblTitulo);
@@ -503,5 +517,6 @@
         private System.Windows.Forms.Label lblEmpleado;
         private System.Windows.Forms.Label lblFecha;
         private System.Windows.Forms.Label lblTitulo;
+        private System.Windows.Forms.Button btnDevolverAProductos;
     }
 }
