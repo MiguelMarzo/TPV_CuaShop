@@ -11,6 +11,7 @@ namespace Entidades
         public String idSubFamilia;
         public String idFamilia;
         public String nombre;
+        public String inicialesSubFamilia;
         public int idIva;
 
         public SubFamilia()
@@ -18,12 +19,13 @@ namespace Entidades
 
         }
 
-        public SubFamilia(String idSubFamilia, String idFamilia, String nombre, int idIva)
+        public SubFamilia(String idSubFamilia, String idFamilia, String nombre, int idIva, String inicialesSubFamilia)
         {
             this.idSubFamilia = idSubFamilia;
             this.idFamilia = idFamilia;
             this.nombre = nombre;
             this.idIva = idIva;
+            this.inicialesSubFamilia = inicialesSubFamilia;
         }
 
         public bool Equals(SubFamilia other)

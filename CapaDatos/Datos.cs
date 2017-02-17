@@ -67,14 +67,15 @@ namespace CapaDatos
         public List<Familia> DevolverFamilias()
         {
             var familias = from daFamilia in dsShop.Famillia
-                           select new Familia(daFamilia.idFamilia, daFamilia.rutaFoto, daFamilia.nombreFamilia);
+                           select new Familia(daFamilia.idFamilia, daFamilia.rutaFoto, daFamilia.nombreFamilia, daFamilia.inicialesFamilia);
             return familias.ToList();
         }
         public List<SubFamilia> DevolverSubFamilias(Familia fam)
         {
             var subFamilias = from daSubFam in dsShop.SubFamilia
                               where daSubFam.idFamilia == fam.idFamilia
-                              select new SubFamilia(daSubFam.idSubFamilia, daSubFam.idFamilia, daSubFam.nombreSubFamilia, daSubFam.idIva);
+                              select new SubFamilia(daSubFam.idSubFamilia, daSubFam.idFamilia, daSubFam.nombreSubFamilia, daSubFam.idIva,
+                              daSubFam.inicialesSubFamilia);
             return subFamilias.ToList();
         }
         public List<Recogida> DevolverRecogidas()
