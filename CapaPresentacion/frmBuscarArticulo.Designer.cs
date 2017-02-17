@@ -62,6 +62,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnVolver = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnBuscar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -71,7 +74,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(386, 12);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(699, 571);
+            this.dataGridView1.Size = new System.Drawing.Size(699, 634);
             this.dataGridView1.TabIndex = 0;
             // 
             // label1
@@ -85,6 +88,9 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnBuscar);
+            this.panel1.Controls.Add(this.btnCancelar);
+            this.panel1.Controls.Add(this.btnVolver);
             this.panel1.Controls.Add(this.chbLocalizacion);
             this.panel1.Controls.Add(this.chbIVA);
             this.panel1.Controls.Add(this.chbPrecio);
@@ -119,7 +125,7 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(368, 571);
+            this.panel1.Size = new System.Drawing.Size(368, 634);
             this.panel1.TabIndex = 2;
             // 
             // chbLocalizacion
@@ -212,7 +218,7 @@
             // 
             // txtEstante
             // 
-            this.txtEstante.Location = new System.Drawing.Point(137, 531);
+            this.txtEstante.Location = new System.Drawing.Point(144, 531);
             this.txtEstante.Name = "txtEstante";
             this.txtEstante.Size = new System.Drawing.Size(77, 20);
             this.txtEstante.TabIndex = 22;
@@ -236,7 +242,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(151, 515);
+            this.label11.Location = new System.Drawing.Point(158, 515);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(43, 13);
             this.label11.TabIndex = 19;
@@ -385,11 +391,38 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Número Recogida";
             // 
+            // btnVolver
+            // 
+            this.btnVolver.Location = new System.Drawing.Point(6, 571);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(75, 60);
+            this.btnVolver.TabIndex = 3;
+            this.btnVolver.Text = "Volver";
+            this.btnVolver.UseVisualStyleBackColor = true;
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Location = new System.Drawing.Point(144, 571);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(75, 60);
+            this.btnCancelar.TabIndex = 4;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Location = new System.Drawing.Point(288, 571);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(75, 60);
+            this.btnBuscar.TabIndex = 33;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            // 
             // frmBuscarArticulo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1097, 595);
+            this.ClientSize = new System.Drawing.Size(1097, 658);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dataGridView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -440,5 +473,8 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Button btnVolver;
     }
 }
