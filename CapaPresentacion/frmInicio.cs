@@ -38,5 +38,11 @@ namespace CapaPresentacion
             frmBuscarArticulo buscarArticulo = new frmBuscarArticulo();
             buscarArticulo.Show();
         }
+
+        private void btnAdmin_Click(object sender, EventArgs e)
+        {
+            frmAdmin admin = new frmAdmin();
+            admin.Show();
+        }
     }
 }

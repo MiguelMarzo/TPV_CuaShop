@@ -112,6 +112,9 @@
       <DependentUpon>Prueba.cs</DependentUpon>
     </Compile>
     <Compile Include="StaticGlobal.cs" />
+    <EmbeddedResource Include="frmAdmin.resx">
+      <DependentUpon>frmAdmin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmBuscarArticulo.resx">
       <DependentUpon>frmBuscarArticulo.cs</DependentUpon>
     </EmbeddedResource>
@@ -162,6 +165,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CapaDatos\CapaDatos.csproj">
+      <Project>{9F026FC7-9ADC-439F-9D0D-8DA80C7E860A}</Project>
+      <Name>CapaDatos</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CapaNegocio\CapaNegocio.csproj">
       <Project>{b95b544c-d8ac-401f-9235-b4c1a111ff7c}</Project>
       <Name>CapaNegocio</Name>
