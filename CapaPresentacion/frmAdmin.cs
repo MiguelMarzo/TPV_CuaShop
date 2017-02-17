@@ -35,8 +35,7 @@ namespace CapaPresentacion
                 {
                     MessageBox.Show("Debes elegir un archivo con formato adecuado (.png, .jpeg, .jpg o .gif");
                     return;
-                }
-                
+                }                
             } 
         }
 

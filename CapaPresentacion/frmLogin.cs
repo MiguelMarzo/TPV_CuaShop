@@ -59,8 +59,8 @@ namespace CapaPresentacion
         {
             Button btnClicked = sender as Button;
             StaticGlobal.GlobalVar = (Empleado) btnClicked.Tag;
-            frmInicio inicio = new frmInicio();
-            inicio.Show();
+            frmAccionesEmpleado accionesEmpleado = new frmAccionesEmpleado();
+            accionesEmpleado.Show();
         }
 
         private void btnSalir_Click(object sender, EventArgs e)

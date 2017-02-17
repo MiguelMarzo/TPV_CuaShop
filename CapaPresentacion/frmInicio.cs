@@ -29,8 +29,8 @@ namespace CapaPresentacion
 
         private void btnAccionesEmpleado_Click(object sender, EventArgs e)
         {
-            frmAccionesEmpleado accionesEmpleado = new frmAccionesEmpleado();
-            accionesEmpleado.Show();
+            frmLogin login = new frmLogin();
+            login.Show();
         }
 
         private void btnBuscarArticulo_Click(object sender, EventArgs e)
