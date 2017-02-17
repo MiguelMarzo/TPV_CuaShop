@@ -27,8 +27,17 @@ namespace CapaPresentacion
             fdlg.RestoreDirectory = true;
             if (fdlg.ShowDialog() == DialogResult.OK)
             {
-                txtRutaFoto.Text = fdlg.FileName;
-            }
+                if ((fdlg.FileName.EndsWith(".png") || fdlg.FileName.EndsWith(".jpeg") || fdlg.FileName.EndsWith(".jpg")
+                || fdlg.FileName.EndsWith(".gif")))
+                {
+                    txtRutaFoto.Text = fdlg.FileName;
+                } else
+                {
+                    MessageBox.Show("Debes elegir un archivo con formato adecuado (.png, .jpeg, .jpg o .gif");
+                    return;
+                }
+                
+            } 
         }
 
         private void grpAñadirEmpleado_Enter(object sender, EventArgs e)
