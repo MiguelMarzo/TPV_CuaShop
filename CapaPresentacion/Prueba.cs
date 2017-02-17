@@ -32,7 +32,7 @@ namespace CapaPresentacion
         }
         private void cargarFamilias()
         {
-            var familias = _negocio.devolverFamilias();
+            var familias = _negocio.DevolverFamilias();
             foreach (Familia fam in familias)
             {
                 for (int i = 0; i < familias.Count; i++)

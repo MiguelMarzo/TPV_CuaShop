@@ -24,8 +24,8 @@ namespace CapaPresentacion
         {
             lblEmpleado.Text += StaticGlobal.GlobalVar.numeroEmpleado;
             lblFecha.Text += DateTime.Today.ToShortDateString();
-            var empleados =  _negocio.devolverEmpleados();
-            lblNumeroRecogida.Text += ": " + _negocio.maxRecogida();
+            var empleados =  _negocio.DevolverEmpleados();
+            lblNumeroRecogida.Text += ": " + _negocio.MaxRecogida();
             cmbEntregador.Items.Add("Profesor");
             cmbEntregador.Items.Add("Alumno");
         }

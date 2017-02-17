@@ -11,6 +11,7 @@ namespace Entidades
         public string codigoArticulo { get; set;}
         public string descripcion { get; set; }
         public string tallaPesoLitros { get; set; }
+        public int stock { get; set; }
         public int numeroRecogida { get; set; }
         public int numeroPedido { get; set; }
         public int numeroVenta { get; set; }
@@ -25,13 +26,14 @@ namespace Entidades
 
         }
 
-        public Articulo(string codigoArticulo, string descripcion, string tallaPesoLitros,
+        public Articulo(string codigoArticulo, string descripcion, string tallaPesoLitros, int stock,
             int numeroRecogida, int numeroPedido, int numeroVenta, decimal precio, 
             String localizacion, String idFamilia, String idSubFamilia)
         {
             this.codigoArticulo = codigoArticulo;
             this.descripcion = descripcion;
             this.tallaPesoLitros = tallaPesoLitros;
+            this.stock = stock;
             this.numeroRecogida = numeroRecogida;
             this.numeroPedido = numeroPedido;
             this.numeroVenta = numeroVenta;
