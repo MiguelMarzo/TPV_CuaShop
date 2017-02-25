@@ -7,11 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CapaNegocio;
+using Entidades;
 
 namespace CapaPresentacion
 {
     public partial class frmAdmin : Form
     {
+        private Negocio _negocio = new Negocio();
         public frmAdmin()
         {
             InitializeComponent();
@@ -47,6 +50,19 @@ namespace CapaPresentacion
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnAñadir_Click(object sender, EventArgs e)
+        {
+            if (txtNombreEmpleado.Text == "")
+            {
+                MessageBox.Show("Introduce un nombre de empleado");
+                return;
+            } else
+            {
+                String resultado = _negocio.InsertarEmpleado(txtNombreEmpleado.Text, txtRutaFoto.Text);
+                MessageBox.Show(resultado);
+            }
         }
     }
 }

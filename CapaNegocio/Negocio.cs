@@ -83,5 +83,10 @@ namespace CapaNegocio
         {
             return _datos.ActualizarStockArticulo(codigo, cantidad);
         }
+
+        public String InsertarEmpleado(String nombre, String rutaFoto)
+        {
+            return _datos.InsertarEmpleado(nombre, rutaFoto);
+        }
     }
 }

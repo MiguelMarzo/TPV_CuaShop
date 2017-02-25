@@ -30,12 +30,12 @@
         {
             this.lblTitulo = new System.Windows.Forms.Label();
             this.grpAñadirEmpleado = new System.Windows.Forms.GroupBox();
+            this.txtRutaFoto = new System.Windows.Forms.TextBox();
+            this.btnAñadirFoto = new System.Windows.Forms.Button();
+            this.lblNombreArticulo = new System.Windows.Forms.Label();
+            this.txtNombreEmpleado = new System.Windows.Forms.TextBox();
             this.btnAñadir = new System.Windows.Forms.Button();
             this.adminTableAdapter1 = new CapaDatos.dsCuaShopTableAdapters.AdminTableAdapter();
-            this.lblNombreArticulo = new System.Windows.Forms.Label();
-            this.txtNombreArticulo = new System.Windows.Forms.TextBox();
-            this.btnAñadirFoto = new System.Windows.Forms.Button();
-            this.txtRutaFoto = new System.Windows.Forms.TextBox();
             this.btnSalir = new System.Windows.Forms.Button();
             this.grpAñadirEmpleado.SuspendLayout();
             this.SuspendLayout();
@@ -59,7 +59,7 @@
             this.grpAñadirEmpleado.Controls.Add(this.txtRutaFoto);
             this.grpAñadirEmpleado.Controls.Add(this.btnAñadirFoto);
             this.grpAñadirEmpleado.Controls.Add(this.lblNombreArticulo);
-            this.grpAñadirEmpleado.Controls.Add(this.txtNombreArticulo);
+            this.grpAñadirEmpleado.Controls.Add(this.txtNombreEmpleado);
             this.grpAñadirEmpleado.Controls.Add(this.btnAñadir);
             this.grpAñadirEmpleado.Location = new System.Drawing.Point(31, 99);
             this.grpAñadirEmpleado.Name = "grpAñadirEmpleado";
@@ -69,41 +69,14 @@
             this.grpAñadirEmpleado.Text = "Añadir Empleado";
             this.grpAñadirEmpleado.Enter += new System.EventHandler(this.grpAñadirEmpleado_Enter);
             // 
-            // btnAñadir
+            // txtRutaFoto
             // 
-            this.btnAñadir.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnAñadir.Font = new System.Drawing.Font("Rockwell", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAñadir.Location = new System.Drawing.Point(40, 188);
-            this.btnAñadir.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnAñadir.Name = "btnAñadir";
-            this.btnAñadir.Size = new System.Drawing.Size(274, 56);
-            this.btnAñadir.TabIndex = 2;
-            this.btnAñadir.Text = "Añadir";
-            this.btnAñadir.UseVisualStyleBackColor = true;
-            // 
-            // adminTableAdapter1
-            // 
-            this.adminTableAdapter1.ClearBeforeFill = true;
-            // 
-            // lblNombreArticulo
-            // 
-            this.lblNombreArticulo.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblNombreArticulo.AutoSize = true;
-            this.lblNombreArticulo.Font = new System.Drawing.Font("Rockwell", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombreArticulo.Location = new System.Drawing.Point(6, 47);
-            this.lblNombreArticulo.Name = "lblNombreArticulo";
-            this.lblNombreArticulo.Size = new System.Drawing.Size(111, 27);
-            this.lblNombreArticulo.TabIndex = 6;
-            this.lblNombreArticulo.Text = "Nombre:";
-            // 
-            // txtNombreArticulo
-            // 
-            this.txtNombreArticulo.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtNombreArticulo.Location = new System.Drawing.Point(123, 52);
-            this.txtNombreArticulo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtNombreArticulo.Name = "txtNombreArticulo";
-            this.txtNombreArticulo.Size = new System.Drawing.Size(246, 22);
-            this.txtNombreArticulo.TabIndex = 7;
+            this.txtRutaFoto.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtRutaFoto.Location = new System.Drawing.Point(157, 121);
+            this.txtRutaFoto.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtRutaFoto.Name = "txtRutaFoto";
+            this.txtRutaFoto.Size = new System.Drawing.Size(157, 22);
+            this.txtRutaFoto.TabIndex = 9;
             // 
             // btnAñadirFoto
             // 
@@ -118,14 +91,42 @@
             this.btnAñadirFoto.UseVisualStyleBackColor = true;
             this.btnAñadirFoto.Click += new System.EventHandler(this.btnAñadirFoto_Click);
             // 
-            // txtRutaFoto
+            // lblNombreArticulo
             // 
-            this.txtRutaFoto.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtRutaFoto.Location = new System.Drawing.Point(157, 121);
-            this.txtRutaFoto.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtRutaFoto.Name = "txtRutaFoto";
-            this.txtRutaFoto.Size = new System.Drawing.Size(157, 22);
-            this.txtRutaFoto.TabIndex = 9;
+            this.lblNombreArticulo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblNombreArticulo.AutoSize = true;
+            this.lblNombreArticulo.Font = new System.Drawing.Font("Rockwell", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombreArticulo.Location = new System.Drawing.Point(6, 47);
+            this.lblNombreArticulo.Name = "lblNombreArticulo";
+            this.lblNombreArticulo.Size = new System.Drawing.Size(111, 27);
+            this.lblNombreArticulo.TabIndex = 6;
+            this.lblNombreArticulo.Text = "Nombre:";
+            // 
+            // txtNombreEmpleado
+            // 
+            this.txtNombreEmpleado.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtNombreEmpleado.Location = new System.Drawing.Point(123, 52);
+            this.txtNombreEmpleado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtNombreEmpleado.Name = "txtNombreEmpleado";
+            this.txtNombreEmpleado.Size = new System.Drawing.Size(246, 22);
+            this.txtNombreEmpleado.TabIndex = 7;
+            // 
+            // btnAñadir
+            // 
+            this.btnAñadir.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnAñadir.Font = new System.Drawing.Font("Rockwell", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAñadir.Location = new System.Drawing.Point(40, 188);
+            this.btnAñadir.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAñadir.Name = "btnAñadir";
+            this.btnAñadir.Size = new System.Drawing.Size(274, 56);
+            this.btnAñadir.TabIndex = 2;
+            this.btnAñadir.Text = "Añadir";
+            this.btnAñadir.UseVisualStyleBackColor = true;
+            this.btnAñadir.Click += new System.EventHandler(this.btnAñadir_Click);
+            // 
+            // adminTableAdapter1
+            // 
+            this.adminTableAdapter1.ClearBeforeFill = true;
             // 
             // btnSalir
             // 
@@ -165,7 +166,7 @@
         private System.Windows.Forms.Button btnAñadir;
         private CapaDatos.dsCuaShopTableAdapters.AdminTableAdapter adminTableAdapter1;
         private System.Windows.Forms.Label lblNombreArticulo;
-        private System.Windows.Forms.TextBox txtNombreArticulo;
+        private System.Windows.Forms.TextBox txtNombreEmpleado;
         private System.Windows.Forms.TextBox txtRutaFoto;
         private System.Windows.Forms.Button btnAñadirFoto;
         private System.Windows.Forms.Button btnSalir;

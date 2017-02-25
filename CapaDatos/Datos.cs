@@ -182,6 +182,15 @@ namespace CapaDatos
             }
         }
 
+        public String InsertarEmpleado(String nombre, String rutaFoto)
+        {
+            dsCuaShop.EmpleadoRow drEmpleado = dsShop.Empleado.NewEmpleadoRow();
+            drEmpleado.nombreEmpleado = nombre;
+            drEmpleado.rutaFoto = rutaFoto;
+            dsShop.Empleado.AddEmpleadoRow(drEmpleado);
+            daEmpleado.Update(drEmpleado);
+            return "Insertado";
+        }
 
         //FIN METODOS CREAR REGISTRO (INSERTS)
 

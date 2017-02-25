@@ -50,5 +50,10 @@ namespace CapaPresentacion
         {
             this.Close();
         }
+
+        private void frmAccionesEmpleado_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
