@@ -131,7 +131,7 @@ namespace CapaDatos
             daRecogida.Update(drRegistroRecogida);
             return "Insertado";
         }
-        public int MaxRecogida()
+        private int MaxRecogida()
         {
             var numRecogida = dsShop.Recogida.OrderByDescending(x => x.numeroRecogida).First().numeroRecogida;
 
@@ -185,13 +185,19 @@ namespace CapaDatos
         public String InsertarEmpleado(String nombre, String rutaFoto)
         {
             dsCuaShop.EmpleadoRow drEmpleado = dsShop.Empleado.NewEmpleadoRow();
+            drEmpleado.numeroEmpleado = (short) MaxEmpleado();
             drEmpleado.nombreEmpleado = nombre;
             drEmpleado.rutaFoto = rutaFoto;
             dsShop.Empleado.AddEmpleadoRow(drEmpleado);
             daEmpleado.Update(drEmpleado);
             return "Insertado";
         }
+        private int MaxEmpleado()
+        {
+            var numEmpleado = dsShop.Empleado.OrderByDescending(x => x.numeroEmpleado).First().numeroEmpleado;
 
+            return numEmpleado + 1;
+        }
         //FIN METODOS CREAR REGISTRO (INSERTS)
 
 
