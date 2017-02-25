@@ -88,5 +88,14 @@ namespace CapaNegocio
         {
             return _datos.InsertarEmpleado(nombre, rutaFoto);
         }
+        public bool AdminLogin(String usuario, String contraseña)
+        {
+            return _datos.AdminLogin(usuario, contraseña);
+        }
+        public Admin ComprobarAdminUsuario(String usuario)
+        {
+            return _datos.ComprobarAdminUsuario(usuario);
+        }
+
     }
 }

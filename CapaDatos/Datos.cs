@@ -17,6 +17,7 @@ namespace CapaDatos
         private VentaTableAdapter daVenta;
         private FamilliaTableAdapter daFamilia;
         private SubFamiliaTableAdapter daSubFamilia;
+        private AdminTableAdapter daAdmin;
         public Datos()
         {
             CrearDataSetCompleto();
@@ -43,6 +44,9 @@ namespace CapaDatos
 
             daSubFamilia = new dsCuaShopTableAdapters.SubFamiliaTableAdapter();
             daSubFamilia.Fill(dsShop.SubFamilia);
+
+            daAdmin = new dsCuaShopTableAdapters.AdminTableAdapter();
+            daAdmin.Fill(dsShop.Admin);
         }
 
         //METODOS PARA DEVOLVER OBJETOS (SELECTS)
@@ -113,7 +117,12 @@ namespace CapaDatos
                            daArticulo.idFamilia, daArticulo.idSubFamilia);
             return articulo.ToList()[0];
         }
-
+        public List<Admin> DevolverAdmins()
+        {
+            var admins = from daAdmin in dsShop.Admin
+                         select new Admin(daAdmin.Id, daAdmin.Usuario, daAdmin.Contraseña);
+            return admins.ToList();
+        }
 
         //FIN METODOS DEVOLVER OBJETOS (SELECTS)
 
@@ -131,7 +140,7 @@ namespace CapaDatos
             daRecogida.Update(drRegistroRecogida);
             return "Insertado";
         }
-        private int MaxRecogida()
+        public int MaxRecogida()
         {
             var numRecogida = dsShop.Recogida.OrderByDescending(x => x.numeroRecogida).First().numeroRecogida;
 
@@ -235,6 +244,34 @@ namespace CapaDatos
         }
 
 
-        //FIN METODOS PARA ACUALIZAR DATOS (UPDATES)       
+        //FIN METODOS PARA ACUALIZAR DATOS (UPDATES)    
+
+        //OTROS METODOS
+        public bool AdminLogin(String usuario, String contraseña)
+        {
+            var admins = from daAdmin in dsShop.Admin
+                         select new Admin(daAdmin.Id, daAdmin.Usuario, daAdmin.Contraseña);
+            foreach (Admin admin in admins.ToList())
+            {
+                if (admin.usuario == usuario && admin.contraseña == contraseña)
+                {
+                    return true;
+                }
+                    
+            }
+            return false;
+        }
+
+        public Admin ComprobarAdminUsuario(String usuario)
+        {
+            foreach (Admin admin in DevolverAdmins())
+            {
+                if (admin.usuario.ToUpper() == usuario.ToUpper())
+                {
+                    return admin;
+                } 
+            }
+            return null;
+        }
     }
 }
