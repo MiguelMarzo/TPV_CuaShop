@@ -38,7 +38,6 @@ namespace CapaPresentacion
             cmbNumRecogida.Enabled = false;
             cmbNumVenta.Enabled = false;
             cmbSubFamilia.Enabled = false;
-            cmbSubFamilia.Enabled = false;
         }
 
         private void chbDescripcion_CheckedChanged(object sender, EventArgs e)
@@ -170,6 +169,22 @@ namespace CapaPresentacion
             cmbNumVenta.Enabled = false;
             cmbSubFamilia.Enabled = false;
             cmbSubFamilia.Enabled = false;
+
+            txtAltura.Text = "";
+            txtDescripcion.Text = "";
+            txtEstante.Text = "";
+            txtEstanteria.Text = "";
+            cmbFamilia.Text = "";
+            cmbIVA.Text = "";
+            cmbNumPedido.Text = "";
+            cmbNumRecogida.Text = "";
+            cmbNumVenta.Text = "";
+            cmbSubFamilia.Text = "";
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
