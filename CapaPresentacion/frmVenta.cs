@@ -26,13 +26,9 @@ namespace CapaPresentacion
         }
         private void Prueba_Load(object sender, EventArgs e)
         {
-            articulos = _negocio.DevolverTodosLosArticulos();
             cargarFamilias();
-            dgvProductos.DataSource = articulos;
-            //dgvCarrito.DataSource = carrito;
             lblEmpleado.Text += StaticGlobal.GlobalVar.numeroEmpleado;
             lblFecha.Text += DateTime.Today.ToShortDateString();
-
         }
         private void cargarFamilias()
         {
@@ -44,6 +40,7 @@ namespace CapaPresentacion
                 countBtn++;
                 famButton.Tag = fam;
                 famButton.Text = fam.nombreFamilia;
+                famButton.Visible = true;
                 //famButton.BackgroundImage = Image.FromFile(@fam.rutaFoto);        
             }
         }
@@ -52,11 +49,19 @@ namespace CapaPresentacion
             Button famButton = sender as Button;
             if (famButton.Tag != null)
             {
+                dgvProductos.DataSource = articulos;
+                foreach (Control btn in grpFamilias.Controls)
+                {
+                    btn.BackColor = Color.Transparent;
+                }
+                famButton.BackColor = Color.Aqua;
                 subFamilias = _negocio.DevolverSubFamiliasPorFamilia((Familia)famButton.Tag);
                 foreach (Control btn in grpSubFamilias.Controls)
                 {
                     btn.Text = "";
+                    btn.Visible = false;
                     btn.Tag = null;
+                    btn.BackColor = Color.Transparent;
                 }
                 int countBtn = 1;
                 foreach (SubFamilia subFam in subFamilias)
@@ -65,6 +70,7 @@ namespace CapaPresentacion
                     countBtn++;
                     subFamButton.Tag = subFam;
                     subFamButton.Text = subFam.nombre;
+                    subFamButton.Visible = true;
                 }
             }
         }
@@ -74,6 +80,11 @@ namespace CapaPresentacion
             Button subFamButton = sender as Button;
             if (subFamButton.Tag != null)
             {
+                foreach (Control btn in grpSubFamilias.Controls)
+                {
+                    btn.BackColor = Color.Transparent;
+                }
+                subFamButton.BackColor = Color.Aqua;
                 articulos = _negocio.DevolverArticulosPorSubFamilia((SubFamilia)subFamButton.Tag);
                 dgvProductos.DataSource = articulos.Select(o => new
                 {
@@ -83,7 +94,7 @@ namespace CapaPresentacion
                     Cantidad = o.stock,
                     TallaPesoLitros = o.stock
                 }).ToList();
-                
+                if (articulos.Count > 0) { dgvProductos.Rows[0].Selected = true; }
             }
         }
         private void btnAtras_Click(object sender, EventArgs e)
@@ -97,13 +108,16 @@ namespace CapaPresentacion
         }
         private void btnAnadirCarrito_Click(object sender, EventArgs e)
         {
-            foreach (Articulo art in articulos)
+            Articulo art = articulos.Find(x => x.codigoArticulo == dgvProductos.SelectedRows[0].Cells[0].Value.ToString());
+            if (art.stock > 0)
             {
-                if (art.descripcion == dgvProductos.SelectedRows[0].Cells[0].Value.ToString())
+                if (carrito.Contains(art))
+                {
+                    carrito.Find(x => x.codigoArticulo == art.codigoArticulo).stock++;
+                }
+                else
                 {
                     carrito.Add(art);
-                    art.stock--;
-                    dgvProductos.Update();
                     dgvCarrito.DataSource = carrito.Select(o => new
                     {
                         Codigo = o.codigoArticulo,
@@ -112,11 +126,17 @@ namespace CapaPresentacion
                         Cantidad = o.stock,
                         TallaPesoLitros = o.stock
                     }).ToList();
-                    dgvCarrito.Update();
-                    return;
                 }
+                art.stock--;
+                dgvProductos.Refresh();
+                dgvCarrito.Refresh();
+                return;
             }
-            
+            else
+            {
+                MessageBox.Show("No hay stock");
+                return;
+            }
             //if (Convert.ToInt32(dgvProductos.CurrentRow.Cells["stock"].Value) > 0)
             //{
             //    Articulo articulo = new Articulo();
@@ -144,26 +164,26 @@ namespace CapaPresentacion
         }
 
         private void btnDevolverAProductos_Click(object sender, EventArgs e)
+    {
+
+        if (articulos.Count > 0)
         {
 
-            if (articulos.Count > 0)
-            {
+            String CodigoArticulo = Convert.ToString(dgvCarrito.CurrentRow.Cells["codigoArticulo"].Value);
+            Articulo articulo = _negocio.DevolverArticuloPorCodigo(CodigoArticulo);
+            articulo.stock = articulo.stock + 1;
 
-                String CodigoArticulo = Convert.ToString(dgvCarrito.CurrentRow.Cells["codigoArticulo"].Value);
-                Articulo articulo = _negocio.DevolverArticuloPorCodigo(CodigoArticulo);
-                articulo.stock = articulo.stock + 1;
-
-                articulos.RemoveAt(dgvCarrito.CurrentRow.Index);
-                dgvCarrito.DataSource = null;
-                dgvCarrito.DataSource = articulos;
-            }
-
+            articulos.RemoveAt(dgvCarrito.CurrentRow.Index);
+            dgvCarrito.DataSource = null;
+            dgvCarrito.DataSource = articulos;
         }
 
-        private void btnSacarTicket_Click(object sender, EventArgs e)
-        {
-
-        }
-       
     }
+
+    private void btnSacarTicket_Click(object sender, EventArgs e)
+    {
+
+    }
+
+}
 }
