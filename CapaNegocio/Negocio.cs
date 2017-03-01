@@ -83,5 +83,10 @@ namespace CapaNegocio
         {
             return _datos.ActualizarStockArticulo(codigo, cantidad);
         }
+
+        public List<Articulo> BuscarArticuloEspecifico(string descripcion, Familia familia, SubFamilia subFamilia, int numeroRecogida, int numeroPedido, int numeroVenta, Iva iva, int estanteria, int estante, int altura)
+        {
+            return _datos.BuscarArticuloEspecifico(descripcion, familia, subFamilia, numeroRecogida, numeroPedido, numeroVenta, iva, estanteria, estante, altura);
+        }
     }
 }

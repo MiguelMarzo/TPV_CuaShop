@@ -77,7 +77,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 0);
+            this.label1.Location = new System.Drawing.Point(3, 4);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(63, 13);
             this.label1.TabIndex = 1;
@@ -155,7 +155,7 @@
             // chbLocalizacion
             // 
             this.chbLocalizacion.AutoSize = true;
-            this.chbLocalizacion.Location = new System.Drawing.Point(75, 422);
+            this.chbLocalizacion.Location = new System.Drawing.Point(75, 434);
             this.chbLocalizacion.Name = "chbLocalizacion";
             this.chbLocalizacion.Size = new System.Drawing.Size(15, 14);
             this.chbLocalizacion.TabIndex = 32;
@@ -225,7 +225,7 @@
             // chbDescripcion
             // 
             this.chbDescripcion.AutoSize = true;
-            this.chbDescripcion.Location = new System.Drawing.Point(72, -1);
+            this.chbDescripcion.Location = new System.Drawing.Point(72, 3);
             this.chbDescripcion.Name = "chbDescripcion";
             this.chbDescripcion.Size = new System.Drawing.Size(15, 14);
             this.chbDescripcion.TabIndex = 24;
@@ -283,9 +283,9 @@
             // cmbIVA
             // 
             this.cmbIVA.FormattingEnabled = true;
-            this.cmbIVA.Location = new System.Drawing.Point(3, 379);
+            this.cmbIVA.Location = new System.Drawing.Point(6, 379);
             this.cmbIVA.Name = "cmbIVA";
-            this.cmbIVA.Size = new System.Drawing.Size(121, 21);
+            this.cmbIVA.Size = new System.Drawing.Size(118, 21);
             this.cmbIVA.TabIndex = 17;
             // 
             // cmbNumVenta
@@ -330,7 +330,7 @@
             // 
             // txtDescripcion
             // 
-            this.txtDescripcion.Location = new System.Drawing.Point(6, 16);
+            this.txtDescripcion.Location = new System.Drawing.Point(4, 19);
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(100, 20);
             this.txtDescripcion.TabIndex = 10;
@@ -356,7 +356,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(3, 422);
+            this.label7.Location = new System.Drawing.Point(3, 434);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(66, 13);
             this.label7.TabIndex = 7;

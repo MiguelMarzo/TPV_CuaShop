@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Entidades;
 using CapaDatos.dsCuaShopTableAdapters;
+using System.Data.OleDb;
 
 namespace CapaDatos
 {
@@ -105,11 +106,13 @@ namespace CapaDatos
         }
         public Articulo DevolverArticuloPorCodigo(String codigo)
         {
+
             var articulo = from daArticulo in dsShop.Articulo
                            where daArticulo.codigoArticulo == codigo
                            select new Articulo(daArticulo.codigoArticulo, daArticulo.descripcion, daArticulo.tallaPesoLitros, daArticulo.stock,
                            daArticulo.numeroRecogida, daArticulo.numeroPedido, daArticulo.numeroVenta, daArticulo.precio, daArticulo.localizacion,
                            daArticulo.idFamilia, daArticulo.idSubFamilia);
+          
             return articulo.ToList()[0];
         }
 
@@ -219,6 +222,217 @@ namespace CapaDatos
         }
 
 
-        //FIN METODOS PARA ACUALIZAR DATOS (UPDATES)       
+        //FIN METODOS PARA ACUALIZAR DATOS (UPDATES)   
+        
+        public List<Articulo> BuscarArticuloEspecifico(string descripcion, Familia familia, SubFamilia subFamilia, int numeroRecogida, int numeroPedido, int numeroVenta, Iva iva, int estanteria, int estante, int altura)
+        {
+            string cadCon = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=TPVdb1.accdb";
+
+            List<Articulo> result = new List<Articulo>();
+
+            string query = "";
+            bool first = true;
+            if(descripcion != "")
+            {
+                first = false;
+                query += " descripcion = " + descripcion;
+            }
+
+            if(familia != null && subFamilia == null)
+            {
+                if(first)
+                {
+                    first = false;
+                    query += " idFamilia = " + familia.idFamilia;
+                }
+                else
+                {
+                    query += " and idFamilia = " + familia.idFamilia;
+                }
+            }
+
+            if(subFamilia != null)
+            {
+                if(first)
+                {
+                    first = false;
+                    query += " idFamilia = " + subFamilia.idFamilia + " and idSubFamilia = " + subFamilia.idSubFamilia;
+                }
+                else
+                {
+                    query += " and idFamilia = " + subFamilia.idFamilia + " and idSubFamilia = " + subFamilia.idSubFamilia;
+                }
+            }
+
+            if(numeroRecogida != -1)
+            {
+                if (first)
+                {
+                    first = false;
+                    query += " numeroRecogida = " + numeroRecogida;
+                }
+                else
+                {
+                    query += " and numeroRecogida = " + numeroRecogida;
+                }
+            }
+
+            if(numeroPedido != -1)
+            {
+                if (first)
+                {
+                    first = false;
+                    query += " numeroPedido = " + numeroPedido;
+                }
+                else
+                {
+                    query += " and numeroPedido = " + numeroPedido;
+                }
+            }
+
+            if(numeroVenta != -1)
+            {
+                if (first)
+                {
+                    first = false;
+                    query += " numeroVenta = " + numeroVenta;
+                }
+                else
+                {
+                    query += " and numeroVenta = " + numeroVenta;
+                }
+            }
+
+            if(iva != null)
+            {
+                if (first)
+                {
+                    first = false;
+                    query += " idIva = " + iva.idIva;
+                }
+                else
+                {
+                    query += " and idIva = " + iva.idIva;
+                }
+            }
+
+            if(estanteria != -1)
+            {
+                if(estante != -1)
+                {
+                    if(altura != -1)
+                    {
+                        if (first)
+                        {
+                            first = false;
+                            query += " localizacion = " + estanteria + "." + estante + "." + altura;
+                        }
+                        else
+                        {
+                            query += " and localizacion = " + estanteria + "." + estante + "." + altura;
+                        }
+                    }
+                    else
+                    {
+                        if (first)
+                        {
+                            first = false;
+                            query += " localizacion like " + estanteria + "." + estante + ".%";
+                        }else
+                        {
+                            query += " and localizacion like " + estanteria + "." + estante + ".%";
+                        }
+                    }
+                }
+                else if(altura != -1)
+                {
+                    if (first)
+                    {
+                        first = false;
+                        query += " localizacion like " + estanteria + ".%." + altura;
+                    }
+                    else
+                    {
+                        query += " and localizacion like " + estanteria + ".%." + altura;
+                    }
+                }
+                else
+                {
+                    if (first)
+                    {
+                        first = false;
+                        query += " localizacion like " + estanteria + ".%.%";
+                    }
+                    else
+                    {
+                        query += " and localizacion like " + estanteria + ".%.%";
+                    }
+                }
+                
+            }
+            else if(estante != -1)
+            {
+                if(altura != -1)
+                {
+                    if (first)
+                    {
+                        first = false;
+                        query += " localizacion like %." + estante + "." + altura;
+                    }
+                    else
+                    {
+                        query += " and localizacion like %." + estante + "." + altura;
+                    }
+                }
+                else
+                {
+                    if (first)
+                    {
+                        first = false;
+                        query += " localizacion like %." + estante + ".%";
+                    }
+                    else
+                    {
+                        query += " and localizacion like %." + estante + ".%";
+                    }
+                }
+            }
+            else if(altura != -1)
+            {
+                if (first)
+                {
+                    first = false;
+                    query += " localizacion like %.%." + altura;
+                }
+                else
+                {
+                    query += " and localizacion like %.%." + altura;
+                }
+            }
+
+            string sql = "select * from Articulo where" + query;
+            OleDbConnection conArticulo = new OleDbConnection(cadCon);
+            OleDbCommand cmd = new OleDbCommand(sql, conArticulo);
+            try
+            {
+                conArticulo.Open();
+                OleDbDataReader dr = cmd.ExecuteReader();
+                if(!dr.HasRows)
+                {
+                    return null;
+                }
+
+                while (dr.Read())
+                {
+                    result.Add(new Articulo((string)dr["codigoArticulo"], (string)dr["descripcion"], (string)dr["tallaPesoLitros"], (int)dr["stock"], (int)dr["numeroRecogida"], (int)dr["numeroPedido"], (int)dr["numeroventa"], (decimal)dr["precio"], (string)dr["localizacion"], (string)dr["idFamilia"], (string)dr["idSubFamilia"]));
+                }
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+
+            return result;
+        }    
     }
 }
