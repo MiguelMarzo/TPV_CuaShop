@@ -60,8 +60,8 @@ namespace CapaPresentacion
                 return;
             } else
             {
-                String resultado = _negocio.InsertarEmpleado(txtNombreEmpleado.Text, txtRutaFoto.Text);
-                MessageBox.Show(resultado);
+                //String resultado = _negocio.InsertarEmpleado(txtNombreEmpleado.Text, txtRutaFoto.Text);
+                //MessageBox.Show(resultado);
             }
         }
     }
