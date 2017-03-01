@@ -70,91 +70,92 @@
             // 
             // btnFamilia10
             // 
-            this.btnFamilia10.Location = new System.Drawing.Point(87, 336);
-            this.btnFamilia10.Margin = new System.Windows.Forms.Padding(2);
+            this.btnFamilia10.Location = new System.Drawing.Point(116, 414);
+            this.btnFamilia10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnFamilia10.Name = "btnFamilia10";
-            this.btnFamilia10.Size = new System.Drawing.Size(71, 67);
+            this.btnFamilia10.Size = new System.Drawing.Size(95, 82);
             this.btnFamilia10.TabIndex = 19;
-            this.btnFamilia10.Text = "familia10";
             this.btnFamilia10.UseVisualStyleBackColor = true;
+            this.btnFamilia10.Click += new System.EventHandler(this.FamButtonClick);
             // 
             // btnFamilia9
             // 
-            this.btnFamilia9.Location = new System.Drawing.Point(4, 336);
-            this.btnFamilia9.Margin = new System.Windows.Forms.Padding(2);
+            this.btnFamilia9.Location = new System.Drawing.Point(5, 414);
+            this.btnFamilia9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnFamilia9.Name = "btnFamilia9";
-            this.btnFamilia9.Size = new System.Drawing.Size(71, 67);
+            this.btnFamilia9.Size = new System.Drawing.Size(95, 82);
             this.btnFamilia9.TabIndex = 18;
-            this.btnFamilia9.Text = "familia9";
             this.btnFamilia9.UseVisualStyleBackColor = true;
+            this.btnFamilia9.Click += new System.EventHandler(this.FamButtonClick);
             // 
             // btnFamilia8
             // 
-            this.btnFamilia8.Location = new System.Drawing.Point(87, 255);
-            this.btnFamilia8.Margin = new System.Windows.Forms.Padding(2);
+            this.btnFamilia8.Location = new System.Drawing.Point(116, 314);
+            this.btnFamilia8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnFamilia8.Name = "btnFamilia8";
-            this.btnFamilia8.Size = new System.Drawing.Size(71, 67);
+            this.btnFamilia8.Size = new System.Drawing.Size(95, 82);
             this.btnFamilia8.TabIndex = 17;
-            this.btnFamilia8.Text = "familia8";
             this.btnFamilia8.UseVisualStyleBackColor = true;
+            this.btnFamilia8.Click += new System.EventHandler(this.FamButtonClick);
             // 
             // btnFamilia7
             // 
-            this.btnFamilia7.Location = new System.Drawing.Point(4, 255);
-            this.btnFamilia7.Margin = new System.Windows.Forms.Padding(2);
+            this.btnFamilia7.Location = new System.Drawing.Point(5, 314);
+            this.btnFamilia7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnFamilia7.Name = "btnFamilia7";
-            this.btnFamilia7.Size = new System.Drawing.Size(71, 67);
+            this.btnFamilia7.Size = new System.Drawing.Size(95, 82);
             this.btnFamilia7.TabIndex = 16;
-            this.btnFamilia7.Text = "familia7";
             this.btnFamilia7.UseVisualStyleBackColor = true;
+            this.btnFamilia7.Click += new System.EventHandler(this.FamButtonClick);
             // 
             // btnFamilia5
             // 
-            this.btnFamilia5.Location = new System.Drawing.Point(4, 180);
-            this.btnFamilia5.Margin = new System.Windows.Forms.Padding(2);
+            this.btnFamilia5.Location = new System.Drawing.Point(5, 222);
+            this.btnFamilia5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnFamilia5.Name = "btnFamilia5";
-            this.btnFamilia5.Size = new System.Drawing.Size(71, 67);
+            this.btnFamilia5.Size = new System.Drawing.Size(95, 82);
             this.btnFamilia5.TabIndex = 14;
-            this.btnFamilia5.Text = "familia5";
             this.btnFamilia5.UseVisualStyleBackColor = true;
+            this.btnFamilia5.Click += new System.EventHandler(this.FamButtonClick);
             // 
             // btnFamilia4
             // 
-            this.btnFamilia4.Location = new System.Drawing.Point(87, 101);
-            this.btnFamilia4.Margin = new System.Windows.Forms.Padding(2);
+            this.btnFamilia4.Location = new System.Drawing.Point(116, 124);
+            this.btnFamilia4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnFamilia4.Name = "btnFamilia4";
-            this.btnFamilia4.Size = new System.Drawing.Size(71, 67);
+            this.btnFamilia4.Size = new System.Drawing.Size(95, 82);
             this.btnFamilia4.TabIndex = 13;
-            this.btnFamilia4.Text = "familia4";
             this.btnFamilia4.UseVisualStyleBackColor = true;
+            this.btnFamilia4.Click += new System.EventHandler(this.FamButtonClick);
             // 
             // btnFamilia3
             // 
-            this.btnFamilia3.Location = new System.Drawing.Point(4, 101);
-            this.btnFamilia3.Margin = new System.Windows.Forms.Padding(2);
+            this.btnFamilia3.Location = new System.Drawing.Point(5, 124);
+            this.btnFamilia3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnFamilia3.Name = "btnFamilia3";
-            this.btnFamilia3.Size = new System.Drawing.Size(71, 67);
+            this.btnFamilia3.Size = new System.Drawing.Size(95, 82);
             this.btnFamilia3.TabIndex = 12;
-            this.btnFamilia3.Text = "familia3";
             this.btnFamilia3.UseVisualStyleBackColor = true;
+            this.btnFamilia3.Click += new System.EventHandler(this.FamButtonClick);
             // 
             // btnFamilia2
             // 
-            this.btnFamilia2.Location = new System.Drawing.Point(87, 22);
-            this.btnFamilia2.Margin = new System.Windows.Forms.Padding(2);
+            this.btnFamilia2.Location = new System.Drawing.Point(116, 27);
+            this.btnFamilia2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnFamilia2.Name = "btnFamilia2";
-            this.btnFamilia2.Size = new System.Drawing.Size(71, 67);
+            this.btnFamilia2.Size = new System.Drawing.Size(95, 82);
             this.btnFamilia2.TabIndex = 11;
-            this.btnFamilia2.Text = "familia2";
             this.btnFamilia2.UseVisualStyleBackColor = true;
+            this.btnFamilia2.Click += new System.EventHandler(this.FamButtonClick);
             // 
             // btnAnadirCarrito
             // 
             this.btnAnadirCarrito.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnAnadirCarrito.Location = new System.Drawing.Point(678, 164);
+            this.btnAnadirCarrito.Location = new System.Drawing.Point(904, 202);
+            this.btnAnadirCarrito.Margin = new System.Windows.Forms.Padding(4);
             this.btnAnadirCarrito.Name = "btnAnadirCarrito";
             this.btnAnadirCarrito.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btnAnadirCarrito.Size = new System.Drawing.Size(91, 106);
+            this.btnAnadirCarrito.Size = new System.Drawing.Size(121, 130);
             this.btnAnadirCarrito.TabIndex = 20;
             this.btnAnadirCarrito.Text = "Añadir al carrito        <----------------------";
             this.btnAnadirCarrito.UseVisualStyleBackColor = true;
@@ -163,42 +164,43 @@
             // btnSacarTicket
             // 
             this.btnSacarTicket.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnSacarTicket.Location = new System.Drawing.Point(826, 530);
+            this.btnSacarTicket.Location = new System.Drawing.Point(1101, 652);
+            this.btnSacarTicket.Margin = new System.Windows.Forms.Padding(4);
             this.btnSacarTicket.Name = "btnSacarTicket";
-            this.btnSacarTicket.Size = new System.Drawing.Size(104, 93);
+            this.btnSacarTicket.Size = new System.Drawing.Size(139, 114);
             this.btnSacarTicket.TabIndex = 21;
             this.btnSacarTicket.Text = "Efectuar compra / Sacar ticket";
             this.btnSacarTicket.UseVisualStyleBackColor = true;
+            this.btnSacarTicket.Click += new System.EventHandler(this.btnSacarTicket_Click);
             // 
             // btnFamilia6
             // 
-            this.btnFamilia6.Location = new System.Drawing.Point(87, 180);
-            this.btnFamilia6.Margin = new System.Windows.Forms.Padding(2);
+            this.btnFamilia6.Location = new System.Drawing.Point(116, 222);
+            this.btnFamilia6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnFamilia6.Name = "btnFamilia6";
-            this.btnFamilia6.Size = new System.Drawing.Size(71, 67);
+            this.btnFamilia6.Size = new System.Drawing.Size(95, 82);
             this.btnFamilia6.TabIndex = 24;
-            this.btnFamilia6.Text = "familia6";
             this.btnFamilia6.UseVisualStyleBackColor = true;
+            this.btnFamilia6.Click += new System.EventHandler(this.FamButtonClick);
             // 
             // btnFamilia1
             // 
-            this.btnFamilia1.Location = new System.Drawing.Point(4, 22);
-            this.btnFamilia1.Margin = new System.Windows.Forms.Padding(2);
+            this.btnFamilia1.Location = new System.Drawing.Point(5, 27);
+            this.btnFamilia1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnFamilia1.Name = "btnFamilia1";
-            this.btnFamilia1.Size = new System.Drawing.Size(71, 67);
+            this.btnFamilia1.Size = new System.Drawing.Size(95, 82);
             this.btnFamilia1.TabIndex = 23;
-            this.btnFamilia1.Text = "familia1";
             this.btnFamilia1.UseVisualStyleBackColor = true;
-            this.btnFamilia1.Click += new System.EventHandler(this.button2_Click);
+            this.btnFamilia1.Click += new System.EventHandler(this.FamButtonClick);
             // 
             // btnAtras
             // 
             this.btnAtras.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnAtras.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAtras.Location = new System.Drawing.Point(10, 144);
-            this.btnAtras.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAtras.Location = new System.Drawing.Point(13, 177);
+            this.btnAtras.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAtras.Name = "btnAtras";
-            this.btnAtras.Size = new System.Drawing.Size(147, 52);
+            this.btnAtras.Size = new System.Drawing.Size(196, 64);
             this.btnAtras.TabIndex = 25;
             this.btnAtras.Text = "Volver";
             this.btnAtras.UseVisualStyleBackColor = true;
@@ -208,9 +210,10 @@
             // 
             this.dgvProductos.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProductos.Location = new System.Drawing.Point(182, 164);
+            this.dgvProductos.Location = new System.Drawing.Point(243, 202);
+            this.dgvProductos.Margin = new System.Windows.Forms.Padding(4);
             this.dgvProductos.Name = "dgvProductos";
-            this.dgvProductos.Size = new System.Drawing.Size(490, 272);
+            this.dgvProductos.Size = new System.Drawing.Size(653, 335);
             this.dgvProductos.TabIndex = 26;
             // 
             // grpFamilias
@@ -226,11 +229,11 @@
             this.grpFamilias.Controls.Add(this.btnFamilia8);
             this.grpFamilias.Controls.Add(this.btnFamilia10);
             this.grpFamilias.Controls.Add(this.btnFamilia9);
-            this.grpFamilias.Location = new System.Drawing.Point(-1, 200);
-            this.grpFamilias.Margin = new System.Windows.Forms.Padding(2);
+            this.grpFamilias.Location = new System.Drawing.Point(-1, 246);
+            this.grpFamilias.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grpFamilias.Name = "grpFamilias";
-            this.grpFamilias.Padding = new System.Windows.Forms.Padding(2);
-            this.grpFamilias.Size = new System.Drawing.Size(170, 421);
+            this.grpFamilias.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.grpFamilias.Size = new System.Drawing.Size(227, 518);
             this.grpFamilias.TabIndex = 27;
             this.grpFamilias.TabStop = false;
             this.grpFamilias.Text = "FAMILIAS";
@@ -250,143 +253,142 @@
             this.grpSubFamilias.Controls.Add(this.btnSubFamilia8);
             this.grpSubFamilias.Controls.Add(this.btnSubFamilia10);
             this.grpSubFamilias.Controls.Add(this.btnSubFamilia9);
-            this.grpSubFamilias.Location = new System.Drawing.Point(182, 442);
-            this.grpSubFamilias.Margin = new System.Windows.Forms.Padding(2);
+            this.grpSubFamilias.Location = new System.Drawing.Point(243, 544);
+            this.grpSubFamilias.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grpSubFamilias.Name = "grpSubFamilias";
-            this.grpSubFamilias.Padding = new System.Windows.Forms.Padding(2);
-            this.grpSubFamilias.Size = new System.Drawing.Size(498, 179);
+            this.grpSubFamilias.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.grpSubFamilias.Size = new System.Drawing.Size(664, 220);
             this.grpSubFamilias.TabIndex = 28;
             this.grpSubFamilias.TabStop = false;
             this.grpSubFamilias.Text = "SUBFAMILIAS";
             // 
             // btnSubFamilia12
             // 
-            this.btnSubFamilia12.Location = new System.Drawing.Point(419, 101);
-            this.btnSubFamilia12.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSubFamilia12.Location = new System.Drawing.Point(559, 124);
+            this.btnSubFamilia12.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSubFamilia12.Name = "btnSubFamilia12";
-            this.btnSubFamilia12.Size = new System.Drawing.Size(71, 67);
+            this.btnSubFamilia12.Size = new System.Drawing.Size(95, 82);
             this.btnSubFamilia12.TabIndex = 26;
-            this.btnSubFamilia12.Text = "subfamilia12";
             this.btnSubFamilia12.UseVisualStyleBackColor = true;
+            this.btnSubFamilia12.Click += new System.EventHandler(this.SubFamButtonClick);
             // 
             // btnSubFamilia11
             // 
-            this.btnSubFamilia11.Location = new System.Drawing.Point(337, 101);
-            this.btnSubFamilia11.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSubFamilia11.Location = new System.Drawing.Point(449, 124);
+            this.btnSubFamilia11.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSubFamilia11.Name = "btnSubFamilia11";
-            this.btnSubFamilia11.Size = new System.Drawing.Size(71, 67);
+            this.btnSubFamilia11.Size = new System.Drawing.Size(95, 82);
             this.btnSubFamilia11.TabIndex = 25;
-            this.btnSubFamilia11.Text = "subfamilia11";
             this.btnSubFamilia11.UseVisualStyleBackColor = true;
+            this.btnSubFamilia11.Click += new System.EventHandler(this.SubFamButtonClick);
             // 
             // btnSubFamilia1
             // 
-            this.btnSubFamilia1.Location = new System.Drawing.Point(4, 22);
-            this.btnSubFamilia1.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSubFamilia1.Location = new System.Drawing.Point(5, 27);
+            this.btnSubFamilia1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSubFamilia1.Name = "btnSubFamilia1";
-            this.btnSubFamilia1.Size = new System.Drawing.Size(71, 67);
+            this.btnSubFamilia1.Size = new System.Drawing.Size(95, 82);
             this.btnSubFamilia1.TabIndex = 23;
-            this.btnSubFamilia1.Text = "subfamilia1";
             this.btnSubFamilia1.UseVisualStyleBackColor = true;
+            this.btnSubFamilia1.Click += new System.EventHandler(this.SubFamButtonClick);
             // 
             // btnSubFamilia2
             // 
-            this.btnSubFamilia2.Location = new System.Drawing.Point(87, 22);
-            this.btnSubFamilia2.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSubFamilia2.Location = new System.Drawing.Point(116, 27);
+            this.btnSubFamilia2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSubFamilia2.Name = "btnSubFamilia2";
-            this.btnSubFamilia2.Size = new System.Drawing.Size(71, 67);
+            this.btnSubFamilia2.Size = new System.Drawing.Size(95, 82);
             this.btnSubFamilia2.TabIndex = 11;
-            this.btnSubFamilia2.Text = "subfamilia2";
             this.btnSubFamilia2.UseVisualStyleBackColor = true;
+            this.btnSubFamilia2.Click += new System.EventHandler(this.SubFamButtonClick);
             // 
             // btnSubFamilia3
             // 
-            this.btnSubFamilia3.Location = new System.Drawing.Point(170, 22);
-            this.btnSubFamilia3.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSubFamilia3.Location = new System.Drawing.Point(227, 27);
+            this.btnSubFamilia3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSubFamilia3.Name = "btnSubFamilia3";
-            this.btnSubFamilia3.Size = new System.Drawing.Size(71, 67);
+            this.btnSubFamilia3.Size = new System.Drawing.Size(95, 82);
             this.btnSubFamilia3.TabIndex = 12;
-            this.btnSubFamilia3.Text = "subfamilia3";
             this.btnSubFamilia3.UseVisualStyleBackColor = true;
+            this.btnSubFamilia3.Click += new System.EventHandler(this.SubFamButtonClick);
             // 
             // btnSubFamilia6
             // 
-            this.btnSubFamilia6.Location = new System.Drawing.Point(419, 22);
-            this.btnSubFamilia6.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSubFamilia6.Location = new System.Drawing.Point(559, 27);
+            this.btnSubFamilia6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSubFamilia6.Name = "btnSubFamilia6";
-            this.btnSubFamilia6.Size = new System.Drawing.Size(71, 67);
+            this.btnSubFamilia6.Size = new System.Drawing.Size(95, 82);
             this.btnSubFamilia6.TabIndex = 24;
-            this.btnSubFamilia6.Text = "subfamilia6";
             this.btnSubFamilia6.UseVisualStyleBackColor = true;
+            this.btnSubFamilia6.Click += new System.EventHandler(this.SubFamButtonClick);
             // 
             // btnSubFamilia4
             // 
-            this.btnSubFamilia4.Location = new System.Drawing.Point(252, 22);
-            this.btnSubFamilia4.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSubFamilia4.Location = new System.Drawing.Point(336, 27);
+            this.btnSubFamilia4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSubFamilia4.Name = "btnSubFamilia4";
-            this.btnSubFamilia4.Size = new System.Drawing.Size(71, 67);
+            this.btnSubFamilia4.Size = new System.Drawing.Size(95, 82);
             this.btnSubFamilia4.TabIndex = 13;
-            this.btnSubFamilia4.Text = "subfamilia4";
             this.btnSubFamilia4.UseVisualStyleBackColor = true;
+            this.btnSubFamilia4.Click += new System.EventHandler(this.SubFamButtonClick);
             // 
             // btnSubFamilia5
             // 
-            this.btnSubFamilia5.Location = new System.Drawing.Point(337, 22);
-            this.btnSubFamilia5.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSubFamilia5.Location = new System.Drawing.Point(449, 27);
+            this.btnSubFamilia5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSubFamilia5.Name = "btnSubFamilia5";
-            this.btnSubFamilia5.Size = new System.Drawing.Size(71, 67);
+            this.btnSubFamilia5.Size = new System.Drawing.Size(95, 82);
             this.btnSubFamilia5.TabIndex = 14;
-            this.btnSubFamilia5.Text = "subfamilia5";
             this.btnSubFamilia5.UseVisualStyleBackColor = true;
+            this.btnSubFamilia5.Click += new System.EventHandler(this.SubFamButtonClick);
             // 
             // btnSubFamilia7
             // 
-            this.btnSubFamilia7.Location = new System.Drawing.Point(4, 101);
-            this.btnSubFamilia7.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSubFamilia7.Location = new System.Drawing.Point(5, 124);
+            this.btnSubFamilia7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSubFamilia7.Name = "btnSubFamilia7";
-            this.btnSubFamilia7.Size = new System.Drawing.Size(71, 67);
+            this.btnSubFamilia7.Size = new System.Drawing.Size(95, 82);
             this.btnSubFamilia7.TabIndex = 16;
-            this.btnSubFamilia7.Text = "subfamilia7";
             this.btnSubFamilia7.UseVisualStyleBackColor = true;
+            this.btnSubFamilia7.Click += new System.EventHandler(this.SubFamButtonClick);
             // 
             // btnSubFamilia8
             // 
-            this.btnSubFamilia8.Location = new System.Drawing.Point(87, 101);
-            this.btnSubFamilia8.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSubFamilia8.Location = new System.Drawing.Point(116, 124);
+            this.btnSubFamilia8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSubFamilia8.Name = "btnSubFamilia8";
-            this.btnSubFamilia8.Size = new System.Drawing.Size(71, 67);
+            this.btnSubFamilia8.Size = new System.Drawing.Size(95, 82);
             this.btnSubFamilia8.TabIndex = 17;
-            this.btnSubFamilia8.Text = "subfamilia8";
             this.btnSubFamilia8.UseVisualStyleBackColor = true;
+            this.btnSubFamilia8.Click += new System.EventHandler(this.SubFamButtonClick);
             // 
             // btnSubFamilia10
             // 
-            this.btnSubFamilia10.Location = new System.Drawing.Point(252, 101);
-            this.btnSubFamilia10.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSubFamilia10.Location = new System.Drawing.Point(336, 124);
+            this.btnSubFamilia10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSubFamilia10.Name = "btnSubFamilia10";
-            this.btnSubFamilia10.Size = new System.Drawing.Size(71, 67);
+            this.btnSubFamilia10.Size = new System.Drawing.Size(95, 82);
             this.btnSubFamilia10.TabIndex = 19;
-            this.btnSubFamilia10.Text = "subfamilia10";
             this.btnSubFamilia10.UseVisualStyleBackColor = true;
+            this.btnSubFamilia10.Click += new System.EventHandler(this.SubFamButtonClick);
             // 
             // btnSubFamilia9
             // 
-            this.btnSubFamilia9.Location = new System.Drawing.Point(170, 101);
-            this.btnSubFamilia9.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSubFamilia9.Location = new System.Drawing.Point(227, 124);
+            this.btnSubFamilia9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSubFamilia9.Name = "btnSubFamilia9";
-            this.btnSubFamilia9.Size = new System.Drawing.Size(71, 67);
+            this.btnSubFamilia9.Size = new System.Drawing.Size(95, 82);
             this.btnSubFamilia9.TabIndex = 18;
-            this.btnSubFamilia9.Text = "subfamilia9";
             this.btnSubFamilia9.UseVisualStyleBackColor = true;
+            this.btnSubFamilia9.Click += new System.EventHandler(this.SubFamButtonClick);
             // 
             // lblArticulos
             // 
             this.lblArticulos.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblArticulos.AutoSize = true;
-            this.lblArticulos.Location = new System.Drawing.Point(184, 147);
-            this.lblArticulos.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblArticulos.Location = new System.Drawing.Point(245, 181);
             this.lblArticulos.Name = "lblArticulos";
-            this.lblArticulos.Size = new System.Drawing.Size(50, 13);
+            this.lblArticulos.Size = new System.Drawing.Size(66, 17);
             this.lblArticulos.TabIndex = 29;
             this.lblArticulos.Text = "Articulos:";
             // 
@@ -394,9 +396,10 @@
             // 
             this.dgvCarrito.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgvCarrito.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCarrito.Location = new System.Drawing.Point(775, 164);
+            this.dgvCarrito.Location = new System.Drawing.Point(1033, 202);
+            this.dgvCarrito.Margin = new System.Windows.Forms.Padding(4);
             this.dgvCarrito.Name = "dgvCarrito";
-            this.dgvCarrito.Size = new System.Drawing.Size(220, 358);
+            this.dgvCarrito.Size = new System.Drawing.Size(293, 441);
             this.dgvCarrito.TabIndex = 30;
             // 
             // lblEmpleado
@@ -405,10 +408,9 @@
             this.lblEmpleado.AutoSize = true;
             this.lblEmpleado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblEmpleado.Font = new System.Drawing.Font("Rockwell", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmpleado.Location = new System.Drawing.Point(734, 106);
-            this.lblEmpleado.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblEmpleado.Location = new System.Drawing.Point(979, 130);
             this.lblEmpleado.Name = "lblEmpleado";
-            this.lblEmpleado.Size = new System.Drawing.Size(113, 23);
+            this.lblEmpleado.Size = new System.Drawing.Size(141, 29);
             this.lblEmpleado.TabIndex = 41;
             this.lblEmpleado.Text = "Empleado: ";
             // 
@@ -418,10 +420,9 @@
             this.lblFecha.AutoSize = true;
             this.lblFecha.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblFecha.Font = new System.Drawing.Font("Rockwell", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFecha.Location = new System.Drawing.Point(734, 74);
-            this.lblFecha.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblFecha.Location = new System.Drawing.Point(979, 91);
             this.lblFecha.Name = "lblFecha";
-            this.lblFecha.Size = new System.Drawing.Size(70, 23);
+            this.lblFecha.Size = new System.Drawing.Size(88, 29);
             this.lblFecha.TabIndex = 40;
             this.lblFecha.Text = "Fecha:";
             // 
@@ -431,10 +432,9 @@
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblTitulo.Font = new System.Drawing.Font("Rockwell", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.Location = new System.Drawing.Point(261, 74);
-            this.lblTitulo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblTitulo.Location = new System.Drawing.Point(348, 91);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(359, 35);
+            this.lblTitulo.Size = new System.Drawing.Size(435, 43);
             this.lblTitulo.TabIndex = 39;
             this.lblTitulo.Text = "VENTA DE UN ARTICULO";
             this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -442,9 +442,10 @@
             // btnDevolverAProductos
             // 
             this.btnDevolverAProductos.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnDevolverAProductos.Location = new System.Drawing.Point(678, 330);
+            this.btnDevolverAProductos.Location = new System.Drawing.Point(904, 406);
+            this.btnDevolverAProductos.Margin = new System.Windows.Forms.Padding(4);
             this.btnDevolverAProductos.Name = "btnDevolverAProductos";
-            this.btnDevolverAProductos.Size = new System.Drawing.Size(91, 106);
+            this.btnDevolverAProductos.Size = new System.Drawing.Size(121, 130);
             this.btnDevolverAProductos.TabIndex = 42;
             this.btnDevolverAProductos.Text = "Devolver a productos <-----------------------";
             this.btnDevolverAProductos.UseVisualStyleBackColor = true;
@@ -452,9 +453,9 @@
             // 
             // Prueba
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1002, 780);
+            this.ClientSize = new System.Drawing.Size(1336, 960);
             this.Controls.Add(this.btnDevolverAProductos);
             this.Controls.Add(this.lblEmpleado);
             this.Controls.Add(this.lblFecha);
@@ -468,7 +469,7 @@
             this.Controls.Add(this.btnAnadirCarrito);
             this.Controls.Add(this.btnSacarTicket);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Prueba";
             this.Text = "Prueba";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
