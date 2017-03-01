@@ -27,7 +27,7 @@ namespace Entidades
         }
 
         public Articulo(string codigoArticulo, string descripcion, string tallaPesoLitros, int stock,
-            int numeroRecogida, int numeroPedido, int numeroVenta, decimal precio, 
+            int numeroRecogida, int numeroPedido, int numeroVenta, decimal precio,
             String localizacion, String idFamilia, String idSubFamilia)
         {
             this.codigoArticulo = codigoArticulo;
