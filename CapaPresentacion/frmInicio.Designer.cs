@@ -40,10 +40,9 @@
             this.lblTitulo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.Font = new System.Drawing.Font("Rockwell", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.Location = new System.Drawing.Point(107, 16);
-            this.lblTitulo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblTitulo.Location = new System.Drawing.Point(143, 20);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(467, 117);
+            this.lblTitulo.Size = new System.Drawing.Size(584, 147);
             this.lblTitulo.TabIndex = 0;
             this.lblTitulo.Text = "CuaShop";
             // 
@@ -51,10 +50,10 @@
             // 
             this.btnAccionesEmpleado.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnAccionesEmpleado.Font = new System.Drawing.Font("Rockwell", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAccionesEmpleado.Location = new System.Drawing.Point(184, 138);
-            this.btnAccionesEmpleado.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAccionesEmpleado.Location = new System.Drawing.Point(245, 170);
+            this.btnAccionesEmpleado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAccionesEmpleado.Name = "btnAccionesEmpleado";
-            this.btnAccionesEmpleado.Size = new System.Drawing.Size(255, 54);
+            this.btnAccionesEmpleado.Size = new System.Drawing.Size(340, 66);
             this.btnAccionesEmpleado.TabIndex = 1;
             this.btnAccionesEmpleado.Text = "AccionesEmpleado";
             this.btnAccionesEmpleado.UseVisualStyleBackColor = true;
@@ -64,22 +63,23 @@
             // 
             this.btnAdmin.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnAdmin.Font = new System.Drawing.Font("Rockwell", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdmin.Location = new System.Drawing.Point(184, 281);
-            this.btnAdmin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAdmin.Location = new System.Drawing.Point(245, 346);
+            this.btnAdmin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAdmin.Name = "btnAdmin";
-            this.btnAdmin.Size = new System.Drawing.Size(255, 54);
+            this.btnAdmin.Size = new System.Drawing.Size(340, 66);
             this.btnAdmin.TabIndex = 2;
             this.btnAdmin.Text = "Administración";
             this.btnAdmin.UseVisualStyleBackColor = true;
+            this.btnAdmin.Click += new System.EventHandler(this.btnAdmin_Click);
             // 
             // btnBuscarArticulo
             // 
             this.btnBuscarArticulo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnBuscarArticulo.Font = new System.Drawing.Font("Rockwell", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscarArticulo.Location = new System.Drawing.Point(184, 210);
-            this.btnBuscarArticulo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnBuscarArticulo.Location = new System.Drawing.Point(245, 258);
+            this.btnBuscarArticulo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnBuscarArticulo.Name = "btnBuscarArticulo";
-            this.btnBuscarArticulo.Size = new System.Drawing.Size(255, 54);
+            this.btnBuscarArticulo.Size = new System.Drawing.Size(340, 66);
             this.btnBuscarArticulo.TabIndex = 3;
             this.btnBuscarArticulo.Text = "Buscar Articulo";
             this.btnBuscarArticulo.UseVisualStyleBackColor = true;
@@ -89,10 +89,10 @@
             // 
             this.btnSalir.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnSalir.Font = new System.Drawing.Font("Rockwell", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalir.Location = new System.Drawing.Point(571, 10);
-            this.btnSalir.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSalir.Location = new System.Drawing.Point(761, 12);
+            this.btnSalir.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(125, 78);
+            this.btnSalir.Size = new System.Drawing.Size(167, 96);
             this.btnSalir.TabIndex = 4;
             this.btnSalir.Text = "LogOut";
             this.btnSalir.UseVisualStyleBackColor = true;
@@ -100,16 +100,16 @@
             // 
             // frmInicio
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(705, 397);
+            this.ClientSize = new System.Drawing.Size(940, 489);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnBuscarArticulo);
             this.Controls.Add(this.btnAdmin);
             this.Controls.Add(this.btnAccionesEmpleado);
             this.Controls.Add(this.lblTitulo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmInicio";
             this.Text = "CuaShop";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

@@ -109,6 +109,7 @@
             this.Name = "frmAccionesEmpleado";
             this.Text = "CuaShop";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.frmAccionesEmpleado_Load);
             this.ResumeLayout(false);
 
         }

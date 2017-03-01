@@ -31,7 +31,7 @@ namespace CapaPresentacion
 
         private void btnVenta_Click(object sender, EventArgs e)
         {
-            Prueba venta = new Prueba();
+            frmVenta venta = new frmVenta();
             venta.Show();
         }
 
@@ -49,6 +49,11 @@ namespace CapaPresentacion
         private void btnVolver_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void frmAccionesEmpleado_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
