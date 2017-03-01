@@ -212,9 +212,11 @@
             this.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProductos.Location = new System.Drawing.Point(243, 202);
             this.dgvProductos.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvProductos.MultiSelect = false;
             this.dgvProductos.Name = "dgvProductos";
             this.dgvProductos.Size = new System.Drawing.Size(653, 335);
             this.dgvProductos.TabIndex = 26;
+            this.dgvProductos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.CellEnter);
             // 
             // grpFamilias
             // 
@@ -451,7 +453,7 @@
             this.btnDevolverAProductos.UseVisualStyleBackColor = true;
             this.btnDevolverAProductos.Click += new System.EventHandler(this.btnDevolverAProductos_Click);
             // 
-            // Prueba
+            // frmVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -470,7 +472,7 @@
             this.Controls.Add(this.btnSacarTicket);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "Prueba";
+            this.Name = "frmVenta";
             this.Text = "Prueba";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Prueba_Load);
