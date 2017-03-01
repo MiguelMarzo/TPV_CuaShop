@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CapaNegocio;
+using Entidades;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +14,9 @@ namespace CapaPresentacion
 {
     public partial class frmBuscarArticulo : Form
     {
+
+        Negocio _negocio = new Negocio();
+
         public frmBuscarArticulo()
         {
             InitializeComponent();
@@ -184,7 +189,32 @@ namespace CapaPresentacion
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            
+            int estanteria;
+            int estante;
+            int altura;
+
+            Int32.TryParse(txtEstanteria.Text, out estanteria);
+            Int32.TryParse(txtEstante.Text, out estante);
+            Int32.TryParse(txtAltura.Text, out altura);
+
+            if(estanteria == 0)
+            {
+                estanteria = -1;
+            }
+
+            if(estante == 0)
+            {
+                estante = -1;
+            }
+
+            if(altura == 0)
+            {
+                altura = -1;
+            }
+
+            List<Articulo> articulos = _negocio.BuscarArticuloEspecifico(txtDescripcion.Text, (Familia)cmbFamilia.SelectedItem, (SubFamilia)cmbSubFamilia.SelectedItem, (int)cmbNumRecogida.SelectedItem, (int)cmbNumPedido.SelectedItem, (int)cmbNumVenta.SelectedItem, (Iva)cmbIVA.SelectedItem, estanteria, estante, altura);
+
+            dgvArticulos.DataSource = articulos;
         }
     }
 }
