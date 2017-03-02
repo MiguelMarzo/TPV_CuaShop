@@ -207,6 +207,41 @@ namespace CapaDatos
 
             return numEmpleado + 1;
         }
+
+        public String EfectuarVenta(List<Articulo> articulosVenta, Empleado empleado)
+        {
+            Decimal precioTotal = 0;
+            try
+            {
+                foreach (Articulo art in articulosVenta)
+                {
+                    var drArticulo = dsShop.Articulo.FindBycodigoArticulo(art.codigoArticulo);
+                    drArticulo.stock -= (short)art.stock;
+                    drArticulo.numeroVenta = (short) maxNumeroVenta();
+                    precioTotal += art.precio * art.stock;
+                    dsShop.Articulo.GetChanges();
+                    drArticulo.AcceptChanges();
+                }
+            }
+            catch
+            {
+                return "Error actualizando stock articulos";
+            }
+            dsCuaShop.VentaRow drVenta = dsShop.Venta.NewVentaRow();
+            drVenta.numeroVenta = (short)maxNumeroVenta();
+            drVenta.numeroEmpleado = (short) empleado.numeroEmpleado;
+            drVenta.precioVenta = precioTotal;
+            drVenta.fechaVenta = DateTime.Today.Date;
+            dsShop.Venta.AddVentaRow(drVenta);
+            daVenta.Update(drVenta);
+            return "Venta insertada y stocks actualizados";
+        }
+
+        private int maxNumeroVenta()
+        {
+            var numVenta = dsShop.Venta.OrderByDescending(x => x.numeroVenta).First().numeroVenta;
+            return numVenta + 1;
+        }
         //FIN METODOS CREAR REGISTRO (INSERTS)
 
 

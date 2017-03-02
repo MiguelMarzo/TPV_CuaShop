@@ -97,5 +97,10 @@ namespace CapaNegocio
             return _datos.ComprobarAdminUsuario(usuario);
         }
 
+        public String EfectuarVenta(List<Articulo> articulosVenta, Empleado empleado)
+        {
+            return _datos.EfectuarVenta(articulosVenta, empleado);
+        }
+
     }
 }

@@ -199,23 +199,12 @@ namespace CapaPresentacion
                 }
 
             }
-            //if (articulos.Count > 0)
-            //{
-
-            //    String CodigoArticulo = Convert.ToString(dgvCarrito.CurrentRow.Cells["codigoArticulo"].Value);
-            //    Articulo articulo = _negocio.DevolverArticuloPorCodigo(CodigoArticulo);
-            //    articulo.stock = articulo.stock + 1;
-
-            //    articulos.RemoveAt(dgvCarrito.CurrentRow.Index);
-            //    dgvCarrito.DataSource = null;
-            //    dgvCarrito.DataSource = articulos;
-            //}
 
         }
 
         private void btnSacarTicket_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show(_negocio.EfectuarVenta(carrito, StaticGlobal.GlobalVar));
         }
 
     }
