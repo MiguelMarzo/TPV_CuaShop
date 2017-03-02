@@ -159,7 +159,7 @@
             // btnAnadirCarrito
             // 
             this.btnAnadirCarrito.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnAnadirCarrito.Location = new System.Drawing.Point(904, 202);
+            this.btnAnadirCarrito.Location = new System.Drawing.Point(798, 202);
             this.btnAnadirCarrito.Margin = new System.Windows.Forms.Padding(4);
             this.btnAnadirCarrito.Name = "btnAnadirCarrito";
             this.btnAnadirCarrito.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -172,7 +172,7 @@
             // btnSacarTicket
             // 
             this.btnSacarTicket.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnSacarTicket.Location = new System.Drawing.Point(1101, 652);
+            this.btnSacarTicket.Location = new System.Drawing.Point(1059, 650);
             this.btnSacarTicket.Margin = new System.Windows.Forms.Padding(4);
             this.btnSacarTicket.Name = "btnSacarTicket";
             this.btnSacarTicket.Size = new System.Drawing.Size(139, 114);
@@ -225,9 +225,9 @@
             this.dgvProductos.Margin = new System.Windows.Forms.Padding(4);
             this.dgvProductos.MultiSelect = false;
             this.dgvProductos.Name = "dgvProductos";
-            this.dgvProductos.Size = new System.Drawing.Size(653, 335);
+            this.dgvProductos.Size = new System.Drawing.Size(547, 335);
             this.dgvProductos.TabIndex = 26;
-            this.dgvProductos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.CellEnter);
+            this.dgvProductos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.CellEnterArticulos);
             // 
             // grpFamilias
             // 
@@ -421,11 +421,12 @@
             // 
             this.dgvCarrito.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgvCarrito.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCarrito.Location = new System.Drawing.Point(1033, 202);
+            this.dgvCarrito.Location = new System.Drawing.Point(927, 202);
             this.dgvCarrito.Margin = new System.Windows.Forms.Padding(4);
             this.dgvCarrito.Name = "dgvCarrito";
-            this.dgvCarrito.Size = new System.Drawing.Size(293, 441);
+            this.dgvCarrito.Size = new System.Drawing.Size(399, 441);
             this.dgvCarrito.TabIndex = 30;
+            this.dgvCarrito.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.CellEnterCarrito);
             // 
             // lblEmpleado
             // 
@@ -467,7 +468,7 @@
             // btnDevolverAProductos
             // 
             this.btnDevolverAProductos.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnDevolverAProductos.Location = new System.Drawing.Point(904, 406);
+            this.btnDevolverAProductos.Location = new System.Drawing.Point(802, 408);
             this.btnDevolverAProductos.Margin = new System.Windows.Forms.Padding(4);
             this.btnDevolverAProductos.Name = "btnDevolverAProductos";
             this.btnDevolverAProductos.Size = new System.Drawing.Size(121, 130);
