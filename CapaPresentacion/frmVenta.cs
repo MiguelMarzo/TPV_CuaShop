@@ -20,6 +20,7 @@ namespace CapaPresentacion
         List<Articulo> carrito = new List<Articulo>();
         List<Familia> familias = new List<Familia>();
         List<SubFamilia> subFamilias = new List<SubFamilia>();
+        SubFamilia subFamActual;
         public frmVenta()
         {
             InitializeComponent();
@@ -86,7 +87,7 @@ namespace CapaPresentacion
                     btn.BackColor = Color.Transparent;
                 }
                 subFamButton.BackColor = Color.Aqua;
-                SubFamilia subFamActual = (SubFamilia)subFamButton.Tag;
+                subFamActual = (SubFamilia)subFamButton.Tag;
                 List<Articulo> articulosSubFam = articulos.FindAll(x => x.idSubFamilia == subFamActual.idSubFamilia);
                 dgvProductos.DataSource = articulosSubFam.Select(o => new
                 {
@@ -121,22 +122,29 @@ namespace CapaPresentacion
                     }
                     else
                     {
-                        carrito.Add(art);
-                        carrito.Find(x => x.codigoArticulo == art.codigoArticulo).stock = 1;
-                        dgvCarrito.DataSource = carrito.Select(o => new
-                        {
-                            Codigo = o.codigoArticulo,
-                            Descripción = o.descripcion,
-                            Precio = o.precio,
-                            Cantidad = o.stock,
-                            TallaPesoLitros = o.stock
-                        }).ToList();
+                        Articulo artCarrito = new Articulo(art.codigoArticulo, art.descripcion, art.tallaPesoLitros, 1, art.numeroRecogida,
+                            art.numeroPedido, art.numeroVenta, art.precio, art.localizacion, art.idFamilia, art.idSubFamilia);
+                        carrito.Add(artCarrito);
                     }
                     art.stock--;
-                    dgvProductos.Refresh();
-                    dgvProductos.Update();
-                    dgvProductos.Rows[dgvProductos.SelectedCells[0].RowIndex].Selected = true;
-                    dgvCarrito.Refresh();
+                    dgvCarrito.DataSource = carrito.Select(o => new
+                    {
+                        Codigo = o.codigoArticulo,
+                        Descripción = o.descripcion,
+                        Precio = o.precio,
+                        Cantidad = o.stock,
+                        TallaPesoLitros = o.tallaPesoLitros
+                    }).ToList();
+                    List<Articulo> articulosSubFam = articulos.FindAll(x => x.idSubFamilia == subFamActual.idSubFamilia);
+                    dgvProductos.DataSource = articulosSubFam.Select(o => new
+                    {
+                        Codigo = o.codigoArticulo,
+                        Descripción = o.descripcion,
+                        Precio = o.precio,
+                        Cantidad = o.stock,
+                        TallaPesoLitros = o.tallaPesoLitros
+                    }).ToList();
+                    if (dgvProductos.Rows.Count > 0) { dgvProductos.Rows[0].Selected = true; }
                     return;
                 }
                 else
@@ -144,30 +152,30 @@ namespace CapaPresentacion
                     MessageBox.Show("No hay stock");
                     return;
                 }
-            }           
+            }
         }
 
         private void btnDevolverAProductos_Click(object sender, EventArgs e)
-    {
-
-        if (articulos.Count > 0)
         {
 
-            String CodigoArticulo = Convert.ToString(dgvCarrito.CurrentRow.Cells["codigoArticulo"].Value);
-            Articulo articulo = _negocio.DevolverArticuloPorCodigo(CodigoArticulo);
-            articulo.stock = articulo.stock + 1;
+            if (articulos.Count > 0)
+            {
 
-            articulos.RemoveAt(dgvCarrito.CurrentRow.Index);
-            dgvCarrito.DataSource = null;
-            dgvCarrito.DataSource = articulos;
+                String CodigoArticulo = Convert.ToString(dgvCarrito.CurrentRow.Cells["codigoArticulo"].Value);
+                Articulo articulo = _negocio.DevolverArticuloPorCodigo(CodigoArticulo);
+                articulo.stock = articulo.stock + 1;
+
+                articulos.RemoveAt(dgvCarrito.CurrentRow.Index);
+                dgvCarrito.DataSource = null;
+                dgvCarrito.DataSource = articulos;
+            }
+
+        }
+
+        private void btnSacarTicket_Click(object sender, EventArgs e)
+        {
+
         }
 
     }
-
-    private void btnSacarTicket_Click(object sender, EventArgs e)
-    {
-
-    }
-
-}
 }
