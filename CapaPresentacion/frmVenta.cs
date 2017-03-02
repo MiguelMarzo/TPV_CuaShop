@@ -29,6 +29,7 @@ namespace CapaPresentacion
             cargarFamilias();
             lblEmpleado.Text += StaticGlobal.GlobalVar.numeroEmpleado;
             lblFecha.Text += DateTime.Today.ToShortDateString();
+            articulos = _negocio.DevolverTodosLosArticulos();
         }
         private void cargarFamilias()
         {
@@ -47,9 +48,9 @@ namespace CapaPresentacion
         private void FamButtonClick(object sender, EventArgs e)
         {
             Button famButton = sender as Button;
+            dgvProductos.DataSource = null;
             if (famButton.Tag != null)
             {
-                dgvProductos.DataSource = articulos;
                 foreach (Control btn in grpFamilias.Controls)
                 {
                     btn.BackColor = Color.Transparent;
@@ -85,16 +86,17 @@ namespace CapaPresentacion
                     btn.BackColor = Color.Transparent;
                 }
                 subFamButton.BackColor = Color.Aqua;
-                articulos = _negocio.DevolverArticulosPorSubFamilia((SubFamilia)subFamButton.Tag);
-                dgvProductos.DataSource = articulos.Select(o => new
+                SubFamilia subFamActual = (SubFamilia)subFamButton.Tag;
+                List<Articulo> articulosSubFam = articulos.FindAll(x => x.idSubFamilia == subFamActual.idSubFamilia);
+                dgvProductos.DataSource = articulosSubFam.Select(o => new
                 {
                     Codigo = o.codigoArticulo,
                     Descripción = o.descripcion,
                     Precio = o.precio,
                     Cantidad = o.stock,
-                    TallaPesoLitros = o.stock
+                    TallaPesoLitros = o.tallaPesoLitros
                 }).ToList();
-                if (articulos.Count > 0) { dgvProductos.Rows[0].Selected = true; }
+                if (dgvProductos.Rows.Count > 0) { dgvProductos.Rows[0].Selected = true; }
             }
         }
         private void btnAtras_Click(object sender, EventArgs e)
@@ -108,59 +110,41 @@ namespace CapaPresentacion
         }
         private void btnAnadirCarrito_Click(object sender, EventArgs e)
         {
-            Articulo art = articulos.Find(x => x.codigoArticulo == dgvProductos.SelectedRows[0].Cells[0].Value.ToString());
-            if (art.stock > 0)
+            if (dgvProductos.SelectedRows.Count > 0)
             {
-                if (carrito.Contains(art))
+                Articulo art = articulos.Find(x => x.codigoArticulo == dgvProductos.SelectedRows[0].Cells[0].Value.ToString());
+                if (art.stock > 0)
                 {
-                    carrito.Find(x => x.codigoArticulo == art.codigoArticulo).stock++;
+                    if (carrito.Contains(art))
+                    {
+                        carrito.Find(x => x.codigoArticulo == art.codigoArticulo).stock++;
+                    }
+                    else
+                    {
+                        carrito.Add(art);
+                        carrito.Find(x => x.codigoArticulo == art.codigoArticulo).stock = 1;
+                        dgvCarrito.DataSource = carrito.Select(o => new
+                        {
+                            Codigo = o.codigoArticulo,
+                            Descripción = o.descripcion,
+                            Precio = o.precio,
+                            Cantidad = o.stock,
+                            TallaPesoLitros = o.stock
+                        }).ToList();
+                    }
+                    art.stock--;
+                    dgvProductos.Refresh();
+                    dgvProductos.Update();
+                    dgvProductos.Rows[dgvProductos.SelectedCells[0].RowIndex].Selected = true;
+                    dgvCarrito.Refresh();
+                    return;
                 }
                 else
                 {
-                    carrito.Add(art);
-                    dgvCarrito.DataSource = carrito.Select(o => new
-                    {
-                        Codigo = o.codigoArticulo,
-                        Descripción = o.descripcion,
-                        Precio = o.precio,
-                        Cantidad = o.stock,
-                        TallaPesoLitros = o.stock
-                    }).ToList();
+                    MessageBox.Show("No hay stock");
+                    return;
                 }
-                art.stock--;
-                dgvProductos.Refresh();
-                dgvCarrito.Refresh();
-                return;
-            }
-            else
-            {
-                MessageBox.Show("No hay stock");
-                return;
-            }
-            //if (Convert.ToInt32(dgvProductos.CurrentRow.Cells["stock"].Value) > 0)
-            //{
-            //    Articulo articulo = new Articulo();
-            //    articulo.codigoArticulo = Convert.ToString(dgvProductos.CurrentRow.Cells["codigoArticulo"].Value);
-            //    articulo.descripcion = Convert.ToString(dgvProductos.CurrentRow.Cells["descripcion"].Value);
-            //    articulo.tallaPesoLitros = Convert.ToString(dgvProductos.CurrentRow.Cells["tallaPesoLitros"].Value);
-            //    articulo.stock = Convert.ToInt32(dgvProductos.CurrentRow.Cells["stock"].Value);
-            //    articulo.numeroPedido = Convert.ToInt32(dgvProductos.CurrentRow.Cells["numeroPedido"].Value);
-            //    articulo.numeroRecogida = Convert.ToInt32(dgvProductos.CurrentRow.Cells["numeroRecogida"].Value);
-            //    articulo.numeroVenta = Convert.ToInt32(dgvProductos.CurrentRow.Cells["numeroVenta"].Value);
-            //    articulo.precio = Convert.ToInt32(dgvProductos.CurrentRow.Cells["precio"].Value);
-            //    articulo.idIva = Convert.ToInt32(dgvProductos.CurrentRow.Cells["idIva"].Value);
-            //    articulo.localizacion = Convert.ToString(dgvProductos.CurrentRow.Cells["localizacion"].Value);
-            //    articulo.idFamilia = Convert.ToString(dgvProductos.CurrentRow.Cells["idFamilia"].Value);
-            //    articulo.idSubFamilia = Convert.ToString(dgvProductos.CurrentRow.Cells["idSubFamilia"].Value);
-            //    dgvProductos.CurrentRow.Cells["stock"].Value = Convert.ToInt32(dgvProductos.CurrentRow.Cells["stock"].Value) - 1;
-            //    articulos.Add(articulo);
-            //    dgvCarrito.DataSource = null;
-            //    dgvCarrito.DataSource = articulos;
-            //}
-            //else
-            //{
-            //    MessageBox.Show("STOCK 0");
-            //}
+            }           
         }
 
         private void btnDevolverAProductos_Click(object sender, EventArgs e)
