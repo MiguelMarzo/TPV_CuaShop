@@ -59,8 +59,22 @@ namespace CapaPresentacion
                 MessageBox.Show("Introduce un nombre de empleado");
                 return;
             } else
-            {
-                String resultado = _negocio.InsertarEmpleado(txtNombreEmpleado.Text, txtRutaFoto.Text);
+            {                
+                String sourcePath = txtRutaFoto.Text;
+                String targetPath = "/";
+                String[] holis =  sourcePath.Split('/');
+                String fileName = holis[holis.Count() -1].ToString();                
+                string sourceFile = System.IO.Path.Combine(sourcePath, fileName);
+                string destFile = System.IO.Path.Combine(targetPath, fileName);            
+ 
+                if (!System.IO.Directory.Exists(targetPath))
+                {
+                    System.IO.Directory.CreateDirectory(targetPath);
+                }
+                //Copiar
+                System.IO.File.Copy(sourceFile, destFile, true);
+
+                String resultado = _negocio.InsertarEmpleado(txtNombreEmpleado.Text, fileName);
                 MessageBox.Show(resultado);
             }
         }
