@@ -219,7 +219,7 @@
             // dgvProductos
             // 
             this.dgvProductos.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.dgvProductos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            this.dgvProductos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProductos.Location = new System.Drawing.Point(243, 202);
             this.dgvProductos.Margin = new System.Windows.Forms.Padding(4);

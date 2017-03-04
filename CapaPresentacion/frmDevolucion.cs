@@ -15,6 +15,7 @@ namespace CapaPresentacion
     public partial class frmDevolucion : Form
     {
         private Negocio _negocio = new Negocio();
+        private List<Articulo> articulos = new List<Articulo>();
         public frmDevolucion()
         {
             InitializeComponent();
@@ -24,7 +25,7 @@ namespace CapaPresentacion
         {
             lblEmpleado.Text += StaticGlobal.GlobalVar.numeroEmpleado;
             lblFecha.Text += DateTime.Today.ToShortDateString();
-            dataGridView1.DataSource = _negocio.DevolverTodosLosArticulos();
+            articulos = _negocio.DevolverTodosLosArticulos();
         }
 
         private void btnAtras_Click(object sender, EventArgs e)
@@ -32,18 +33,29 @@ namespace CapaPresentacion
             this.Close();
         }
 
-        private void btnTicket_Click(object sender, EventArgs e)
-        {
-            var numeroArticulo = dataGridView1.CurrentRow.Cells[0].Value.ToString();
-            var precio = dataGridView1.CurrentRow.Cells[8].Value;
-            var res2 = _negocio.ActualizarPrecioVenta((int.Parse(textBox1.Text)), (int) precio);
-
-            dataGridView1.DataSource = _negocio.DevolverVenta(textBox1.Text);
-        }
-
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = _negocio.DevolverVenta(textBox1.Text);
+            dgvArticulos.DataSource = articulos.FindAll(a => (a.codigoArticulo.Contains(txtCodigo.Text)) 
+            && (a.numeroVenta != 0)).Select(o => new
+            {
+                Codigo = o.codigoArticulo,
+                Descripción = o.descripcion,
+                Precio = o.precio,
+                Cantidad = o.stock,
+                TallaPesoLitros = o.tallaPesoLitros,
+                Localizacion = o.localizacion
+            }).ToList();
+            if (dgvArticulos.Rows.Count > 0) { dgvArticulos.Rows[dgvArticulos.SelectedCells[0].RowIndex].Selected = true; };
+        }
+
+        private void CellEnterArticulos(object sender, EventArgs e)
+        {
+            if (dgvArticulos.Rows.Count > 0) { dgvArticulos.Rows[dgvArticulos.SelectedCells[0].RowIndex].Selected = true; };
+        }
+
+        private void btnDevolver_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(_negocio.DevolverArticulo(dgvArticulos.SelectedCells[0].Value.ToString()));
         }
     }
 }

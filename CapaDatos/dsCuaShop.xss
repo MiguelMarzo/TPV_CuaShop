@@ -7,7 +7,7 @@
 <DiagramLayout xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ex:showrelationlabel="False" ViewPortX="6489" ViewPortY="35" xmlns:ex="urn:schemas-microsoft-com:xml-msdatasource-layout-extended" xmlns="urn:schemas-microsoft-com:xml-msdatasource-layout">
   <Shapes>
     <Shape ID="DesignTable:Admin" ZOrder="8" X="6643" Y="497" Height="158" Width="213" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="99" />
-    <Shape ID="DesignTable:Articulo" ZOrder="7" X="7179" Y="80" Height="365" Width="223" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="306" />
+    <Shape ID="DesignTable:Articulo" ZOrder="7" X="7179" Y="79" Height="365" Width="223" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="306" />
     <Shape ID="DesignTable:Empleado" ZOrder="6" X="7364" Y="498" Height="158" Width="237" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="99" />
     <Shape ID="DesignTable:Famillia" ZOrder="5" X="6529" Y="263" Height="181" Width="221" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="122" />
     <Shape ID="DesignTable:Iva" ZOrder="4" X="6902" Y="242" Height="135" Width="187" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="76" />
@@ -20,11 +20,11 @@
       <RoutePoints>
         <Point>
           <X>6750</X>
-          <Y>419</Y>
+          <Y>418</Y>
         </Point>
         <Point>
           <X>7179</X>
-          <Y>419</Y>
+          <Y>418</Y>
         </Point>
       </RoutePoints>
     </Connector>
@@ -36,11 +36,11 @@
         </Point>
         <Point>
           <X>7057</X>
-          <Y>389</Y>
+          <Y>388</Y>
         </Point>
         <Point>
           <X>7179</X>
-          <Y>389</Y>
+          <Y>388</Y>
         </Point>
       </RoutePoints>
     </Connector>
@@ -48,11 +48,11 @@
       <RoutePoints>
         <Point>
           <X>7533</X>
-          <Y>272</Y>
+          <Y>271</Y>
         </Point>
         <Point>
           <X>7402</X>
-          <Y>272</Y>
+          <Y>271</Y>
         </Point>
       </RoutePoints>
     </Connector>
@@ -60,11 +60,11 @@
       <RoutePoints>
         <Point>
           <X>6935</X>
-          <Y>123</Y>
+          <Y>122</Y>
         </Point>
         <Point>
           <X>7179</X>
-          <Y>123</Y>
+          <Y>122</Y>
         </Point>
       </RoutePoints>
     </Connector>
@@ -76,11 +76,11 @@
         </Point>
         <Point>
           <X>7113</X>
-          <Y>428</Y>
+          <Y>427</Y>
         </Point>
         <Point>
           <X>7179</X>
-          <Y>428</Y>
+          <Y>427</Y>
         </Point>
       </RoutePoints>
     </Connector>

@@ -95,7 +95,8 @@ namespace CapaPresentacion
                     Descripción = o.descripcion,
                     Precio = o.precio,
                     Cantidad = o.stock,
-                    TallaPesoLitros = o.tallaPesoLitros
+                    TallaPesoLitros = o.tallaPesoLitros,
+                    Localizacion = o.localizacion
                 }).ToList();
                 if (dgvProductos.Rows.Count > 0) { dgvProductos.Rows[0].Selected = true; }
             }
@@ -133,7 +134,8 @@ namespace CapaPresentacion
                         Descripción = o.descripcion,
                         Precio = o.precio,
                         Cantidad = o.stock,
-                        TallaPesoLitros = o.tallaPesoLitros
+                        TallaPesoLitros = o.tallaPesoLitros,
+                        Localizacion = o.localizacion
                     }).ToList();
                     List<Articulo> articulosSubFam = articulos.FindAll(x => x.idSubFamilia == subFamActual.idSubFamilia);
                     dgvProductos.DataSource = articulosSubFam.Select(o => new
@@ -142,7 +144,8 @@ namespace CapaPresentacion
                         Descripción = o.descripcion,
                         Precio = o.precio,
                         Cantidad = o.stock,
-                        TallaPesoLitros = o.tallaPesoLitros
+                        TallaPesoLitros = o.tallaPesoLitros,
+                        Localizacion = o.localizacion
                     }).ToList();
                     if (dgvProductos.Rows.Count > 0) { dgvProductos.Rows[0].Selected = true; }
                     if (dgvCarrito.Rows.Count > 0) { dgvCarrito.Rows[0].Selected = true; }
@@ -179,7 +182,8 @@ namespace CapaPresentacion
                         Descripción = o.descripcion,
                         Precio = o.precio,
                         Cantidad = o.stock,
-                        TallaPesoLitros = o.tallaPesoLitros
+                        TallaPesoLitros = o.tallaPesoLitros,
+                        Localizacion = o.localizacion
                     }).ToList();
                     if (dgvProductos.Rows.Count > 0) { dgvProductos.Rows[0].Selected = true; }                    
                     if (artCarrito.stock == 0)
@@ -191,7 +195,8 @@ namespace CapaPresentacion
                             Descripción = o.descripcion,
                             Precio = o.precio,
                             Cantidad = o.stock,
-                            TallaPesoLitros = o.tallaPesoLitros
+                            TallaPesoLitros = o.tallaPesoLitros,
+                            Localizacion = o.localizacion
                         }).ToList();
                         if (dgvCarrito.Rows.Count > 0) { dgvCarrito.Rows[0].Selected = true; }
                     }
@@ -206,6 +211,5 @@ namespace CapaPresentacion
         {
             MessageBox.Show(_negocio.EfectuarVenta(carrito, StaticGlobal.GlobalVar));
         }
-
     }
 }

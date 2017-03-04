@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Entidades;
 using CapaDatos.dsCuaShopTableAdapters;
+using System.Data.SqlClient;
 
 namespace CapaDatos
 {
@@ -52,69 +53,59 @@ namespace CapaDatos
         //METODOS PARA DEVOLVER OBJETOS (SELECTS)
         public List<Articulo> DevolverTodosLosArticulos()
         {
-            var articulos = from daArticulo in dsShop.Articulo
-                            orderby daArticulo.descripcion ascending
-                            select new Articulo(daArticulo.codigoArticulo, daArticulo.descripcion, daArticulo.tallaPesoLitros, daArticulo.stock,
-                            daArticulo.numeroRecogida, daArticulo.numeroPedido, daArticulo.numeroVenta, daArticulo.precio, daArticulo.localizacion,
-                            daArticulo.idFamilia, daArticulo.idSubFamilia);
+            var articulos = from drArticulo in dsShop.Articulo
+                            orderby drArticulo.descripcion ascending
+                            select new Articulo(drArticulo.codigoArticulo, drArticulo.descripcion, drArticulo.tallaPesoLitros, drArticulo.stock,
+                            drArticulo.numeroRecogida, drArticulo.numeroPedido, drArticulo.numeroVenta, drArticulo.precio, drArticulo.localizacion,
+                            drArticulo.idFamilia, drArticulo.idSubFamilia);
 
             return articulos.ToList();
         }
         public List<Empleado> DevolverEmpleados()
         {
-            var empleados = from daEmpleado in dsShop.Empleado
-                            orderby daEmpleado.nombreEmpleado
-                            select new Empleado(daEmpleado.numeroEmpleado, daEmpleado.rutaFoto, daEmpleado.nombreEmpleado);
+            var empleados = from drEmpleado in dsShop.Empleado
+                            orderby drEmpleado.nombreEmpleado
+                            select new Empleado(drEmpleado.numeroEmpleado, drEmpleado.rutaFoto, drEmpleado.nombreEmpleado);
 
             return empleados.ToList();
         }
         public List<Familia> DevolverFamilias()
         {
-            var familias = from daFamilia in dsShop.Famillia
-                           select new Familia(daFamilia.idFamilia, daFamilia.rutaFoto, daFamilia.nombreFamilia, daFamilia.inicialesFamilia);
+            var familias = from drFamilia in dsShop.Famillia
+                           select new Familia(drFamilia.idFamilia, drFamilia.rutaFoto, drFamilia.nombreFamilia, drFamilia.inicialesFamilia);
             return familias.ToList();
         }
         public List<SubFamilia> DevolverSubFamilias(Familia fam)
         {
-            var subFamilias = from daSubFam in dsShop.SubFamilia
-                              where daSubFam.idFamilia == fam.idFamilia
-                              select new SubFamilia(daSubFam.idSubFamilia, daSubFam.idFamilia, daSubFam.nombreSubFamilia, daSubFam.idIva,
-                              daSubFam.inicialesSubFamilia);
+            var subFamilias = from drSubFam in dsShop.SubFamilia
+                              where drSubFam.idFamilia == fam.idFamilia
+                              select new SubFamilia(drSubFam.idSubFamilia, drSubFam.idFamilia, drSubFam.nombreSubFamilia, drSubFam.idIva,
+                              drSubFam.inicialesSubFamilia);
             return subFamilias.ToList();
         }
         public List<Recogida> DevolverRecogidas()
         {
-            var recogidas = from daRecogida in dsShop.Recogida
-                            select new Recogida(daRecogida.numeroRecogida, daRecogida.fecha, daRecogida.cantidadArticulos,
-                            daRecogida.entregador, daRecogida.numeroEmpleado);
+            var recogidas = from drRecogida in dsShop.Recogida
+                            select new Recogida(drRecogida.numeroRecogida, drRecogida.fecha, drRecogida.cantidadArticulos,
+                            drRecogida.entregador, drRecogida.numeroEmpleado);
             return recogidas.ToList();
-        }
-        public List<Articulo> DevolverVentaPorCodigoVenta(string codigoVenta)
-        {
-            var articulos = from daArticulo in dsShop.Articulo
-                            orderby daArticulo.numeroVenta.ToString().Equals(codigoVenta)
-                            select new Articulo(daArticulo.codigoArticulo, daArticulo.descripcion, daArticulo.tallaPesoLitros, daArticulo.stock,
-                            daArticulo.numeroRecogida, daArticulo.numeroPedido, daArticulo.numeroVenta, daArticulo.precio, daArticulo.localizacion,
-                            daArticulo.idFamilia, daArticulo.idSubFamilia);
-
-            return articulos.ToList();
         }
         public List<Articulo> DevolverArticulosPorSubFamilia(SubFamilia subFam)
         {
-            var articulos = from daArticulo in dsShop.Articulo
-                            where daArticulo.idSubFamilia == subFam.idSubFamilia
-                            select new Articulo(daArticulo.codigoArticulo, daArticulo.descripcion, daArticulo.tallaPesoLitros, daArticulo.stock,
-                            daArticulo.numeroRecogida, daArticulo.numeroPedido, daArticulo.numeroVenta, daArticulo.precio, daArticulo.localizacion,
-                            daArticulo.idFamilia, daArticulo.idSubFamilia);
+            var articulos = from drArt in dsShop.Articulo
+                            where drArt.idSubFamilia == subFam.idSubFamilia
+                            select new Articulo(drArt.codigoArticulo, drArt.descripcion, drArt.tallaPesoLitros, drArt.stock,
+                            drArt.numeroRecogida, drArt.numeroPedido, drArt.numeroVenta, drArt.precio, drArt.localizacion,
+                            drArt.idFamilia, drArt.idSubFamilia);
             return articulos.ToList();
         }
         public Articulo DevolverArticuloPorCodigo(String codigo)
         {
-            var articulo = from daArticulo in dsShop.Articulo
-                           where daArticulo.codigoArticulo == codigo
-                           select new Articulo(daArticulo.codigoArticulo, daArticulo.descripcion, daArticulo.tallaPesoLitros, daArticulo.stock,
-                           daArticulo.numeroRecogida, daArticulo.numeroPedido, daArticulo.numeroVenta, daArticulo.precio, daArticulo.localizacion,
-                           daArticulo.idFamilia, daArticulo.idSubFamilia);
+            var articulo = from drArt in dsShop.Articulo
+                           where drArt.codigoArticulo == codigo
+                           select new Articulo(drArt.codigoArticulo, drArt.descripcion, drArt.tallaPesoLitros, drArt.stock,
+                           drArt.numeroRecogida, drArt.numeroPedido, drArt.numeroVenta, drArt.precio, drArt.localizacion,
+                           drArt.idFamilia, drArt.idSubFamilia);
             return articulo.ToList()[0];
         }
         public List<Admin> DevolverAdmins()
@@ -122,6 +113,16 @@ namespace CapaDatos
             var admins = from daAdmin in dsShop.Admin
                          select new Admin(daAdmin.Id, daAdmin.Usuario, daAdmin.Contraseña);
             return admins.ToList();
+        }
+
+        public List<Articulo> DevolverArticulosLikeCodigo(String codigo)
+        {
+            var arts = from drArt in dsShop.Articulo
+                       where drArt.codigoArticulo.Contains(codigo)
+                       select new Articulo(drArt.codigoArticulo, drArt.descripcion, drArt.tallaPesoLitros, drArt.stock,
+                            drArt.numeroRecogida, drArt.numeroPedido, drArt.numeroVenta, drArt.precio, drArt.localizacion,
+                            drArt.idFamilia, drArt.idSubFamilia);
+            return arts.ToList();
         }
 
         //FIN METODOS DEVOLVER OBJETOS (SELECTS)
@@ -246,6 +247,22 @@ namespace CapaDatos
 
 
         //METODOS PARA ACTUALIZAR DATOS (UPDATES)
+        public String DevolverArticulo(string codigoArticulo)
+        {
+            try
+            {
+                var drArticulo = dsShop.Articulo.FindBycodigoArticulo(codigoArticulo);
+                drArticulo.numeroVenta = 0;
+                daArticulo.Update(drArticulo);
+                dsShop.Articulo.GetChanges();
+                drArticulo.AcceptChanges();
+                return "Articulo devulelto correctamente";
+            } catch
+            {
+                return "Fallo en la devolución";
+            }
+
+        }
         public String ActualizarStockArticulo(String codigo, int cantidad)
         {
             try
@@ -255,11 +272,11 @@ namespace CapaDatos
                 daArticulo.Update(drArticulo);
                 dsShop.Articulo.GetChanges();
                 drArticulo.AcceptChanges();
+                return "Stock actualizado correctamente";
             } catch
             {
                 return "Error actualizando el stock!";
             }
-            return "";
         }
         public string ActualizarPrecioVenta(int codigoVenta, int precio)
         {

@@ -49,9 +49,9 @@ namespace CapaNegocio
             return _datos.DevolverRecogidas();
         }
 
-        public List<Articulo> DevolverVenta(string codigoVenta)
+        public String DevolverArticulo(string codigoArticulo)
         {
-            return _datos.DevolverVentaPorCodigoVenta(codigoVenta);
+            return _datos.DevolverArticulo(codigoArticulo);
         }
 
         public string ActualizarPrecioVenta(int codigoVenta, int precio)
@@ -102,5 +102,9 @@ namespace CapaNegocio
             return _datos.EfectuarVenta(articulosVenta, empleado);
         }
 
+        public List<Articulo> DevolverArticulosLikeCodigo(String codigo)
+        {
+            return _datos.DevolverArticulosLikeCodigo(codigo);
+        }
     }
 }
