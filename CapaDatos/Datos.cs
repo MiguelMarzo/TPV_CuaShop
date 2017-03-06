@@ -57,7 +57,7 @@ namespace CapaDatos
             var articulos = from drArticulo in dsShop.Articulo
                             orderby drArticulo.descripcion ascending
                             select new Articulo(drArticulo.codigoArticulo, drArticulo.descripcion, drArticulo.tallaPesoLitros, drArticulo.stock,
-                            drArticulo.numeroRecogida, drArticulo.numeroPedido, drArticulo.numeroVenta, drArticulo.precio, drArticulo.localizacion,
+                            drArticulo.numeroRecogida, drArticulo.numeroPedido, drArticulo.precio, drArticulo.localizacion,
                             drArticulo.idFamilia, drArticulo.idSubFamilia);
 
             return articulos.ToList();
@@ -96,7 +96,7 @@ namespace CapaDatos
             var articulos = from drArt in dsShop.Articulo
                             where drArt.idSubFamilia == subFam.idSubFamilia
                             select new Articulo(drArt.codigoArticulo, drArt.descripcion, drArt.tallaPesoLitros, drArt.stock,
-                            drArt.numeroRecogida, drArt.numeroPedido, drArt.numeroVenta, drArt.precio, drArt.localizacion,
+                            drArt.numeroRecogida, drArt.numeroPedido, drArt.precio, drArt.localizacion,
                             drArt.idFamilia, drArt.idSubFamilia);
             return articulos.ToList();
         }
@@ -105,7 +105,7 @@ namespace CapaDatos
             var articulo = from drArt in dsShop.Articulo
                            where drArt.codigoArticulo == codigo
                            select new Articulo(drArt.codigoArticulo, drArt.descripcion, drArt.tallaPesoLitros, drArt.stock,
-                           drArt.numeroRecogida, drArt.numeroPedido, drArt.numeroVenta, drArt.precio, drArt.localizacion,
+                           drArt.numeroRecogida, drArt.numeroPedido, drArt.precio, drArt.localizacion,
                            drArt.idFamilia, drArt.idSubFamilia);
             return articulo.ToList()[0];
         }
@@ -121,7 +121,7 @@ namespace CapaDatos
             var arts = from drArt in dsShop.Articulo
                        where drArt.codigoArticulo.Contains(codigo)
                        select new Articulo(drArt.codigoArticulo, drArt.descripcion, drArt.tallaPesoLitros, drArt.stock,
-                            drArt.numeroRecogida, drArt.numeroPedido, drArt.numeroVenta, drArt.precio, drArt.localizacion,
+                            drArt.numeroRecogida, drArt.numeroPedido, drArt.precio, drArt.localizacion,
                             drArt.idFamilia, drArt.idSubFamilia);
             return arts.ToList();
         }
@@ -154,7 +154,7 @@ namespace CapaDatos
             var articulo = dsShop.Articulo.FindBycodigoArticulo(codigoArticulo);
 
             Articulo art = new Articulo(codigoArticulo, descripcion, tallaPesoLitros, stock, numeroRecogida,
-            numeroPedido, numeroVenta, precio, localizacion, familia.idFamilia, subfamilia.idSubFamilia);
+            numeroPedido, precio, localizacion,familia.idFamilia ,subfamilia.idSubFamilia);
             if (articulo == null)
             {
                 dsCuaShop.ArticuloRow drArticulo = dsShop.Articulo.NewArticuloRow();
@@ -527,10 +527,10 @@ namespace CapaDatos
 
                 while (dr.Read())
                 {
-                    result.Add(new Articulo((string)dr["codigoArticulo"], (string)dr["descripcion"], (string)dr["tallaPesoLitros"], Int32.Parse(dr["stock"].ToString()), Int32.Parse(dr["numeroRecogida"].ToString()), Int32.Parse(dr["numeroPedido"].ToString()), Int32.Parse(dr["numeroventa"].ToString()), Decimal.Parse(dr["precio"].ToString()), (string)dr["localizacion"], (string)dr["idFamilia"], (string)dr["idSubFamilia"]));
+                    result.Add(new Articulo((string)dr["codigoArticulo"], (string)dr["descripcion"], (string)dr["tallaPesoLitros"], Int32.Parse(dr["stock"].ToString()), Int32.Parse(dr["numeroRecogida"].ToString()), Int32.Parse(dr["numeroPedido"].ToString()), Decimal.Parse(dr["precio"].ToString()), (string)dr["localizacion"], (string)dr["idFamilia"], (string)dr["idSubFamilia"]));
                 }
             }
-            catch (Exception ex)
+            catch
             {
                 return null;
             }

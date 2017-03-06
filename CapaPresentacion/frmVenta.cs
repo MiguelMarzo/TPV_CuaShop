@@ -133,7 +133,7 @@ namespace CapaPresentacion
                     else
                     {
                         Articulo artCarrito = new Articulo(art.codigoArticulo, art.descripcion, art.tallaPesoLitros, 1, art.numeroRecogida,
-                            art.numeroPedido, art.numeroVenta, art.precio, art.localizacion, art.idFamilia, art.idSubFamilia);
+                            art.numeroPedido, art.precio, art.localizacion, art.idFamilia, art.idSubFamilia);
                         carrito.Add(artCarrito);
                     }
                     art.stock--;
@@ -251,7 +251,7 @@ namespace CapaPresentacion
                     else
                     {
                         Articulo artCarrito = new Articulo(art.codigoArticulo, art.descripcion, art.tallaPesoLitros, 1, art.numeroRecogida,
-                            art.numeroPedido, art.numeroVenta, art.precio, art.localizacion, art.idFamilia, art.idSubFamilia);
+                            art.numeroPedido, art.precio, art.localizacion, art.idFamilia, art.idSubFamilia);
                         carrito.Add(artCarrito);
                     }
                     art.stock--;
