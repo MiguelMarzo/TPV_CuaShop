@@ -20,6 +20,7 @@ namespace CapaDatos
         private FamilliaTableAdapter daFamilia;
         private SubFamiliaTableAdapter daSubFamilia;
         private AdminTableAdapter daAdmin;
+        private ArticulosVentaTableAdapter daArticulosVenta;
         public Datos()
         {
             CrearDataSetCompleto();
@@ -49,6 +50,9 @@ namespace CapaDatos
 
             daAdmin = new dsCuaShopTableAdapters.AdminTableAdapter();
             daAdmin.Fill(dsShop.Admin);
+
+            daArticulosVenta = new dsCuaShopTableAdapters.ArticulosVentaTableAdapter();
+            daArticulosVenta.Fill(dsShop.ArticulosVenta);
         }
 
         //METODOS PARA DEVOLVER OBJETOS (SELECTS)
@@ -154,7 +158,7 @@ namespace CapaDatos
             var articulo = dsShop.Articulo.FindBycodigoArticulo(codigoArticulo);
 
             Articulo art = new Articulo(codigoArticulo, descripcion, tallaPesoLitros, stock, numeroRecogida,
-            numeroPedido, precio, localizacion,familia.idFamilia ,subfamilia.idSubFamilia);
+            numeroPedido, precio, localizacion, familia.idFamilia, subfamilia.idSubFamilia);
             if (articulo == null)
             {
                 dsCuaShop.ArticuloRow drArticulo = dsShop.Articulo.NewArticuloRow();
@@ -163,9 +167,8 @@ namespace CapaDatos
                 drArticulo.tallaPesoLitros = art.tallaPesoLitros;
                 drArticulo.numeroRecogida = art.numeroRecogida;
                 drArticulo.numeroPedido = art.numeroPedido;
-                drArticulo.numeroVenta = 0;
                 drArticulo.precio = art.precio;
-                drArticulo.stock = (short) art.stock;
+                drArticulo.stock = (short)art.stock;
                 drArticulo.localizacion = art.localizacion;
                 drArticulo.idFamilia = art.idFamilia;
                 drArticulo.idSubFamilia = art.idSubFamilia;
@@ -195,7 +198,7 @@ namespace CapaDatos
         public String InsertarEmpleado(String nombre, String rutaFoto)
         {
             dsCuaShop.EmpleadoRow drEmpleado = dsShop.Empleado.NewEmpleadoRow();
-            drEmpleado.numeroEmpleado = (short) MaxEmpleado();
+            drEmpleado.numeroEmpleado = (short)MaxEmpleado();
             drEmpleado.nombreEmpleado = nombre;
             drEmpleado.rutaFoto = rutaFoto;
             dsShop.Empleado.AddEmpleadoRow(drEmpleado);
@@ -212,29 +215,36 @@ namespace CapaDatos
         public String EfectuarVenta(List<Articulo> articulosVenta, Empleado empleado)
         {
             Decimal precioTotal = 0;
+            int maxVenta = maxNumeroVenta();
+            dsCuaShop.VentaRow drVenta = dsShop.Venta.NewVentaRow();
+            drVenta.numeroVenta = (short)maxVenta;
+            drVenta.numeroEmpleado = (short)empleado.numeroEmpleado;
+            drVenta.precioVenta = precioTotal;
+            drVenta.fechaVenta = DateTime.Today.Date;
+            dsShop.Venta.AddVentaRow(drVenta);
+            daVenta.Update(drVenta);
+            foreach (Articulo art in articulosVenta)
+                {
+                dsCuaShop.ArticulosVentaRow drArticulosVenta = dsShop.ArticulosVenta.NewArticulosVentaRow();
+                drArticulosVenta.codigoArticulo = art.codigoArticulo;
+                drArticulosVenta.numeroVenta = (short)maxVenta;
+                dsShop.ArticulosVenta.AddArticulosVentaRow(drArticulosVenta);
+                daArticulosVenta.Update(drArticulosVenta);
+                //
+                var drArticulo = dsShop.Articulo.FindBycodigoArticulo(art.codigoArticulo);
+                drArticulo.stock -= (short)art.stock;
+                precioTotal += art.precio * art.stock;
+                dsShop.Articulo.GetChanges();
+                drArticulo.AcceptChanges();
+            }
             try
             {
-                foreach (Articulo art in articulosVenta)
-                {
-                    var drArticulo = dsShop.Articulo.FindBycodigoArticulo(art.codigoArticulo);
-                    drArticulo.stock -= (short)art.stock;
-                    drArticulo.numeroVenta = (short) maxNumeroVenta();
-                    precioTotal += art.precio * art.stock;
-                    dsShop.Articulo.GetChanges();
-                    drArticulo.AcceptChanges();
-                }
             }
             catch
             {
                 return "Error actualizando stock articulos";
             }
-            dsCuaShop.VentaRow drVenta = dsShop.Venta.NewVentaRow();
-            drVenta.numeroVenta = (short)maxNumeroVenta();
-            drVenta.numeroEmpleado = (short) empleado.numeroEmpleado;
-            drVenta.precioVenta = precioTotal;
-            drVenta.fechaVenta = DateTime.Today.Date;
-            dsShop.Venta.AddVentaRow(drVenta);
-            daVenta.Update(drVenta);
+
             return "Venta insertada y stocks actualizados";
         }
 
@@ -251,13 +261,18 @@ namespace CapaDatos
         {
             try
             {
-                var drArticulo = dsShop.Articulo.FindBycodigoArticulo(codigoArticulo);
-                drArticulo.numeroVenta = 0;
-                daArticulo.Update(drArticulo);
-                dsShop.Articulo.GetChanges();
-                drArticulo.AcceptChanges();
+                var ventasArticulo = dsShop.ArticulosVenta.AsEnumerable().Where(a => a.codigoArticulo == codigoArticulo);
+                if (ventasArticulo.ToList().Count == 0)
+                {
+                    return "El articulo no había sido vendido";
+                }
+                foreach(var row in ventasArticulo.ToList())
+                {
+                    row.Delete();
+                }
                 return "Articulo devulelto correctamente";
-            } catch
+            }
+            catch
             {
                 return "Fallo en la devolución";
             }
@@ -273,7 +288,8 @@ namespace CapaDatos
                 dsShop.Articulo.GetChanges();
                 drArticulo.AcceptChanges();
                 return "Stock actualizado correctamente";
-            } catch
+            }
+            catch
             {
                 return "Error actualizando el stock!";
             }
@@ -309,7 +325,7 @@ namespace CapaDatos
                 {
                     return true;
                 }
-                    
+
             }
             return false;
         }
@@ -321,7 +337,7 @@ namespace CapaDatos
                 if (admin.usuario.ToUpper() == usuario.ToUpper())
                 {
                     return admin;
-                } 
+                }
             }
             return null;
         }
@@ -541,11 +557,13 @@ namespace CapaDatos
         public List<Iva> DevolverIvas()
         {
             var ivas = from drIva in dsShop.Iva
-                            orderby drIva.IdIva
-                            select new Iva(drIva.IdIva, drIva.Tipo);
+                       orderby drIva.IdIva
+                       select new Iva(drIva.IdIva, drIva.Tipo);
 
             return ivas.ToList();
         }
+    }
 
-}
+
+    
 }

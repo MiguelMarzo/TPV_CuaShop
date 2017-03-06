@@ -35,8 +35,7 @@ namespace CapaPresentacion
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            dgvArticulos.DataSource = articulos.FindAll(a => (a.codigoArticulo.Contains(txtCodigo.Text)) 
-            && (a.numeroVenta != 0)).Select(o => new
+            dgvArticulos.DataSource = articulos.FindAll(a => (a.codigoArticulo.Contains(txtCodigo.Text))).Select(o => new
             {
                 Codigo = o.codigoArticulo,
                 Descripción = o.descripcion,
