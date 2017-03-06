@@ -49,9 +49,6 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.cmbIVA = new System.Windows.Forms.ComboBox();
-            this.cmbNumVenta = new System.Windows.Forms.ComboBox();
-            this.cmbNumPedido = new System.Windows.Forms.ComboBox();
-            this.cmbNumRecogida = new System.Windows.Forms.ComboBox();
             this.cmbSubFamilia = new System.Windows.Forms.ComboBox();
             this.cmbFamilia = new System.Windows.Forms.ComboBox();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
@@ -62,6 +59,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.txtNumRecogida = new System.Windows.Forms.TextBox();
+            this.txtNumPedido = new System.Windows.Forms.TextBox();
+            this.txtNumVenta = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).BeginInit();
             this.pnlControls.SuspendLayout();
             this.SuspendLayout();
@@ -85,6 +85,9 @@
             // 
             // pnlControls
             // 
+            this.pnlControls.Controls.Add(this.txtNumVenta);
+            this.pnlControls.Controls.Add(this.txtNumPedido);
+            this.pnlControls.Controls.Add(this.txtNumRecogida);
             this.pnlControls.Controls.Add(this.btnBuscar);
             this.pnlControls.Controls.Add(this.btnCancelar);
             this.pnlControls.Controls.Add(this.btnVolver);
@@ -103,9 +106,6 @@
             this.pnlControls.Controls.Add(this.label11);
             this.pnlControls.Controls.Add(this.label10);
             this.pnlControls.Controls.Add(this.cmbIVA);
-            this.pnlControls.Controls.Add(this.cmbNumVenta);
-            this.pnlControls.Controls.Add(this.cmbNumPedido);
-            this.pnlControls.Controls.Add(this.cmbNumRecogida);
             this.pnlControls.Controls.Add(this.cmbSubFamilia);
             this.pnlControls.Controls.Add(this.cmbFamilia);
             this.pnlControls.Controls.Add(this.txtDescripcion);
@@ -288,30 +288,6 @@
             this.cmbIVA.Size = new System.Drawing.Size(118, 21);
             this.cmbIVA.TabIndex = 17;
             // 
-            // cmbNumVenta
-            // 
-            this.cmbNumVenta.FormattingEnabled = true;
-            this.cmbNumVenta.Location = new System.Drawing.Point(6, 315);
-            this.cmbNumVenta.Name = "cmbNumVenta";
-            this.cmbNumVenta.Size = new System.Drawing.Size(121, 21);
-            this.cmbNumVenta.TabIndex = 16;
-            // 
-            // cmbNumPedido
-            // 
-            this.cmbNumPedido.FormattingEnabled = true;
-            this.cmbNumPedido.Location = new System.Drawing.Point(6, 256);
-            this.cmbNumPedido.Name = "cmbNumPedido";
-            this.cmbNumPedido.Size = new System.Drawing.Size(121, 21);
-            this.cmbNumPedido.TabIndex = 15;
-            // 
-            // cmbNumRecogida
-            // 
-            this.cmbNumRecogida.FormattingEnabled = true;
-            this.cmbNumRecogida.Location = new System.Drawing.Point(6, 194);
-            this.cmbNumRecogida.Name = "cmbNumRecogida";
-            this.cmbNumRecogida.Size = new System.Drawing.Size(121, 21);
-            this.cmbNumRecogida.TabIndex = 14;
-            // 
             // cmbSubFamilia
             // 
             this.cmbSubFamilia.FormattingEnabled = true;
@@ -327,6 +303,7 @@
             this.cmbFamilia.Name = "cmbFamilia";
             this.cmbFamilia.Size = new System.Drawing.Size(121, 21);
             this.cmbFamilia.TabIndex = 12;
+            this.cmbFamilia.SelectedIndexChanged += new System.EventHandler(this.cmbFamilia_SelectedIndexChanged);
             // 
             // txtDescripcion
             // 
@@ -398,6 +375,27 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Número Recogida";
             // 
+            // txtNumRecogida
+            // 
+            this.txtNumRecogida.Location = new System.Drawing.Point(6, 194);
+            this.txtNumRecogida.Name = "txtNumRecogida";
+            this.txtNumRecogida.Size = new System.Drawing.Size(100, 20);
+            this.txtNumRecogida.TabIndex = 34;
+            // 
+            // txtNumPedido
+            // 
+            this.txtNumPedido.Location = new System.Drawing.Point(6, 256);
+            this.txtNumPedido.Name = "txtNumPedido";
+            this.txtNumPedido.Size = new System.Drawing.Size(100, 20);
+            this.txtNumPedido.TabIndex = 35;
+            // 
+            // txtNumVenta
+            // 
+            this.txtNumVenta.Location = new System.Drawing.Point(6, 315);
+            this.txtNumVenta.Name = "txtNumVenta";
+            this.txtNumVenta.Size = new System.Drawing.Size(100, 20);
+            this.txtNumVenta.TabIndex = 36;
+            // 
             // frmBuscarArticulo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -438,9 +436,6 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ComboBox cmbIVA;
-        private System.Windows.Forms.ComboBox cmbNumVenta;
-        private System.Windows.Forms.ComboBox cmbNumPedido;
-        private System.Windows.Forms.ComboBox cmbNumRecogida;
         private System.Windows.Forms.ComboBox cmbSubFamilia;
         private System.Windows.Forms.ComboBox cmbFamilia;
         private System.Windows.Forms.TextBox txtDescripcion;
@@ -454,5 +449,8 @@
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnVolver;
+        private System.Windows.Forms.TextBox txtNumVenta;
+        private System.Windows.Forms.TextBox txtNumPedido;
+        private System.Windows.Forms.TextBox txtNumRecogida;
     }
 }

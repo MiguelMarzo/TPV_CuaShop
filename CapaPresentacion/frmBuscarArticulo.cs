@@ -39,10 +39,24 @@ namespace CapaPresentacion
             txtEstanteria.Enabled = false;
             cmbFamilia.Enabled = false;
             cmbIVA.Enabled = false;
-            cmbNumPedido.Enabled = false;
-            cmbNumRecogida.Enabled = false;
-            cmbNumVenta.Enabled = false;
+            txtNumPedido.Enabled = false;
+            txtNumRecogida.Enabled = false;
+            txtNumVenta.Enabled = false;
             cmbSubFamilia.Enabled = false;
+
+            List<Familia> familias = _negocio.DevolverFamilias();
+
+            foreach(Familia fam in familias)
+            {
+                cmbFamilia.Items.Add(fam);
+            }
+
+            List<Iva> ivas = _negocio.DevolverIvas();
+
+            foreach(Iva iva in ivas)
+            {
+                cmbIVA.Items.Add(iva);
+            }
         }
 
         private void chbDescripcion_CheckedChanged(object sender, EventArgs e)
@@ -53,6 +67,7 @@ namespace CapaPresentacion
             }else
             {
                 txtDescripcion.Enabled = false;
+                txtDescripcion.Text = "";
             }
         }
 
@@ -68,6 +83,7 @@ namespace CapaPresentacion
                 cmbFamilia.Enabled = false;
                 chbSubFamilia.Enabled = false;
                 chbSubFamilia.Checked = false;
+                cmbFamilia.Text = "";
             }
         }
 
@@ -80,6 +96,7 @@ namespace CapaPresentacion
             else
             {
                 cmbSubFamilia.Enabled = false;
+                cmbSubFamilia.Text = "";
             }
         }
 
@@ -87,11 +104,12 @@ namespace CapaPresentacion
         {
             if (chbNumRecogida.Checked)
             {
-                cmbNumRecogida.Enabled = true;
+                txtNumRecogida.Enabled = true;
             }
             else
             {
-                cmbNumRecogida.Enabled = false;
+                txtNumRecogida.Enabled = false;
+                txtNumRecogida.Text = "";
             }
         }
 
@@ -99,11 +117,12 @@ namespace CapaPresentacion
         {
             if (chbNumPedido.Checked)
             {
-                cmbNumPedido.Enabled = true;
+                txtNumPedido.Enabled = true;
             }
             else
             {
-                cmbNumPedido.Enabled = false;
+                txtNumPedido.Enabled = false;
+                txtNumPedido.Text = "";
             }
         }
 
@@ -111,11 +130,12 @@ namespace CapaPresentacion
         {
             if (chbNumVenta.Checked)
             {
-                cmbNumVenta.Enabled = true;
+                txtNumVenta.Enabled = true;
             }
             else
             {
-                cmbNumVenta.Enabled = false;
+                txtNumVenta.Enabled = false;
+                txtNumPedido.Text = "";
             }
         }
 
@@ -128,6 +148,7 @@ namespace CapaPresentacion
             else
             {
                 cmbIVA.Enabled = false;
+                cmbIVA.Text = "";
             }
         }
 
@@ -144,6 +165,9 @@ namespace CapaPresentacion
                 txtEstanteria.Enabled = false;
                 txtEstante.Enabled = false;
                 txtAltura.Enabled = false;
+                txtEstanteria.Text = "";
+                txtEstante.Text = "";
+                txtAltura.Text = "";
             }
         }
 
@@ -169,9 +193,9 @@ namespace CapaPresentacion
             txtEstanteria.Enabled = false;
             cmbFamilia.Enabled = false;
             cmbIVA.Enabled = false;
-            cmbNumPedido.Enabled = false;
-            cmbNumRecogida.Enabled = false;
-            cmbNumVenta.Enabled = false;
+            txtNumPedido.Enabled = false;
+            txtNumRecogida.Enabled = false;
+            txtNumVenta.Enabled = false;
             cmbSubFamilia.Enabled = false;
             cmbSubFamilia.Enabled = false;
 
@@ -181,9 +205,9 @@ namespace CapaPresentacion
             txtEstanteria.Text = "";
             cmbFamilia.Text = "";
             cmbIVA.Text = "";
-            cmbNumPedido.Text = "";
-            cmbNumRecogida.Text = "";
-            cmbNumVenta.Text = "";
+            txtNumPedido.Text = "";
+            txtNumRecogida.Text = "";
+            txtNumVenta.Text = "";
             cmbSubFamilia.Text = "";
         }
 
@@ -195,9 +219,9 @@ namespace CapaPresentacion
             Familia familia;
             SubFamilia subFamilia;
             Iva iva;
-            Recogida recogida;
-            Articulo numPedido;
-            Venta venta;
+            Int32 recogida;
+            Int32 numPedido;
+            Int32 venta;
 
             Int32.TryParse(txtEstanteria.Text, out estanteria);
             Int32.TryParse(txtEstante.Text, out estante);
@@ -227,28 +251,28 @@ namespace CapaPresentacion
                 iva = (Iva)cmbIVA.SelectedItem;
             }
 
-            if((Recogida)cmbNumRecogida.SelectedItem == null)
+            if(txtNumRecogida.Text == "")
             {
-                recogida = new Recogida(-1, new DateTime(), -1, "", -1);
+                recogida = -1;
             }else
             {
-                recogida = (Recogida)cmbNumRecogida.SelectedItem;
+                recogida = Int32.Parse(txtNumRecogida.Text);
             }
 
-            if((Articulo)cmbNumPedido.SelectedItem == null)
+            if(txtNumPedido.Text == "")
             {
-                numPedido = new Articulo("", "", "", -1, -1, -1, -1, -1, "", "", "");
+                numPedido = -1;
             }else
             {
-                numPedido = (Articulo)cmbNumPedido.SelectedItem;
+                numPedido = Int32.Parse(txtNumPedido.Text);
             }
 
-            if((Venta)cmbNumVenta.SelectedItem == null)
+            if(txtNumVenta.Text == "")
             {
-                venta = new Venta(-1, -1, new DateTime(), -1);
+                venta = -1;
             }else
             {
-                venta = (Venta)cmbNumVenta.SelectedItem;
+                venta = Int32.Parse(txtNumVenta.Text);
             }
 
             if(estanteria == 0)
@@ -266,9 +290,14 @@ namespace CapaPresentacion
                 altura = -1;
             }
 
-            List<Articulo> articulos = _negocio.BuscarArticuloEspecifico(txtDescripcion.Text, familia, subFamilia, recogida.numeroRecogida, numPedido.numeroPedido, venta.numeroVenta, iva, estanteria, estante, altura);
+            List<Articulo> articulos = _negocio.BuscarArticuloEspecifico(txtDescripcion.Text, familia, subFamilia, recogida, numPedido, venta, iva, estanteria, estante, altura);
 
             dgvArticulos.DataSource = articulos;
+        }
+        
+        private void cmbFamilia_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            List<SubFamilia> subFamilias = _negocio.DevolverSubFamiliasPorFamilia((Familia) cmbFamilia.SelectedItem);
         }
     }
 }

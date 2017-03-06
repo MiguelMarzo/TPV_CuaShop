@@ -106,5 +106,15 @@ namespace CapaNegocio
         {
             return _datos.DevolverArticulosLikeCodigo(codigo);
         }
+
+        public List<Articulo> BuscarArticuloEspecifico(string descripcion, Familia familia, SubFamilia subFamilia, int numeroRecogida, int numeroPedido, int numeroVenta, Iva iva, int estanteria, int estante, int altura)
+        {
+            return _datos.BuscarArticuloEspecifico(descripcion, familia, subFamilia, numeroRecogida, numeroPedido, numeroVenta, iva, estanteria, estante, altura);
+        }
+
+        public List<Iva> DevolverIvas()
+        {
+            return _datos.DevolverIvas();
+        }
     }
 }
