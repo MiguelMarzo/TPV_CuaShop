@@ -185,7 +185,6 @@
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(137, 61);
             this.btnVolver.TabIndex = 16;
-            this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = true;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
@@ -210,7 +209,6 @@
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(482, 61);
             this.btnAceptar.TabIndex = 17;
-            this.btnAceptar.Text = "Añadir Articulo Nuevo";
             this.btnAceptar.UseVisualStyleBackColor = true;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
@@ -552,7 +550,6 @@
             this.btnAñadirStock.Name = "btnAñadirStock";
             this.btnAñadirStock.Size = new System.Drawing.Size(482, 61);
             this.btnAñadirStock.TabIndex = 43;
-            this.btnAñadirStock.Text = "Añadir Articulo ya Existente";
             this.btnAñadirStock.UseVisualStyleBackColor = true;
             this.btnAñadirStock.Click += new System.EventHandler(this.btnAñadirStock_Click);
             // 

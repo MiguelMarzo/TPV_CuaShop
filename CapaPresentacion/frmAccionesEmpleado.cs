@@ -53,7 +53,8 @@ namespace CapaPresentacion
 
         private void frmAccionesEmpleado_Load(object sender, EventArgs e)
         {
-
+            btnVolver.BackgroundImage = new Bitmap("volver.png");
+            btnVolver.BackgroundImageLayout = ImageLayout.Stretch;
         }
     }
 }

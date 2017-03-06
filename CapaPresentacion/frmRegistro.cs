@@ -27,6 +27,13 @@ namespace CapaPresentacion
             lblEmpleado.Text += StaticGlobal.GlobalVar.numeroEmpleado;
             lblFecha.Text += DateTime.Today.ToShortDateString();
 
+            btnVolver.BackgroundImage = new Bitmap("volver.png");
+            btnVolver.BackgroundImageLayout = ImageLayout.Stretch;
+            btnAceptar.BackgroundImage = new Bitmap("aceptar.png");
+            btnAceptar.BackgroundImageLayout = ImageLayout.Stretch;
+            btnAñadirStock.BackgroundImage = new Bitmap("añadir.png");
+            btnAñadirStock.BackgroundImageLayout = ImageLayout.Stretch;
+
             recogidas = _negocio.DevolverRecogidas();
             cmbRecogida.DataSource = recogidas;
             cmbRecogida.DisplayMember = "numeroRecogida";
