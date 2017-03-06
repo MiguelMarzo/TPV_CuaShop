@@ -139,6 +139,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="frmVenta.resx">
       <DependentUpon>frmVenta.cs</DependentUpon>
@@ -169,6 +170,30 @@
       <Project>{0e1e8b29-4c10-43da-a2ca-b17b143cc02d}</Project>
       <Name>Entidades</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\aceptar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\añadir.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\cancelar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\carrito.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\default.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\flechaderecha.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\flechaizquierda.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\volver.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
