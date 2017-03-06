@@ -176,16 +176,19 @@ namespace CapaPresentacion
                         articulos.Find(x => x.codigoArticulo == artCarrito.codigoArticulo).stock++;
                     }
                     artCarrito.stock--;
-                    List<Articulo> articulosSubFam = articulos.FindAll(x => x.idSubFamilia == subFamActual.idSubFamilia);
-                    dgvProductos.DataSource = articulosSubFam.Select(o => new
+                    if (subFamActual != null)
                     {
-                        Codigo = o.codigoArticulo,
-                        Descripción = o.descripcion,
-                        Precio = o.precio,
-                        Cantidad = o.stock,
-                        TallaPesoLitros = o.tallaPesoLitros,
-                        Localizacion = o.localizacion
-                    }).ToList();
+                        List<Articulo> articulosSubFam = articulos.FindAll(x => x.idSubFamilia == subFamActual.idSubFamilia);
+                        dgvProductos.DataSource = articulosSubFam.Select(o => new
+                        {
+                            Codigo = o.codigoArticulo,
+                            Descripción = o.descripcion,
+                            Precio = o.precio,
+                            Cantidad = o.stock,
+                            TallaPesoLitros = o.tallaPesoLitros,
+                            Localizacion = o.localizacion
+                        }).ToList();
+                    }                    
                     if (dgvProductos.Rows.Count > 0) { dgvProductos.Rows[0].Selected = true; }
                     if (artCarrito.stock == 0)
                     {
@@ -210,7 +213,15 @@ namespace CapaPresentacion
 
         private void btnSacarTicket_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(_negocio.EfectuarVenta(carrito, StaticGlobal.GlobalVar));
+            if (carrito.Count > 0)
+            {
+                DialogResult dr = new DialogResult();
+                dr = MessageBox.Show("¿Terminar venta?");
+                if(dr == DialogResult.OK)
+                {
+                    MessageBox.Show(_negocio.EfectuarVenta(carrito, StaticGlobal.GlobalVar));
+                }
+            }            
         }
 
         private void btnCodigoBarras_Click(object sender, EventArgs e)
@@ -237,16 +248,6 @@ namespace CapaPresentacion
                     }
                     art.stock--;
                     dgvCarrito.DataSource = carrito.Select(o => new
-                    {
-                        Codigo = o.codigoArticulo,
-                        Descripción = o.descripcion,
-                        Precio = o.precio,
-                        Cantidad = o.stock,
-                        TallaPesoLitros = o.tallaPesoLitros,
-                        Localizacion = o.localizacion
-                    }).ToList();
-                    List<Articulo> articulosSubFam = articulos.FindAll(x => x.idSubFamilia == subFamActual.idSubFamilia);
-                    dgvProductos.DataSource = articulosSubFam.Select(o => new
                     {
                         Codigo = o.codigoArticulo,
                         Descripción = o.descripcion,
