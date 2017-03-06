@@ -225,11 +225,26 @@ namespace CapaPresentacion
             {
                 if (art.stock > 0)
                 {
-                    if (articulos.Contains(art))
+                    if (carrito.Contains(art))
                     {
-                        articulos.Find(x => x.codigoArticulo == art.codigoArticulo).stock++;
+                        carrito.Find(x => x.codigoArticulo == art.codigoArticulo).stock++;
+                    }
+                    else
+                    {
+                        Articulo artCarrito = new Articulo(art.codigoArticulo, art.descripcion, art.tallaPesoLitros, 1, art.numeroRecogida,
+                            art.numeroPedido, art.numeroVenta, art.precio, art.localizacion, art.idFamilia, art.idSubFamilia);
+                        carrito.Add(artCarrito);
                     }
                     art.stock--;
+                    dgvCarrito.DataSource = carrito.Select(o => new
+                    {
+                        Codigo = o.codigoArticulo,
+                        Descripción = o.descripcion,
+                        Precio = o.precio,
+                        Cantidad = o.stock,
+                        TallaPesoLitros = o.tallaPesoLitros,
+                        Localizacion = o.localizacion
+                    }).ToList();
                     List<Articulo> articulosSubFam = articulos.FindAll(x => x.idSubFamilia == subFamActual.idSubFamilia);
                     dgvProductos.DataSource = articulosSubFam.Select(o => new
                     {
@@ -241,20 +256,12 @@ namespace CapaPresentacion
                         Localizacion = o.localizacion
                     }).ToList();
                     if (dgvProductos.Rows.Count > 0) { dgvProductos.Rows[0].Selected = true; }
-                    if (art.stock == 0)
-                    {
-                        carrito.Remove(art);
-                        dgvCarrito.DataSource = carrito.Select(o => new
-                        {
-                            Codigo = o.codigoArticulo,
-                            Descripción = o.descripcion,
-                            Precio = o.precio,
-                            Cantidad = o.stock,
-                            TallaPesoLitros = o.tallaPesoLitros,
-                            Localizacion = o.localizacion
-                        }).ToList();
-                        if (dgvCarrito.Rows.Count > 0) { dgvCarrito.Rows[0].Selected = true; }
-                    }
+                    if (dgvCarrito.Rows.Count > 0) { dgvCarrito.Rows[0].Selected = true; }
+                    return;
+                }
+                else
+                {
+                    MessageBox.Show("No hay stock");
                     return;
                 }
             }
