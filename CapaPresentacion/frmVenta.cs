@@ -32,6 +32,14 @@ namespace CapaPresentacion
             lblEmpleado.Text += StaticGlobal.GlobalVar.numeroEmpleado;
             lblFecha.Text += DateTime.Today.ToShortDateString();
             articulos = _negocio.DevolverTodosLosArticulos();
+            btnAnadirCarrito.BackgroundImage = new Bitmap("flechaderecha.png");
+            btnAnadirCarrito.BackgroundImageLayout = ImageLayout.Stretch;
+            btnDevolverAProductos.BackgroundImage = new Bitmap("flechaizquierda.png");
+            btnDevolverAProductos.BackgroundImageLayout = ImageLayout.Stretch;
+            btnAtras.BackgroundImage = new Bitmap("volver.png");
+            btnAtras.BackgroundImageLayout = ImageLayout.Stretch;
+            btnSacarTicket.BackgroundImage = new Bitmap("carrito.png");
+            btnSacarTicket.BackgroundImageLayout = ImageLayout.Stretch;
         }
         private void cargarFamilias()
         {
