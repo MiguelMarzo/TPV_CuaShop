@@ -297,7 +297,17 @@ namespace CapaPresentacion
         
         private void cmbFamilia_SelectedIndexChanged(object sender, EventArgs e)
         {
+
+            cmbSubFamilia.Text = "";
+
+            cmbSubFamilia.Items.Clear();
+
             List<SubFamilia> subFamilias = _negocio.DevolverSubFamiliasPorFamilia((Familia) cmbFamilia.SelectedItem);
+
+            foreach(SubFamilia subFam in subFamilias)
+            {
+                cmbSubFamilia.Items.Add(subFam);
+            }
         }
     }
 }

@@ -345,11 +345,11 @@ namespace CapaDatos
                 if (first)
                 {
                     first = false;
-                    query += " idFamilia = " + familia.idFamilia;
+                    query += " idFamilia = '" + familia.idFamilia + "'";
                 }
                 else
                 {
-                    query += " and idFamilia = " + familia.idFamilia;
+                    query += " and idFamilia = '" + familia.idFamilia + "'";
                 }
             }
 
@@ -358,11 +358,11 @@ namespace CapaDatos
                 if (first)
                 {
                     first = false;
-                    query += " idFamilia = " + subFamilia.idFamilia + " and idSubFamilia = " + subFamilia.idSubFamilia;
+                    query += " idFamilia = '" + subFamilia.idFamilia + "' and idSubFamilia = '" + subFamilia.idSubFamilia + "'";
                 }
                 else
                 {
-                    query += " and idFamilia = " + subFamilia.idFamilia + " and idSubFamilia = " + subFamilia.idSubFamilia;
+                    query += " and idFamilia = '" + subFamilia.idFamilia + "' and idSubFamilia = '" + subFamilia.idSubFamilia + "'";
                 }
             }
 
