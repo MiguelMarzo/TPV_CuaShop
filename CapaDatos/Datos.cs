@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Entidades;
 using CapaDatos.dsCuaShopTableAdapters;
-using System.Data.OleDb;
+using System.Data.SqlClient;
 
 namespace CapaDatos
 {
@@ -18,6 +18,7 @@ namespace CapaDatos
         private VentaTableAdapter daVenta;
         private FamilliaTableAdapter daFamilia;
         private SubFamiliaTableAdapter daSubFamilia;
+        private AdminTableAdapter daAdmin;
         public Datos()
         {
             CrearDataSetCompleto();
@@ -44,78 +45,85 @@ namespace CapaDatos
 
             daSubFamilia = new dsCuaShopTableAdapters.SubFamiliaTableAdapter();
             daSubFamilia.Fill(dsShop.SubFamilia);
+
+            daAdmin = new dsCuaShopTableAdapters.AdminTableAdapter();
+            daAdmin.Fill(dsShop.Admin);
         }
 
         //METODOS PARA DEVOLVER OBJETOS (SELECTS)
         public List<Articulo> DevolverTodosLosArticulos()
         {
-            var articulos = from daArticulo in dsShop.Articulo
-                            orderby daArticulo.descripcion ascending
-                            select new Articulo(daArticulo.codigoArticulo, daArticulo.descripcion, daArticulo.tallaPesoLitros, daArticulo.stock,
-                            daArticulo.numeroRecogida, daArticulo.numeroPedido, daArticulo.numeroVenta, daArticulo.precio, daArticulo.localizacion,
-                            daArticulo.idFamilia, daArticulo.idSubFamilia);
+            var articulos = from drArticulo in dsShop.Articulo
+                            orderby drArticulo.descripcion ascending
+                            select new Articulo(drArticulo.codigoArticulo, drArticulo.descripcion, drArticulo.tallaPesoLitros, drArticulo.stock,
+                            drArticulo.numeroRecogida, drArticulo.numeroPedido, drArticulo.numeroVenta, drArticulo.precio, drArticulo.localizacion,
+                            drArticulo.idFamilia, drArticulo.idSubFamilia);
 
             return articulos.ToList();
         }
         public List<Empleado> DevolverEmpleados()
         {
-            var empleados = from daEmpleado in dsShop.Empleado
-                            orderby daEmpleado.nombreEmpleado
-                            select new Empleado(daEmpleado.numeroEmpleado, daEmpleado.rutaFoto, daEmpleado.nombreEmpleado);
+            var empleados = from drEmpleado in dsShop.Empleado
+                            orderby drEmpleado.nombreEmpleado
+                            select new Empleado(drEmpleado.numeroEmpleado, drEmpleado.rutaFoto, drEmpleado.nombreEmpleado);
 
             return empleados.ToList();
         }
         public List<Familia> DevolverFamilias()
         {
-            var familias = from daFamilia in dsShop.Famillia
-                           select new Familia(daFamilia.idFamilia, daFamilia.rutaFoto, daFamilia.nombreFamilia, daFamilia.inicialesFamilia);
+            var familias = from drFamilia in dsShop.Famillia
+                           select new Familia(drFamilia.idFamilia, drFamilia.rutaFoto, drFamilia.nombreFamilia, drFamilia.inicialesFamilia);
             return familias.ToList();
         }
         public List<SubFamilia> DevolverSubFamilias(Familia fam)
         {
-            var subFamilias = from daSubFam in dsShop.SubFamilia
-                              where daSubFam.idFamilia == fam.idFamilia
-                              select new SubFamilia(daSubFam.idSubFamilia, daSubFam.idFamilia, daSubFam.nombreSubFamilia, daSubFam.idIva, daSubFam.inicialesSubFamilia);
+            var subFamilias = from drSubFam in dsShop.SubFamilia
+                              where drSubFam.idFamilia == fam.idFamilia
+                              select new SubFamilia(drSubFam.idSubFamilia, drSubFam.idFamilia, drSubFam.nombreSubFamilia, drSubFam.idIva,
+                              drSubFam.inicialesSubFamilia);
             return subFamilias.ToList();
         }
         public List<Recogida> DevolverRecogidas()
         {
-            var recogidas = from daRecogida in dsShop.Recogida
-                            select new Recogida(daRecogida.numeroRecogida, daRecogida.fecha, daRecogida.cantidadArticulos,
-                            daRecogida.entregador, daRecogida.numeroEmpleado);
+            var recogidas = from drRecogida in dsShop.Recogida
+                            select new Recogida(drRecogida.numeroRecogida, drRecogida.fecha, drRecogida.cantidadArticulos,
+                            drRecogida.entregador, drRecogida.numeroEmpleado);
             return recogidas.ToList();
-        }
-        public List<Articulo> DevolverVentaPorCodigoVenta(string codigoVenta)
-        {
-            var articulos = from daArticulo in dsShop.Articulo
-                            orderby daArticulo.numeroVenta.ToString().Equals(codigoVenta)
-                            select new Articulo(daArticulo.codigoArticulo, daArticulo.descripcion, daArticulo.tallaPesoLitros, daArticulo.stock,
-                            daArticulo.numeroRecogida, daArticulo.numeroPedido, daArticulo.numeroVenta, daArticulo.precio, daArticulo.localizacion,
-                            daArticulo.idFamilia, daArticulo.idSubFamilia);
-
-            return articulos.ToList();
         }
         public List<Articulo> DevolverArticulosPorSubFamilia(SubFamilia subFam)
         {
-            var articulos = from daArticulo in dsShop.Articulo
-                            where daArticulo.idSubFamilia == subFam.idSubFamilia
-                            select new Articulo(daArticulo.codigoArticulo, daArticulo.descripcion, daArticulo.tallaPesoLitros, daArticulo.stock,
-                            daArticulo.numeroRecogida, daArticulo.numeroPedido, daArticulo.numeroVenta, daArticulo.precio, daArticulo.localizacion,
-                            daArticulo.idFamilia, daArticulo.idSubFamilia);
+            var articulos = from drArt in dsShop.Articulo
+                            where drArt.idSubFamilia == subFam.idSubFamilia
+                            select new Articulo(drArt.codigoArticulo, drArt.descripcion, drArt.tallaPesoLitros, drArt.stock,
+                            drArt.numeroRecogida, drArt.numeroPedido, drArt.numeroVenta, drArt.precio, drArt.localizacion,
+                            drArt.idFamilia, drArt.idSubFamilia);
             return articulos.ToList();
         }
         public Articulo DevolverArticuloPorCodigo(String codigo)
         {
-
-            var articulo = from daArticulo in dsShop.Articulo
-                           where daArticulo.codigoArticulo == codigo
-                           select new Articulo(daArticulo.codigoArticulo, daArticulo.descripcion, daArticulo.tallaPesoLitros, daArticulo.stock,
-                           daArticulo.numeroRecogida, daArticulo.numeroPedido, daArticulo.numeroVenta, daArticulo.precio, daArticulo.localizacion,
-                           daArticulo.idFamilia, daArticulo.idSubFamilia);
-          
+            var articulo = from drArt in dsShop.Articulo
+                           where drArt.codigoArticulo == codigo
+                           select new Articulo(drArt.codigoArticulo, drArt.descripcion, drArt.tallaPesoLitros, drArt.stock,
+                           drArt.numeroRecogida, drArt.numeroPedido, drArt.numeroVenta, drArt.precio, drArt.localizacion,
+                           drArt.idFamilia, drArt.idSubFamilia);
             return articulo.ToList()[0];
         }
+        public List<Admin> DevolverAdmins()
+        {
+            var admins = from daAdmin in dsShop.Admin
+                         select new Admin(daAdmin.Id, daAdmin.Usuario, daAdmin.Contraseña);
+            return admins.ToList();
+        }
 
+        public List<Articulo> DevolverArticulosLikeCodigo(String codigo)
+        {
+            var arts = from drArt in dsShop.Articulo
+                       where drArt.codigoArticulo.Contains(codigo)
+                       select new Articulo(drArt.codigoArticulo, drArt.descripcion, drArt.tallaPesoLitros, drArt.stock,
+                            drArt.numeroRecogida, drArt.numeroPedido, drArt.numeroVenta, drArt.precio, drArt.localizacion,
+                            drArt.idFamilia, drArt.idSubFamilia);
+            return arts.ToList();
+        }
 
         //FIN METODOS DEVOLVER OBJETOS (SELECTS)
 
@@ -184,11 +192,77 @@ namespace CapaDatos
             }
         }
 
+        public String InsertarEmpleado(String nombre, String rutaFoto)
+        {
+            dsCuaShop.EmpleadoRow drEmpleado = dsShop.Empleado.NewEmpleadoRow();
+            drEmpleado.numeroEmpleado = (short) MaxEmpleado();
+            drEmpleado.nombreEmpleado = nombre;
+            drEmpleado.rutaFoto = rutaFoto;
+            dsShop.Empleado.AddEmpleadoRow(drEmpleado);
+            daEmpleado.Update(drEmpleado);
+            return "Insertado";
+        }
+        private int MaxEmpleado()
+        {
+            var numEmpleado = dsShop.Empleado.OrderByDescending(x => x.numeroEmpleado).First().numeroEmpleado;
 
+            return numEmpleado + 1;
+        }
+
+        public String EfectuarVenta(List<Articulo> articulosVenta, Empleado empleado)
+        {
+            Decimal precioTotal = 0;
+            try
+            {
+                foreach (Articulo art in articulosVenta)
+                {
+                    var drArticulo = dsShop.Articulo.FindBycodigoArticulo(art.codigoArticulo);
+                    drArticulo.stock -= (short)art.stock;
+                    drArticulo.numeroVenta = (short) maxNumeroVenta();
+                    precioTotal += art.precio * art.stock;
+                    dsShop.Articulo.GetChanges();
+                    drArticulo.AcceptChanges();
+                }
+            }
+            catch
+            {
+                return "Error actualizando stock articulos";
+            }
+            dsCuaShop.VentaRow drVenta = dsShop.Venta.NewVentaRow();
+            drVenta.numeroVenta = (short)maxNumeroVenta();
+            drVenta.numeroEmpleado = (short) empleado.numeroEmpleado;
+            drVenta.precioVenta = precioTotal;
+            drVenta.fechaVenta = DateTime.Today.Date;
+            dsShop.Venta.AddVentaRow(drVenta);
+            daVenta.Update(drVenta);
+            return "Venta insertada y stocks actualizados";
+        }
+
+        private int maxNumeroVenta()
+        {
+            var numVenta = dsShop.Venta.OrderByDescending(x => x.numeroVenta).First().numeroVenta;
+            return numVenta + 1;
+        }
         //FIN METODOS CREAR REGISTRO (INSERTS)
 
 
         //METODOS PARA ACTUALIZAR DATOS (UPDATES)
+        public String DevolverArticulo(string codigoArticulo)
+        {
+            try
+            {
+                var drArticulo = dsShop.Articulo.FindBycodigoArticulo(codigoArticulo);
+                drArticulo.numeroVenta = 0;
+                daArticulo.Update(drArticulo);
+                dsShop.Articulo.GetChanges();
+                drArticulo.AcceptChanges();
+                return "Articulo devulelto correctamente";
+            } catch
+            {
+                return "Fallo en la devolución";
+            }
+
+        }
         public String ActualizarStockArticulo(String codigo, int cantidad)
         {
             try
@@ -198,11 +272,11 @@ namespace CapaDatos
                 daArticulo.Update(drArticulo);
                 dsShop.Articulo.GetChanges();
                 drArticulo.AcceptChanges();
+                return "Stock actualizado correctamente";
             } catch
             {
                 return "Error actualizando el stock!";
             }
-            return "";
         }
         public string ActualizarPrecioVenta(int codigoVenta, int precio)
         {
@@ -222,217 +296,34 @@ namespace CapaDatos
         }
 
 
-        //FIN METODOS PARA ACUALIZAR DATOS (UPDATES)   
-        
-        public List<Articulo> BuscarArticuloEspecifico(string descripcion, Familia familia, SubFamilia subFamilia, int numeroRecogida, int numeroPedido, int numeroVenta, Iva iva, int estanteria, int estante, int altura)
+        //FIN METODOS PARA ACUALIZAR DATOS (UPDATES)    
+
+        //OTROS METODOS
+        public bool AdminLogin(String usuario, String contraseña)
         {
-            string cadCon = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=TPVdb1.accdb";
-
-            List<Articulo> result = new List<Articulo>();
-
-            string query = "";
-            bool first = true;
-            if(descripcion != "")
+            var admins = from daAdmin in dsShop.Admin
+                         select new Admin(daAdmin.Id, daAdmin.Usuario, daAdmin.Contraseña);
+            foreach (Admin admin in admins.ToList())
             {
-                first = false;
-                query += " descripcion = '" + descripcion + "'";
+                if (admin.usuario == usuario && admin.contraseña == contraseña)
+                {
+                    return true;
+                }
+                    
             }
+            return false;
+        }
 
-            if(familia.idFamilia != "" && subFamilia.idSubFamilia == "")
+        public Admin ComprobarAdminUsuario(String usuario)
+        {
+            foreach (Admin admin in DevolverAdmins())
             {
-                if(first)
+                if (admin.usuario.ToUpper() == usuario.ToUpper())
                 {
-                    first = false;
-                    query += " idFamilia = " + familia.idFamilia;
-                }
-                else
-                {
-                    query += " and idFamilia = " + familia.idFamilia;
-                }
+                    return admin;
+                } 
             }
-
-            if(subFamilia.idSubFamilia != "")
-            {
-                if(first)
-                {
-                    first = false;
-                    query += " idFamilia = " + subFamilia.idFamilia + " and idSubFamilia = " + subFamilia.idSubFamilia;
-                }
-                else
-                {
-                    query += " and idFamilia = " + subFamilia.idFamilia + " and idSubFamilia = " + subFamilia.idSubFamilia;
-                }
-            }
-
-            if(numeroRecogida != -1)
-            {
-                if (first)
-                {
-                    first = false;
-                    query += " numeroRecogida = " + numeroRecogida;
-                }
-                else
-                {
-                    query += " and numeroRecogida = " + numeroRecogida;
-                }
-            }
-
-            if(numeroPedido != -1)
-            {
-                if (first)
-                {
-                    first = false;
-                    query += " numeroPedido = " + numeroPedido;
-                }
-                else
-                {
-                    query += " and numeroPedido = " + numeroPedido;
-                }
-            }
-
-            if(numeroVenta != -1)
-            {
-                if (first)
-                {
-                    first = false;
-                    query += " numeroVenta = " + numeroVenta;
-                }
-                else
-                {
-                    query += " and numeroVenta = " + numeroVenta;
-                }
-            }
-
-            if(iva.idIva != -1)
-            {
-                if (first)
-                {
-                    first = false;
-                    query += " idIva = " + iva.idIva;
-                }
-                else
-                {
-                    query += " and idIva = " + iva.idIva;
-                }
-            }
-
-            if(estanteria != -1)
-            {
-                if(estante != -1)
-                {
-                    if(altura != -1)
-                    {
-                        if (first)
-                        {
-                            first = false;
-                            query += " localizacion = " + estanteria + "." + estante + "." + altura;
-                        }
-                        else
-                        {
-                            query += " and localizacion = " + estanteria + "." + estante + "." + altura;
-                        }
-                    }
-                    else
-                    {
-                        if (first)
-                        {
-                            first = false;
-                            query += " localizacion like " + estanteria + "." + estante + ".%";
-                        }else
-                        {
-                            query += " and localizacion like " + estanteria + "." + estante + ".%";
-                        }
-                    }
-                }
-                else if(altura != -1)
-                {
-                    if (first)
-                    {
-                        first = false;
-                        query += " localizacion like " + estanteria + ".%." + altura;
-                    }
-                    else
-                    {
-                        query += " and localizacion like " + estanteria + ".%." + altura;
-                    }
-                }
-                else
-                {
-                    if (first)
-                    {
-                        first = false;
-                        query += " localizacion like " + estanteria + ".%.%";
-                    }
-                    else
-                    {
-                        query += " and localizacion like " + estanteria + ".%.%";
-                    }
-                }
-                
-            }
-            else if(estante != -1)
-            {
-                if(altura != -1)
-                {
-                    if (first)
-                    {
-                        first = false;
-                        query += " localizacion like %." + estante + "." + altura;
-                    }
-                    else
-                    {
-                        query += " and localizacion like %." + estante + "." + altura;
-                    }
-                }
-                else
-                {
-                    if (first)
-                    {
-                        first = false;
-                        query += " localizacion like %." + estante + ".%";
-                    }
-                    else
-                    {
-                        query += " and localizacion like %." + estante + ".%";
-                    }
-                }
-            }
-            else if(altura != -1)
-            {
-                if (first)
-                {
-                    first = false;
-                    query += " localizacion like %.%." + altura;
-                }
-                else
-                {
-                    query += " and localizacion like %.%." + altura;
-                }
-            }
-
-            string sql = "select * from Articulo where" + query;
-            OleDbConnection conArticulo = new OleDbConnection(cadCon);
-            OleDbCommand cmd = new OleDbCommand(sql, conArticulo);
-            try
-            {
-                conArticulo.Open();
-                OleDbDataReader dr = cmd.ExecuteReader();
-                if(!dr.HasRows)
-                {
-                    return null;
-                }
-
-                while (dr.Read())
-                {
-                    result.Add(new Articulo((string)dr["codigoArticulo"], (string)dr["descripcion"], (string)dr["tallaPesoLitros"], (int)dr["stock"], (int)dr["numeroRecogida"], (int)dr["numeroPedido"], (int)dr["numeroventa"], (decimal)dr["precio"], (string)dr["localizacion"], (string)dr["idFamilia"], (string)dr["idSubFamilia"]));
-                }
-            }
-            catch (Exception ex)
-            {
-                return null;
-            }
-
-            return result;
-        }    
+            return null;
+        }
     }
 }

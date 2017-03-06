@@ -49,9 +49,9 @@ namespace CapaNegocio
             return _datos.DevolverRecogidas();
         }
 
-        public List<Articulo> DevolverVenta(string codigoVenta)
+        public String DevolverArticulo(string codigoArticulo)
         {
-            return _datos.DevolverVentaPorCodigoVenta(codigoVenta);
+            return _datos.DevolverArticulo(codigoArticulo);
         }
 
         public string ActualizarPrecioVenta(int codigoVenta, int precio)
@@ -84,9 +84,27 @@ namespace CapaNegocio
             return _datos.ActualizarStockArticulo(codigo, cantidad);
         }
 
-        public List<Articulo> BuscarArticuloEspecifico(string descripcion, Familia familia, SubFamilia subFamilia, int numeroRecogida, int numeroPedido, int numeroVenta, Iva iva, int estanteria, int estante, int altura)
+        public String InsertarEmpleado(String nombre, String rutaFoto)
         {
-            return _datos.BuscarArticuloEspecifico(descripcion, familia, subFamilia, numeroRecogida, numeroPedido, numeroVenta, iva, estanteria, estante, altura);
+            return _datos.InsertarEmpleado(nombre, rutaFoto);
+        }
+        public bool AdminLogin(String usuario, String contraseña)
+        {
+            return _datos.AdminLogin(usuario, contraseña);
+        }
+        public Admin ComprobarAdminUsuario(String usuario)
+        {
+            return _datos.ComprobarAdminUsuario(usuario);
+        }
+
+        public String EfectuarVenta(List<Articulo> articulosVenta, Empleado empleado)
+        {
+            return _datos.EfectuarVenta(articulosVenta, empleado);
+        }
+
+        public List<Articulo> DevolverArticulosLikeCodigo(String codigo)
+        {
+            return _datos.DevolverArticulosLikeCodigo(codigo);
         }
     }
 }

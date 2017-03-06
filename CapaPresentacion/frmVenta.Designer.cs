@@ -76,6 +76,7 @@
             this.btnFamilia10.Size = new System.Drawing.Size(95, 82);
             this.btnFamilia10.TabIndex = 19;
             this.btnFamilia10.UseVisualStyleBackColor = true;
+            this.btnFamilia10.Visible = false;
             this.btnFamilia10.Click += new System.EventHandler(this.FamButtonClick);
             // 
             // btnFamilia9
@@ -86,6 +87,7 @@
             this.btnFamilia9.Size = new System.Drawing.Size(95, 82);
             this.btnFamilia9.TabIndex = 18;
             this.btnFamilia9.UseVisualStyleBackColor = true;
+            this.btnFamilia9.Visible = false;
             this.btnFamilia9.Click += new System.EventHandler(this.FamButtonClick);
             // 
             // btnFamilia8
@@ -96,6 +98,7 @@
             this.btnFamilia8.Size = new System.Drawing.Size(95, 82);
             this.btnFamilia8.TabIndex = 17;
             this.btnFamilia8.UseVisualStyleBackColor = true;
+            this.btnFamilia8.Visible = false;
             this.btnFamilia8.Click += new System.EventHandler(this.FamButtonClick);
             // 
             // btnFamilia7
@@ -106,6 +109,7 @@
             this.btnFamilia7.Size = new System.Drawing.Size(95, 82);
             this.btnFamilia7.TabIndex = 16;
             this.btnFamilia7.UseVisualStyleBackColor = true;
+            this.btnFamilia7.Visible = false;
             this.btnFamilia7.Click += new System.EventHandler(this.FamButtonClick);
             // 
             // btnFamilia5
@@ -116,6 +120,7 @@
             this.btnFamilia5.Size = new System.Drawing.Size(95, 82);
             this.btnFamilia5.TabIndex = 14;
             this.btnFamilia5.UseVisualStyleBackColor = true;
+            this.btnFamilia5.Visible = false;
             this.btnFamilia5.Click += new System.EventHandler(this.FamButtonClick);
             // 
             // btnFamilia4
@@ -126,6 +131,7 @@
             this.btnFamilia4.Size = new System.Drawing.Size(95, 82);
             this.btnFamilia4.TabIndex = 13;
             this.btnFamilia4.UseVisualStyleBackColor = true;
+            this.btnFamilia4.Visible = false;
             this.btnFamilia4.Click += new System.EventHandler(this.FamButtonClick);
             // 
             // btnFamilia3
@@ -136,6 +142,7 @@
             this.btnFamilia3.Size = new System.Drawing.Size(95, 82);
             this.btnFamilia3.TabIndex = 12;
             this.btnFamilia3.UseVisualStyleBackColor = true;
+            this.btnFamilia3.Visible = false;
             this.btnFamilia3.Click += new System.EventHandler(this.FamButtonClick);
             // 
             // btnFamilia2
@@ -146,12 +153,13 @@
             this.btnFamilia2.Size = new System.Drawing.Size(95, 82);
             this.btnFamilia2.TabIndex = 11;
             this.btnFamilia2.UseVisualStyleBackColor = true;
+            this.btnFamilia2.Visible = false;
             this.btnFamilia2.Click += new System.EventHandler(this.FamButtonClick);
             // 
             // btnAnadirCarrito
             // 
             this.btnAnadirCarrito.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnAnadirCarrito.Location = new System.Drawing.Point(904, 202);
+            this.btnAnadirCarrito.Location = new System.Drawing.Point(798, 202);
             this.btnAnadirCarrito.Margin = new System.Windows.Forms.Padding(4);
             this.btnAnadirCarrito.Name = "btnAnadirCarrito";
             this.btnAnadirCarrito.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -164,7 +172,7 @@
             // btnSacarTicket
             // 
             this.btnSacarTicket.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnSacarTicket.Location = new System.Drawing.Point(1101, 652);
+            this.btnSacarTicket.Location = new System.Drawing.Point(1059, 650);
             this.btnSacarTicket.Margin = new System.Windows.Forms.Padding(4);
             this.btnSacarTicket.Name = "btnSacarTicket";
             this.btnSacarTicket.Size = new System.Drawing.Size(139, 114);
@@ -181,6 +189,7 @@
             this.btnFamilia6.Size = new System.Drawing.Size(95, 82);
             this.btnFamilia6.TabIndex = 24;
             this.btnFamilia6.UseVisualStyleBackColor = true;
+            this.btnFamilia6.Visible = false;
             this.btnFamilia6.Click += new System.EventHandler(this.FamButtonClick);
             // 
             // btnFamilia1
@@ -191,6 +200,7 @@
             this.btnFamilia1.Size = new System.Drawing.Size(95, 82);
             this.btnFamilia1.TabIndex = 23;
             this.btnFamilia1.UseVisualStyleBackColor = true;
+            this.btnFamilia1.Visible = false;
             this.btnFamilia1.Click += new System.EventHandler(this.FamButtonClick);
             // 
             // btnAtras
@@ -209,14 +219,15 @@
             // dgvProductos
             // 
             this.dgvProductos.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dgvProductos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProductos.Location = new System.Drawing.Point(243, 202);
             this.dgvProductos.Margin = new System.Windows.Forms.Padding(4);
             this.dgvProductos.MultiSelect = false;
             this.dgvProductos.Name = "dgvProductos";
-            this.dgvProductos.Size = new System.Drawing.Size(653, 335);
+            this.dgvProductos.Size = new System.Drawing.Size(547, 335);
             this.dgvProductos.TabIndex = 26;
-            this.dgvProductos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.CellEnter);
+            this.dgvProductos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.CellEnterArticulos);
             // 
             // grpFamilias
             // 
@@ -272,6 +283,7 @@
             this.btnSubFamilia12.Size = new System.Drawing.Size(95, 82);
             this.btnSubFamilia12.TabIndex = 26;
             this.btnSubFamilia12.UseVisualStyleBackColor = true;
+            this.btnSubFamilia12.Visible = false;
             this.btnSubFamilia12.Click += new System.EventHandler(this.SubFamButtonClick);
             // 
             // btnSubFamilia11
@@ -282,6 +294,7 @@
             this.btnSubFamilia11.Size = new System.Drawing.Size(95, 82);
             this.btnSubFamilia11.TabIndex = 25;
             this.btnSubFamilia11.UseVisualStyleBackColor = true;
+            this.btnSubFamilia11.Visible = false;
             this.btnSubFamilia11.Click += new System.EventHandler(this.SubFamButtonClick);
             // 
             // btnSubFamilia1
@@ -292,6 +305,7 @@
             this.btnSubFamilia1.Size = new System.Drawing.Size(95, 82);
             this.btnSubFamilia1.TabIndex = 23;
             this.btnSubFamilia1.UseVisualStyleBackColor = true;
+            this.btnSubFamilia1.Visible = false;
             this.btnSubFamilia1.Click += new System.EventHandler(this.SubFamButtonClick);
             // 
             // btnSubFamilia2
@@ -302,6 +316,7 @@
             this.btnSubFamilia2.Size = new System.Drawing.Size(95, 82);
             this.btnSubFamilia2.TabIndex = 11;
             this.btnSubFamilia2.UseVisualStyleBackColor = true;
+            this.btnSubFamilia2.Visible = false;
             this.btnSubFamilia2.Click += new System.EventHandler(this.SubFamButtonClick);
             // 
             // btnSubFamilia3
@@ -312,6 +327,7 @@
             this.btnSubFamilia3.Size = new System.Drawing.Size(95, 82);
             this.btnSubFamilia3.TabIndex = 12;
             this.btnSubFamilia3.UseVisualStyleBackColor = true;
+            this.btnSubFamilia3.Visible = false;
             this.btnSubFamilia3.Click += new System.EventHandler(this.SubFamButtonClick);
             // 
             // btnSubFamilia6
@@ -322,6 +338,7 @@
             this.btnSubFamilia6.Size = new System.Drawing.Size(95, 82);
             this.btnSubFamilia6.TabIndex = 24;
             this.btnSubFamilia6.UseVisualStyleBackColor = true;
+            this.btnSubFamilia6.Visible = false;
             this.btnSubFamilia6.Click += new System.EventHandler(this.SubFamButtonClick);
             // 
             // btnSubFamilia4
@@ -332,6 +349,7 @@
             this.btnSubFamilia4.Size = new System.Drawing.Size(95, 82);
             this.btnSubFamilia4.TabIndex = 13;
             this.btnSubFamilia4.UseVisualStyleBackColor = true;
+            this.btnSubFamilia4.Visible = false;
             this.btnSubFamilia4.Click += new System.EventHandler(this.SubFamButtonClick);
             // 
             // btnSubFamilia5
@@ -342,6 +360,7 @@
             this.btnSubFamilia5.Size = new System.Drawing.Size(95, 82);
             this.btnSubFamilia5.TabIndex = 14;
             this.btnSubFamilia5.UseVisualStyleBackColor = true;
+            this.btnSubFamilia5.Visible = false;
             this.btnSubFamilia5.Click += new System.EventHandler(this.SubFamButtonClick);
             // 
             // btnSubFamilia7
@@ -352,6 +371,7 @@
             this.btnSubFamilia7.Size = new System.Drawing.Size(95, 82);
             this.btnSubFamilia7.TabIndex = 16;
             this.btnSubFamilia7.UseVisualStyleBackColor = true;
+            this.btnSubFamilia7.Visible = false;
             this.btnSubFamilia7.Click += new System.EventHandler(this.SubFamButtonClick);
             // 
             // btnSubFamilia8
@@ -362,6 +382,7 @@
             this.btnSubFamilia8.Size = new System.Drawing.Size(95, 82);
             this.btnSubFamilia8.TabIndex = 17;
             this.btnSubFamilia8.UseVisualStyleBackColor = true;
+            this.btnSubFamilia8.Visible = false;
             this.btnSubFamilia8.Click += new System.EventHandler(this.SubFamButtonClick);
             // 
             // btnSubFamilia10
@@ -372,6 +393,7 @@
             this.btnSubFamilia10.Size = new System.Drawing.Size(95, 82);
             this.btnSubFamilia10.TabIndex = 19;
             this.btnSubFamilia10.UseVisualStyleBackColor = true;
+            this.btnSubFamilia10.Visible = false;
             this.btnSubFamilia10.Click += new System.EventHandler(this.SubFamButtonClick);
             // 
             // btnSubFamilia9
@@ -382,6 +404,7 @@
             this.btnSubFamilia9.Size = new System.Drawing.Size(95, 82);
             this.btnSubFamilia9.TabIndex = 18;
             this.btnSubFamilia9.UseVisualStyleBackColor = true;
+            this.btnSubFamilia9.Visible = false;
             this.btnSubFamilia9.Click += new System.EventHandler(this.SubFamButtonClick);
             // 
             // lblArticulos
@@ -398,11 +421,12 @@
             // 
             this.dgvCarrito.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgvCarrito.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCarrito.Location = new System.Drawing.Point(1033, 202);
+            this.dgvCarrito.Location = new System.Drawing.Point(927, 202);
             this.dgvCarrito.Margin = new System.Windows.Forms.Padding(4);
             this.dgvCarrito.Name = "dgvCarrito";
-            this.dgvCarrito.Size = new System.Drawing.Size(293, 441);
+            this.dgvCarrito.Size = new System.Drawing.Size(399, 441);
             this.dgvCarrito.TabIndex = 30;
+            this.dgvCarrito.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.CellEnterCarrito);
             // 
             // lblEmpleado
             // 
@@ -444,7 +468,7 @@
             // btnDevolverAProductos
             // 
             this.btnDevolverAProductos.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnDevolverAProductos.Location = new System.Drawing.Point(904, 406);
+            this.btnDevolverAProductos.Location = new System.Drawing.Point(802, 408);
             this.btnDevolverAProductos.Margin = new System.Windows.Forms.Padding(4);
             this.btnDevolverAProductos.Name = "btnDevolverAProductos";
             this.btnDevolverAProductos.Size = new System.Drawing.Size(121, 130);

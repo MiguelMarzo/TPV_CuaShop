@@ -30,6 +30,7 @@
         {
             this.lblTitulo = new System.Windows.Forms.Label();
             this.grpAñadirEmpleado = new System.Windows.Forms.GroupBox();
+            this.pctBoxFotoEmpleado = new System.Windows.Forms.PictureBox();
             this.txtRutaFoto = new System.Windows.Forms.TextBox();
             this.btnAñadirFoto = new System.Windows.Forms.Button();
             this.lblNombreArticulo = new System.Windows.Forms.Label();
@@ -38,6 +39,7 @@
             this.adminTableAdapter1 = new CapaDatos.dsCuaShopTableAdapters.AdminTableAdapter();
             this.btnSalir = new System.Windows.Forms.Button();
             this.grpAñadirEmpleado.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pctBoxFotoEmpleado)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTitulo
@@ -56,6 +58,7 @@
             // grpAñadirEmpleado
             // 
             this.grpAñadirEmpleado.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.grpAñadirEmpleado.Controls.Add(this.pctBoxFotoEmpleado);
             this.grpAñadirEmpleado.Controls.Add(this.txtRutaFoto);
             this.grpAñadirEmpleado.Controls.Add(this.btnAñadirFoto);
             this.grpAñadirEmpleado.Controls.Add(this.lblNombreArticulo);
@@ -63,16 +66,24 @@
             this.grpAñadirEmpleado.Controls.Add(this.btnAñadir);
             this.grpAñadirEmpleado.Location = new System.Drawing.Point(31, 99);
             this.grpAñadirEmpleado.Name = "grpAñadirEmpleado";
-            this.grpAñadirEmpleado.Size = new System.Drawing.Size(375, 249);
+            this.grpAñadirEmpleado.Size = new System.Drawing.Size(709, 249);
             this.grpAñadirEmpleado.TabIndex = 2;
             this.grpAñadirEmpleado.TabStop = false;
             this.grpAñadirEmpleado.Text = "Añadir Empleado";
-            this.grpAñadirEmpleado.Enter += new System.EventHandler(this.grpAñadirEmpleado_Enter);
+            // 
+            // pctBoxFotoEmpleado
+            // 
+            this.pctBoxFotoEmpleado.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pctBoxFotoEmpleado.Location = new System.Drawing.Point(448, 21);
+            this.pctBoxFotoEmpleado.Name = "pctBoxFotoEmpleado";
+            this.pctBoxFotoEmpleado.Size = new System.Drawing.Size(199, 198);
+            this.pctBoxFotoEmpleado.TabIndex = 6;
+            this.pctBoxFotoEmpleado.TabStop = false;
             // 
             // txtRutaFoto
             // 
             this.txtRutaFoto.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtRutaFoto.Location = new System.Drawing.Point(157, 121);
+            this.txtRutaFoto.Location = new System.Drawing.Point(159, 102);
             this.txtRutaFoto.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtRutaFoto.Name = "txtRutaFoto";
             this.txtRutaFoto.Size = new System.Drawing.Size(157, 22);
@@ -82,7 +93,7 @@
             // 
             this.btnAñadirFoto.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnAñadirFoto.Font = new System.Drawing.Font("Rockwell", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAñadirFoto.Location = new System.Drawing.Point(40, 110);
+            this.btnAñadirFoto.Location = new System.Drawing.Point(42, 91);
             this.btnAñadirFoto.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAñadirFoto.Name = "btnAñadirFoto";
             this.btnAñadirFoto.Size = new System.Drawing.Size(111, 44);
@@ -96,7 +107,7 @@
             this.lblNombreArticulo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblNombreArticulo.AutoSize = true;
             this.lblNombreArticulo.Font = new System.Drawing.Font("Rockwell", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombreArticulo.Location = new System.Drawing.Point(6, 47);
+            this.lblNombreArticulo.Location = new System.Drawing.Point(8, 28);
             this.lblNombreArticulo.Name = "lblNombreArticulo";
             this.lblNombreArticulo.Size = new System.Drawing.Size(111, 27);
             this.lblNombreArticulo.TabIndex = 6;
@@ -105,7 +116,7 @@
             // txtNombreEmpleado
             // 
             this.txtNombreEmpleado.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtNombreEmpleado.Location = new System.Drawing.Point(123, 52);
+            this.txtNombreEmpleado.Location = new System.Drawing.Point(125, 33);
             this.txtNombreEmpleado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtNombreEmpleado.Name = "txtNombreEmpleado";
             this.txtNombreEmpleado.Size = new System.Drawing.Size(246, 22);
@@ -115,7 +126,7 @@
             // 
             this.btnAñadir.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnAñadir.Font = new System.Drawing.Font("Rockwell", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAñadir.Location = new System.Drawing.Point(40, 188);
+            this.btnAñadir.Location = new System.Drawing.Point(42, 169);
             this.btnAñadir.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAñadir.Name = "btnAñadir";
             this.btnAñadir.Size = new System.Drawing.Size(274, 56);
@@ -154,6 +165,7 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.grpAñadirEmpleado.ResumeLayout(false);
             this.grpAñadirEmpleado.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pctBoxFotoEmpleado)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -170,5 +182,6 @@
         private System.Windows.Forms.TextBox txtRutaFoto;
         private System.Windows.Forms.Button btnAñadirFoto;
         private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.PictureBox pctBoxFotoEmpleado;
     }
 }
