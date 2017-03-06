@@ -8,10 +8,10 @@ namespace Entidades
 {
     public class Venta : IEquatable<Venta>
     {
-        private int numeroVenta;
-        private int numeroEmpleado;
-        private DateTime fechaVenta;
-        private double precio;
+        public int numeroVenta { get; set; }
+        public int numeroEmpleado { get; set; }
+        public DateTime fechaVenta { get; set; }
+        public double precio { get; set; }
 
         public Venta()
         {

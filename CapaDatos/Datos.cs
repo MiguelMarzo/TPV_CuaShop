@@ -235,10 +235,10 @@ namespace CapaDatos
             if(descripcion != "")
             {
                 first = false;
-                query += " descripcion = " + descripcion;
+                query += " descripcion = '" + descripcion + "'";
             }
 
-            if(familia != null && subFamilia == null)
+            if(familia.idFamilia != "" && subFamilia.idSubFamilia == "")
             {
                 if(first)
                 {
@@ -251,7 +251,7 @@ namespace CapaDatos
                 }
             }
 
-            if(subFamilia != null)
+            if(subFamilia.idSubFamilia != "")
             {
                 if(first)
                 {
@@ -303,7 +303,7 @@ namespace CapaDatos
                 }
             }
 
-            if(iva != null)
+            if(iva.idIva != -1)
             {
                 if (first)
                 {

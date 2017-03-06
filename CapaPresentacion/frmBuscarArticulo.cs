@@ -192,10 +192,64 @@ namespace CapaPresentacion
             int estanteria;
             int estante;
             int altura;
+            Familia familia;
+            SubFamilia subFamilia;
+            Iva iva;
+            Recogida recogida;
+            Articulo numPedido;
+            Venta venta;
 
             Int32.TryParse(txtEstanteria.Text, out estanteria);
             Int32.TryParse(txtEstante.Text, out estante);
             Int32.TryParse(txtAltura.Text, out altura);
+
+            if((Familia)cmbFamilia.SelectedItem == null)
+            {
+                familia = new Familia("", "", "", "");
+            }else
+            {
+                familia = (Familia)cmbFamilia.SelectedItem;
+            }
+
+            if((SubFamilia)cmbSubFamilia.SelectedItem == null)
+            {
+                subFamilia = new SubFamilia("", "", "", -1, "");
+            }else
+            {
+                subFamilia = (SubFamilia)cmbSubFamilia.SelectedItem;
+            }
+
+            if((Iva)cmbIVA.SelectedItem == null)
+            {
+                iva = new Iva(-1, "");
+            }else
+            {
+                iva = (Iva)cmbIVA.SelectedItem;
+            }
+
+            if((Recogida)cmbNumRecogida.SelectedItem == null)
+            {
+                recogida = new Recogida(-1, new DateTime(), -1, "", -1);
+            }else
+            {
+                recogida = (Recogida)cmbNumRecogida.SelectedItem;
+            }
+
+            if((Articulo)cmbNumPedido.SelectedItem == null)
+            {
+                numPedido = new Articulo("", "", "", -1, -1, -1, -1, -1, "", "", "");
+            }else
+            {
+                numPedido = (Articulo)cmbNumPedido.SelectedItem;
+            }
+
+            if((Venta)cmbNumVenta.SelectedItem == null)
+            {
+                venta = new Venta(-1, -1, new DateTime(), -1);
+            }else
+            {
+                venta = (Venta)cmbNumVenta.SelectedItem;
+            }
 
             if(estanteria == 0)
             {
@@ -212,7 +266,7 @@ namespace CapaPresentacion
                 altura = -1;
             }
 
-            List<Articulo> articulos = _negocio.BuscarArticuloEspecifico(txtDescripcion.Text, (Familia)cmbFamilia.SelectedItem, (SubFamilia)cmbSubFamilia.SelectedItem, (int)cmbNumRecogida.SelectedItem, (int)cmbNumPedido.SelectedItem, (int)cmbNumVenta.SelectedItem, (Iva)cmbIVA.SelectedItem, estanteria, estante, altura);
+            List<Articulo> articulos = _negocio.BuscarArticuloEspecifico(txtDescripcion.Text, familia, subFamilia, recogida.numeroRecogida, numPedido.numeroPedido, venta.numeroVenta, iva, estanteria, estante, altura);
 
             dgvArticulos.DataSource = articulos;
         }
