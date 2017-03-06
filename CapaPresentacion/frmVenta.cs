@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaNegocio;
 using Entidades;
+using Microsoft.VisualBasic;
 
 
 namespace CapaPresentacion
@@ -185,7 +186,7 @@ namespace CapaPresentacion
                         TallaPesoLitros = o.tallaPesoLitros,
                         Localizacion = o.localizacion
                     }).ToList();
-                    if (dgvProductos.Rows.Count > 0) { dgvProductos.Rows[0].Selected = true; }                    
+                    if (dgvProductos.Rows.Count > 0) { dgvProductos.Rows[0].Selected = true; }
                     if (artCarrito.stock == 0)
                     {
                         carrito.Remove(artCarrito);
@@ -210,6 +211,53 @@ namespace CapaPresentacion
         private void btnSacarTicket_Click(object sender, EventArgs e)
         {
             MessageBox.Show(_negocio.EfectuarVenta(carrito, StaticGlobal.GlobalVar));
+        }
+
+        private void btnCodigoBarras_Click(object sender, EventArgs e)
+        {
+            String codigoBarras = Interaction.InputBox("Escanea el código");
+            Articulo art = articulos.Find(a => a.codigoArticulo == codigoBarras);
+            if (art == null)
+            {
+                MessageBox.Show("Articulo no encontrado");
+            }
+            else
+            {
+                if (art.stock > 0)
+                {
+                    if (articulos.Contains(art))
+                    {
+                        articulos.Find(x => x.codigoArticulo == art.codigoArticulo).stock++;
+                    }
+                    art.stock--;
+                    List<Articulo> articulosSubFam = articulos.FindAll(x => x.idSubFamilia == subFamActual.idSubFamilia);
+                    dgvProductos.DataSource = articulosSubFam.Select(o => new
+                    {
+                        Codigo = o.codigoArticulo,
+                        Descripción = o.descripcion,
+                        Precio = o.precio,
+                        Cantidad = o.stock,
+                        TallaPesoLitros = o.tallaPesoLitros,
+                        Localizacion = o.localizacion
+                    }).ToList();
+                    if (dgvProductos.Rows.Count > 0) { dgvProductos.Rows[0].Selected = true; }
+                    if (art.stock == 0)
+                    {
+                        carrito.Remove(art);
+                        dgvCarrito.DataSource = carrito.Select(o => new
+                        {
+                            Codigo = o.codigoArticulo,
+                            Descripción = o.descripcion,
+                            Precio = o.precio,
+                            Cantidad = o.stock,
+                            TallaPesoLitros = o.tallaPesoLitros,
+                            Localizacion = o.localizacion
+                        }).ToList();
+                        if (dgvCarrito.Rows.Count > 0) { dgvCarrito.Rows[0].Selected = true; }
+                    }
+                    return;
+                }
+            }
         }
     }
 }

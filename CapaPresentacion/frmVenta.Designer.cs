@@ -62,6 +62,7 @@
             this.lblFecha = new System.Windows.Forms.Label();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.btnDevolverAProductos = new System.Windows.Forms.Button();
+            this.btnCodigoBarras = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             this.grpFamilias.SuspendLayout();
             this.grpSubFamilias.SuspendLayout();
@@ -434,7 +435,7 @@
             this.lblEmpleado.AutoSize = true;
             this.lblEmpleado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblEmpleado.Font = new System.Drawing.Font("Rockwell", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmpleado.Location = new System.Drawing.Point(979, 130);
+            this.lblEmpleado.Location = new System.Drawing.Point(979, 82);
             this.lblEmpleado.Name = "lblEmpleado";
             this.lblEmpleado.Size = new System.Drawing.Size(141, 29);
             this.lblEmpleado.TabIndex = 41;
@@ -446,7 +447,7 @@
             this.lblFecha.AutoSize = true;
             this.lblFecha.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblFecha.Font = new System.Drawing.Font("Rockwell", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFecha.Location = new System.Drawing.Point(979, 91);
+            this.lblFecha.Location = new System.Drawing.Point(979, 43);
             this.lblFecha.Name = "lblFecha";
             this.lblFecha.Size = new System.Drawing.Size(88, 29);
             this.lblFecha.TabIndex = 40;
@@ -458,7 +459,7 @@
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblTitulo.Font = new System.Drawing.Font("Rockwell", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.Location = new System.Drawing.Point(348, 91);
+            this.lblTitulo.Location = new System.Drawing.Point(352, 43);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(435, 43);
             this.lblTitulo.TabIndex = 39;
@@ -477,11 +478,25 @@
             this.btnDevolverAProductos.UseVisualStyleBackColor = true;
             this.btnDevolverAProductos.Click += new System.EventHandler(this.btnDevolverAProductos_Click);
             // 
+            // btnCodigoBarras
+            // 
+            this.btnCodigoBarras.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnCodigoBarras.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCodigoBarras.Location = new System.Drawing.Point(440, 132);
+            this.btnCodigoBarras.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnCodigoBarras.Name = "btnCodigoBarras";
+            this.btnCodigoBarras.Size = new System.Drawing.Size(289, 64);
+            this.btnCodigoBarras.TabIndex = 43;
+            this.btnCodigoBarras.Text = "Escanear";
+            this.btnCodigoBarras.UseVisualStyleBackColor = true;
+            this.btnCodigoBarras.Click += new System.EventHandler(this.btnCodigoBarras_Click);
+            // 
             // frmVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1336, 960);
+            this.Controls.Add(this.btnCodigoBarras);
             this.Controls.Add(this.btnDevolverAProductos);
             this.Controls.Add(this.lblEmpleado);
             this.Controls.Add(this.lblFecha);
@@ -545,5 +560,6 @@
         private System.Windows.Forms.Label lblFecha;
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.Button btnDevolverAProductos;
+        private System.Windows.Forms.Button btnCodigoBarras;
     }
 }
