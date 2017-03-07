@@ -32,8 +32,16 @@ namespace CapaPresentacion
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
+           int numeroArticulos;
+           if (!int.TryParse(txtNumeroArticulosEntregados.Text, out numeroArticulos))
+            {
+                MessageBox.Show("Introduce una cantidad de articulos correcta");
+                return;
+            } else
+            {
+                MessageBox.Show(_negocio.CrearRegistroRecogida(cmbEntregador.SelectedItem.ToString(), (short) numeroArticulos, (short)StaticGlobal.GlobalVar.numeroEmpleado));
+            }
            
-            _negocio.CrearRegistroRecogida(cmbEntregador.SelectedItem.ToString(), short.Parse(txtNumeroArticulosEntregados.Text), (short) StaticGlobal.GlobalVar.numeroEmpleado);
         }
 
         private void btnVolver_Click(object sender, EventArgs e)

@@ -207,6 +207,10 @@ namespace CapaDatos
         }
         private int MaxEmpleado()
         {
+            if(dsShop.Empleado.Count == 0)
+            {
+                return 1;
+            }
             var numEmpleado = dsShop.Empleado.OrderByDescending(x => x.numeroEmpleado).First().numeroEmpleado;
 
             return numEmpleado + 1;
