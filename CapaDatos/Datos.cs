@@ -215,6 +215,10 @@ namespace CapaDatos
         public String EfectuarVenta(List<Articulo> articulosVenta, Empleado empleado)
         {
             Decimal precioTotal = 0;
+            foreach (Articulo art in articulosVenta)
+            {
+                precioTotal += art.precio * art.stock;
+            }
             int maxVenta = maxNumeroVenta();
             dsCuaShop.VentaRow drVenta = dsShop.Venta.NewVentaRow();
             drVenta.numeroVenta = (short)maxVenta;
@@ -232,19 +236,10 @@ namespace CapaDatos
                 daArticulosVenta.Update(drArticulosVenta);
                 //
                 var drArticulo = dsShop.Articulo.FindBycodigoArticulo(art.codigoArticulo);
-                drArticulo.stock -= (short)art.stock;
-                precioTotal += art.precio * art.stock;
+                drArticulo.stock -= (short)art.stock;                
                 dsShop.Articulo.GetChanges();
                 drArticulo.AcceptChanges();
             }
-            try
-            {
-            }
-            catch
-            {
-                return "Error actualizando stock articulos";
-            }
-
             return "Venta insertada y stocks actualizados";
         }
 
@@ -341,7 +336,16 @@ namespace CapaDatos
             }
             return null;
         }
-
+        public String BorrarEmpleados()
+        {
+            var empleados = dsShop.Empleado.AsEnumerable();
+            foreach (var row in empleados.ToList())
+            {
+                row.Delete();
+                dsShop.AcceptChanges();
+            }
+            return "Empleados borrados correctamente";
+        }
         public List<Articulo> BuscarArticuloEspecifico(string descripcion, Familia familia, SubFamilia subFamilia, int numeroRecogida, int numeroPedido, int numeroVenta, Iva iva, int estanteria, int estante, int altura)
         {
             string cadCon = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=TPVdb1.accdb";
