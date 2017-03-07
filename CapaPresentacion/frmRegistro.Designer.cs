@@ -544,7 +544,6 @@
             // btnAñadirStock
             // 
             this.btnAñadirStock.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnAñadirStock.BackgroundImage = global::CapaPresentacion.Properties.Resources.añadir;
             this.btnAñadirStock.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnAñadirStock.Font = new System.Drawing.Font("Palatino Linotype", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAñadirStock.Location = new System.Drawing.Point(5, 359);
