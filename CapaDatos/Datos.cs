@@ -342,8 +342,9 @@ namespace CapaDatos
             foreach (var row in empleados.ToList())
             {
                 row.Delete();
+                daEmpleado.Update(row);
                 dsShop.AcceptChanges();
-            }
+            }            
             return "Empleados borrados correctamente";
         }
         public List<Articulo> BuscarArticuloEspecifico(string descripcion, Familia familia, SubFamilia subFamilia, int numeroRecogida, int numeroPedido, int numeroVenta, Iva iva, int estanteria, int estante, int altura)
