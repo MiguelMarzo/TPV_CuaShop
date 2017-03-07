@@ -215,8 +215,6 @@ namespace CapaDatos
         public String EfectuarVenta(List<Articulo> articulosVenta, Empleado empleado)
         {
             Decimal precioTotal = 0;
-            foreach (Articulo art in articulosVenta)
-            { precioTotal += art.precio * art.stock; }
             int maxVenta = maxNumeroVenta();
             dsCuaShop.VentaRow drVenta = dsShop.Venta.NewVentaRow();
             drVenta.numeroVenta = (short)maxVenta;
@@ -226,19 +224,27 @@ namespace CapaDatos
             dsShop.Venta.AddVentaRow(drVenta);
             daVenta.Update(drVenta);
             foreach (Articulo art in articulosVenta)
-            {
+                {
                 dsCuaShop.ArticulosVentaRow drArticulosVenta = dsShop.ArticulosVenta.NewArticulosVentaRow();
                 drArticulosVenta.codigoArticulo = art.codigoArticulo;
                 drArticulosVenta.numeroVenta = (short)maxVenta;
-                drArticulosVenta.cantidad = art.stock;
                 dsShop.ArticulosVenta.AddArticulosVentaRow(drArticulosVenta);
                 daArticulosVenta.Update(drArticulosVenta);
                 //
                 var drArticulo = dsShop.Articulo.FindBycodigoArticulo(art.codigoArticulo);
                 drArticulo.stock -= (short)art.stock;
+                precioTotal += art.precio * art.stock;
                 dsShop.Articulo.GetChanges();
                 drArticulo.AcceptChanges();
             }
+            try
+            {
+            }
+            catch
+            {
+                return "Error actualizando stock articulos";
+            }
+
             return "Venta insertada y stocks actualizados";
         }
 
@@ -260,7 +266,7 @@ namespace CapaDatos
                 {
                     return "El articulo no había sido vendido";
                 }
-                foreach (var row in ventasArticulo.ToList())
+                foreach(var row in ventasArticulo.ToList())
                 {
                     row.Delete();
                 }
@@ -334,18 +340,6 @@ namespace CapaDatos
                 }
             }
             return null;
-        }
-
-        public String BorrarEmpleados()
-        {
-            foreach (var row in dsShop.Empleado.ToList())
-            {
-                //dsShop.Empleado.Rows.Remove(row);
-                row.Delete();                
-            }
-            dsShop.Empleado.GetChanges();
-            dsShop.Empleado.AcceptChanges();
-            return "Empleados borrados correctamente";
         }
 
         public List<Articulo> BuscarArticuloEspecifico(string descripcion, Familia familia, SubFamilia subFamilia, int numeroRecogida, int numeroPedido, int numeroVenta, Iva iva, int estanteria, int estante, int altura)
@@ -569,4 +563,7 @@ namespace CapaDatos
             return ivas.ToList();
         }
     }
+
+
+    
 }
