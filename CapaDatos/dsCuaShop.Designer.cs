@@ -3233,6 +3233,14 @@ namespace CapaDatos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public ArticulosVentaRow FindBynumeroVentacodigoArticulo(short numeroVenta, string codigoArticulo) {
+                return ((ArticulosVentaRow)(this.Rows.Find(new object[] {
+                            numeroVenta,
+                            codigoArticulo})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public override global::System.Data.DataTable Clone() {
                 ArticulosVentaDataTable cln = ((ArticulosVentaDataTable)(base.Clone()));
                 cln.InitVars();
@@ -3259,6 +3267,11 @@ namespace CapaDatos {
                 base.Columns.Add(this.columnnumeroVenta);
                 this.columncodigoArticulo = new global::System.Data.DataColumn("codigoArticulo", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncodigoArticulo);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnnumeroVenta,
+                                this.columncodigoArticulo}, true));
+                this.columnnumeroVenta.AllowDBNull = false;
+                this.columncodigoArticulo.AllowDBNull = false;
                 this.columncodigoArticulo.MaxLength = 255;
             }
             
@@ -4572,12 +4585,7 @@ namespace CapaDatos {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public short numeroVenta {
                 get {
-                    try {
-                        return ((short)(this[this.tableArticulosVenta.numeroVentaColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'numeroVenta\' in table \'ArticulosVenta\' is DBNull.", e);
-                    }
+                    return ((short)(this[this.tableArticulosVenta.numeroVentaColumn]));
                 }
                 set {
                     this[this.tableArticulosVenta.numeroVentaColumn] = value;
@@ -4588,12 +4596,7 @@ namespace CapaDatos {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string codigoArticulo {
                 get {
-                    try {
-                        return ((string)(this[this.tableArticulosVenta.codigoArticuloColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'codigoArticulo\' in table \'ArticulosVenta\' is DBNull.", e);
-                    }
+                    return ((string)(this[this.tableArticulosVenta.codigoArticuloColumn]));
                 }
                 set {
                     this[this.tableArticulosVenta.codigoArticuloColumn] = value;
@@ -4620,30 +4623,6 @@ namespace CapaDatos {
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["VentaArticulosVenta"]);
                 }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsnumeroVentaNull() {
-                return this.IsNull(this.tableArticulosVenta.numeroVentaColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetnumeroVentaNull() {
-                this[this.tableArticulosVenta.numeroVentaColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IscodigoArticuloNull() {
-                return this.IsNull(this.tableArticulosVenta.codigoArticuloColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetcodigoArticuloNull() {
-                this[this.tableArticulosVenta.codigoArticuloColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -8434,12 +8413,28 @@ namespace CapaDatos.dsCuaShopTableAdapters {
             tableMapping.ColumnMappings.Add("numeroVenta", "numeroVenta");
             tableMapping.ColumnMappings.Add("codigoArticulo", "codigoArticulo");
             this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.DeleteCommand = new global::System.Data.OleDb.OleDbCommand();
+            this._adapter.DeleteCommand.Connection = this.Connection;
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM `ArticulosVenta` WHERE ((`numeroVenta` = ?) AND (`codigoArticulo` = ?" +
+                "))";
+            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_numeroVenta", global::System.Data.OleDb.OleDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "numeroVenta", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_codigoArticulo", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "codigoArticulo", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.InsertCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = "INSERT INTO `ArticulosVenta` (`numeroVenta`, `codigoArticulo`) VALUES (?, ?)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("numeroVenta", global::System.Data.OleDb.OleDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "numeroVenta", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("codigoArticulo", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "codigoArticulo", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand = new global::System.Data.OleDb.OleDbCommand();
+            this._adapter.UpdateCommand.Connection = this.Connection;
+            this._adapter.UpdateCommand.CommandText = "UPDATE `ArticulosVenta` SET `numeroVenta` = ?, `codigoArticulo` = ? WHERE ((`nume" +
+                "roVenta` = ?) AND (`codigoArticulo` = ?))";
+            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("numeroVenta", global::System.Data.OleDb.OleDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "numeroVenta", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("codigoArticulo", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "codigoArticulo", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_numeroVenta", global::System.Data.OleDb.OleDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "numeroVenta", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_codigoArticulo", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "codigoArticulo", global::System.Data.DataRowVersion.Original, false, null));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8515,16 +8510,39 @@ namespace CapaDatos.dsCuaShopTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(global::System.Nullable<short> numeroVenta, string codigoArticulo) {
-            if ((numeroVenta.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((short)(numeroVenta.Value));
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
+        public virtual int Delete(short Original_numeroVenta, string Original_codigoArticulo) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((short)(Original_numeroVenta));
+            if ((Original_codigoArticulo == null)) {
+                throw new global::System.ArgumentNullException("Original_codigoArticulo");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_codigoArticulo));
             }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
+            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.DeleteCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.DeleteCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
+        public virtual int Insert(short numeroVenta, string codigoArticulo) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((short)(numeroVenta));
             if ((codigoArticulo == null)) {
-                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("codigoArticulo");
             }
             else {
                 this.Adapter.InsertCommand.Parameters[1].Value = ((string)(codigoArticulo));
@@ -8543,6 +8561,49 @@ namespace CapaDatos.dsCuaShopTableAdapters {
                     this.Adapter.InsertCommand.Connection.Close();
                 }
             }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(short numeroVenta, string codigoArticulo, short Original_numeroVenta, string Original_codigoArticulo) {
+            this.Adapter.UpdateCommand.Parameters[0].Value = ((short)(numeroVenta));
+            if ((codigoArticulo == null)) {
+                throw new global::System.ArgumentNullException("codigoArticulo");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(codigoArticulo));
+            }
+            this.Adapter.UpdateCommand.Parameters[2].Value = ((short)(Original_numeroVenta));
+            if ((Original_codigoArticulo == null)) {
+                throw new global::System.ArgumentNullException("Original_codigoArticulo");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Original_codigoArticulo));
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
+            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.UpdateCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.UpdateCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(short Original_numeroVenta, string Original_codigoArticulo) {
+            return this.Update(Original_numeroVenta, Original_codigoArticulo, Original_numeroVenta, Original_codigoArticulo);
         }
     }
     

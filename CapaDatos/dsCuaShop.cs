@@ -6,3 +6,10 @@
     {
     }
 }
+
+namespace CapaDatos.dsCuaShopTableAdapters {
+    
+    
+    public partial class ArticulosVentaTableAdapter {
+    }
+}

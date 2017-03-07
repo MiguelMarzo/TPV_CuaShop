@@ -240,7 +240,8 @@ namespace CapaDatos
                 daArticulosVenta.Update(drArticulosVenta);
                 //
                 var drArticulo = dsShop.Articulo.FindBycodigoArticulo(art.codigoArticulo);
-                drArticulo.stock -= (short)art.stock;                
+                drArticulo.stock -= (short)art.stock;
+                daArticulo.Update(drArticulo); 
                 dsShop.Articulo.GetChanges();
                 drArticulo.AcceptChanges();
             }
@@ -258,24 +259,22 @@ namespace CapaDatos
         //METODOS PARA ACTUALIZAR DATOS (UPDATES)
         public String DevolverArticulo(string codigoArticulo)
         {
-            try
-            {
-                var ventasArticulo = dsShop.ArticulosVenta.AsEnumerable().Where(a => a.codigoArticulo == codigoArticulo);
-                if (ventasArticulo.ToList().Count == 0)
-                {
-                    return "El articulo no había sido vendido";
-                }
-                foreach(var row in ventasArticulo.ToList())
-                {
-                    row.Delete();
-                }
-                return "Articulo devulelto correctamente";
-            }
-            catch
-            {
-                return "Fallo en la devolución";
-            }
 
+            var ventasArticulo = dsShop.ArticulosVenta.AsEnumerable().Where(a => a.codigoArticulo == codigoArticulo);
+            if (ventasArticulo.ToList().Count == 0)
+            {
+                return "El articulo no había sido vendido";
+            }
+            var row = ventasArticulo.ElementAt(0);
+            row.Delete();
+            var drArticulo = dsShop.Articulo.FindBycodigoArticulo(codigoArticulo);
+            drArticulo.stock += 1;
+            daArticulo.Update(drArticulo);
+            daArticulosVenta.Update(row);
+            dsShop.AcceptChanges();
+
+
+            return "Articulo devulelto correctamente";
         }
         public String ActualizarStockArticulo(String codigo, int cantidad)
         {

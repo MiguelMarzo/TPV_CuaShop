@@ -196,22 +196,23 @@ namespace CapaPresentacion
                             TallaPesoLitros = o.tallaPesoLitros,
                             Localizacion = o.localizacion
                         }).ToList();
-                    }                    
-                    if (dgvProductos.Rows.Count > 0) { dgvProductos.Rows[0].Selected = true; }
+                    }                                      
                     if (artCarrito.stock == 0)
                     {
                         carrito.Remove(artCarrito);
-                        dgvCarrito.DataSource = carrito.Select(o => new
-                        {
-                            Codigo = o.codigoArticulo,
-                            Descripción = o.descripcion,
-                            Precio = o.precio,
-                            Cantidad = o.stock,
-                            TallaPesoLitros = o.tallaPesoLitros,
-                            Localizacion = o.localizacion
-                        }).ToList();
-                        if (dgvCarrito.Rows.Count > 0) { dgvCarrito.Rows[0].Selected = true; }
-                    }
+                        if (dgvProductos.Rows.Count > 0) { dgvProductos.Rows[0].Selected = true; }
+                    } 
+                    dgvCarrito.DataSource = carrito.Select(o => new
+                    {
+                        Codigo = o.codigoArticulo,
+                        Descripción = o.descripcion,
+                        Precio = o.precio,
+                        Cantidad = o.stock,
+                        TallaPesoLitros = o.tallaPesoLitros,
+                        Localizacion = o.localizacion
+                    }).ToList();
+                    if (dgvCarrito.Rows.Count > 0) { dgvCarrito.Rows[dgvCarrito.SelectedCells[0].RowIndex].Selected = true; }
+                    dgvProductos.Rows[dgvProductos.SelectedCells[0].RowIndex].Selected = true;
                     return;
                 }
 
