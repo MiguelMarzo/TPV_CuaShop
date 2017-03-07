@@ -117,9 +117,9 @@ namespace CapaNegocio
             return _datos.DevolverIvas();
         }
 
-        //public bool ArticuloVendido()
-        //{
-
-        //}
+        public String BorrarEmpleados()
+        {
+            return _datos.BorrarEmpleados();
+        }
     }
 }

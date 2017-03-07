@@ -223,12 +223,10 @@ namespace CapaPresentacion
         {
             if (carrito.Count > 0)
             {
-                DialogResult dr = new DialogResult();
-                dr = MessageBox.Show("¿Terminar venta?");
-                if(dr == DialogResult.OK)
+                if (MessageBox.Show("¿Confirmar compra?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     MessageBox.Show(_negocio.EfectuarVenta(carrito, StaticGlobal.GlobalVar));
-                }
+                }                
             }            
         }
 

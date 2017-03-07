@@ -79,5 +79,13 @@ namespace CapaPresentacion
                 MessageBox.Show(resultado);
             }
         }
+
+        private void btnEliminarTodosLosEmpleados_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("¿Eliminar todos los empleados?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                MessageBox.Show(_negocio.BorrarEmpleados());
+            }
+        }
     }
 }
