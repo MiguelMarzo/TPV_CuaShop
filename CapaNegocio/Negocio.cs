@@ -116,5 +116,10 @@ namespace CapaNegocio
         {
             return _datos.DevolverIvas();
         }
+
+        //public bool ArticuloVendido()
+        //{
+
+        //}
     }
 }
